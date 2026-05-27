@@ -117,21 +117,16 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-4 left-4 right-4 z-[999] ${scrolled ? 'shadow-2xl rounded-[20px]' : 'bg-transparent rounded-none'
+      className={`fixed top-4 left-4 right-4 z-[999] ${scrolled ? 'shadow-2xl rounded-[20px]' : 'rounded-[20px] shadow-lg'
         }`}
       style={{
-        transition: 'background 0.7s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.1s ease-out',
-        ...(scrolled
-          ? {
-            // Glass water effect background
-            background:
-              'linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 64, 175, 0.68) 45%, rgba(15, 23, 42, 0.75) 100%)',
-            backdropFilter: 'blur(28px) saturate(200%)',
-            WebkitBackdropFilter: 'blur(28px) saturate(200%)',
-            boxShadow:
-              '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.14)',
-          }
-          : {}),
+        transition: 'background 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.1s ease-out',
+        background: scrolled
+          ? 'linear-gradient(90deg, rgba(224, 226, 230, 0.97) 0%, rgba(150, 167, 207, 0.95) 50%, rgba(125, 185, 65, 0.61) 100%'
+          : 'linear-gradient(90deg, rgba(221, 223, 227, 0.89) 0%, rgba(150, 167, 207, 0.86) 50%, rgba(125, 185, 65, 0.61) 100%)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+        border: scrolled ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
       {/* Frosted glass shine overlay - Water glass effect */}
@@ -162,23 +157,23 @@ function Navbar() {
       <div className="relative max-w-7xl mx-auto flex items-center justify-between px-2 md:px-3 lg:px-4 py-4">
         <Link to="/" onClick={handleLinkClick} className="flex items-center gap-4 group">
           <div className="relative">
-            <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 opacity-20 blur-md group-hover:opacity-40 transition duration-500"></div>
+            <div className="absolute -inset-2 rounded-full"></div>
             <img
-              src={scrolled ? '/logo_ng11.png' : '/ng--logo.png'}
-              alt="NG Stellar Solutions"
-              className="relative h-10 w-auto md:h-12 drop-shadow-lg transition-all duration-300"
+              src='/logo_ngs.png'
+              alt="Next Gen Stellar"
+              className="relative h-10 w-auto md:h-12 transition-all duration-300"
             />
           </div>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 text-[0.95rem] font-medium text-slate-300 lg:flex">
+        <nav className="hidden items-center gap-8 text-[0.95rem] font-medium text-primary-700 lg:flex">
           <Link
             to="/"
             onClick={handleLinkClick}
-            className={`relative pb-1 transition-colors hover:text-violet-300 ${location.pathname === '/'
-              ? 'text-white nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-indigo-500 after:via-fuchsia-500 after:to-pink-500'
-              : 'text-slate-300'
+            className={`relative pb-1 transition-colors ${location.pathname === '/'
+              ? 'text-primary-700 nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary-600 after:to-secondary-500'
+              : 'text-primary-700'
               }`}
           >
             Home
@@ -193,9 +188,9 @@ function Navbar() {
             <Link
               to="/capability"
               onClick={handleLinkClick}
-              className={`flex items-center gap-1 pb-1 transition-colors hover:text-violet-300 relative ${location.pathname === '/capability' || location.pathname.startsWith('/services')
-                ? 'text-white nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-indigo-500 after:via-fuchsia-500 after:to-pink-500'
-                : 'text-slate-300'
+              className={`flex items-center gap-1 pb-1 transition-colors relative ${location.pathname === '/capability' || location.pathname.startsWith('/services')
+                ? 'text-primary-700 nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary-600 after:to-secondary-500'
+                : 'text-primary-700'
                 }`}
             >
               Capabilities
@@ -234,11 +229,11 @@ function Navbar() {
                             : 'hover:bg-white/5'
                         }`}
                       >
-                        <div className={`flex-shrink-0 transition-colors ${isActive ? 'text-fuchsia-400' : 'text-violet-400 group-hover:text-fuchsia-400'}`}>
+                        <div className={`flex-shrink-0 transition-colors ${isActive ? 'text-secondary-400' : 'text-primary-400 group-hover:text-secondary-400'}`}>
                           {item.icon}
                         </div>
                         <div className="flex-1">
-                          <h4 className={`font-bold text-base mb-1 transition-colors ${isActive ? 'text-violet-300' : 'text-white group-hover:text-violet-300'}`}>
+                          <h4 className={`font-bold text-base mb-1 transition-colors ${isActive ? 'text-primary-300' : 'text-white group-hover:text-primary-300'}`}>
                             {item.title}
                           </h4>
                           <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
@@ -254,9 +249,9 @@ function Navbar() {
           <Link
             to="/industry"
             onClick={handleLinkClick}
-            className={`relative pb-1 transition-colors hover:text-violet-300 ${location.pathname === '/industry'
-              ? 'text-white nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-indigo-500 after:via-fuchsia-500 after:to-pink-500'
-              : 'text-slate-300'
+            className={`relative pb-1 transition-colors ${location.pathname === '/industry'
+              ? 'text-primary-700 nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary-600 after:to-secondary-500'
+              : 'text-primary-700'
               }`}
           >
             Industries
@@ -269,9 +264,9 @@ function Navbar() {
              <Link
               to="/about"
               onClick={handleLinkClick}
-              className={`flex items-center gap-1 pb-1 transition-colors hover:text-violet-300 relative ${location.pathname === '/about' || location.pathname === '/careers'
-                ? 'text-white nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-indigo-500 after:via-fuchsia-500 after:to-pink-500'
-                : 'text-slate-300'
+              className={`flex items-center gap-1 pb-1 transition-colors relative ${location.pathname === '/about' || location.pathname === '/careers'
+                ? 'text-primary-700 nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary-600 after:to-secondary-500'
+                : 'text-primary-700'
                 }`}
             >
               About us
@@ -309,11 +304,11 @@ function Navbar() {
                             : 'hover:bg-white/5'
                         }`}
                       >
-                        <div className={`flex-shrink-0 transition-colors ${isActive ? 'text-fuchsia-400' : 'text-violet-400 group-hover:text-fuchsia-400'}`}>
+                        <div className={`flex-shrink-0 transition-colors ${isActive ? 'text-secondary-400' : 'text-primary-400 group-hover:text-secondary-400'}`}>
                           {item.icon}
                         </div>
                         <div className="flex-1">
-                          <h4 className={`font-bold text-base mb-1 transition-colors ${isActive ? 'text-violet-300' : 'text-white group-hover:text-violet-300'}`}>
+                          <h4 className={`font-bold text-base mb-1 transition-colors ${isActive ? 'text-primary-300' : 'text-white group-hover:text-primary-300'}`}>
                             {item.title}
                           </h4>
                           <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
@@ -329,7 +324,7 @@ function Navbar() {
           <Link
             to="/contact"
             onClick={handleLinkClick}
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-fuchsia-400/60 hover:scale-105 active:scale-95"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-700 to-primary-500 px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-primary-700/20 transition-all hover:brightness-110 hover:shadow-primary-500/30 hover:scale-105 active:scale-95"
           >
             <span className="flex items-center gap-2">Contact Us</span>
           </Link>
@@ -368,7 +363,7 @@ function Navbar() {
                 to="/"
                 onClick={handleLinkClick}
                 className={`px-4 py-3 rounded-lg transition-colors ${location.pathname === '/'
-                  ? 'bg-gradient-to-r from-indigo-500/20 via-fuchsia-500/20 to-pink-500/20 text-white font-semibold'
+                  ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
                   : 'text-slate-300 hover:bg-white/5 hover:text-white'
                   }`}
               >
@@ -379,7 +374,7 @@ function Navbar() {
               <div>
                 <div
                   className={`w-full px-4 py-3 rounded-lg transition-colors flex items-center justify-between ${location.pathname === '/capability' || location.pathname.startsWith('/services')
-                    ? 'bg-gradient-to-r from-indigo-500/20 via-fuchsia-500/20 to-pink-500/20 text-white font-semibold'
+                    ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
                     : 'text-slate-300 hover:bg-white/5 hover:text-white'
                     }`}
                 >
@@ -426,7 +421,7 @@ function Navbar() {
                           }`}
                         >
                           <svg
-                            className="w-6 h-6 text-violet-400"
+                            className="w-6 h-6 text-primary-400"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -450,7 +445,7 @@ function Navbar() {
                           }`}
                         >
                           <svg
-                            className="w-6 h-6 text-violet-400"
+                            className="w-6 h-6 text-primary-400"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -474,7 +469,7 @@ function Navbar() {
                           }`}
                         >
                           <svg
-                            className="w-6 h-6 text-violet-400"
+                            className="w-6 h-6 text-primary-400"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -498,7 +493,7 @@ function Navbar() {
                 to="/industry"
                 onClick={handleLinkClick}
                 className={`px-4 py-3 rounded-lg transition-colors ${location.pathname === '/industry'
-                  ? 'bg-gradient-to-r from-indigo-500/20 via-fuchsia-500/20 to-pink-500/20 text-white font-semibold'
+                  ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
                   : 'text-slate-300 hover:bg-white/5 hover:text-white'
                   }`}
               >
@@ -508,7 +503,7 @@ function Navbar() {
                 <div>
                  <div
                     className={`w-full px-4 py-3 rounded-lg transition-colors flex items-center justify-between ${location.pathname === '/about' || location.pathname === '/careers'
-                      ? 'bg-gradient-to-r from-indigo-500/20 via-fuchsia-500/20 to-pink-500/20 text-white font-semibold'
+                      ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
                       : 'text-slate-300 hover:bg-white/5 hover:text-white'
                       }`}
                   >
@@ -571,7 +566,7 @@ function Navbar() {
               <Link
                 to="/contact"
                 onClick={handleLinkClick}
-                className="mt-4 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 active:scale-95"
+                className="mt-4 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-700 to-primary-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-700/20 transition-all hover:brightness-110 active:scale-95"
               >
                 Contact Us
               </Link>
