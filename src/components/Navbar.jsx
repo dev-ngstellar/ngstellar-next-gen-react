@@ -97,8 +97,8 @@ function Navbar() {
       style={{
         transition: 'background 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
         background: scrolled
-          ? 'linear-gradient(90deg, rgba(224, 226, 230, 0.84)'
-          : 'linear-gradient(90deg, rgba(224, 226, 230, 0.84)',
+          ? 'linear-gradient(90deg, rgba(255, 255, 255, 1)'
+          : 'linear-gradient(90deg, rgba(255, 255, 255, 1)',
         backdropFilter: 'blur(20px) saturate(180%)',
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
       }}
@@ -132,11 +132,18 @@ function Navbar() {
         <Link to="/" onClick={handleLinkClick} className="flex items-center gap-4 group">
           <div className="relative">
             <div className="absolute -inset-2 rounded-full"></div>
-            <img
-              src='/logo_ngs.png'
-              alt="Next Gen Stellar"
-              className="relative h-10 w-auto md:h-12 transition-all duration-300"
-            />
+            <picture>
+              <source srcSet="/logo_ngs.webp" type="image/webp" />
+              <img
+                src='/logo_ngs.png'
+                alt="Next Gen Stellar"
+                width="400"
+                height="74"
+                loading="eager"
+                decoding="async"
+                className="relative h-10 w-auto md:h-12 transition-all duration-300"
+              />
+            </picture>
           </div>
         </Link>
 
@@ -307,7 +314,7 @@ function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+          className="lg:hidden p-2 rounded-lg text-primary-700 hover:bg-primary-700 transition-colors"
           aria-label="Toggle mobile menu"
         >
           {mobileMenuOpen ? (

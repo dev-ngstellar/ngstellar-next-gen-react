@@ -101,17 +101,8 @@ function Services() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6 }}
-        className="relative mt-16 rounded-3xl p-[1.5px] overflow-hidden shadow-[0_40px_120px_rgba(10,16,40,0.9)] z-0"
+        className="relative mt-16 rounded-3xl border border-slate-700/50 shadow-[0_40px_120px_rgba(10,16,40,0.9)] z-0"
       >
-        {/* Animated Border Beam — pure CSS for GPU compositing */}
-        <style>{`
-          @keyframes border-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-          .border-beam-spin { animation: border-spin 40s linear infinite; }
-        `}</style>
-        <div
-          className="border-beam-spin absolute inset-[-100%] z-[-1]"
-          style={{ background: 'conic-gradient(from 90deg at 50% 50%, #0000 0%, #0000 94%, #7db941 96.5%, #335fa8 100%)' }}
-        />
 
         {/* Main Content Container */}
         <div className="relative h-full w-full rounded-[22px] bg-gradient-to-b from-slate-900 to-black p-8 md:p-12">
