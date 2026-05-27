@@ -116,19 +116,11 @@ function Workflow() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className={`group relative overflow-hidden rounded-[28px] border border-slate-700/50 bg-gradient-to-b from-[#0b1024] via-[#050819] to-[#050716] p-6 shadow-[0_30px_80px_rgba(5,8,30,0.9)] cursor-pointer ${index >= visibleCount ? 'hidden md:block' : ''}`}
             >
-              {/* Animated gradient glow background */}
-              <motion.div
-                className="pointer-events-none absolute inset-0 rounded-[28px] opacity-40"
+              {/* Gradient glow background — static, hover via CSS */}
+              <div
+                className="pointer-events-none absolute inset-0 rounded-[28px] opacity-40 group-hover:opacity-60 transition-opacity duration-500"
                 style={{
                   background: 'radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.3), transparent 60%), radial-gradient(circle at 50% 70%, rgba(59, 130, 246, 0.25), transparent 70%)'
-                }}
-                animate={{
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
                 }}
               />
 
@@ -137,19 +129,9 @@ function Workflow() {
 
               {/* Icon container */}
               <div className="relative z-10 flex items-center justify-center h-32">
-                <motion.div
-                  animate={{
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="text-indigo-300"
-                >
+                <div className="text-indigo-300 transition-transform duration-300 group-hover:scale-110">
                   {card.icon}
-                </motion.div>
+                </div>
               </div>
 
               {/* Content box at bottom */}

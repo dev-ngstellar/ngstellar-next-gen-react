@@ -11,42 +11,17 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check multiple scroll sources to handle different layouts
-      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
       setScrolled(scrollY > 0);
     };
 
-    // Find all potentially scrollable elements in the DOM
-    const findScrollableElements = () => {
-      const scrollableElements = [window, document];
-
-      // Find all elements with overflow properties that allow scrolling
-      const allElements = document.querySelectorAll('*');
-      allElements.forEach((el) => {
-        const style = window.getComputedStyle(el);
-        if (style.overflowY === 'auto' || style.overflowY === 'scroll' ||
-          style.overflow === 'auto' || style.overflow === 'scroll') {
-          scrollableElements.push(el);
-        }
-      });
-
-      return scrollableElements;
-    };
-
-    // Attach listeners to all scrollable elements
-    const scrollableElements = findScrollableElements();
-    scrollableElements.forEach((element) => {
-      element.addEventListener('scroll', handleScroll, { passive: true });
-    });
-
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Check initial scroll position
     handleScroll();
 
     return () => {
-      scrollableElements.forEach((element) => {
-        element.removeEventListener('scroll', handleScroll);
-      });
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 

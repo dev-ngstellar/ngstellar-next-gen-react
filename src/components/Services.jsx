@@ -103,15 +103,14 @@ function Services() {
         transition={{ duration: 0.6 }}
         className="relative mt-16 rounded-3xl p-[1.5px] overflow-hidden shadow-[0_40px_120px_rgba(10,16,40,0.9)] z-0"
       >
-        {/* Animated Border Beam */}
-        <motion.div
-          className="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#0000_94%,#7db941_96.5%,#335fa8_100%)] z-[-1]"
-          animate={{ rotate: 360 }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "linear"
-          }}
+        {/* Animated Border Beam — pure CSS for GPU compositing */}
+        <style>{`
+          @keyframes border-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+          .border-beam-spin { animation: border-spin 40s linear infinite; }
+        `}</style>
+        <div
+          className="border-beam-spin absolute inset-[-100%] z-[-1]"
+          style={{ background: 'conic-gradient(from 90deg at 50% 50%, #0000 0%, #0000 94%, #7db941 96.5%, #335fa8 100%)' }}
         />
 
         {/* Main Content Container */}

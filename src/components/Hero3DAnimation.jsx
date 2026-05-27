@@ -1,12 +1,11 @@
-import { useRef, useMemo, useEffect } from 'react';
+import { useRef, useMemo, useEffect, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, Trail } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Banner 1: Welcome - Floating Light Particles with Gentle Motion
 function WelcomeAnimation({ isActive = false }) {
   const welcomeGroupRef = useRef();
-  const particleCount = 30;
+  const particleCount = 18; // Reduced from 30
 
   const particles = useMemo(() => {
     return Array.from({ length: particleCount }, (_, i) => ({
@@ -28,15 +27,10 @@ function WelcomeAnimation({ isActive = false }) {
 
   return (
     <group ref={welcomeGroupRef}>
-      {/* Floating light particles */}
       {particles.map((particle, i) => (
         <FloatingParticle key={particle.id} particle={particle} isActive={isActive} index={i} />
       ))}
-
-      {/* Central welcoming light orb */}
       <WelcomeOrb isActive={isActive} />
-
-      {/* Gentle light rays */}
       <LightRays isActive={isActive} />
     </group>
   );
@@ -51,8 +45,6 @@ function FloatingParticle({ particle, isActive, index }) {
       const time = state.clock.elapsedTime;
       particleRef.current.position.y = particle.initialY + Math.sin(time * particle.speed + particle.phase) * 2;
       particleRef.current.position.x = particle.initialX + Math.cos(time * particle.speed * 0.7 + particle.phase) * 1.5;
-      particleRef.current.rotation.y += 0.01;
-      // Gentle pulsing
       const scale = 1 + Math.sin(time * 2 + particle.phase) * 0.3;
       particleRef.current.scale.setScalar(scale);
     }
@@ -64,7 +56,7 @@ function FloatingParticle({ particle, isActive, index }) {
       position={[particle.initialX, particle.initialY, particle.initialZ]}
     >
       <mesh>
-        <sphereGeometry args={[particle.size, 16, 16]} />
+        <sphereGeometry args={[particle.size, 6, 6]} />{/* Reduced from 16,16 */}
         <meshStandardMaterial
           color="#88ccff"
           emissive="#4488ff"
@@ -84,7 +76,7 @@ function FloatingParticle({ particle, isActive, index }) {
   );
 }
 
-// Welcome Orb - Central welcoming element
+// Welcome Orb
 function WelcomeOrb({ isActive }) {
   const orbRef = useRef();
 
@@ -100,9 +92,8 @@ function WelcomeOrb({ isActive }) {
 
   return (
     <group ref={orbRef} position={[0, 0, 0]}>
-      {/* Main orb */}
       <mesh>
-        <sphereGeometry args={[0.9, 32, 32]} />
+        <sphereGeometry args={[0.9, 24, 24]} />
         <meshPhysicalMaterial
           color="#ffffff"
           emissive="#88ccff"
@@ -113,9 +104,8 @@ function WelcomeOrb({ isActive }) {
           opacity={isActive ? 0.9 : 0.4}
         />
       </mesh>
-      {/* Inner glow */}
       <mesh>
-        <sphereGeometry args={[0.85, 24, 24]} />
+        <sphereGeometry args={[0.85, 16, 16]} />
         <meshBasicMaterial
           color="#88ccff"
           transparent
@@ -123,9 +113,8 @@ function WelcomeOrb({ isActive }) {
           side={THREE.BackSide}
         />
       </mesh>
-      {/* Outer glow rings */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[1.2, 1.6, 32]} />
+        <ringGeometry args={[1.2, 1.6, 24]} />
         <meshBasicMaterial
           color="#4488ff"
           transparent
@@ -147,7 +136,7 @@ function WelcomeOrb({ isActive }) {
 // Gentle Light Rays
 function LightRays({ isActive }) {
   const raysRef = useRef();
-  const rayCount = 8;
+  const rayCount = 6; // Reduced from 8
 
   useFrame((state) => {
     if (raysRef.current && isActive) {
@@ -180,11 +169,11 @@ function LightRays({ isActive }) {
   );
 }
 
-// Banner 2: 3D Rotating Dots and Lines Network - Full Container
+// Banner 2: 3D Network Dots
 function NetworkDots({ isActive = false }) {
   const networkRef = useRef();
-  const nodeCount = 35;
-  
+  const nodeCount = 20; // Reduced from 35
+
   const nodes = useMemo(() => {
     const nodeArray = [];
     for (let i = 0; i < nodeCount; i++) {
@@ -200,7 +189,6 @@ function NetworkDots({ isActive = false }) {
     return nodeArray;
   }, []);
 
-  // Create connections between nearby nodes
   const connections = useMemo(() => {
     const lines = [];
     for (let i = 0; i < nodes.length; i++) {
@@ -211,10 +199,7 @@ function NetworkDots({ isActive = false }) {
           Math.pow(nodes[i].position[2] - nodes[j].position[2], 2)
         );
         if (dist < 3) {
-          lines.push([
-            ...nodes[i].position,
-            ...nodes[j].position
-          ]);
+          lines.push([...nodes[i].position, ...nodes[j].position]);
         }
       }
     }
@@ -230,7 +215,6 @@ function NetworkDots({ isActive = false }) {
 
   return (
     <group ref={networkRef}>
-      {/* Connection lines */}
       <lineSegments>
         <bufferGeometry>
           <bufferAttribute
@@ -244,31 +228,19 @@ function NetworkDots({ isActive = false }) {
           color="#88ccff"
           transparent
           opacity={isActive ? 0.4 : 0.15}
-          linewidth={1}
         />
       </lineSegments>
 
-      {/* Nodes */}
       {nodes.map((node, i) => (
         <group key={i} position={node.position}>
           <mesh>
-            <sphereGeometry args={[node.size, 16, 16]} />
+            <sphereGeometry args={[node.size, 6, 6]} />{/* Reduced from 16,16 */}
             <meshStandardMaterial
               color="#88ccff"
               emissive="#4488ff"
               emissiveIntensity={isActive ? 1.5 : 0.3}
               metalness={0.7}
               roughness={0.2}
-            />
-          </mesh>
-          {/* Outer glow ring */}
-          <mesh>
-            <ringGeometry args={[node.size * 1.5, node.size * 2, 16]} />
-            <meshBasicMaterial
-              color="#88ccff"
-              transparent
-              opacity={isActive ? 0.3 : 0.1}
-              side={THREE.DoubleSide}
             />
           </mesh>
           <pointLight
@@ -284,7 +256,7 @@ function NetworkDots({ isActive = false }) {
   );
 }
 
-// Banner 3: 3D Growing Digital Grid - Full Container
+// Banner 3: Digital Grid
 function DigitalGrid({ isActive = false }) {
   const gridRef = useRef();
   const gridSize = 10;
@@ -293,57 +265,32 @@ function DigitalGrid({ isActive = false }) {
   useFrame((state) => {
     if (gridRef.current && isActive) {
       const time = state.clock.elapsedTime;
-      // Growing animation with pulse
       const scale = 0.8 + Math.sin(time * 0.6) * 0.15;
       gridRef.current.scale.lerp(new THREE.Vector3(scale, scale, scale), 0.08);
-      // Subtle rotation
       gridRef.current.rotation.z = Math.sin(time * 0.2) * 0.05;
     }
   });
 
-  // Grid lines
   const gridLines = useMemo(() => {
     const lines = [];
-    
-    // Horizontal lines
     for (let i = -gridSize / 2; i <= gridSize / 2; i++) {
-      lines.push(
-        -gridSize * gridSpacing, i * gridSpacing, 0,
-        gridSize * gridSpacing, i * gridSpacing, 0
-      );
+      lines.push(-gridSize * gridSpacing, i * gridSpacing, 0, gridSize * gridSpacing, i * gridSpacing, 0);
     }
-    
-    // Vertical lines
     for (let i = -gridSize / 2; i <= gridSize / 2; i++) {
-      lines.push(
-        i * gridSpacing, -gridSize * gridSpacing, 0,
-        i * gridSpacing, gridSize * gridSpacing, 0
-      );
+      lines.push(i * gridSpacing, -gridSize * gridSpacing, 0, i * gridSpacing, gridSize * gridSpacing, 0);
     }
-    
-    // Depth lines
     for (let i = -gridSize / 2; i <= gridSize / 2; i += 2) {
-      lines.push(
-        -gridSize * gridSpacing, 0, i * gridSpacing * 0.5,
-        gridSize * gridSpacing, 0, i * gridSpacing * 0.5
-      );
-      lines.push(
-        0, -gridSize * gridSpacing, i * gridSpacing * 0.5,
-        0, gridSize * gridSpacing, i * gridSpacing * 0.5
-      );
+      lines.push(-gridSize * gridSpacing, 0, i * gridSpacing * 0.5, gridSize * gridSpacing, 0, i * gridSpacing * 0.5);
+      lines.push(0, -gridSize * gridSpacing, i * gridSpacing * 0.5, 0, gridSize * gridSpacing, i * gridSpacing * 0.5);
     }
-    
     return new Float32Array(lines);
   }, []);
 
-  // Grid points/intersections with depth layers
   const gridPoints = useMemo(() => {
     const points = [];
     for (let x = -gridSize / 2; x <= gridSize / 2; x += 1) {
       for (let y = -gridSize / 2; y <= gridSize / 2; y += 1) {
-        // Main layer
         points.push(x * gridSpacing, y * gridSpacing, 0);
-        // Depth layers
         if ((x + y) % 3 === 0) {
           points.push(x * gridSpacing, y * gridSpacing, -0.5);
           points.push(x * gridSpacing, y * gridSpacing, 0.5);
@@ -355,7 +302,6 @@ function DigitalGrid({ isActive = false }) {
 
   return (
     <group ref={gridRef}>
-      {/* Grid lines */}
       <lineSegments>
         <bufferGeometry>
           <bufferAttribute
@@ -369,11 +315,9 @@ function DigitalGrid({ isActive = false }) {
           color="#22d3ee"
           transparent
           opacity={isActive ? 0.8 : 0.2}
-          linewidth={1.5}
         />
       </lineSegments>
 
-      {/* Grid points with varying sizes */}
       <points>
         <bufferGeometry>
           <bufferAttribute
@@ -388,61 +332,40 @@ function DigitalGrid({ isActive = false }) {
           color="#22d3ee"
           transparent
           opacity={isActive ? 1 : 0.3}
-          emissive="#06b6d4"
-          emissiveIntensity={isActive ? 1.5 : 0.3}
         />
       </points>
 
-      {/* Multiple glow points for full coverage */}
-      <pointLight
-        position={[0, 0, 0]}
-        intensity={isActive ? 1.2 : 0.3}
-        color="#22d3ee"
-        distance={6}
-        decay={2}
-      />
-      <pointLight
-        position={[-3, 1.5, 0]}
-        intensity={isActive ? 0.8 : 0.2}
-        color="#06b6d4"
-        distance={6}
-        decay={2}
-      />
-      <pointLight
-        position={[3, -1.5, 0]}
-        intensity={isActive ? 0.8 : 0.2}
-        color="#06b6d4"
-        distance={6}
-        decay={2}
-      />
+      <pointLight position={[0, 0, 0]} intensity={isActive ? 1.2 : 0.3} color="#22d3ee" distance={6} decay={2} />
+      <pointLight position={[-3, 1.5, 0]} intensity={isActive ? 0.8 : 0.2} color="#06b6d4" distance={6} decay={2} />
+      <pointLight position={[3, -1.5, 0]} intensity={isActive ? 0.8 : 0.2} color="#06b6d4" distance={6} decay={2} />
     </group>
   );
 }
 
-// Background particles for all banners - Full Container
+// Background particles - reduced count
 function BackgroundParticles({ isActive = false }) {
   const particlesRef = useRef();
   const particles = useMemo(() => {
-    const count = 100;
+    const count = 60; // Reduced from 100
     const positions = new Float32Array(count * 3);
-    const sizes = new Float32Array(count);
     for (let i = 0; i < count; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 14;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
-      sizes[i] = Math.random() * 0.06 + 0.03;
     }
-    return { positions, sizes };
+    return { positions };
   }, []);
 
   useFrame((state) => {
     if (particlesRef.current && isActive) {
       const positions = particlesRef.current.geometry.attributes.position.array;
-      for (let i = 0; i < positions.length; i += 3) {
-        // Slow drift animation
-        positions[i + 1] += Math.sin(state.clock.elapsedTime + i) * 0.001;
+      // Only update every other frame for performance
+      if (Math.round(state.clock.elapsedTime * 60) % 2 === 0) {
+        for (let i = 0; i < positions.length; i += 3) {
+          positions[i + 1] += Math.sin(state.clock.elapsedTime + i) * 0.001;
+        }
+        particlesRef.current.geometry.attributes.position.needsUpdate = true;
       }
-      particlesRef.current.geometry.attributes.position.needsUpdate = true;
     }
   });
 
@@ -454,12 +377,6 @@ function BackgroundParticles({ isActive = false }) {
           count={particles.positions.length / 3}
           array={particles.positions}
           itemSize={3}
-        />
-        <bufferAttribute
-          attach="attributes-size"
-          count={particles.sizes.length}
-          array={particles.sizes}
-          itemSize={1}
         />
       </bufferGeometry>
       <pointsMaterial
@@ -473,48 +390,21 @@ function BackgroundParticles({ isActive = false }) {
   );
 }
 
-// Ambient glow background planes for depth - removed square background
-function AmbientGlow({ activeSlide }) {
-  // No square background - just ambient effects
-  return null;
-}
-
 // Main Scene Component
 function Scene({ activeSlide = 0 }) {
   return (
     <>
-      {/* Enhanced ambient lighting - blue theme for all */}
       <ambientLight intensity={0.4} color="#ffffff" />
       <directionalLight position={[8, 6, 6]} intensity={0.8} color="#ffffff" />
       <directionalLight position={[-8, -6, -6]} intensity={0.4} color="#4488ff" />
       <directionalLight position={[0, 8, 0]} intensity={0.3} color="#88ccff" />
 
-      {/* Ambient glow background */}
-      <AmbientGlow activeSlide={activeSlide} />
-
-      {/* Background particles */}
       <BackgroundParticles isActive={true} />
 
-      {/* Banner 1: Welcome Animation (Slide 0) */}
-      {activeSlide === 0 && (
-        <WelcomeAnimation isActive={true} />
-      )}
+      {activeSlide === 0 && <WelcomeAnimation isActive={true} />}
+      {activeSlide === 1 && <NetworkDots isActive={true} />}
+      {activeSlide === 2 && <DigitalGrid isActive={true} />}
 
-      {/* Banner 2: Network Dots (Slide 1) */}
-      {activeSlide === 1 && (
-        <NetworkDots isActive={true} />
-      )}
-
-      {/* Banner 3: Digital Grid (Slide 2) */}
-      {activeSlide === 2 && (
-        <DigitalGrid isActive={true} />
-      )}
-
-      {/* Camera controls - static view for full container */}
-      {/* OrbitControls removed to prevent touch event stealing on mobile */}
-
-      
-      {/* Responsive Camera Adjustment */}
       <ResponsiveCamera />
     </>
   );
@@ -525,15 +415,9 @@ function ResponsiveCamera() {
 
   useEffect(() => {
     const aspect = size.width / size.height;
-    // Ensure the scene fits horizontally
-    // The scene width is roughly 10-12 units
-    const targetWidth = 14; 
+    const targetWidth = 14;
     const fovRad = (camera.fov * Math.PI) / 180;
     const distance = targetWidth / (2 * Math.tan(fovRad / 2) * aspect);
-    
-    // Clamp the distance
-    // Min 8 (original desktop distance)
-    // Max 25 (for very narrow screens)
     camera.position.z = Math.max(8, Math.min(distance, 25));
     camera.updateProjectionMatrix();
   }, [camera, size]);
@@ -541,10 +425,23 @@ function ResponsiveCamera() {
   return null;
 }
 
-// Main Export Component
+// Main Export Component — pauses WebGL when scrolled out of view
 export default function Hero3DAnimation({ activeSlide = 0 }) {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div 
+    <div
+      ref={containerRef}
       className="w-full h-full relative overflow-hidden"
       style={{
         maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
@@ -553,19 +450,20 @@ export default function Hero3DAnimation({ activeSlide = 0 }) {
     >
       <Canvas
         camera={{ position: [0, 0, 8], fov: 50 }}
-        gl={{ 
-          alpha: true, 
-          antialias: true, 
-          preserveDrawingBuffer: true,
+        gl={{
+          alpha: true,
+          antialias: false, // Disabled for performance
+          preserveDrawingBuffer: false,
           powerPreference: 'high-performance'
         }}
-        style={{ 
-          background: 'transparent', 
-          width: '100%', 
+        frameloop={isVisible ? 'always' : 'never'} // Pause when off-screen
+        style={{
+          background: 'transparent',
+          width: '100%',
           height: '85%',
           display: 'block'
         }}
-        dpr={[1, 2]}
+        dpr={1} // Fixed at 1x — eliminates 4x pixel cost on retina screens
       >
         <Scene activeSlide={activeSlide} />
       </Canvas>

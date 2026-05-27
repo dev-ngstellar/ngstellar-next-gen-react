@@ -46,33 +46,33 @@ function Testimonials() {
             transition={{ duration: 0.6 }}
             className="my-24 rounded-3xl bg-gradient-to-b from-slate-900 to-black p-8 md:p-16 relative overflow-hidden"
         >
-            {/* Snow Animation Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                {[...Array(30)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className="absolute bg-white rounded-full opacity-20"
-                        initial={{
-                            x: Math.random() * 100 + "%",
-                            y: -20,
-                            opacity: Math.random() * 0.3 + 0.1,
-                        }}
-                        animate={{
-                            y: "120%",
-                        }}
-                        transition={{
-                            duration: Math.random() * 15 + 10,
-                            repeat: Infinity,
-                            ease: "linear",
-                            delay: Math.random() * 10
-                        }}
-                        style={{
-                            width: Math.random() * 3 + 1 + "px",
-                            height: Math.random() * 3 + 1 + "px",
-                        }}
-                    />
-                ))}
-            </div>
+        {/* Snow Animation Background — pure CSS, no JS timelines */}
+        <style>{`
+          @keyframes snow-fall {
+            0% { transform: translateY(-20px) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(calc(100vh + 20px)) translateX(20px); opacity: 0; }
+          }
+          .snow-particle { animation: snow-fall linear infinite; position: absolute; background: white; border-radius: 50%; }
+        `}</style>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="snow-particle"
+              style={{
+                left: `${(i * 5.1 + 2) % 100}%`,
+                top: '-4px',
+                width: `${(i % 3) + 1}px`,
+                height: `${(i % 3) + 1}px`,
+                animationDuration: `${12 + (i % 8) * 2}s`,
+                animationDelay: `${(i * 0.6) % 10}s`,
+                opacity: 0.15 + (i % 4) * 0.04,
+              }}
+            />
+          ))}
+        </div>
 
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 rounded-full blur-3xl z-0"></div>
