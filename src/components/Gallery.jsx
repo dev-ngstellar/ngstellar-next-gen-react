@@ -37,7 +37,7 @@ function Gallery() {
   return (
     <motion.section
       id="projects"
-      className="mt-20 rounded-[32px] bg-gradient-to-b from-[#13051f] to-[#0a0412] px-5 py-12 text-slate-100 shadow-[0_40px_120px_rgba(15,23,42,0.9)] border border-white/5"
+      className="mt-20 rounded-[32px] bg-gradient-to-b from-[#0b1129] to-[#050718] px-5 py-12 text-slate-100 shadow-[0_40px_120px_rgba(15,23,42,0.9)] border border-white/5"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
@@ -70,7 +70,7 @@ function Gallery() {
               style={{
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 50%, #22d3ee 100%)'
+                backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
               }}
             > Portfolio</span>
           </motion.h2>

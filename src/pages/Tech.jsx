@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Tech() {
   return (
-    <div className="bg-slate-950 min-h-screen text-slate-100 font-sans selection:bg-cyan-500/30">
+    <div className="bg-slate-950 min-h-screen text-slate-100 font-sans selection:bg-primary-500/30">
       <Helmet>
         <title>Technology Solutions - NG Stellar</title>
         <meta
@@ -22,7 +22,7 @@ export default function Tech() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
          {/* Background Elements - Tech/Grid Theme */}
          <div className="absolute inset-0 z-0">
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] animate-pulse"></div>
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-[100px] animate-pulse"></div>
              <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
              
              {/* Floating Code Elements */}
@@ -49,15 +49,24 @@ export default function Tech() {
                transition={{ duration: 0.8 }}
                className="space-y-8 flex flex-col items-center"
              >
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border border-violet-400/30 text-violet-200 text-xs font-medium uppercase tracking-wider mb-4">
-                  <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-400/30 text-primary-200 text-xs font-medium uppercase tracking-wider mb-4">
+                  <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></span>
                   Tech Services
                 </span>
                 
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-sans leading-tight tracking-tight drop-shadow-lg max-w-5xl mx-auto">
                    Robust Architecture. <br/>
                    Seamless Functionality. <br/>
-                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">Future-Ready Code.</span>
+                    <span
+                      className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400"
+                      style={{
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundImage: 'linear-gradient(90deg, #3b82f6 0%, #7db941 100%)'
+                      }}
+                    >
+                      Future-Ready Code.
+                    </span>
                 </h1>
 
                 <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -65,7 +74,7 @@ export default function Tech() {
                 </p>
 
                <div className="flex flex-wrap justify-center gap-4 pt-4">
-                                  <Link to='/contact' className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-2xl hover:shadow-fuchsia-400/60 hover:scale-105 active:scale-95">
+                                  <Link to='/contact' className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-2xl hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
                                      Discuss Your Project
                                   </Link>
                                </div>
@@ -86,11 +95,11 @@ export default function Tech() {
                    <h2 className="text-3xl md:text-4xl font-black font-bold font-sans text-slate-900 mb-6">
                       Your Website is Your <br/>
                        <span
-              className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent font-extrabold"
+              className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent font-extrabold"
               style={{
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 50%, #22d3ee 100%)'
+                backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
               }}
             > 24/7 Headquarters</span>
                    </h2>
@@ -99,13 +108,13 @@ export default function Tech() {
                    </p>
                    <div className="flex gap-4">
                        <div className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-                          <FaCheckCircle className="text-pink-600" /> Fast
+                          <FaCheckCircle className="text-secondary-600" /> Fast
                        </div>
                        <div className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-                          <FaCheckCircle className="text-pink-600" /> Secure
+                          <FaCheckCircle className="text-secondary-600" /> Secure
                        </div>
                        <div className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-                          <FaCheckCircle className="text-pink-600" /> Scalable
+                          <FaCheckCircle className="text-secondary-600" /> Scalable
                        </div>
                    </div>
                 </motion.div>
@@ -116,7 +125,7 @@ export default function Tech() {
                    viewport={{ once: true }}
                    className="relative group"
                 >
-                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                   <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                    <div className="relative p-8 bg-slate-950 rounded-xl border border-slate-200/20 font-mono text-sm text-slate-400 overflow-hidden shadow-2xl">
                        <div className="flex gap-2 mb-4 border-b border-white/10 pb-4">
                           <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -152,13 +161,13 @@ export default function Tech() {
                 {/* 1. Custom Website Development (Large - Spans 2 cols, 2 rows on desktop) */}
                 <motion.div 
                    whileHover={{ y: -5 }}
-                   className="md:col-span-2 md:row-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-cyan-500/30 transition-all group relative overflow-hidden flex flex-col justify-between"
+                   className="md:col-span-2 md:row-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-primary-500/30 transition-all group relative overflow-hidden flex flex-col justify-between"
                 >
                     <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
                        <FaLaptopCode className="text-9xl" />
                     </div>
                     <div className="relative z-10">
-                       <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center text-3xl text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                       <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center text-3xl text-primary-400 mb-6 group-hover:scale-110 transition-transform">
                           <FaCode />
                        </div>
                        <h3 className="text-2xl font-bold text-white mb-3">Custom Website Development</h3>
@@ -166,7 +175,7 @@ export default function Tech() {
                           Bespoke websites built from the ground up using modern technologies (React, Node, PHP, Python) tailored to your specific business logic.
                        </p>
                     </div>
-                    <div className="bg-slate-950/50 rounded-xl p-4 border border-white/5 font-mono text-xs text-slate-400 group-hover:border-cyan-500/20 transition-colors">
+                    <div className="bg-slate-950/50 rounded-xl p-4 border border-white/5 font-mono text-xs text-slate-400 group-hover:border-primary-500/20 transition-colors">
                        import {'{'} Future {'}'} from 'stellar-tech';
                     </div>
                 </motion.div>
@@ -174,7 +183,7 @@ export default function Tech() {
                 {/* 2. E-Commerce Development (Wide - Spans 2 cols) */}
                 <motion.div 
                    whileHover={{ y: -5 }}
-                   className="md:col-span-2 lg:col-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-cyan-500/30 transition-all group flex flex-col md:flex-row gap-6 items-start md:items-center"
+                   className="md:col-span-2 lg:col-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-primary-500/30 transition-all group flex flex-col md:flex-row gap-6 items-start md:items-center"
                 >
                     <div className="w-14 h-14 rounded-xl bg-purple-500/10 flex-shrink-0 flex items-center justify-center text-3xl text-purple-400 group-hover:scale-110 transition-transform">
                        <FaShoppingCart />
@@ -190,7 +199,7 @@ export default function Tech() {
                 {/* 3. Web Application Development (Tall - Spans 1 col, 2 rows) */}
                 <motion.div 
                    whileHover={{ y: -5 }}
-                   className="md:col-span-1 md:row-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-cyan-500/30 transition-all group flex flex-col"
+                   className="md:col-span-1 md:row-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-primary-500/30 transition-all group flex flex-col"
                 >
                     <div className="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center text-3xl text-blue-400 mb-6 group-hover:scale-110 transition-transform">
                        <FaCloud />
@@ -208,7 +217,7 @@ export default function Tech() {
                 {/* 4. CMS Solutions (Spans 2 rows on LG to fill gap) */}
                 <motion.div 
                    whileHover={{ y: -5 }}
-                   className="md:col-span-1 lg:row-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-cyan-500/30 transition-all group flex flex-col justify-between"
+                   className="md:col-span-1 lg:row-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-primary-500/30 transition-all group flex flex-col justify-between"
                 >
                     <div className="">
                         <div className="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center text-2xl text-pink-400 mb-4 group-hover:scale-110 transition-transform">
@@ -228,7 +237,7 @@ export default function Tech() {
                 {/* 5. Maintenance & Security (Spans 2 cols on LG to fill bottom layer) */}
                 <motion.div 
                    whileHover={{ y: -5 }}
-                   className="md:col-span-2 lg:col-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-cyan-500/30 transition-all group flex flex-col md:flex-row gap-6 items-center"
+                   className="md:col-span-2 lg:col-span-2 bg-slate-900/50 rounded-3xl p-6 border border-white/5 hover:border-primary-500/30 transition-all group flex flex-col md:flex-row gap-6 items-center"
                 >
                     <div className="w-12 h-12 rounded-xl bg-green-500/10 flex-shrink-0 flex items-center justify-center text-2xl text-green-400 group-hover:scale-110 transition-transform">
                        <FaShieldAlt />
@@ -248,13 +257,13 @@ export default function Tech() {
 
       {/* 4. FINAL CTA */}
       {/* <section className="py-20 px-6 text-center relative overflow-hidden">
-         <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/10 to-transparent pointer-events-none"></div>
+         <div className="absolute inset-0 bg-gradient-to-t from-primary-900/10 to-transparent pointer-events-none"></div>
          <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 font-sans">
                Ready to update your <br/>
-               <span className="text-cyan-400">digital infrastructure?</span>
+               <span className="text-primary-400">digital infrastructure?</span>
             </h2>
-              <button className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-fuchsia-400/60 hover:scale-105 active:scale-95">
+              <button className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
                 Start Your Project
               </button>
          </div>

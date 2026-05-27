@@ -83,11 +83,11 @@ function Testimonials() {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-white">
                         Client <span
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
                             style={{
                                 WebkitBackgroundClip: 'text',
                                 WebkitTextFillColor: 'transparent',
-                                backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+                                backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
                             }}
                         >Testimonials</span>
                     </h2>
@@ -103,7 +103,7 @@ function Testimonials() {
                             <path d="M 10 160 A 150 150 0 0 1 310 160" stroke="rgba(255,255,255,0.1)" strokeWidth="1" strokeDasharray="4 4" />
 
                             {/* Traveling Light */}
-                            <circle r="4" fill="#a78bfa" className="drop-shadow-[0_0_10px_rgba(167,139,250,1)]">
+                            <circle r="4" fill="#335fa8" className="drop-shadow-[0_0_10px_rgba(51,95,168,1)]">
                                 <animateMotion
                                     dur="4s"
                                     repeatCount="indefinite"
@@ -151,7 +151,7 @@ function Testimonials() {
                                         key={testimonial.name}
                                         onClick={() => setCurrentIndex(index)}
                                         className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${currentIndex === index
-                                            ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-lg shadow-fuchsia-500/40'
+                                            ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-lg shadow-primary-500/30'
                                             : 'bg-slate-800/60 text-slate-400 hover:bg-slate-700/60 hover:text-white'
                                             }`}
                                     >

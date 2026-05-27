@@ -125,11 +125,11 @@ function Hero() {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight drop-shadow-lg">
                   {heroSlides[currentSlide].title}{' '}
                   <span
-                    className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-md font-extrabold"
+                    className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent drop-shadow-md font-extrabold"
                     style={{
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
-                      backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 50%, #22d3ee 100%)'
+                      backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
                     }}
                   >
                     {heroSlides[currentSlide].titleHighlight}
@@ -144,7 +144,7 @@ function Hero() {
 
             {/* Bottom Controls - Stable Wrapper */}
             <div className="flex flex-wrap items-center gap-4 md:gap-6 relative z-[60]">
-              <Link to="/contact" className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-fuchsia-400/60 hover:scale-105 active:scale-95">
+              <Link to="/contact" className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
                 Get Started
               </Link>
 
@@ -214,3 +214,4 @@ function Hero() {
 }
 
 export default Hero;
+

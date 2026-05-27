@@ -20,13 +20,13 @@ const TermsAndConditions = () => {
             {/* Header Banner */}
             <div className="relative w-full py-24 md:py-32 overflow-hidden bg-[#020617]">
                 {/* Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-950 to-fuchsia-950 opacity-90"></div>
-                <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-rose-900/20 to-transparent blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-indigo-900/20 to-transparent blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-slate-950 to-secondary-950 opacity-90"></div>
+                <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-secondary-900/20 to-transparent blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-primary-900/20 to-transparent blur-3xl"></div>
 
                 <div className="relative max-w-7xl mx-auto px-6 md:px-20 z-10 text-center md:text-left">
                     <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4">
-                        Terms and <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-rose-300">Conditions</span>
+                        Terms and <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 via-secondary-300 to-emerald-300">Conditions</span>
                     </h1>
                     <p className="text-slate-400 text-sm md:text-base font-medium">
                         Published and effective on: <span className="text-slate-200">December 17, 2025</span>
@@ -51,11 +51,11 @@ const TermsAndConditions = () => {
                         {/* Section 1 */}
                         <section>
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">1</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">1</span>
                                 Definitions
                             </h2>
                             <p className="mb-4">Capitalized terms used in these Terms shall have the meanings set out below, whether used in singular or plural form:</p>
-                            <ul className="list-disc pl-6 space-y-3 marker:text-indigo-500">
+                            <ul className="list-disc pl-6 space-y-3 marker:text-primary-500">
                                 <li><strong className="text-white">Company</strong> refers to NGStellar Solutions Private Limited, 151/18, D R Avenue 1, Netaji Nagar, Moolapalayam, Erode, Tamil Nadu 638002, India. <br/> 📞 +91-9710909727 | 📧 email@ngstellar.com</li>
                                 <li><strong className="text-white">Website</strong> refers to ngstellarsolutions.org.</li>
                                 <li><strong className="text-white">Service(s)</strong> refers to website development, mobile application development, digital marketing, branding services, technology solutions, and consulting services offered by the Company.</li>
@@ -67,7 +67,7 @@ const TermsAndConditions = () => {
                         {/* Section 2 */}
                         <section>
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">2</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">2</span>
                                 Acceptance of Terms
                             </h2>
                             <p className="leading-relaxed mb-3">By accessing the Website or engaging our Services, You confirm that You have read, understood, and agree to be bound by these Terms. If You do not agree, You must not use the Website or Services.</p>
@@ -77,14 +77,14 @@ const TermsAndConditions = () => {
                         {/* Section 3 */}
                         <section>
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">3</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">3</span>
                                 Scope of Services
                             </h2>
                             <p className="mb-4">NGStellar provides professional services including, but not limited to:</p>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                                 {["Website design and development", "Mobile application development", "Digital marketing and performance marketing", "Branding and creative services", "Technology solutions", "Business and technology consulting"].map((item, i) => (
                                     <li key={i} className="flex items-center gap-2 bg-slate-800/50 p-3 rounded-lg border border-slate-700/50">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-fuchsia-500"></div> {item}
+                                        <div className="w-1.5 h-1.5 rounded-full bg-secondary-500"></div> {item}
                                     </li>
                                 ))}
                             </ul>
@@ -94,11 +94,11 @@ const TermsAndConditions = () => {
                         {/* Section 4 */}
                         <section>
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">4</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">4</span>
                                 Client Responsibilities
                             </h2>
                             <p className="mb-3">The Client agrees to:</p>
-                            <ul className="list-disc pl-6 space-y-2 marker:text-indigo-500 mb-3">
+                            <ul className="list-disc pl-6 space-y-2 marker:text-primary-500 mb-3">
                                 <li>Provide accurate, complete, and timely information and approvals</li>
                                 <li>Ensure all supplied materials do not infringe third-party rights</li>
                                 <li>Cooperate reasonably to enable timely project execution</li>
@@ -109,10 +109,10 @@ const TermsAndConditions = () => {
                         {/* Section 5 */}
                         <section>
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">5</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">5</span>
                                 Fees and Payments
                             </h2>
-                            <ul className="list-disc pl-6 space-y-2 marker:text-indigo-500">
+                            <ul className="list-disc pl-6 space-y-2 marker:text-primary-500">
                                 <li>Fees and payment schedules will be specified in the applicable agreement or proposal.</li>
                                 <li>All payments must be made within the agreed timelines.</li>
                                 <li>Late payments may result in suspension of Services.</li>
@@ -123,10 +123,10 @@ const TermsAndConditions = () => {
                         {/* Section 6 */}
                         <section>
                              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">6</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">6</span>
                                 Intellectual Property
                             </h2>
-                            <ul className="list-disc pl-6 space-y-2 marker:text-indigo-500">
+                            <ul className="list-disc pl-6 space-y-2 marker:text-primary-500">
                                 <li>Intellectual property rights in materials provided by the Client remain the Client’s property.</li>
                                 <li>Ownership of final deliverables transfers to the Client only upon full payment, unless otherwise agreed in writing.</li>
                                 <li>NGStellar reserves the right to display completed work in its portfolio and marketing materials unless restricted by a written agreement.</li>
@@ -136,7 +136,7 @@ const TermsAndConditions = () => {
                         {/* Section 7 */}
                         <section>
                              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">7</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">7</span>
                                 Third-Party Services
                             </h2>
                             <p>NGStellar may use or recommend third-party tools, platforms, or services. The Company is not responsible for third-party services, including their availability, changes, or policies. Any associated costs shall be borne by the Client unless agreed otherwise.</p>
@@ -145,7 +145,7 @@ const TermsAndConditions = () => {
                         {/* Section 8 */}
                         <section>
                              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">8</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">8</span>
                                 Confidentiality
                             </h2>
                             <p>Both parties agree to maintain the confidentiality of all non-public business, technical, and commercial information exchanged during the engagement, unless disclosure is required by law.</p>
@@ -154,7 +154,7 @@ const TermsAndConditions = () => {
                          {/* Section 9 */}
                          <section>
                              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">9</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">9</span>
                                 Disclaimer
                             </h2>
                             <p className="mb-3">All Services are provided on an “AS IS” and “AS AVAILABLE” basis. NGStellar does not guarantee specific business results, rankings, revenue, or performance outcomes.</p>
@@ -164,11 +164,11 @@ const TermsAndConditions = () => {
                         {/* Section 10 */}
                         <section>
                              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">10</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">10</span>
                                 Limitation of Liability
                             </h2>
                             <p className="mb-2">To the maximum extent permitted by law:</p>
-                            <ul className="list-disc pl-6 space-y-2 marker:text-indigo-500">
+                            <ul className="list-disc pl-6 space-y-2 marker:text-primary-500">
                                 <li>NGStellar shall not be liable for any indirect, incidental, or consequential damages, including loss of profits, data, or business opportunities.</li>
                                 <li>NGStellar’s total liability shall not exceed the amount paid by the Client for the specific Service giving rise to the claim.</li>
                             </ul>
@@ -177,11 +177,11 @@ const TermsAndConditions = () => {
                         {/* Section 11 */}
                         <section>
                              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">11</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">11</span>
                                 Termination
                             </h2>
                             <p className="mb-2">Either party may terminate Services in accordance with the applicable agreement. Upon termination:</p>
-                            <ul className="list-disc pl-6 space-y-2 marker:text-indigo-500">
+                            <ul className="list-disc pl-6 space-y-2 marker:text-primary-500">
                                 <li>All completed work must be paid for in full</li>
                                 <li>Access to the Services may be suspended immediately</li>
                             </ul>
@@ -190,7 +190,7 @@ const TermsAndConditions = () => {
                         {/* Section 12 */}
                         <section>
                              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">12</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">12</span>
                                 Governing Law
                             </h2>
                             <p>These Terms shall be governed by and interpreted in accordance with the laws of Tamil Nadu, India, without regard to conflict of law principles.</p>
@@ -199,14 +199,14 @@ const TermsAndConditions = () => {
                         {/* Section 13 */}
                         <section>
                              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 text-sm">13</span>
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">13</span>
                                 Changes to Terms
                             </h2>
                             <p>NGStellar reserves the right to update these Terms at any time. Continued use of the Website or Services after changes take effect constitutes acceptance of the revised Terms.</p>
                         </section>
 
                         {/* Section 14 */}
-                        <section className="bg-gradient-to-br from-indigo-900/30 to-fuchsia-900/30 border border-white/10 rounded-xl p-6">
+                        <section className="bg-gradient-to-br from-primary-900/30 to-secondary-900/30 border border-white/10 rounded-xl p-6">
                              <h2 className="text-2xl font-bold text-white mb-4">
                                 14. Contact Information
                             </h2>
@@ -214,9 +214,9 @@ const TermsAndConditions = () => {
                             <div className="space-y-2 text-white">
                                 <p className="font-semibold">NGStellar Solutions Private Limited</p>
                                 <p>151/18, D R Avenue 1, Netaji Nagar, Moolapalayam<br/>Erode, Tamil Nadu 638002, India</p>
-                                <p className="flex items-center gap-2 mt-4"><span className="text-fuchsia-400">📞</span> +91 97109 09727</p>
-                                <p className="flex items-center gap-2"><span className="text-fuchsia-400">📧</span> email@ngstellar.com</p>
-                                <p className="flex items-center gap-2"><span className="text-fuchsia-400">🌐</span> ngstellarsolutions.org</p>
+                                <p className="flex items-center gap-2 mt-4"><span className="text-secondary-400">📞</span> +91 97109 09727</p>
+                                <p className="flex items-center gap-2"><span className="text-secondary-400">📧</span> email@ngstellar.com</p>
+                                <p className="flex items-center gap-2"><span className="text-secondary-400">🌐</span> ngstellarsolutions.org</p>
                             </div>
                         </section>
 

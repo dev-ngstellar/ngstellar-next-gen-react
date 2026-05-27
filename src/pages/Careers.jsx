@@ -54,7 +54,7 @@ export default function Careers() {
           </h1>
           
           <div className="mt-12">
-            <Link to="/contact" className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-fuchsia-400/60 hover:scale-105 active:scale-95">
+            <Link to="/contact" className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
                 Get Started
               </Link>
           </div>
@@ -74,11 +74,11 @@ export default function Careers() {
           >
             <h2 className="text-3xl md:text-4xl font-bold">
               Work on  <span
-                    className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-md font-extrabold"
+                    className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent drop-shadow-md font-extrabold"
                     style={{
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
-                      backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 50%, #22d3ee 100%)'
+                      backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
                     }}
                   >
                    real projects 
@@ -87,28 +87,28 @@ export default function Careers() {
             <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
               <p>
                 At our company, you’ll work on real projects across <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >multiple industries</span>, collaborate with a <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >supportive team</span>, and grow your skills in a practical, hands-on environment.
               </p>
               <p>
                 We value creativity, responsibility, and commitment—and we <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >respect timelines</span> as much as ideas.
               </p>
@@ -271,7 +271,7 @@ export default function Careers() {
       </section>
 
       {/* 5. VALUES & MINDSET STATEMENT */}
-      <section className="py-24 px-4 bg-gradient-to-r from-indigo-900/20 via-slate-900 to-pink-900/20 border-y border-white/5">
+      <section className="py-24 px-4 bg-gradient-to-r from-primary-900/20 via-slate-900 to-secondary-900/20 border-y border-white/5">
         <motion.div 
            initial={{ opacity: 0, scale: 0.95 }}
            whileInView={{ opacity: 1, scale: 1 }}
@@ -279,35 +279,35 @@ export default function Careers() {
            transition={{ duration: 0.8 }}
            className="max-w-4xl mx-auto"
         >
-           <StarBorder as="div" className="w-full text-center p-10 md:p-16 bg-slate-900/40 backdrop-blur-md" color="#6366f1" speed="4s">
+           <StarBorder as="div" className="w-full text-center p-10 md:p-16 bg-slate-900/40 backdrop-blur-md" color="#335fa8" speed="4s">
                <blockquote className="text-2xl md:text-4xl font-serif italic text-slate-200 leading-tight mb-8">
                  "If you believe in creating value, meeting commitments, and delivering work you’re proud of—we’d love to hear from you."
                </blockquote>
                
-               <div className="w-24 h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent mx-auto rounded-full mb-8"></div>
+               <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent mx-auto rounded-full mb-8"></div>
    
                <div className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
                  <p className="mb-3">We don’t look for perfection.</p>
                  <p className="text-white font-medium">We look for people who are willing to <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >learn </span> , take <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >responsibility </span>, and <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >grow </span>with the team.</p>
                </div>
@@ -344,7 +344,7 @@ export default function Careers() {
                      <p className="text-lg text-slate-400 mb-10">Tell us why you’d like to work with us.</p>
                      
                      <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <a href="mailto:careers@ngstellar.com" className="cursor-pointer order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-fuchsia-400/60 hover:scale-105 active:scale-95">
+                        <a href="mailto:careers@ngstellar.com" className="cursor-pointer order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
                 Send Resume
               </a>
                         <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-transparent border-2 border-white/20 px-8 py-4 text-base font-bold text-white hover:bg-white/5 transition-all">

@@ -50,11 +50,11 @@ function Services() {
             </span>
         <h2 className="text-3xl md:text-4xl font-bold text-white">
           Quality <span
-              className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent font-extrabold"
+              className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent font-extrabold"
               style={{
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 50%, #22d3ee 100%)'
+                backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
               }}
             > Services</span>
         </h2>
@@ -70,7 +70,7 @@ function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative overflow-hidden rounded-2xl bg-slate-900/40 border border-white/10 hover:border-fuchsia-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-fuchsia-500/20"
+            className="group relative overflow-hidden rounded-2xl bg-slate-900/40 border border-white/10 hover:border-fuchsia-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20"
           >
             {/* Image at Top */}
             <div className="relative h-48 overflow-hidden">
@@ -105,7 +105,7 @@ function Services() {
       >
         {/* Animated Border Beam */}
         <motion.div
-          className="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#0000_94%,#d946ef_96.5%,#00a2ff_100%)] z-[-1]"
+          className="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#0000_94%,#7db941_96.5%,#335fa8_100%)] z-[-1]"
           animate={{ rotate: 360 }}
           transition={{
             duration: 40,

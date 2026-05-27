@@ -67,11 +67,11 @@ function StatsStrip() {
       {/* Heading - Outside Container */}
       <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">
         Our Success <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >Metrics</span>
       </h2>

@@ -51,7 +51,7 @@ export default function Consulting() {
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 pt-4">
-                   <Link to='/contact' className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-2xl hover:shadow-fuchsia-400/60 hover:scale-105 active:scale-95">
+                   <Link to='/contact' className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-2xl hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
                       Get Expert Guidance
                    </Link>
                 </div>
@@ -75,11 +75,11 @@ export default function Consulting() {
                >
                   <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight drop-shadow-lg mb-6">
                      Bridging The Gap Between <span
-              className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent font-extrabold"
+              className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent font-extrabold"
               style={{
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 50%, #22d3ee 100%)'
+                backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
               }}
             > Where You Are</span> And Where You Want To Be.
                   </h2>

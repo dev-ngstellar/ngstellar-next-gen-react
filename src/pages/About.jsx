@@ -85,7 +85,7 @@ export default function About() {
                     style={{
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
-                      backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 50%, #22d3ee 100%)'
+                      backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
                     }}
                   >
                     Creativity Meets Discipline
@@ -152,7 +152,7 @@ export default function About() {
               style={{
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9ff 50%, #22d3ee 100%)'
+                backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
               }}
             > Digital Innovation</span>            </h2>
 
@@ -163,7 +163,7 @@ export default function About() {
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >10 years</span>, we’ve partnered with businesses across multiple industries, helping them
                 design, build, and scale digital products that actually work.
@@ -174,14 +174,14 @@ export default function About() {
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >early stage-startups</span> to <span
           className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >established enterprises</span>, 
                 our journey has been defined by consistent delivery, long-term relationships, and measurable success.
@@ -218,8 +218,8 @@ export default function About() {
                         "ROI-Focused Strategy"
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-center gap-3 text-slate-300">
-                           <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#bd36c9]/20 flex items-center justify-center animate-pulse">
-                              <FaCheckCircle className="text-[#bd36c9] text-xs" />
+                           <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#7db941]/20 flex items-center justify-center animate-pulse">
+                              <FaCheckCircle className="text-[#7db941] text-xs" />
                            </div>
                            {item}
                         </li>
@@ -280,7 +280,7 @@ export default function About() {
               style={{
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 50%, #22d3ee 100%)'
+                backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
               }}
             > Purpose & Precision</span>    </h2>
             </div>

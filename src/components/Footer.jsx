@@ -5,7 +5,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden pt-16 pb-8" style={{ background: 'linear-gradient(90deg, #3A4CB4 0%, #C40F4C 100%)' }}>
+    <footer className="relative overflow-hidden pt-16 pb-8" style={{ background: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)' }}>
       {/* Background decoration circles */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-violet-500/10 to-fuchsia-500/10 rounded-full blur-3xl -z-10"></div>
@@ -14,8 +14,8 @@ function Footer() {
         
         {/* 1. Logo */}
         <div className="mb-6">
-          <Link to="/">
-             <img src="/ng--logo.png" alt="NG Stellar Solutions" className="h-12 w-auto" />
+          <Link to="/" className="inline-block bg-white/95 px-4 py-2 rounded-xl border border-white/25 shadow-md transition-all duration-300 hover:bg-white hover:scale-105">
+             <img src="/logo_ngs.png" alt="NG Stellar Solutions" className="h-9 w-auto" />
           </Link>
         </div>
 

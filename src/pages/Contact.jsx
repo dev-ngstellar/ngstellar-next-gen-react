@@ -110,11 +110,11 @@ function Contact() {
                         Let&apos;s chat.
                         <br />
                         Tell us about your <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-extrabold"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #a78bfa 0%, #e879f9 100%)'
+            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
           }}
         >Project.</span>
                     </h2>
@@ -152,11 +152,11 @@ function Contact() {
 
                 {/* RIGHT SIDE FORM CARD */}
                 <div
-                    className="rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl shadow-fuchsia-500/20 mt-8 lg:mt-0"
+                    className="rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl shadow-primary-500/20 mt-8 lg:mt-0"
                     style={{
-                        background: "linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.15) 50%, rgba(236, 72, 153, 0.1) 100%)",
+                        background: "linear-gradient(135deg, rgba(51, 95, 168, 0.1) 0%, rgba(90, 155, 65, 0.15) 50%, rgba(125, 185, 65, 0.1) 100%)",
                         backdropFilter: "blur(10px)",
-                        border: "1px solid rgba(168, 85, 247, 0.2)",
+                        border: "1px solid rgba(51, 95, 168, 0.2)",
                     }}
                 >
                     <h3 className="text-white text-lg sm:text-xl font-semibold mb-5 md:mb-6">
@@ -239,7 +239,7 @@ function Contact() {
                         <button
                             type="submit"
                             disabled={status === "sending"}
-                            className="w-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 text-white font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-lg shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-fuchsia-400/60 hover:scale-[1.02] active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+                            className="w-full bg-gradient-to-r from-primary-600 to-secondary-500 text-white font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-lg shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-secondary-500/40 hover:scale-[1.02] active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
                         >
                             {status === "sending" ? "Sending..." : "Send Message"}
                         </button>

@@ -79,7 +79,7 @@ function Workflow() {
     <section className="relative mt-24 rounded-[32px] p-[1.5px] overflow-hidden shadow-[0_40px_120px_rgba(10,16,40,0.9)] z-0">
       {/* Animated Border Beam */}
       {/* Animated Border Beam */}
-      <BorderBeam />
+      {/* <BorderBeam /> */}
         {/* className="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#0000_92.5%,#d946ef_96.5%,#ffaa40_100%)] z-[-1]" */}
 
       {/* Main Content Container (Masks the center) */}
