@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import Hero3DAnimation from './Hero3DAnimation';
+
+// Lazy-load Three.js canvas — defers 923 kB from initial page load
+const Hero3DAnimation = lazy(() => import('./Hero3DAnimation'));
 
 const heroSlides = [
   {
@@ -98,9 +100,11 @@ function Hero() {
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-900/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-      {/* Full Banner 3D Animation */}
+      {/* Full Banner 3D Animation — loads asynchronously after hero text */}
       <div className="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
-        <Hero3DAnimation activeSlide={currentSlide} />
+        <Suspense fallback={null}>
+          <Hero3DAnimation activeSlide={currentSlide} />
+        </Suspense>
       </div>
 
       {/* Content - Text Carousel */}

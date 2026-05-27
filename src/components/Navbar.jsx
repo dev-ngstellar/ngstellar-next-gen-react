@@ -97,8 +97,8 @@ function Navbar() {
       style={{
         transition: 'background 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
         background: scrolled
-          ? 'linear-gradient(90deg, rgba(224, 226, 230, 0.97) 0%, rgba(150, 167, 207, 0.95) 50%, rgba(125, 185, 65, 0.61) 100%'
-          : 'linear-gradient(90deg, rgba(221, 223, 227, 0.89) 0%, rgba(150, 167, 207, 0.86) 50%, rgba(125, 185, 65, 0.61) 100%)',
+          ? 'linear-gradient(90deg, rgba(224, 226, 230, 0.84)'
+          : 'linear-gradient(90deg, rgba(224, 226, 230, 0.84)',
         backdropFilter: 'blur(20px) saturate(180%)',
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
       }}
