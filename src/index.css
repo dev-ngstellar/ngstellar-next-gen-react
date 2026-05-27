@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-[#030014] text-slate-100 antialiased overflow-x-hidden;
+    background-color: #030014;
+    color: #f1f5f9;
+
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    background-image:
+      radial-gradient(circle at 50% 0%, #2e1065 0%, transparent 50%),
+      radial-gradient(circle at 100% 0%, #4c1d95 0%, transparent 50%),
+      radial-gradient(circle at 0% 0%, #1e67dc 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #030014;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #1e293b;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #334155;
+  }
+
+  ::selection {
+    background-color: rgba(139, 92, 246, 0.3);
+    color: #ddd6fe;
+  }
+}
+
+@layer components {
+  .page-shell {
+    min-height: 100vh;
+    color: #f1f5f9;
+  }
+
+  /* Active Navigation Underline Animation */
+  @keyframes slideInUnderline {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  .nav-active-underline::after {
+    animation: slideInUnderline 0.4s ease-out forwards;
+  }
+}

@@ -1,0 +1,246 @@
+[
+  {
+    "id": "1",
+    "question": "What services do you offer?",
+    "answer": "We offer a comprehensive range of digital services. What are you interested in?",
+    "keywords": ["services", "offer", "what", "development", "branding", "marketing", "help", "do", "capability", "solutions", "tech"],
+    "options": ["I need a website", "I need a mobile app", "I need digital marketing", "Branding & Design", "E-commerce Setup", "Maintenance & Support"]
+  },
+  {
+    "id": "2",
+    "question": "I need a website",
+    "answer": "Great! What type of website are you looking for?",
+    "keywords": ["website", "web", "site", "development", "build", "create", "make a site", "web design", "homepage", "online presence"],
+    "options": ["E-commerce Website", "Portfolio Website", "Corporate Website", "Landing Page", "Service Booking", "Blog Website", "Real Estate Website", "Healthcare Website"]
+  },
+  {
+    "id": "3",
+    "question": "I need a mobile app",
+    "answer": "Excellent choice. We build native and cross-platform mobile apps. Do you have a specific platform in mind?",
+    "keywords": ["mobile", "app", "application", "android", "ios", "phone", "smartphone", "apk", "play store", "app store"],
+    "options": ["iOS App", "Android App", "Cross-Platform (Both)"]
+  },
+  {
+    "id": "3a",
+    "question": "iOS App",
+    "answer": "We develop high-performance native iOS applications using Swift and SwiftUI, ensuring a premium user experience on iPhones and iPads.",
+    "keywords": ["ios", "iphone", "apple", "ipad", "swift", "native", "mac"],
+    "options": ["What is your timeline?", "Do you have a budget range?"]
+  },
+  {
+    "id": "3b",
+    "question": "Android App",
+    "answer": "We build robust Android applications using Kotlin and Java that work seamlessly across the vast ecosystem of Android devices.",
+    "keywords": ["android", "google", "play store", "kotlin", "java", "samsung", "pixel"],
+    "options": ["What is your timeline?", "Do you have a budget range?"]
+  },
+  {
+    "id": "3c",
+    "question": "Cross-Platform (Both)",
+    "answer": "Smart choice! We use frameworks like Flutter and React Native to build one code base that works perfectly on both iOS and Android, saving you time and money.",
+    "keywords": ["cross", "platform", "hybrid", "flutter", "react native", "both", "multi-platform"],
+    "options": ["What is your timeline?", "Do you have a budget range?"]
+  },
+  {
+    "id": "4",
+    "question": "I need digital marketing",
+    "answer": "We can help grow your brand! What are your primary goals?",
+    "keywords": ["marketing", "digital", "seo", "social", "media", "ads", "growth", "traffic", "leads", "promotion"],
+    "options": ["SEO Services", "Social Media Marketing", "PPC Ads", "Content Marketing"]
+  },
+  {
+    "id": "5",
+    "question": "Do you have a budget range?",
+    "answer": "We offer flexible pricing based on project scope. To give you an accurate quote, could you share a rough budget range?",
+    "keywords": ["budget", "price", "cost", "money", "quote", "pricing", "rates", "fees", "expensive", "cheap", "afford"],
+    "options": ["Less than $1k", "$1k - $5k", "$5k - $10k", "More than $10k"]
+  },
+  {
+    "id": "5a",
+    "question": "Less than $1k",
+    "answer": "We have specific startup packages and template-based solutions that fit this budget perfectly. Shall we connect you with a consultant?",
+    "keywords": ["cheap", "low budget", "small", "startup", "less", "1000", "1k"],
+    "options": ["Contact Us", "What services do you offer?"]
+  },
+  {
+    "id": "5b",
+    "question": "$1k - $5k",
+    "answer": "This is a healthy budget for a custom website or a standard mobile app MVP. We can deliver great quality within this range.",
+    "keywords": ["medium", "average", "mid-range", "5000", "5k"],
+    "options": ["Contact Us", "See Portfolio"]
+  },
+  {
+    "id": "5c",
+    "question": "$5k - $10k",
+    "answer": "With this budget, we can build a fully custom, feature-rich platform with advanced integrations and premium design.",
+    "keywords": ["premium", "high", "custom", "advanced", "10000", "10k"],
+    "options": ["Contact Us", "See Portfolio"]
+  },
+  {
+    "id": "5d",
+    "question": "More than $10k",
+    "answer": "We are ready to build an enterprise-grade solution for you. Let's schedule a meeting to discuss your detailed requirements.",
+    "keywords": ["enterprise", "large", "scale", "big", "investor"],
+    "options": ["Contact Us"]
+  },
+  {
+    "id": "6",
+    "question": "What is your timeline?",
+    "answer": "Standard websites typically take 4-8 weeks, while complex apps can take 3-6 months. Do you have a specific launch date in mind?",
+    "keywords": ["timeline", "time", "long", "duration", "launch", "deadline", "date", "fast", "quick", "schedule"],
+    "options": ["Urgent (ASAP)", "1-2 Months", "3-6 Months", "Flexible"]
+  },
+  {
+    "id": "6a",
+    "question": "Urgent (ASAP)",
+    "answer": "We offer expedited services for urgent projects. Note that this may incur a rush fee. Let's start immediately.",
+    "keywords": ["urgent", "fast", "now", "immediately", "quick", "rush", "asap"],
+    "options": ["Contact Us"]
+  },
+  {
+    "id": "6b",
+    "question": "Flexible",
+    "answer": "Great, a flexible timeline allows us to focus deeply on research and iterative design for the best possible result.",
+    "keywords": ["flexible", "no rush", "whenever", "relaxed"],
+    "options": ["Contact Us"]
+  },
+  {
+    "id": "7",
+    "question": "Fragrance Website",
+    "answer": "For a fragrance brand, we can create a stunning e-commerce store or brand showcase. Do you need features like a scent finder quiz, ingredient details (top/heart/base notes), or subscription options?",
+    "keywords": ["fragrance", "perfume", "scent", "store", "shop", "cologne", "aroma", "cosmetic", "beauty"]
+  },
+  {
+    "id": "8",
+    "question": "E-commerce Website",
+    "answer": "We build robust e-commerce solutions with payment gateways (Razorpay, Stripe), order tracking, and inventory management. How many products do you plan to list?",
+    "keywords": ["ecommerce", "shop", "store", "sell", "products", "e-commerce", "cart", "buying", "selling", "shopify", "woocommerce"],
+    "options": ["1-50 Products", "50-500 Products", "500+ Products"]
+  },
+  {
+    "id": "9",
+    "question": "Portfolio Website",
+    "answer": "A portfolio website is perfect for showcasing your work. We focus on high-quality visuals and smooth animations to make your projects stand out.",
+    "keywords": ["portfolio", "showcase", "work", "gallery", "resume", "cv", "personal site", "artist", "photographer"]
+  },
+  {
+    "id": "10",
+    "question": "Corporate Website",
+    "answer": "We design professional corporate websites that build trust and authority. Key features often include 'About Us', 'Services', 'Team', and 'Careers' sections.",
+    "keywords": ["corporate", "business", "company", "professional", "firm", "agency", "official", "enterprise"]
+  },
+  {
+    "id": "11",
+    "question": "Landing Page",
+    "answer": "A high-converting landing page is essential for campaigns. We focus on clear CTAs, fast loading speeds, and persuasive copy to maximize conversions.",
+    "keywords": ["landing", "page", "sales", "funnel", "conversion", "squeeze page", "promo", "campaign", "offer"]
+  },
+  {
+    "id": "12",
+    "question": "Service Booking",
+    "answer": "We can integrate advanced booking systems for appointments, reservations, and service scheduling, complete with calendar sync and automated reminders.",
+    "keywords": ["booking", "service", "appointment", "reservation", "schedule", "calendar", "meeting", "consultation"]
+  },
+  {
+    "id": "13",
+    "question": "Blog Website",
+    "answer": "We create engaging blog platforms with easy-to-use CMS, newsletter integration, and social sharing features to help you build an audience.",
+    "keywords": ["blog", "news", "magazine", "content", "article", "post", "journal", "media", "publication"]
+  },
+  {
+    "id": "14",
+    "question": "Real Estate Website",
+    "answer": "Our real estate solutions include property listings, advanced search filters, map integration, and virtual tour capabilities.",
+    "keywords": ["real", "estate", "property", "house", "listing", "realtor", "home", "apartment", "rent", "buy"]
+  },
+  {
+    "id": "15",
+    "question": "Healthcare Website",
+    "answer": "We build secure, HIPAA-compliant healthcare websites with patient portals, appointment scheduling, and telemedicine integration capabilities.",
+    "keywords": ["healthcare", "medical", "doctor", "clinic", "hospital", "patient", "health", "wellness", "medicine"]
+  },
+  {
+    "id": "16",
+    "question": "Maintenance & Support",
+    "answer": "We provide ongoing maintenance packages to keep your website secure and updated.",
+    "keywords": ["maintenance", "support", "help", "fix", "repair", "update", "security", "bug", "error", "issue"]
+  },
+  {
+    "id": "17",
+    "question": "Branding & Design",
+    "answer": "We create impactful brand identities, including logos, color palettes, and brand guidelines.",
+    "keywords": ["branding", "design", "logo", "identity", "graphic", "visual", "art", "creative", "style"]
+  },
+  {
+    "id": "18",
+    "question": "SEO Services",
+    "answer": "Our SEO services include on-page optimization, keyword research, and backlink strategies to improve your search rankings.",
+    "keywords": ["seo", "search", "ranking", "google", "optimization", "organic", "traffic", "keywords", "rank"]
+  },
+  {
+    "id": "19",
+    "question": "Social Media Marketing",
+    "answer": "We manage your social media presence, creating engaging content and running targeted ad campaigns.",
+    "keywords": ["social", "media", "facebook", "instagram", "linkedin", "twitter", "tiktok", "influencer", "followers"]
+  },
+  {
+    "id": "20",
+    "question": "PPC Ads",
+    "answer": "We run data-driven PPC campaigns on Google and Social Media to drive instant traffic and conversions.",
+    "keywords": ["ppc", "ads", "google", "advertising", "paid", "search ads", "display", "sem", "adwords"]
+  },
+  {
+    "id": "21",
+    "question": "Content Marketing",
+    "answer": "We create valuable content that attracts and engages your target audience, driving profitable customer action.",
+    "keywords": ["content", "marketing", "blog", "writing", "copywriting", "strategy", "storytelling"]
+  },
+  {
+    "id": "22",
+    "question": "Contact Us",
+    "answer": "You can reach us at contact@ngstellar.com or call us at +91 97109 09727. We'd love to hear from you!",
+    "keywords": ["contact", "email", "phone", "call", "reach", "address", "location"]
+  },
+  {
+    "id": "23",
+    "question": "See Portfolio",
+    "answer": "Check out our latest work on our portfolio page. We've delivered stunning projects for clients across various industries.",
+    "keywords": ["portfolio", "work", "projects", "case studies", "examples", "samples"],
+    "options": ["I need a website", "Contact Us"]
+  },
+  {
+    "id": "24",
+    "question": "1-50 Products",
+    "answer": "Perfect for a boutique store! We can set this up quickly with a user-friendly interface. What is your timeline?",
+    "keywords": ["small store", "boutique", "few products", "startup shop"],
+    "options": ["Urgent (ASAP)", "1-2 Months", "Flexible"]
+  },
+  {
+    "id": "25",
+    "question": "50-500 Products",
+    "answer": "A growing catalog! We'll ensure your store has robust search and filtering capabilities. Do you have a budget range?",
+    "keywords": ["medium store", "catalog", "growing business"],
+    "options": ["$1k - $5k", "$5k - $10k", "More than $10k"]
+  },
+  {
+    "id": "26",
+    "question": "500+ Products",
+    "answer": "Impressive scale! We recommend a high-performance custom solution to handle your inventory and traffic. Let's discuss your enterprise needs.",
+    "keywords": ["large store", "enterprise", "huge catalog", "warehouse"],
+    "options": ["Contact Us"]
+  },
+  {
+    "id": "27",
+    "question": "1-2 Months",
+    "answer": "That's a standard timeline for most projects. We can definitely work within that schedule.",
+    "keywords": ["standard", "normal", "month", "weeks"],
+    "options": ["Do you have a budget range?", "Contact Us"]
+  },
+  {
+    "id": "28",
+    "question": "3-6 Months",
+    "answer": "This allows for a very thorough development process with extensive testing and refinement.",
+    "keywords": ["long term", "thorough", "detailed", "complex"],
+    "options": ["Do you have a budget range?", "Contact Us"]
+  }
+]
