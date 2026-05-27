@@ -1,29 +1,39 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
-
-// Pages
-import Home from './pages/Home.jsx';
-import Capability from './pages/Capability.jsx';
-import Industry from './pages/Industry.jsx';
-import About from './pages/About.jsx';
-import Contact from './pages/Contact.jsx';
-import Careers from './pages/Careers.jsx';
-import TermsAndConditions from './pages/TermsAndConditions.jsx';
-import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
-
-// Service Sub-pages
-import BrandingService from './pages/BrandingService.jsx';
-import Consulting from './pages/Consulting.jsx';
-import Tech from './pages/Tech.jsx';
 import FaqChatbot from './components/FaqChatbot.jsx';
 import { Helmet } from "react-helmet-async";
 
+// Eagerly loaded (home is the first page seen)
+import Home from './pages/Home.jsx';
+
+// Lazy-loaded pages — only fetched when navigated to
+const Capability = lazy(() => import('./pages/Capability.jsx'));
+const Industry = lazy(() => import('./pages/Industry.jsx'));
+const About = lazy(() => import('./pages/About.jsx'));
+const Contact = lazy(() => import('./pages/Contact.jsx'));
+const Careers = lazy(() => import('./pages/Careers.jsx'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions.jsx'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy.jsx'));
+const BrandingService = lazy(() => import('./pages/BrandingService.jsx'));
+const Consulting = lazy(() => import('./pages/Consulting.jsx'));
+const Tech = lazy(() => import('./pages/Tech.jsx'));
+
+// Simple page-transition fallback
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <div className="w-8 h-8 rounded-full border-2 border-primary-500 border-t-transparent animate-spin" />
+    </div>
+  );
+}
+
 function App() {
-  return (  
+  return (
     <BrowserRouter>
-    <Helmet>
+      <Helmet>
         {/* Basic SEO */}
         <title>NG Stellar - Software Solutions Company</title>
         <meta
@@ -52,28 +62,31 @@ function App() {
       <div className="page-shell flex flex-col min-h-screen overflow-x-hidden">
         <Navbar />
         <main className="w-full md:pt-20 lg:pt-24 flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/capability" element={<Capability />} />
-            <Route path="/industry" element={<Industry />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/termsandconditions" element={<TermsAndConditions />} />
-            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/capability" element={<Capability />} />
+              <Route path="/industry" element={<Industry />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/termsandconditions" element={<TermsAndConditions />} />
+              <Route path="/privacypolicy" element={<PrivacyPolicy />} />
 
-            {/* Service Sub-pages */}
-            <Route path="/services/branding" element={<BrandingService />} />
-            <Route path="/services/consulting" element={<Consulting />} />
-            <Route path="/services/tech" element={<Tech />} />
-          </Routes>
+              {/* Service Sub-pages */}
+              <Route path="/services/branding" element={<BrandingService />} />
+              <Route path="/services/consulting" element={<Consulting />} />
+              <Route path="/services/tech" element={<Tech />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
-      <FaqChatbot/>
+      <FaqChatbot />
     </BrowserRouter>
   );
 }
 
 export default App;
+
 

@@ -95,13 +95,12 @@ function Navbar() {
       className={`fixed top-4 left-4 right-4 z-[999] ${scrolled ? 'shadow-2xl rounded-[20px]' : 'rounded-[20px] shadow-lg'
         }`}
       style={{
-        transition: 'background 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.1s ease-out',
+        transition: 'background 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
         background: scrolled
           ? 'linear-gradient(90deg, rgba(224, 226, 230, 0.97) 0%, rgba(150, 167, 207, 0.95) 50%, rgba(125, 185, 65, 0.61) 100%'
           : 'linear-gradient(90deg, rgba(221, 223, 227, 0.89) 0%, rgba(150, 167, 207, 0.86) 50%, rgba(125, 185, 65, 0.61) 100%)',
         backdropFilter: 'blur(20px) saturate(180%)',
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-        border: scrolled ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
       {/* Frosted glass shine overlay - Water glass effect */}
