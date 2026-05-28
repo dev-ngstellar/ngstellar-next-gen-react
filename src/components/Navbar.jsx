@@ -92,7 +92,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-4 left-4 right-4 z-[999] ${scrolled ? 'shadow-2xl rounded-[20px]' : 'rounded-[20px] shadow-lg'
+      className={`opacity-[0.85] fixed top-4 left-4 right-4 z-[999] ${scrolled ? 'shadow-2xl rounded-[20px]' : 'rounded-[20px] shadow-lg'
         }`}
       style={{
         transition: 'background 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
