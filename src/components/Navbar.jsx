@@ -141,7 +141,7 @@ function Navbar() {
                 height="74"
                 loading="eager"
                 decoding="async"
-                className="relative h-10 w-auto md:h-12 transition-all duration-300"
+                className="relative h-8 w-auto md:h-10 transition-all duration-300"
               />
             </picture>
           </div>
