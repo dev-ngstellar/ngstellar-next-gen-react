@@ -1,4 +1,6 @@
 import { FaMapLocationDot } from "react-icons/fa6";
+import { PiBuildingOfficeFill } from "react-icons/pi";
+import { BsBuildingsFill } from "react-icons/bs";
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import { Helmet } from "react-helmet-async";
@@ -21,23 +23,23 @@ function Contact() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-        
+
         // Real-time validation
         let error = "";
         if (name === "fullName") {
-             if (value.trim() && value.trim().length < 2) error = "Name must be at least 2 characters";
-             else if (/\d/.test(value)) error = "Name should not contain numbers";
+            if (value.trim() && value.trim().length < 2) error = "Name must be at least 2 characters";
+            else if (/\d/.test(value)) error = "Name should not contain numbers";
         }
         if (name === "email") {
-             if (value.trim() && !/\S+@\S+\.\S+/.test(value)) error = "Please enter a valid email";
+            if (value.trim() && !/\S+@\S+\.\S+/.test(value)) error = "Please enter a valid email";
         }
         if (name === "subject") {
-             if (value.trim() && value.trim().length < 3) error = "Subject must be at least 3 characters";
+            if (value.trim() && value.trim().length < 3) error = "Subject must be at least 3 characters";
         }
         if (name === "message") {
-             if (value.trim() && value.trim().length < 10) error = "Message must be at least 10 characters";
+            if (value.trim() && value.trim().length < 10) error = "Message must be at least 10 characters";
         }
-        
+
         setErrors(prev => ({ ...prev, [name]: error }));
     };
 
@@ -64,7 +66,7 @@ function Contact() {
         e.preventDefault();
         if (validate()) {
             setStatus("sending");
-            
+
             // Prepare template parameters
             // Make sure these names match the variables in your EmailJS template
             const templateParams = {
@@ -110,18 +112,27 @@ function Contact() {
                         Let&apos;s chat.
                         <br />
                         Tell us about your <span
-          className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
-          style={{
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
-          }}
-        >Project.</span>
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
+                            style={{
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 100%)'
+                            }}
+                        >Project.</span>
                     </h2>
 
                     <p className="text-slate-300/70 mb-6 md:mb-8 text-sm sm:text-base">
                         Let&apos;s create something together
                     </p>
+                    <div className="mt-6 md:mt-10 space-y-3">
+
+                        <h3 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
+                            <BsBuildingsFill className="text-lg sm:text-xl text-fuchsia-400" />NGStellar Solutions
+                        </h3>
+                        <p className="text-slate-200 leading-relaxed text-sm">
+                            By TrueConnect Strategic Services Private Limited
+                        </p>
+                    </div>
 
                     {/* 📍 ADDRESS + GOOGLE MAP */}
                     <div className="mt-6 md:mt-10 space-y-3">
@@ -131,8 +142,7 @@ function Contact() {
                         </h3>
 
                         <p className="text-slate-200 leading-relaxed text-sm">
-                           NGStellar Solutions Private Limited <br/>
-151/18, D R Avenue 1, Netaji Nagar, Moolapalayam, Erode, Tamil Nadu 638002
+                            151/18, D R Avenue 1, Netaji Nagar, Moolapalayam, Erode, Tamil Nadu 638002
                         </p>
 
                         {/* Map Box */}
