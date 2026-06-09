@@ -61,7 +61,7 @@ function App() {
       <ScrollToTop />
       <div className="page-shell flex flex-col min-h-screen overflow-x-hidden">
         <Navbar />
-        <main className="w-full md:pt-20 lg:pt-24 flex-1">
+        <main className="w-full flex-1">
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Home />} />

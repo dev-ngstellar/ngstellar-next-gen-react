@@ -443,10 +443,6 @@ export default function Hero3DAnimation({ activeSlide = 0 }) {
     <div
       ref={containerRef}
       className="w-full h-full relative overflow-hidden"
-      style={{
-        maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)'
-      }}
     >
       <Canvas
         camera={{ position: [0, 0, 8], fov: 50 }}
@@ -467,6 +463,8 @@ export default function Hero3DAnimation({ activeSlide = 0 }) {
       >
         <Scene activeSlide={activeSlide} />
       </Canvas>
+      {/* High-performance bottom fade-out overlay instead of expensive CSS WebGL masking */}
+      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-[#030014] via-[#030014]/40 to-transparent pointer-events-none" />
     </div>
   );
 }

@@ -9,9 +9,9 @@ const heroSlides = [
   {
     id: 1,
     badge: 'Empowering Digital Growth',
-    title: 'Welcome To',
-    titleHighlight: 'NG Stellar Solutions',
-    description: 'Empowering businesses with smart strategies, creative branding, and future-ready technology.',
+    title: 'Transforming',
+    titleHighlight: 'Textile Businesses',
+    description: 'Driving textile brands forward with smart manufacturing solutions, digital commerce, and supply chain innovation.',
     image: '/cursole1.png',
     features: [
       { icon: '🌐', label: 'Web & Mobile' },
@@ -22,22 +22,22 @@ const heroSlides = [
   {
     id: 2,
     badge: 'Transform Your Business',
-    title: 'Make Your Business',
-    titleHighlight: 'Faster & Smarter',
-    description: 'We help your business grow with smart strategies, stunning design, and future-ready tech solutions.',
+    title: 'Innovating',
+    titleHighlight: 'Healthcare Solutions',
+    description: 'Enhancing patient care and operational efficiency through modern healthcare technology and digital transformation.',
     image: '/cursole2.png',
     features: [
-      { icon: '⚡', label: 'Fast Delivery' },
-      { icon: '💡', label: 'Innovation' },
-      { icon: '🚀', label: 'Growth' }
+      { icon: '🏥', label: 'Smart Care' },
+      { icon: '🛡️', label: 'Secure & Compliant' },
+      { icon: '🩺', label: 'Clinical Efficiency' }
     ]
   },
   {
     id: 3,
     badge: 'Creative Excellence',
-    title: 'Clarity, Creativity',
-    titleHighlight: '& Technology',
-    description: 'Creating stunning, responsive websites and apps that engage and convert your visitors into customers.',
+    title: 'Powering',
+    titleHighlight: 'IT Startups <br/>  FinTech',
+    description: 'Building scalable software, secure financial platforms, and innovative digital products that accelerate business growth.',
     image: '/cursole3.png',
     features: [
       { icon: '🎯', label: 'Strategy' },
@@ -92,7 +92,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-5 md:pb-5 lg:pt-5 overflow-hidden no-wrap"
+      className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-5 md:pb-5 lg:pt-30 overflow-hidden no-wrap"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -136,7 +136,12 @@ function Hero() {
                       backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
                     }}
                   >
-                    {heroSlides[currentSlide].titleHighlight}
+                    {heroSlides[currentSlide].titleHighlight.split(/<br\s*\/?>/).map((text, idx, arr) => (
+                      <span key={idx}>
+                        {text}
+                        {idx < arr.length - 1 && <br />}
+                      </span>
+                    ))}
                   </span>
                 </h1>
 

@@ -92,69 +92,64 @@ function Navbar() {
 
   return (
     <nav
-      className={`opacity-[0.85] fixed top-4 left-4 right-4 z-[999] ${scrolled ? 'shadow-2xl rounded-[20px]' : 'rounded-[20px] shadow-lg'
+      className={`fixed z-[999] left-0 right-0 mx-auto transition-all duration-500 ease-out border ${scrolled
+        ? 'top-3 max-w-[96%] md:max-w-[97%] lg:max-w-[96%] xl:max-w-7xl rounded-2xl bg-slate-950/75 border-white/10 shadow-2xl shadow-black/40 backdrop-blur-md'
+        : 'top-6 max-w-7xl rounded-none bg-transparent border-transparent shadow-none backdrop-blur-none'
         }`}
-      style={{
-        transition: 'background 0.5s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-        background: scrolled
-          ? 'linear-gradient(90deg, rgba(255, 255, 255, 1)'
-          : 'linear-gradient(90deg, rgba(255, 255, 255, 1)',
-        backdropFilter: 'blur(20px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-      }}
     >
       {/* Frosted glass shine overlay - Water glass effect */}
-      {scrolled && (
-        <>
-          {/* Main glossy water shine */}
-          <div
-            className="absolute inset-0 pointer-events-none overflow-hidden rounded-[20px] transition-opacity duration-700"
-            style={{
-              background:
-                'radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(255,255,255,0.08) 35%, rgba(255,255,255,0) 60%),' +
-                'linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 45%, rgba(255,255,255,0) 80%)',
-              opacity: scrolled ? 1 : 0,
-            }}
-          />
-          {/* Smooth top highlight shimmer */}
-          <div
-            className="absolute top-0 left-0 right-0 h-[2px] pointer-events-none rounded-t-[20px] transition-opacity duration-700"
-            style={{
-              background:
-                'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.42) 30%, rgba(255, 255, 255, 0.18) 50%, rgba(255, 255, 255, 0.36) 70%, transparent 100%)',
-              opacity: scrolled ? 1 : 0,
-            }}
-          />
-        </>
-      )}
+      {
+        scrolled && (
+          <>
+            {/* Main glossy water shine */}
+            <div
+              className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl transition-opacity duration-700"
+              style={{
+                background:
+                  'radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.08) 0%, rgba(255,255,255,0.03) 35%, rgba(255,255,255,0) 60%),' +
+                  'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 45%, rgba(255,255,255,0) 80%)',
+                opacity: scrolled ? 1 : 0,
+              }}
+            />
+            {/* Smooth top highlight shimmer */}
+            <div
+              className="absolute top-0 left-0 right-0 h-[2px] pointer-events-none rounded-t-2xl transition-opacity duration-700"
+              style={{
+                background:
+                  'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.15) 70%, transparent 100%)',
+                opacity: scrolled ? 1 : 0,
+              }}
+            />
+          </>
+        )
+      }
 
-      <div className="relative max-w-7xl mx-auto flex items-center justify-between px-2 md:px-3 lg:px-4 py-4">
+      <div className={`relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-350 ${scrolled ? 'py-2.5' : 'pt-4 pb-6'}`}>
         <Link to="/" onClick={handleLinkClick} className="flex items-center gap-4 group">
           <div className="relative">
             <div className="absolute -inset-2 rounded-full"></div>
             <picture>
-              <source srcSet="/logo_ngs.webp" type="image/webp" />
+              <source srcSet="/ng_logo_white.png" type="image/webp" />
               <img
-                src='/logo_ngs.png'
+                src='/ng_logo_white.png'
                 alt="Next Gen Stellar"
                 width="400"
                 height="74"
                 loading="eager"
                 decoding="async"
-                className="relative h-8 w-auto md:h-10 transition-all duration-300"
+                className="relative h-10 w-auto md:h-12 transition-all duration-300"
               />
             </picture>
           </div>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 text-[0.95rem] font-medium text-primary-700 lg:flex">
+        <nav className="hidden items-center gap-8 text-[0.95rem] font-medium text-white lg:flex">
           <Link
             to="/"
             onClick={handleLinkClick}
             className={`relative pb-1 transition-colors ${location.pathname === '/'
-              ? 'text-primary-700 nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary-600 after:to-secondary-500'
-              : 'text-primary-700'
+              ? 'text-white' : 'text-white/80 hover:text-white'
               }`}
           >
             Home
@@ -170,8 +165,8 @@ function Navbar() {
               to="/capability"
               onClick={handleLinkClick}
               className={`flex items-center gap-1 pb-1 transition-colors relative ${location.pathname === '/capability' || location.pathname.startsWith('/services')
-                ? 'text-primary-700 nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary-600 after:to-secondary-500'
-                : 'text-primary-700'
+                ? 'text-white'
+                : 'text-white/80 hover:text-white'
                 }`}
             >
               Capabilities
@@ -186,53 +181,62 @@ function Navbar() {
               </svg>
             </Link>
 
-            {/* Dropdown Menu */}
-            {capabilitiesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[420px] rounded-2xl bg-gradient-to-b from-slate-900/95 to-slate-800/90 border border-white/10 shadow-2xl shadow-black/50 overflow-hidden">
-                <div className="p-3 space-y-4">
-                  {capabilities.map((item) => {
-                    const serviceLinks = {
-                      'Branding Services': '/services/branding',
-                      'Consulting Services': '/services/consulting',
-                      'Tech Services': '/services/tech',
-                    };
-                    const path = serviceLinks[item.title];
-                    const isActive = location.pathname === path;
-                    
-                    return (
-                      <Link
-                        key={item.title}
-                        to={path}
-                        onClick={handleLinkClick}
-                        className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-300 group ${
-                          isActive 
-                            ? 'bg-white/10 shadow-inner ring-1 ring-white/10' 
-                            : 'hover:bg-white/5'
-                        }`}
-                      >
-                        <div className={`flex-shrink-0 transition-colors ${isActive ? 'text-secondary-400' : 'text-primary-400 group-hover:text-secondary-400'}`}>
-                          {item.icon}
-                        </div>
-                        <div className="flex-1">
-                          <h4 className={`font-bold text-base mb-1 transition-colors ${isActive ? 'text-primary-300' : 'text-white group-hover:text-primary-300'}`}>
-                            {item.title}
-                          </h4>
-                          <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
+            {/* Dropdown Menu — pt-2 creates an invisible mouse bridge so moving to items doesn't close the menu */}
+            <AnimatePresence>
+              {capabilitiesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[440px] z-50"
+                >
+                  <div className="rounded-2xl bg-gradient-to-b from-slate-900/98 to-slate-800/95 border border-white/10 shadow-2xl shadow-black/60 overflow-hidden">
+                    <div className="p-3 space-y-1">
+                      {capabilities.map((item) => {
+                        const serviceLinks = {
+                          'Branding Services': '/services/branding',
+                          'Consulting Services': '/services/consulting',
+                          'Tech Services': '/services/tech',
+                        };
+                        const path = serviceLinks[item.title];
+                        const isActive = location.pathname === path;
+
+                        return (
+                          <Link
+                            key={item.title}
+                            to={path}
+                            onClick={handleLinkClick}
+                            className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 group ${isActive
+                              ? 'bg-white/10 shadow-inner ring-1 ring-white/10'
+                              : 'hover:bg-white/8'
+                              }`}
+                          >
+                            <div className={`flex-shrink-0 transition-colors ${isActive ? 'text-secondary-400' : 'text-primary-400 group-hover:text-secondary-400'}`}>
+                              {item.icon}
+                            </div>
+                            <div className="flex-1">
+                              <h4 className={`font-bold text-base mb-1 transition-colors ${isActive ? 'text-primary-300' : 'text-white group-hover:text-primary-300'}`}>
+                                {item.title}
+                              </h4>
+                              <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <Link
             to="/industry"
             onClick={handleLinkClick}
             className={`relative pb-1 transition-colors ${location.pathname === '/industry'
-              ? 'text-primary-700 nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary-600 after:to-secondary-500'
-              : 'text-primary-700'
+              ? 'text-white'
+              : 'text-white/80 hover:text-white'
               }`}
           >
             Industries
@@ -242,12 +246,12 @@ function Navbar() {
             onMouseEnter={() => setAboutOpen(true)}
             onMouseLeave={() => setAboutOpen(false)}
           >
-             <Link
+            <Link
               to="/about"
               onClick={handleLinkClick}
               className={`flex items-center gap-1 pb-1 transition-colors relative ${location.pathname === '/about' || location.pathname === '/careers'
-                ? 'text-primary-700 nav-active-underline after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary-600 after:to-secondary-500'
-                : 'text-primary-700'
+                ? 'text-white'
+                : 'text-white/80 hover:text-white'
                 }`}
             >
               About us
@@ -261,45 +265,46 @@ function Navbar() {
               </svg>
             </Link>
 
-            {/* About Dropdown Menu */}
+            {/* About Dropdown Menu — pt-2 creates an invisible mouse bridge */}
             <AnimatePresence>
-            {aboutOpen && (
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[420px] rounded-2xl bg-gradient-to-b from-slate-900/95 to-slate-800/90 border border-white/10 shadow-2xl shadow-black/50 overflow-hidden"
-              >
-                <div className="p-3 space-y-4">
-                  {aboutDropdown.map((item) => {
-                    const isActive = location.pathname === item.path;
-                    return (
-                      <Link
-                        key={item.title}
-                        to={item.path}
-                        onClick={handleLinkClick}
-                        className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-300 group ${
-                          isActive 
-                            ? 'bg-white/10 shadow-inner ring-1 ring-white/10' 
-                            : 'hover:bg-white/5'
-                        }`}
-                      >
-                        <div className={`flex-shrink-0 transition-colors ${isActive ? 'text-secondary-400' : 'text-primary-400 group-hover:text-secondary-400'}`}>
-                          {item.icon}
-                        </div>
-                        <div className="flex-1">
-                          <h4 className={`font-bold text-base mb-1 transition-colors ${isActive ? 'text-primary-300' : 'text-white group-hover:text-primary-300'}`}>
-                            {item.title}
-                          </h4>
-                          <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            )}
+              {aboutOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[440px] z-50"
+                >
+                  <div className="rounded-2xl bg-gradient-to-b from-slate-900/98 to-slate-800/95 border border-white/10 shadow-2xl shadow-black/60 overflow-hidden">
+                    <div className="p-3 space-y-1">
+                      {aboutDropdown.map((item) => {
+                        const isActive = location.pathname === item.path;
+                        return (
+                          <Link
+                            key={item.title}
+                            to={item.path}
+                            onClick={handleLinkClick}
+                            className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 group ${isActive
+                              ? 'bg-white/10 shadow-inner ring-1 ring-white/10'
+                              : 'hover:bg-white/8'
+                              }`}
+                          >
+                            <div className={`flex-shrink-0 transition-colors ${isActive ? 'text-secondary-400' : 'text-primary-400 group-hover:text-secondary-400'}`}>
+                              {item.icon}
+                            </div>
+                            <div className="flex-1">
+                              <h4 className={`font-bold text-base mb-1 transition-colors ${isActive ? 'text-primary-300' : 'text-white group-hover:text-primary-300'}`}>
+                                {item.title}
+                              </h4>
+                              <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
             </AnimatePresence>
           </div>
           <Link
@@ -314,7 +319,7 @@ function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-lg text-primary-700 hover:bg-primary-700 transition-colors"
+          className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
           aria-label="Toggle mobile menu"
         >
           {mobileMenuOpen ? (
@@ -345,7 +350,7 @@ function Navbar() {
                 onClick={handleLinkClick}
                 className={`px-4 py-3 rounded-lg transition-colors ${location.pathname === '/'
                   ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
-                  : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                  : 'text-white hover:bg-white/5'
                   }`}
               >
                 Home
@@ -356,10 +361,10 @@ function Navbar() {
                 <div
                   className={`w-full px-4 py-3 rounded-lg transition-colors flex items-center justify-between ${location.pathname === '/capability' || location.pathname.startsWith('/services')
                     ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
-                    : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                    : 'text-white hover:bg-white/5'
                     }`}
                 >
-                  <Link to="/capability" onClick={handleLinkClick} className="flex-1">
+                  <Link to="/capability" onClick={handleLinkClick} className="flex-1 text-white">
                     Capabilities
                   </Link>
                   <button
@@ -395,11 +400,10 @@ function Navbar() {
                         <Link
                           to="/services/branding"
                           onClick={handleLinkClick}
-                          className={`flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-colors ${
-                            location.pathname === '/services/branding' 
-                              ? 'bg-white/10 text-white' 
-                              : 'text-slate-300 hover:text-white hover:bg-white/5'
-                          }`}
+                          className={`flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-colors ${location.pathname === '/services/branding'
+                            ? 'bg-white/10 text-white'
+                            : 'text-white/80 hover:text-white hover:bg-white/5'
+                            }`}
                         >
                           <svg
                             className="w-6 h-6 text-primary-400"
@@ -419,11 +423,10 @@ function Navbar() {
                         <Link
                           to="/services/consulting"
                           onClick={handleLinkClick}
-                          className={`flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-colors ${
-                            location.pathname === '/services/consulting' 
-                              ? 'bg-white/10 text-white' 
-                              : 'text-slate-300 hover:text-white hover:bg-white/5'
-                          }`}
+                          className={`flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-colors ${location.pathname === '/services/consulting'
+                            ? 'bg-white/10 text-white'
+                            : 'text-white/80 hover:text-white hover:bg-white/5'
+                            }`}
                         >
                           <svg
                             className="w-6 h-6 text-primary-400"
@@ -443,11 +446,10 @@ function Navbar() {
                         <Link
                           to="/services/tech"
                           onClick={handleLinkClick}
-                          className={`flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-colors ${
-                            location.pathname === '/services/tech' 
-                              ? 'bg-white/10 text-white' 
-                              : 'text-slate-300 hover:text-white hover:bg-white/5'
-                          }`}
+                          className={`flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-colors ${location.pathname === '/services/tech'
+                            ? 'bg-white/10 text-white'
+                            : 'text-white/80 hover:text-white hover:bg-white/5'
+                            }`}
                         >
                           <svg
                             className="w-6 h-6 text-primary-400"
@@ -475,74 +477,73 @@ function Navbar() {
                 onClick={handleLinkClick}
                 className={`px-4 py-3 rounded-lg transition-colors ${location.pathname === '/industry'
                   ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
-                  : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                  : 'text-white hover:bg-white/5'
                   }`}
               >
                 Industries
               </Link>
 
-                <div>
-                 <div
-                    className={`w-full px-4 py-3 rounded-lg transition-colors flex items-center justify-between ${location.pathname === '/about' || location.pathname === '/careers'
-                      ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
-                      : 'text-slate-300 hover:bg-white/5 hover:text-white'
-                      }`}
+              <div>
+                <div
+                  className={`w-full px-4 py-3 rounded-lg transition-colors flex items-center justify-between ${location.pathname === '/about' || location.pathname === '/careers'
+                    ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
+                    : 'text-white hover:bg-white/5'
+                    }`}
+                >
+                  <Link to="/about" onClick={handleLinkClick} className="flex-1 text-white">
+                    About Us
+                  </Link>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setAboutOpen(!aboutOpen);
+                    }}
+                    className="p-2 -mr-2"
                   >
-                    <Link to="/about" onClick={handleLinkClick} className="flex-1">
-                      About Us
-                    </Link>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setAboutOpen(!aboutOpen);
-                      }}
-                      className="p-2 -mr-2"
+                    <svg
+                      className={`w-4 h-4 transition-transform ${aboutOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
-                      <svg
-                        className={`w-4 h-4 transition-transform ${aboutOpen ? 'rotate-180' : ''}`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                  </div>
-                  
-                  {/* Sub-menu */}
-                  <AnimatePresence>
-                    {aboutOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="ml-4 mt-2 space-y-1">
-                          {aboutDropdown.map((item) => (
-                              <Link
-                               key={item.title}
-                               to={item.path}
-                               onClick={handleLinkClick}
-                               className={`flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-colors ${
-                                 location.pathname === item.path 
-                                   ? 'bg-white/10 text-white' 
-                                   : 'text-slate-300 hover:text-white hover:bg-white/5'
-                               }`}
-                             >
-                               <div className="w-6 h-6 text-violet-400 flex-shrink-0 [&>svg]:w-full [&>svg]:h-full">
-                                 {item.icon}
-                               </div>
-                               {item.title}
-                             </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
                 </div>
+
+                {/* Sub-menu */}
+                <AnimatePresence>
+                  {aboutOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="ml-4 mt-2 space-y-1">
+                        {aboutDropdown.map((item) => (
+                          <Link
+                            key={item.title}
+                            to={item.path}
+                            onClick={handleLinkClick}
+                            className={`flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-colors ${location.pathname === item.path
+                              ? 'bg-white/10 text-white'
+                              : 'text-white/80 hover:text-white hover:bg-white/5'
+                              }`}
+                          >
+                            <div className="w-6 h-6 text-violet-400 flex-shrink-0 [&>svg]:w-full [&>svg]:h-full">
+                              {item.icon}
+                            </div>
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               <Link
                 to="/contact"
@@ -555,7 +556,7 @@ function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </nav >
   );
 }
 

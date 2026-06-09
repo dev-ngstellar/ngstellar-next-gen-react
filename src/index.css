@@ -169,4 +169,24 @@
   .nav-active-underline::after {
     animation: slideInUnderline 0.4s ease-out forwards;
   }
+
+  /* Layout spacing: ensures content on non-home pages starts below the fixed navbar */
+  main {
+    padding-top: 5rem;
+  }
+  @media (min-width: 768px) {
+    main {
+      padding-top: 6rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    main {
+      padding-top: 6.5rem;
+    }
+  }
+
+  /* Home page handles its own padding to support a full-screen canvas layout */
+  main:has(#home) {
+    padding-top: 0;
+  }
 }
