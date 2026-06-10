@@ -241,6 +241,17 @@ function Navbar() {
           >
             Industries
           </Link>
+          <Link
+            to="/templates"
+            onClick={handleLinkClick}
+            className={`relative pb-1 transition-colors ${location.pathname.startsWith('/templates')
+              ? 'text-white'
+              : 'text-white/80 hover:text-white'
+              }`}
+          >
+            Templates
+          </Link>
+
           <div
             className="relative"
             onMouseEnter={() => setAboutOpen(true)}
@@ -482,6 +493,17 @@ function Navbar() {
               >
                 Industries
               </Link>
+              <Link
+                to="/templates"
+                onClick={handleLinkClick}
+                className={`px-4 py-3 rounded-lg transition-colors ${location.pathname.startsWith('/templates')
+                  ? 'bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-white font-semibold'
+                  : 'text-white hover:bg-white/5'
+                  }`}
+              >
+                Templates
+              </Link>
+
 
               <div>
                 <div

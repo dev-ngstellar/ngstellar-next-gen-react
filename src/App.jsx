@@ -20,6 +20,9 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy.jsx'));
 const BrandingService = lazy(() => import('./pages/BrandingService.jsx'));
 const Consulting = lazy(() => import('./pages/Consulting.jsx'));
 const Tech = lazy(() => import('./pages/Tech.jsx'));
+const Templates = lazy(() => import('./pages/Templates/Templates.jsx'));
+const TemplateDetails = lazy(() => import('./pages/Templates/TemplateDetails.jsx'));
+
 
 // Simple page-transition fallback
 function PageLoader() {
@@ -67,6 +70,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/capability" element={<Capability />} />
               <Route path="/industry" element={<Industry />} />
+              <Route path="/templates" element={<Templates />} />
+              <Route path="/templates/:slug" element={<TemplateDetails />} />
+
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
