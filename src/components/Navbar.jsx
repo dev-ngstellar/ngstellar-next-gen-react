@@ -12,7 +12,7 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset || 0;
-      setScrolled(scrollY > 0);
+      setScrolled(scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -93,8 +93,8 @@ function Navbar() {
   return (
     <nav
       className={`fixed z-[999] left-0 right-0 mx-auto transition-all duration-500 ease-out border ${scrolled
-        ? 'top-3 max-w-[96%] md:max-w-[97%] lg:max-w-[96%] xl:max-w-7xl rounded-2xl bg-slate-950/75 border-white/10 shadow-2xl shadow-black/40 backdrop-blur-md'
-        : 'top-6 max-w-7xl rounded-none bg-transparent border-transparent shadow-none backdrop-blur-none'
+        ? 'top-3 max-w-[92%] sm:max-w-[94%] md:max-w-[95%] lg:max-w-[96%] xl:max-w-7xl rounded-2xl bg-slate-950/75 border-white/10 shadow-2xl shadow-black/40 backdrop-blur-md'
+        : 'top-4 lg:top-6 max-w-[92%] sm:max-w-[94%] md:max-w-[95%] lg:max-w-7xl rounded-2xl lg:rounded-none bg-slate-950/75 lg:bg-transparent border-white/10 lg:border-transparent shadow-2xl lg:shadow-none backdrop-blur-md lg:backdrop-blur-none'
         }`}
     >
       {/* Frosted glass shine overlay - Water glass effect */}
@@ -124,7 +124,7 @@ function Navbar() {
         )
       }
 
-      <div className={`relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-350 ${scrolled ? 'py-2.5' : 'pt-4 pb-6'}`}>
+      <div className={`relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-350 ${scrolled ? 'py-2.5' : 'py-2.5 lg:py-4'}`}>
         <Link to="/" onClick={handleLinkClick} className="flex items-center gap-4 group">
           <div className="relative">
             <div className="absolute -inset-2 rounded-full"></div>
