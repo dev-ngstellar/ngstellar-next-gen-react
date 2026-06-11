@@ -114,7 +114,7 @@ function Workflow() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: 0.1 + index * 0.1, duration: 0.6, ease: "easeOut" }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className={`group relative overflow-hidden rounded-[28px] border border-slate-700/50 bg-gradient-to-b from-[#0b1024] via-[#050819] to-[#050716] p-6 shadow-[0_30px_80px_rgba(5,8,30,0.9)] cursor-pointer ${index >= visibleCount ? 'hidden md:block' : ''}`}
+              className={`group relative overflow-hidden rounded-[28px] border border-slate-700/50 bg-gradient-to-b from-[#0b1024] via-[#050819] to-[#050716] p-6 shadow-[0_30px_80px_rgba(5,8,30,0.9)] cursor-pointer transform-gpu will-change-transform ${index >= visibleCount ? 'hidden md:block' : ''}`}
             >
               {/* Gradient glow background — static, hover via CSS */}
               <div

@@ -70,7 +70,7 @@ function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative overflow-hidden rounded-2xl bg-slate-900/40 border border-white/10 hover:border-fuchsia-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20"
+            className="group relative overflow-hidden rounded-2xl bg-slate-900/40 border border-white/10 hover:border-fuchsia-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20 transform-gpu will-change-transform"
           >
             {/* Image at Top */}
             <div className="relative h-48 overflow-hidden">

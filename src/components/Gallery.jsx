@@ -97,7 +97,7 @@ function Gallery() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: 0.1 + index * 0.05, duration: 0.5 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-slate-800/40 to-slate-900/40 border border-white/10 shadow-xl hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-300"
+              className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-slate-800/40 to-slate-900/40 border border-white/10 shadow-xl hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-300 transform-gpu will-change-transform"
             >
               {/* Image */}
               <div className="relative h-56 overflow-hidden">

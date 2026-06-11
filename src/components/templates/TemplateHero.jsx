@@ -88,6 +88,7 @@ const TemplateHero = ({ template, onDemoClick, onCustomizeClick }) => {
               <img
                 src={coverImage}
                 alt={`${title} Preview`}
+                fetchPriority="high"
                 className="w-full rounded-lg object-cover aspect-[4/3] object-top"
               />
             </div>

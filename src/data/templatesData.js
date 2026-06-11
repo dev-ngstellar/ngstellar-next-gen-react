@@ -4,16 +4,16 @@ export const templates = [
     slug: "construction",
     title: "Construction Template",
     description: "A heavy-duty, modern design built specifically for construction companies, engineering firms, and infrastructure developers.",
-    coverImage: "/Templates Images/Constructions/Home.png",
+    coverImage: "/Templates Images/Constructions/Home.webp",
     tags: ["React.js", "Responsive", "Modern UI"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Constructions/Home.png" },
-      { title: "About Page", image: "/Templates Images/Constructions/About.png" },
-      { title: "Services Page", image: "/Templates Images/Constructions/Services.png" },
-      { title: "Projects Page", image: "/Templates Images/Constructions/Projects.png" },
-      { title: "Team Page", image: "/Templates Images/Constructions/Team.png" },
-      { title: "Careers Page", image: "/Templates Images/Constructions/Careers.png" },
-      { title: "Contact Page", image: "/Templates Images/Constructions/Contact us.png" }
+      { title: "Home Page", image: "/Templates Images/Constructions/Home.webp" },
+      { title: "About Page", image: "/Templates Images/Constructions/About.webp" },
+      { title: "Services Page", image: "/Templates Images/Constructions/Services.webp" },
+      { title: "Projects Page", image: "/Templates Images/Constructions/Projects.webp" },
+      { title: "Team Page", image: "/Templates Images/Constructions/Team.webp" },
+      { title: "Careers Page", image: "/Templates Images/Constructions/Careers.webp" },
+      { title: "Contact Page", image: "/Templates Images/Constructions/Contact us.webp" }
     ]
   },
   {
@@ -21,17 +21,17 @@ export const templates = [
     slug: "healthcare",
     title: "Healthcare Template",
     description: "Clean, professional, and trustworthy layout optimized for hospitals, private clinics, doctors, and medical research facilities.",
-    coverImage: "/Templates Images/Healthcare/Home.png",
+    coverImage: "/Templates Images/Healthcare/Home.webp",
     tags: ["React.js", "Responsive", "Modern UI"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Healthcare/Home.png" },
-      { title: "About Page", image: "/Templates Images/Healthcare/About.png" },
-      { title: "Doctors Page", image: "/Templates Images/Healthcare/Doctors.png" },
-      { title: "Departments Page", image: "/Templates Images/Healthcare/Departments.png" },
-      { title: "Facilities Page", image: "/Templates Images/Healthcare/Facilities.png" },
-      { title: "Blog Page", image: "/Templates Images/Healthcare/Blog.png" },
-      { title: "Testimonials Page", image: "/Templates Images/Healthcare/Testimonials.png" },
-      { title: "Contact Page", image: "/Templates Images/Healthcare/Contact.png" }
+      { title: "Home Page", image: "/Templates Images/Healthcare/Home.webp" },
+      { title: "About Page", image: "/Templates Images/Healthcare/About.webp" },
+      { title: "Doctors Page", image: "/Templates Images/Healthcare/Doctors.webp" },
+      { title: "Departments Page", image: "/Templates Images/Healthcare/Departments.webp" },
+      { title: "Facilities Page", image: "/Templates Images/Healthcare/Facilities.webp" },
+      { title: "Blog Page", image: "/Templates Images/Healthcare/Blog.webp" },
+      { title: "Testimonials Page", image: "/Templates Images/Healthcare/Testimonials.webp" },
+      { title: "Contact Page", image: "/Templates Images/Healthcare/Contact.webp" }
     ]
   },
   {
@@ -39,16 +39,16 @@ export const templates = [
     slug: "textile",
     title: "Textile Template",
     description: "Visually rich, elegant showcase optimized for fabric manufacturers, textile designers, fashion brands, and garment exporters.",
-    coverImage: "/Templates Images/Textiles/Home.png",
+    coverImage: "/Templates Images/Textiles/Home.webp",
     tags: ["React.js", "Responsive", "Modern UI"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Textiles/Home.png" },
-      { title: "Collections Page", image: "/Templates Images/Textiles/Collections.png" },
-      { title: "About Page", image: "/Templates Images/Textiles/About.png" },
-      { title: "Lookbook Page", image: "/Templates Images/Textiles/Lookbook.png" },
-      { title: "Gallery Page", image: "/Templates Images/Textiles/Gallery.png" },
-      { title: "Appointment Page", image: "/Templates Images/Textiles/Appointment.png" },
-      { title: "Contact Page", image: "/Templates Images/Textiles/Contact.png" }
+      { title: "Home Page", image: "/Templates Images/Textiles/Home.webp" },
+      { title: "Collections Page", image: "/Templates Images/Textiles/Collections.webp" },
+      { title: "About Page", image: "/Templates Images/Textiles/About.webp" },
+      { title: "Lookbook Page", image: "/Templates Images/Textiles/Lookbook.webp" },
+      { title: "Gallery Page", image: "/Templates Images/Textiles/Gallery.webp" },
+      { title: "Appointment Page", image: "/Templates Images/Textiles/Appointment.webp" },
+      { title: "Contact Page", image: "/Templates Images/Textiles/Contact.webp" }
     ]
   },
   {

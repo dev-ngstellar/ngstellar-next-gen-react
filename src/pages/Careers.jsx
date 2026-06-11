@@ -323,9 +323,8 @@ export default function Careers() {
          <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Ready to Start?</h2>
             
-            <div className="relative rounded-3xl overflow-hidden p-[1px] shadow-2xl">
-                  <BorderBeam />
-                  <div className="relative z-10 h-full w-full rounded-3xl bg-slate-900/90 backdrop-blur-xl border border-white/10 p-10 md:p-14 bg-white/5">
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                  <div className="relative z-10 h-full w-full rounded-3xl bg-slate-900/90 backdrop-blur-xl p-10 md:p-14 bg-white/5">
                 <motion.div
                   className="pointer-events-none absolute inset-0 rounded-[28px] opacity-40"
                   style={{

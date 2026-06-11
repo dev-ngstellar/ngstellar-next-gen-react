@@ -41,7 +41,7 @@ const Templates = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6"
           >
-            Template <span className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent">Collection</span>
+            Template <span className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-300 bg-clip-text text-transparent pr-2">Collection</span>
           </motion.h1>
 
           <motion.p

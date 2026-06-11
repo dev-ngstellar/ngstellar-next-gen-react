@@ -41,6 +41,30 @@ const TemplateDetails = () => {
     setDemoActivePage(0);
   }, [slug]);
 
+  // Preload all template preview and page images in the background for instant transitions
+  useEffect(() => {
+    if (template) {
+      // Preload current template page images
+      if (template.pages) {
+        template.pages.forEach((page) => {
+          if (page.image) {
+            const img = new Image();
+            img.src = page.image;
+          }
+        });
+      }
+
+      // Preload related templates' cover images
+      const related = templates.filter((t) => t.slug !== template.slug).slice(0, 3);
+      related.forEach((t) => {
+        if (t.coverImage) {
+          const img = new Image();
+          img.src = t.coverImage;
+        }
+      });
+    }
+  }, [template]);
+
   if (!template) {
     return (
       <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-center px-4">
