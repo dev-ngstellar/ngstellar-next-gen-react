@@ -8,41 +8,45 @@ const Hero3DAnimation = lazy(() => import('./Hero3DAnimation'));
 const heroSlides = [
   {
     id: 1,
-    badge: 'Empowering Digital Growth',
-    title: 'Transforming',
-    titleHighlight: 'Textile Businesses',
-    description: 'Driving textile brands forward with smart manufacturing solutions, digital commerce, and supply chain innovation.',
+    badge: '👉 Build Smarter. Grow Faster.',
+    title: '₹500 Today',
+    titleHighlight: 'Could Be the First Step Toward Your',
+    titleBody: 'First Crore Business',
+    descHighlight: 'Most businesses fail simply because they are invisible.',
+    descBody: 'We fix that. We build, market, and scale your brand.',
     image: '/cursole1.png',
     features: [
-      { icon: '🌐', label: 'Web & Mobile' },
-      { icon: '🎨', label: 'Branding' },
-      { icon: '📈', label: 'Digital Marketing' }
+      { icon: '🚀', label: 'High Visibility' },
+      { icon: '💡', label: 'Smart Building' },
+      { icon: '📈', label: 'Scale Fast' }
     ]
   },
   {
     id: 2,
-    badge: 'Transform Your Business',
-    title: 'Innovating',
-    titleHighlight: 'Healthcare Solutions',
-    description: 'Enhancing patient care and operational efficiency through modern healthcare technology and digital transformation.',
+    badge: '👉 Build Smarter. Grow Faster.',
+    title: "Dreams Don't Fail.",
+    titleHighlight: 'They Just Go Unnoticed.',
+    descHighlight: "If customers can't find you online, they can't choose you.",
+    descBody: 'We drive visibility and trust to bring you more customers.',
     image: '/cursole2.png',
     features: [
-      { icon: '🏥', label: 'Smart Care' },
-      { icon: '🛡️', label: 'Secure & Compliant' },
-      { icon: '🩺', label: 'Clinical Efficiency' }
+      { icon: '🔍', label: 'Get Seen' },
+      { icon: '🤝', label: 'Get Trusted' },
+      { icon: '👥', label: 'Get Customers' }
     ]
   },
   {
     id: 3,
-    badge: 'Creative Excellence',
-    title: 'Powering',
-    titleHighlight: 'IT Startups <br/>  FinTech',
-    description: 'Building scalable software, secure financial platforms, and innovative digital products that accelerate business growth.',
+    badge: '👉 Build Smarter. Grow Faster.',
+    title: 'Your Business Has',
+    titleHighlight: 'More Potential Than You Think.',
+    descHighlight: "Hard work alone isn't enough without the right systems.",
+    descBody: 'We accelerate your business using modern tech, automation, and visibility.',
     image: '/cursole3.png',
     features: [
-      { icon: '🎯', label: 'Strategy' },
-      { icon: '✨', label: 'Design' },
-      { icon: '⚙️', label: 'Development' }
+      { icon: '⚙️', label: 'Automation' },
+      { icon: '💻', label: 'Technology' },
+      { icon: '📊', label: 'Growth' }
     ]
   },
 ];
@@ -142,12 +146,18 @@ function Hero() {
                         {idx < arr.length - 1 && <br />}
                       </span>
                     ))}
-                  </span>
+                  </span>{' '}
+                  {heroSlides[currentSlide].titleBody}
                 </h1>
 
-                <p className="max-w-xl text-base sm:text-lg text-slate-200 leading-relaxed drop-shadow-md">
-                  {heroSlides[currentSlide].description}
-                </p>
+                <div className="max-w-2xl space-y-4">
+                  <p className="text-lg sm:text-xl md:text-2xl font-medium text-slate-100 leading-relaxed drop-shadow-md">
+                    {heroSlides[currentSlide].descHighlight}
+                  </p>
+                  <p className="text-sm sm:text-base text-slate-400 leading-relaxed drop-shadow-md border-l-2 border-primary-500/40 pl-4">
+                    {heroSlides[currentSlide].descBody}
+                  </p>
+                </div>
               </motion.div>
             </AnimatePresence>
 
@@ -156,7 +166,9 @@ function Hero() {
               <Link to="/contact" className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
                 Get Started
               </Link>
-
+              <Link to="/templates" className="order-2 md:order-none inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md">
+                View Templates
+              </Link>
               {/* Features - Dynamic but wrapper is stable */}
               <div className="order-3 md:order-none w-full md:w-auto mt-2 md:mt-0">
                 <AnimatePresence mode="wait">

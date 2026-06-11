@@ -74,10 +74,13 @@ export default function Tech() {
                 </p>
 
                <div className="flex flex-wrap justify-center gap-4 pt-4">
-                                  <Link to='/contact' className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-2xl hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
-                                     Discuss Your Project
-                                  </Link>
-                               </div>
+                  <Link to='/contact' className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-2xl hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
+                     Discuss Your Project
+                  </Link>
+                  <Link to="/templates" className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md">
+                     View Templates
+                  </Link>
+               </div>
              </motion.div>
          </div>
       </section>

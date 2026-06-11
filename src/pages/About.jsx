@@ -95,8 +95,11 @@ export default function About() {
                 We are a web development and digital solutions company built on a simple belief.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/contact" className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-fuchsia-500/40 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-fuchsia-400/60 hover:scale-105 active:scale-95">
-                Get Started
-              </Link>
+                  Get Started
+                </Link>
+                <Link to="/templates" className="order-2 md:order-none inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md">
+                  View Templates
+                </Link>
               </div>
             </div>
 

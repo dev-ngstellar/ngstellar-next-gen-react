@@ -53,10 +53,13 @@ export default function Careers() {
             <span className="block mt-2 md:mt-3">People Who Love Building Meaningful Digital Solutions.</span>
           </h1>
           
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
                 Get Started
-              </Link>
+            </Link>
+            <Link to="/templates" className="order-2 md:order-none inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md">
+                View Templates
+            </Link>
           </div>
         </motion.div>
       </section>
