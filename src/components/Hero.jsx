@@ -170,23 +170,13 @@ function Hero() {
                 View Templates
               </Link>
               {/* Features - Dynamic but wrapper is stable */}
-              <div className="order-3 md:order-none w-full md:w-auto mt-2 md:mt-0">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSlide}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="flex flex-nowrap items-center gap-3 md:gap-4 text-xs sm:text-sm text-slate-300"
-                  >
-                    {heroSlides[currentSlide].features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5">
-                        <span className="text-base md:text-lg">{feature.icon}</span>
-                        <span>{feature.label}</span>
-                      </div>
-                    ))}
-                  </motion.div>
-                </AnimatePresence>
+              <div className="flex flex-nowrap items-center gap-3 md:gap-4 text-xs sm:text-sm text-slate-300">
+                {heroSlides[currentSlide].features.map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-1.5">
+                    <span className="text-base md:text-lg">{feature.icon}</span>
+                    <span>{feature.label}</span>
+                  </div>
+                ))}
               </div>
 
               {/* Carousel Navigation Controls - Stable & High Z-Index */}

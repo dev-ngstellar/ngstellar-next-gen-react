@@ -159,6 +159,39 @@ export const templates = [
       { title: "Gallery Page", image: "/Templates Images/skylink residence/gallary.webp" },
       { title: "Contact Page", image: "/Templates Images/skylink residence/contact.webp" }
     ]
+  },
+  {
+    id: 11,
+    slug: "portfolio",
+    title: "Portfolio Template",
+    description: "A sleek, modern developer portfolio dashboard template with theme variations, interactive previews, and professional contact options.",
+    coverImage: "/Templates Images/Portfolio/Home.webp",
+    tags: ["React.js", "Responsive", "Modern UI"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Portfolio/Home.webp" },
+      { title: "Portfolio Page", image: "/Templates Images/Portfolio/Portfolio.webp" },
+      { title: "Dashboard Page", image: "/Templates Images/Portfolio/Developer Dashboard Preview.webp" },
+      { title: "Themes Page", image: "/Templates Images/Portfolio/Themes.webp" },
+      { title: "Contact Page", image: "/Templates Images/Portfolio/Contact.webp" }
+    ]
+  },
+  {
+    id: 12,
+    slug: "property-selling",
+    title: "Property Selling Template",
+    description: "A comprehensive real estate property showcase and agent listing platform designed for agency branding and lead generation.",
+    coverImage: "/Templates Images/Property Selling/Home.webp",
+    tags: ["React.js", "Responsive", "Modern UI"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Property Selling/Home.webp" },
+      { title: "About Page", image: "/Templates Images/Property Selling/About.webp" },
+      { title: "Properties Page", image: "/Templates Images/Property Selling/Properties.webp" },
+      { title: "Agents Page", image: "/Templates Images/Property Selling/Agents.webp" },
+      { title: "Projects Page", image: "/Templates Images/Property Selling/Projects.webp" },
+      { title: "Blog Page", image: "/Templates Images/Property Selling/Blog.webp" },
+      { title: "Contact Page", image: "/Templates Images/Property Selling/Contact.webp" }
+    ]
   }
 ];
+
 

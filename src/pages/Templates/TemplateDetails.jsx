@@ -21,6 +21,14 @@ const TemplateDetails = () => {
   const [isCustomizing, setIsCustomizing] = useState(false);
   const [isDemoMode, setIsDemoMode] = useState(false);
   const [demoActivePage, setDemoActivePage] = useState(0);
+  const [showScrollHint, setShowScrollHint] = useState(true);
+
+  // Reset scroll hint when demo opens or tab changes
+  useEffect(() => {
+    if (isDemoMode) {
+      setShowScrollHint(true);
+    }
+  }, [isDemoMode, demoActivePage]);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -132,7 +140,7 @@ const TemplateDetails = () => {
 
       <div className="relative min-h-screen bg-slate-950 text-white overflow-hidden">
         {/* Back Link */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
           <Link
             to="/templates"
             className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors group"
@@ -371,15 +379,28 @@ const TemplateDetails = () => {
                       className={`px-4 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${demoActivePage === index
                         ? 'bg-white/10 text-white border border-white/15'
                         : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
-                      }`}
+                        }`}
                     >
                       {page.title}
                     </button>
                   ))}
                 </div>
 
+                {/* Scroll Down Tip Banner */}
+                <div className="bg-slate-950/80 border-b border-white/5 px-6 py-2 text-center text-xs text-slate-400 flex items-center justify-center gap-2 flex-shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
+                  <span>Interactive Preview Mode: You can <b>scroll down</b> to view the full page layout of this site.</span>
+                </div>
+
                 {/* Simulated viewport (scrollable screenshot) */}
-                <div className="flex-1 overflow-y-auto bg-slate-950 p-6 flex justify-center items-start">
+                <div
+                  onScroll={(e) => {
+                    if (e.target.scrollTop > 30) {
+                      setShowScrollHint(false);
+                    }
+                  }}
+                  className="flex-1 overflow-y-auto bg-slate-950 p-6 flex justify-center items-start relative"
+                >
                   <div className="max-w-4xl w-full rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-slate-900/50">
                     <img
                       src={template.pages[demoActivePage].image}
@@ -387,6 +408,34 @@ const TemplateDetails = () => {
                       className="w-full h-auto"
                     />
                   </div>
+
+                  {/* Scroll Down Hint — floats inside the viewport, fades out on scroll */}
+                  <AnimatePresence>
+                    {showScrollHint && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.4 }}
+                        className="sticky bottom-6 left-0 right-0 flex justify-center pointer-events-none z-10"
+                      >
+                        <div className="flex items-center gap-2.5 bg-slate-900/95 backdrop-blur-md border border-white/10 rounded-full px-5 py-2.5 shadow-2xl">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse flex-shrink-0" />
+                          <span className="text-[11px] font-semibold text-slate-300 whitespace-nowrap">
+                            Scroll down to explore the full page
+                          </span>
+                          <motion.svg
+                            animate={{ y: [0, 3, 0] }}
+                            transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
+                            className="w-3.5 h-3.5 text-primary-400 flex-shrink-0"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                          </motion.svg>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {/* Simulated browser footer info */}

@@ -94,7 +94,7 @@ function Navbar() {
     <nav
       className={`fixed z-[999] left-0 right-0 mx-auto transition-all duration-500 ease-out border ${scrolled
         ? 'top-3 max-w-[92%] sm:max-w-[94%] md:max-w-[95%] lg:max-w-[96%] xl:max-w-7xl rounded-2xl bg-slate-950/75 border-white/10 shadow-2xl shadow-black/40 backdrop-blur-md'
-        : 'top-4 lg:top-6 max-w-[92%] sm:max-w-[94%] md:max-w-[95%] lg:max-w-7xl rounded-2xl lg:rounded-none bg-slate-950/75 lg:bg-transparent border-white/10 lg:border-transparent shadow-2xl lg:shadow-none backdrop-blur-md lg:backdrop-blur-none'
+        : 'top-4 lg:top-6 max-w-[92%] sm:max-w-[94%] md:max-w-[95%] lg:max-w-7xl rounded-2xl bg-slate-950/75 border-white/10 shadow-2xl backdrop-blur-md'
         }`}
     >
       {/* Frosted glass shine overlay - Water glass effect */}

@@ -5,7 +5,7 @@ const TemplateHero = ({ template, onDemoClick, onCustomizeClick }) => {
   const { title, description, coverImage, tags } = template;
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-10 pb-10 overflow-hidden">
       {/* Background gradients */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-[120px] -z-10 animate-blob" />
       <div className="absolute top-20 right-1/4 w-96 h-96 bg-secondary-500/10 rounded-full blur-[120px] -z-10 animate-blob [animation-delay:2s]" />
