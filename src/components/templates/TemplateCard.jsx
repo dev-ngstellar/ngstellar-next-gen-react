@@ -2,8 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+const categoryStyles = {
+  starter: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  standard: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+  growth: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+  professional: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+  custom: "bg-orange-500/10 text-orange-400 border-orange-500/20",
+};
+
+const categoryLabels = {
+  starter: "STARTER",
+  standard: "STANDARD",
+  growth: "GROWTH",
+  professional: "PROFESSIONAL",
+  custom: "CUSTOM",
+};
+
 const TemplateCard = ({ template }) => {
-  const { slug, title, description, coverImage, pages } = template;
+  const { slug, title, description, coverImage, pages, category = "standard" } = template;
 
   return (
     <motion.div
@@ -27,6 +43,11 @@ const TemplateCard = ({ template }) => {
         />
         {/* Dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
+
+        {/* Category badge */}
+        <div className={`absolute top-4 left-4 flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-bold tracking-wider backdrop-blur-md shadow-md ${categoryStyles[category] || categoryStyles.standard}`}>
+          {categoryLabels[category] || "STANDARD"}
+        </div>
 
         {/* Page count badge */}
         <div className="absolute top-4 right-4 flex items-center gap-1.5 rounded-full bg-slate-950/80 border border-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur-md shadow-md">

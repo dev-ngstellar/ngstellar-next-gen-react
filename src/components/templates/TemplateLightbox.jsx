@@ -2,6 +2,22 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const TemplateLightbox = ({ isOpen, currentIndex, pages, onClose, onPrev, onNext }) => {
+  const scrollContainerRef = React.useRef(null);
+  const [showScrollHint, setShowScrollHint] = React.useState(true);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+      setShowScrollHint(true);
+    }
+  }, [currentIndex]);
+
+  const handleScroll = (e) => {
+    if (e.target.scrollTop > 50) {
+      setShowScrollHint(false);
+    }
+  };
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -48,6 +64,28 @@ const TemplateLightbox = ({ isOpen, currentIndex, pages, onClose, onPrev, onNext
 
         {/* Content Area */}
         <div className="relative flex-1 flex items-center justify-center p-2 sm:p-4">
+          
+          <AnimatePresence>
+            {showScrollHint && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex items-center gap-2 bg-slate-950/90 border border-white/10 px-5 py-2.5 rounded-full backdrop-blur-md shadow-xl"
+              >
+                <span className="text-sm font-semibold text-slate-200">Scroll down to view full page</span>
+                <motion.svg 
+                  animate={{ y: [0, 4, 0] }} 
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                  className="w-4 h-4 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </motion.svg>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           {/* Prev Button */}
           <button
             onClick={onPrev}
@@ -60,7 +98,11 @@ const TemplateLightbox = ({ isOpen, currentIndex, pages, onClose, onPrev, onNext
           </button>
 
           {/* Main Image View */}
-          <div className="max-w-[90%] max-h-[75vh] md:max-h-[80vh] overflow-y-auto rounded-xl border border-white/10 shadow-2xl p-1 bg-slate-900/50">
+          <div 
+            ref={scrollContainerRef}
+            onScroll={handleScroll}
+            className="max-w-[90%] max-h-[75vh] md:max-h-[80vh] overflow-y-auto rounded-xl border border-white/10 shadow-2xl p-1 bg-slate-900/50"
+          >
             <motion.img
               key={currentIndex}
               initial={{ opacity: 0, scale: 0.95 }}

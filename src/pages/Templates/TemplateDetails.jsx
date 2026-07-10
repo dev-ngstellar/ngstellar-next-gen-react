@@ -36,7 +36,7 @@ const TemplateDetails = () => {
     email: '',
     requirements: '',
     timeline: '1-2 weeks',
-    budget: '$1,000 - $3,000'
+    budget: '₹2,500 - ₹15,000'
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -265,9 +265,9 @@ const TemplateDetails = () => {
                             onChange={handleFormChange}
                             className="w-full rounded-xl border border-white/10 bg-slate-950/50 p-3 text-sm text-white outline-none focus:border-primary-500 transition-colors"
                           >
-                            <option value="$1,000 - $3,000">$1k - $3k</option>
-                            <option value="$3,000 - $5,000">$3k - $5k</option>
-                            <option value="$5,000+">$5k+</option>
+                            <option value="₹2,500 - ₹15,000">₹2,500 - ₹15,000</option>
+                            <option value="₹15,000 - ₹30,000">₹15,000 - ₹30,000</option>
+                            <option value="₹30,000+">₹30,000+</option>
                           </select>
                         </div>
                       </div>

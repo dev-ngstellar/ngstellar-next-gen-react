@@ -2,6 +2,7 @@ export const templates = [
   {
     id: 1,
     slug: "construction",
+    category: "standard",
     title: "Construction Template",
     description: "A heavy-duty, modern design built specifically for construction companies, engineering firms, and infrastructure developers.",
     coverImage: "/Templates Images/Constructions/Home.webp",
@@ -19,6 +20,7 @@ export const templates = [
   {
     id: 2,
     slug: "healthcare",
+    category: "growth",
     title: "Healthcare Template",
     description: "Clean, professional, and trustworthy layout optimized for hospitals, private clinics, doctors, and medical research facilities.",
     coverImage: "/Templates Images/Healthcare/Home.webp",
@@ -37,6 +39,7 @@ export const templates = [
   {
     id: 3,
     slug: "textile",
+    category: "standard",
     title: "Textile Template",
     description: "Visually rich, elegant showcase optimized for fabric manufacturers, textile designers, fashion brands, and garment exporters.",
     coverImage: "/Templates Images/Textiles/Home.webp",
@@ -54,6 +57,7 @@ export const templates = [
   {
     id: 4,
     slug: "boutique",
+    category: "professional",
     title: "Boutique Template",
     description: "Sleek and minimalist ecommerce storefront styled for luxury boutiques, apparel houses, jewelry stores, and retail fashion brands.",
     coverImage: "/Templates Images/urban vouage/home.webp",
@@ -70,6 +74,7 @@ export const templates = [
   {
     id: 5,
     slug: "school",
+    category: "growth",
     title: "School Template",
     description: "Inviting, secure, and user-friendly experience designed for K-12 schools, academic academies, colleges, and learning centers.",
     coverImage: "/Templates Images/smartkids school/home.webp",
@@ -85,6 +90,7 @@ export const templates = [
   {
     id: 6,
     slug: "consultancy",
+    category: "standard",
     title: "Consultancy Template",
     description: "High-end corporate portfolio crafted for financial advisors, business consultancy firms, agencies, and independent strategists.",
     coverImage: "/Templates Images/corporate edge/home.webp",
@@ -100,6 +106,7 @@ export const templates = [
   {
     id: 7,
     slug: "food-craft",
+    category: "standard",
     title: "Food Craft Template",
     description: "A delicious and inviting design tailor-made for premium restaurants, culinary experts, cafes, and bistros.",
     coverImage: "/Templates Images/food craft/home.webp",
@@ -116,6 +123,7 @@ export const templates = [
   {
     id: 8,
     slug: "medcare",
+    category: "standard",
     title: "Medcare Template",
     description: "A clean and modern alternative medical layout designed for quick appointments, clinics, and doctor showcases.",
     coverImage: "/Templates Images/medcare/home.webp",
@@ -131,6 +139,7 @@ export const templates = [
   {
     id: 9,
     slug: "royal-stay",
+    category: "professional",
     title: "Royal Stay Template",
     description: "A luxurious, highly responsive hotel and hospitality template built for boutique hotels, resorts, and premium accommodations.",
     coverImage: "/Templates Images/royal stay/home.webp",
@@ -145,6 +154,7 @@ export const templates = [
   {
     id: 10,
     slug: "skylink-residence",
+    category: "standard",
     title: "Skylink Residence Template",
     description: "A premium real estate landing page with dynamic floor plans, structural details, and contact options for modern property developers.",
     coverImage: "/Templates Images/skylink residence/home.webp",
@@ -163,21 +173,21 @@ export const templates = [
   {
     id: 11,
     slug: "portfolio",
+    category: "starter",
     title: "Portfolio Template",
-    description: "A sleek, modern developer portfolio dashboard template with theme variations, interactive previews, and professional contact options.",
-    coverImage: "/Templates Images/Portfolio/Home.webp",
+    description: "A clean, professional 3-page developer portfolio designed to showcase your skills, experience, and projects effectively.",
+    coverImage: "/Templates Images/Portfolio-new/Home.png",
     tags: ["React.js", "Responsive", "Modern UI"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Portfolio/Home.webp" },
-      { title: "Portfolio Page", image: "/Templates Images/Portfolio/Portfolio.webp" },
-      { title: "Dashboard Page", image: "/Templates Images/Portfolio/Developer Dashboard Preview.webp" },
-      { title: "Themes Page", image: "/Templates Images/Portfolio/Themes.webp" },
-      { title: "Contact Page", image: "/Templates Images/Portfolio/Contact.webp" }
+      { title: "Home Page", image: "/Templates Images/Portfolio-new/Home.png" },
+      { title: "About Page", image: "/Templates Images/Portfolio-new/About.png" },
+      { title: "Contact Page", image: "/Templates Images/Portfolio-new/Contact.png" }
     ]
   },
   {
     id: 12,
     slug: "property-selling",
+    category: "growth",
     title: "Property Selling Template",
     description: "A comprehensive real estate property showcase and agent listing platform designed for agency branding and lead generation.",
     coverImage: "/Templates Images/Property Selling/Home.webp",
