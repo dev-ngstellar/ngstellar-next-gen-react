@@ -186,6 +186,20 @@ export const templates = [
   },
   {
     id: 12,
+    slug: "photography",
+    category: "starter",
+    title: "Photography Template",
+    description: "An elegant, highly visual portfolio designed for professional photographers, studios, and visual artists.",
+    coverImage: "/Templates Images/Photography/Home.webp",
+    tags: ["React.js", "Responsive", "Modern UI"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Photography/Home.webp" },
+      { title: "Gallery Page", image: "/Templates Images/Photography/Gallery.webp" },
+      { title: "Contact Page", image: "/Templates Images/Photography/Contact.webp" }
+    ]
+  },
+  {
+    id: 13,
     slug: "portfolio",
     category: "starter",
     title: "Portfolio Template",
@@ -199,7 +213,7 @@ export const templates = [
     ]
   },
   {
-    id: 13,
+    id: 14,
     slug: "property-selling",
     category: "growth",
     title: "Property Selling Template",
