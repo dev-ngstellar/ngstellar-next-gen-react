@@ -229,6 +229,97 @@ export const templates = [
       { title: "Blog Page", image: "/Templates Images/Property Selling/Blog.webp" },
       { title: "Contact Page", image: "/Templates Images/Property Selling/Contact.webp" }
     ]
+  },
+  {
+    id: 15,
+    slug: "crm-system",
+    category: "custom",
+    title: "CRM System Template",
+    description: "A comprehensive Custom Relationship Management dashboard with leads, opportunities, and user management.",
+    coverImage: "/Templates Images/CRM/dashboard.webp",
+    tags: ["Next.js", "Dashboard", "Admin Portal"],
+    pages: [
+      { title: "Dashboard", image: "/Templates Images/CRM/dashboard.webp" },
+      { title: "Leads", image: "/Templates Images/CRM/leads.webp" },
+      { title: "Opportunity", image: "/Templates Images/CRM/Opportunity.webp" },
+      { title: "Customer", image: "/Templates Images/CRM/customer.webp" },
+      { title: "Quotation", image: "/Templates Images/CRM/Quotation.webp" },
+      { title: "Follow-up", image: "/Templates Images/CRM/follow-up.webp" },
+      { title: "Project", image: "/Templates Images/CRM/Project.webp" },
+      { title: "Users", image: "/Templates Images/CRM/Users.webp" },
+      { title: "Roles", image: "/Templates Images/CRM/roles.webp" }
+    ]
+  },
+  {
+    id: 16,
+    slug: "drug-awareness",
+    category: "custom",
+    title: "Drug Awareness Campaign",
+    description: "A highly impactful awareness campaign website with modern UI, educational resources, and a gallery.",
+    coverImage: "/Templates Images/DrugAwarness/home.webp",
+    tags: ["React.js", "Awareness", "Modern UI"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/DrugAwarness/home.webp" },
+      { title: "About Page", image: "/Templates Images/DrugAwarness/about.webp" },
+      { title: "Gallery Page", image: "/Templates Images/DrugAwarness/gallery.webp" }
+    ]
+  },
+  {
+    id: 17,
+    slug: "stellar-solutions",
+    category: "custom",
+    title: "Stellar Solutions",
+    description: "A premium business website designed and developed using React.js with modern UI, responsive layouts, smooth animations, SEO optimization, and scalable architecture.",
+    coverImage: "/Templates Images/Stellar/Home.webp",
+    tags: ["React.js", "Production Ready", "SEO Ready"],
+    pages: [
+      { title: "Home", image: "/Templates Images/Stellar/Home.webp" },
+      { title: "Services", image: "/Templates Images/Stellar/Services.webp" },
+      { title: "Industries", image: "/Templates Images/Stellar/Industries.webp" },
+      { title: "About", image: "/Templates Images/Stellar/About.webp" },
+      { title: "Blog", image: "/Templates Images/Stellar/Blog.webp" },
+      { title: "Contact", image: "/Templates Images/Stellar/Contact.webp" }
+    ]
+  },
+  {
+    id: 18,
+    slug: "shasta",
+    category: "custom",
+    title: "Shasta Car Detailing",
+    description: "A high-end, visually striking platform tailored for professional car detailing services. Designed to showcase premium automotive care packages, client testimonials, and seamless booking integration.",
+    coverImage: "/Templates Images/shasta/home.webp",
+    tags: ["React.js", "Car Detailing", "Premium Service"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/shasta/home.webp" }
+    ]
+  },
+  {
+    id: 19,
+    slug: "sconstructions",
+    category: "custom",
+    title: "Sconstructions Portal",
+    description: "A robust construction company portfolio and project management template highlighting structural capabilities.",
+    coverImage: "/Templates Images/Sconstructions/Home.webp",
+    tags: ["React.js", "Portfolio", "Business Portal"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Sconstructions/Home.webp" },
+      { title: "About Page", image: "/Templates Images/Sconstructions/About.webp" },
+      { title: "Projects Page", image: "/Templates Images/Sconstructions/Projects.webp" },
+      { title: "Clients Page", image: "/Templates Images/Sconstructions/Clients.webp" },
+      { title: "Contact Page", image: "/Templates Images/Sconstructions/Contact.webp" }
+    ]
+  },
+  {
+    id: 20,
+    slug: "business-portfolio",
+    category: "custom",
+    title: "Portfolio",
+    description: "A clean, modern portfolio template designed to beautifully showcase your skills, projects, and professional experience.",
+    coverImage: "/Templates Images/Gokul Portfolio/Home.webp",
+    tags: ["React.js", "Portfolio", "Animations"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Gokul Portfolio/Home.webp" }
+    ]
   }
 ];
 

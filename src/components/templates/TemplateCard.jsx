@@ -19,7 +19,7 @@ const categoryLabels = {
 };
 
 const TemplateCard = ({ template }) => {
-  const { slug, title, description, coverImage, pages, category = "standard" } = template;
+  const { slug, title, description, coverImage, pages, tags = [], category = "standard" } = template;
 
   return (
     <motion.div
@@ -70,24 +70,28 @@ const TemplateCard = ({ template }) => {
 
         {/* Badges and tags */}
         <div className="flex flex-wrap gap-2 mb-6">
-          <span className="inline-flex items-center gap-1 rounded-md bg-primary-500/10 border border-primary-500/20 px-2 py-0.5 text-xs font-semibold text-primary-300">
-            <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.66 14.16c-.34.33-.76.54-1.26.63-.5.09-1.02.04-1.5-.16-.48-.2-1.04-.63-1.68-1.28L8 14.16V17H6V7h2v5.84l4.28-4.28c.64-.64 1.2-1.07 1.68-1.27.48-.2 1-.25 1.5-.16.5.09.92.3 1.26.63.34.33.55.76.64 1.27.09.5.04 1.02-.16 1.5-.2.48-.63 1.04-1.28 1.68l-3.34 3.34 3.34 3.34c.65.64 1.08 1.2 1.28 1.68.2.48.25 1 .16 1.5-.09.51-.3.94-.64 1.27z" />
-            </svg>
-            React.js
-          </span>
-          <span className="inline-flex items-center gap-1 rounded-md bg-secondary-500/10 border border-secondary-500/20 px-2 py-0.5 text-xs font-semibold text-secondary-300">
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-            Responsive
-          </span>
-          <span className="inline-flex items-center gap-1 rounded-md bg-accent-500/10 border border-accent-500/20 px-2 py-0.5 text-xs font-semibold text-accent-300">
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-            </svg>
-            Modern UI
-          </span>
+          {tags.map((tag, idx) => {
+            const styles = [
+              "bg-primary-500/10 border-primary-500/20 text-primary-300",
+              "bg-secondary-500/10 border-secondary-500/20 text-secondary-300",
+              "bg-accent-500/10 border-accent-500/20 text-accent-300",
+            ];
+            const activeStyle = styles[idx % styles.length];
+
+            const icons = [
+              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.66 14.16c-.34.33-.76.54-1.26.63-.5.09-1.02.04-1.5-.16-.48-.2-1.04-.63-1.68-1.28L8 14.16V17H6V7h2v5.84l4.28-4.28c.64-.64 1.2-1.07 1.68-1.27.48-.2 1-.25 1.5-.16.5.09.92.3 1.26.63.34.33.55.76.64 1.27.09.5.04 1.02-.16 1.5-.2.48-.63 1.04-1.28 1.68l-3.34 3.34 3.34 3.34c.65.64 1.08 1.2 1.28 1.68.2.48.25 1 .16 1.5-.09.51-.3.94-.64 1.27z" /></svg>,
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>,
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+            ];
+            const activeIcon = icons[idx % icons.length];
+
+            return (
+              <span key={idx} className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs font-semibold ${activeStyle}`}>
+                {activeIcon}
+                {tag}
+              </span>
+            );
+          })}
         </div>
 
         {/* View Details Link */}

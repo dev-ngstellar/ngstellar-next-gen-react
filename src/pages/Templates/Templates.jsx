@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { templates } from '../../data/templatesData.js';
 import TemplateCard from '../../components/templates/TemplateCard.jsx';
-import { Link } from 'react-router-dom';
+import FeaturedLiveWebsite from '../../components/templates/FeaturedLiveWebsite.jsx';
+import { Link, useLocation } from 'react-router-dom';
 
 const categories = [
   { id: 'all', label: 'All Templates' },
@@ -49,7 +50,9 @@ const categoryInfo = {
 };
 
 const Templates = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const location = useLocation();
+  const initialCategory = location.state?.category || 'all';
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
 
   const filteredTemplates = activeCategory === 'all'
     ? templates
@@ -175,52 +178,11 @@ const Templates = () => {
         </AnimatePresence>
 
         {/* Main Content Area */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div id="templates-collection" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <AnimatePresence mode="wait">
-            {activeCategory === 'custom' ? (
-              <motion.div
-                key="customized-cta"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-                className="w-full"
-              >
-                <div className="rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-transparent to-secondary-900/20 pointer-events-none" />
 
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10">
-                    CUSTOMIZED SOLUTIONS
-                  </h2>
-                  <p className="text-xl text-primary-400 mb-6 font-medium relative z-10">
-                    Have something unique in mind?
-                  </p>
-                  <p className="text-slate-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto relative z-10">
-                    From SaaS platforms and admin dashboards to booking systems, marketplaces and custom business portals — we design solutions around your exact requirements.
-                  </p>
 
-                  <div className="flex flex-wrap justify-center gap-3 mb-10 relative z-10">
-                    {['Custom UI/UX', 'Admin Portals', 'SaaS Platforms', 'API Integrations', 'Booking Systems', 'Business Automation', 'Custom Enterprise Solution', 'AI SaaS Platform', 'CRM + ERP', 'Marketplace', 'Mobile App + Website', 'Any Custom Requirement'].map((chip, idx) => (
-                      <span key={idx} className="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm font-medium">
-                        {chip}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-secondary-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-                    >
-                      Discuss Your Project
-                      <svg className="ml-2 -mr-1 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ) : filteredTemplates.length > 0 ? (
+            {filteredTemplates.length > 0 ? (
               <motion.div
                 key="template-grid"
                 initial={{ opacity: 0 }}
@@ -247,6 +209,50 @@ const Templates = () => {
               </motion.div>
             )}
           </AnimatePresence>
+          {activeCategory === 'custom' && (
+            <motion.div
+              key="customized-cta"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="w-full my-12"
+            >
+              <div className="rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-transparent to-secondary-900/20 pointer-events-none" />
+
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10">
+                  CUSTOMIZED SOLUTIONS
+                </h2>
+                <p className="text-xl text-primary-400 mb-6 font-medium relative z-10">
+                  Have something unique in mind?
+                </p>
+                <p className="text-slate-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto relative z-10">
+                  From SaaS platforms and admin dashboards to booking systems, marketplaces and custom business portals — we design solutions around your exact requirements.
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-3 mb-10 relative z-10">
+                  {['Custom UI/UX', 'Admin Portals', 'SaaS Platforms', 'API Integrations', 'Booking Systems', 'Business Automation', 'Custom Enterprise Solution', 'AI SaaS Platform', 'CRM + ERP', 'Marketplace', 'Mobile App + Website', 'Any Custom Requirement'].map((chip, idx) => (
+                    <span key={idx} className="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm font-medium">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-secondary-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    Discuss Your Project
+                    <svg className="ml-2 -mr-1 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
     </>
