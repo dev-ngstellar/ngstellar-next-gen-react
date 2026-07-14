@@ -172,6 +172,20 @@ export const templates = [
   },
   {
     id: 11,
+    slug: "freelancer",
+    category: "starter",
+    title: "Freelancer Template",
+    description: "A premium, creative portfolio template crafted for independent freelancers, designers, and creatives.",
+    coverImage: "/Templates Images/Freelancer/Home.webp",
+    tags: ["React.js", "Responsive", "Modern UI"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Freelancer/Home.webp" },
+      { title: "About Page", image: "/Templates Images/Freelancer/About.webp" },
+      { title: "Contact Page", image: "/Templates Images/Freelancer/Contact.webp" }
+    ]
+  },
+  {
+    id: 12,
     slug: "portfolio",
     category: "starter",
     title: "Portfolio Template",
@@ -185,7 +199,7 @@ export const templates = [
     ]
   },
   {
-    id: 12,
+    id: 13,
     slug: "property-selling",
     category: "growth",
     title: "Property Selling Template",
