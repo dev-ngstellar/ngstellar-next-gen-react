@@ -176,12 +176,12 @@ export const templates = [
     category: "starter",
     title: "Portfolio Template",
     description: "A clean, professional 3-page developer portfolio designed to showcase your skills, experience, and projects effectively.",
-    coverImage: "/Templates Images/Portfolio-new/Home.png",
+    coverImage: "/Templates Images/Portfolio-new/Home.webp",
     tags: ["React.js", "Responsive", "Modern UI"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Portfolio-new/Home.png" },
-      { title: "About Page", image: "/Templates Images/Portfolio-new/About.png" },
-      { title: "Contact Page", image: "/Templates Images/Portfolio-new/Contact.png" }
+      { title: "Home Page", image: "/Templates Images/Portfolio-new/Home.webp" },
+      { title: "About Page", image: "/Templates Images/Portfolio-new/About.webp" },
+      { title: "Contact Page", image: "/Templates Images/Portfolio-new/Contact.webp" }
     ]
   },
   {
