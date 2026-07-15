@@ -2,7 +2,7 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const dir = path.join(__dirname, 'public/Templates Images/Gokul Portfolio');
+const dir = path.join(__dirname, 'public/Templates Images/nithyagokul');
 
 fs.readdirSync(dir).forEach(file => {
     if (file.endsWith('.png') || file.endsWith('.jpg')) {

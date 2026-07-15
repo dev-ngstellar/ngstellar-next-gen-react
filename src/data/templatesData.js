@@ -320,7 +320,21 @@ export const templates = [
     pages: [
       { title: "Home Page", image: "/Templates Images/Gokul Portfolio/Home.webp" }
     ]
+  },
+  {
+    id: 21,
+    slug: "nithyagokul",
+    category: "custom",
+    title: "Nithyagokul",
+    description: "A custom portfolio template with modern design and animations.",
+    coverImage: "/Templates Images/nithyagokul/Home.webp",
+    tags: ["React.js", "Custom", "Portfolio"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/nithyagokul/Home.webp" },
+      { title: "About Page", image: "/Templates Images/nithyagokul/About.webp" },
+      { title: "Services Page", image: "/Templates Images/nithyagokul/Services.webp" },
+      { title: "Blog Page", image: "/Templates Images/nithyagokul/Blog.webp" },
+      { title: "Contact Page", image: "/Templates Images/nithyagokul/Contact us.webp" }
+    ]
   }
 ];
-
-
