@@ -232,7 +232,7 @@ const Templates = () => {
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3 mb-10 relative z-10">
-                  {['Custom UI/UX', 'Admin Portals', 'SaaS Platforms', 'API Integrations', 'Booking Systems', 'Business Automation', 'Custom Enterprise Solution', 'AI SaaS Platform', 'CRM + ERP', 'Marketplace', 'Mobile App + Website', 'Any Custom Requirement'].map((chip, idx) => (
+                  {['Custom UI/UX', 'Admin Portals', 'SaaS Platforms', 'API Integrations', 'Booking Systems', 'Business Automation', 'Custom Enterprise Solution', 'AI SaaS Platform', 'CRM + ERP', 'Marketplace', 'Mobile App + Website', 'WordPress Site', 'Any Custom Requirement'].map((chip, idx) => (
                     <span key={idx} className="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm font-medium">
                       {chip}
                     </span>
