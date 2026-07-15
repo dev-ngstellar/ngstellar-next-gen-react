@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
-import FaqChatbot from './components/FaqChatbot.jsx';
+const FaqChatbot = lazy(() => import('./components/FaqChatbot.jsx'));
 import { Helmet } from "react-helmet-async";
 
 // Eagerly loaded (home is the first page seen)
@@ -88,7 +88,9 @@ function App() {
         </main>
         <Footer />
       </div>
-      <FaqChatbot />
+      <Suspense fallback={null}>
+        <FaqChatbot />
+      </Suspense>
     </BrowserRouter>
   );
 }

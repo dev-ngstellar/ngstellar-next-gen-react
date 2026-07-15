@@ -134,6 +134,7 @@ function Testimonials() {
                                     <img
                                         src={testimonials[currentIndex].image}
                                         alt={testimonials[currentIndex].name}
+                                        loading="lazy"
                                         className="relative w-20 h-20 rounded-full border-4 border-white/20 object-cover"
                                     />
                                 </div>

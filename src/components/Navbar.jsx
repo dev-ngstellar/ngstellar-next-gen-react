@@ -129,7 +129,7 @@ function Navbar() {
           <div className="relative">
             <div className="absolute -inset-2 rounded-full"></div>
             <picture>
-              <source srcSet="/ng_logo_white.png" type="image/webp" />
+              <source srcSet="/ng_logo_white.png" />
               <img
                 src='/ng_logo_white.png'
                 alt="Next Gen Stellar"
@@ -138,6 +138,7 @@ function Navbar() {
                 loading="eager"
                 decoding="async"
                 className="relative h-10 w-auto md:h-12 transition-all duration-300"
+                style={{ aspectRatio: '400/74' }}
               />
             </picture>
           </div>
