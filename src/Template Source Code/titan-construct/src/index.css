@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #F59E0B;
+  --secondary: #0F172A;
+  --background: #FFFFFF;
+  --accent: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #0F172A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Custom button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #F59E0B;
+  color: #0F172A;
+  border: 1px solid #F59E0B;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #F59E0B;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+}
+
+.btn-secondary:hover {
+  border-color: #F59E0B;
+  color: #F59E0B;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}

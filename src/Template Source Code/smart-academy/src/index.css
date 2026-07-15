@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+  --color-secondary: #f59e0b;
+  --color-secondary-hover: #d97706;
+  --color-accent: #22c55e;
+  --color-accent-hover: #16a34a;
+  --color-accent2: #ec4899;
+  --color-accent2-hover: #db2777;
+
+  /* Remap slate tokens to match child friendly styles */
+  --color-slate-50: #fff8e7;     /* Background: #FFF8E7 */
+  --color-slate-100: #fef1cf;    /* Borders */
+  --color-slate-200: #fde29d;    /* Selected borders */
+  --color-slate-900: #1f2937;    /* Text Primary */
+  --color-slate-950: #111827;    /* Text Primary Dark */
+}
+
+/* Force body background and text primary colors */
+body {
+  background-color: #fff8e7 !important;
+  color: #1f2937 !important;
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff8e7;
+}
+::-webkit-scrollbar-thumb {
+  background: #fde29d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Page transition entry fade */
+.animate-page-enter {
+  animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom luxury wellness shadows */
+.edu-card-shadow {
+  box-shadow: 0px 4px 20px -2px rgba(124, 58, 237, 0.05), 0px 10px 30px -4px rgba(245, 158, 11, 0.03);
+}
+.edu-card-shadow-hover:hover {
+  box-shadow: 0px 10px 25px -5px rgba(124, 58, 237, 0.1), 0px 8px 16px -6px rgba(245, 158, 11, 0.08);
+}
+
+/* Playful Animations */
+.animate-float-cloud {
+  animation: floatCloud 6s ease-in-out infinite alternate;
+}
+.animate-float-balloon {
+  animation: floatBalloon 5s ease-in-out infinite alternate;
+}
+.animate-float-star {
+  animation: floatStar 4s ease-in-out infinite;
+}
+.animate-shake-bus {
+  animation: shakeBus 3s ease-in-out infinite;
+}
+
+@keyframes floatCloud {
+  0% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(-8px) translateX(12px); }
+}
+
+@keyframes floatBalloon {
+  0% { transform: translateY(0px) rotate(-2deg); }
+  100% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes floatStar {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes shakeBus {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-2px) rotate(1deg); }
+}

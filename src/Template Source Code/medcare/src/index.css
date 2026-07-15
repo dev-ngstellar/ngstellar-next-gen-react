@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+
+  /* Luxury Wellness Color Palette Remapping */
+  --color-primary: #166534;
+  --color-primary-hover: #14532d;
+  --color-secondary: #d4a373;
+  --color-secondary-hover: #c8955d;
+
+  /* Map default tailwind utility colors used in components to the luxury color scheme */
+  --color-sky-50: #f0fdf4;       /* Primary light tint */
+  --color-sky-100: #dcfce7;      /* Primary light border */
+  --color-sky-500: #166534;      /* Primary (Emerald Green) */
+  --color-sky-600: #14532d;      /* Primary Hover (Darker Emerald) */
+  
+  --color-emerald-50: #fcf9f5;   /* Secondary light tint */
+  --color-emerald-100: #fef3c7;  /* Secondary light border */
+  --color-emerald-500: #d4a373;  /* Secondary (Luxury Gold) */
+  --color-emerald-600: #c8955d;  /* Secondary Hover */
+  
+  --color-slate-50: #fafaf8;     /* Background: #FAFAF8 */
+  --color-slate-100: #f1f3f1;    /* Light borders */
+  --color-slate-400: #6b7280;    /* Text Secondary */
+  --color-slate-500: #6b7280;    /* Text Secondary */
+  --color-slate-800: #374151;    /* Dark slate */
+  --color-slate-900: #1f2937;    /* Text Primary */
+  --color-slate-950: #111827;    /* Text Primary Dark */
+}
+
+/* Force body background and text primary colors */
+body {
+  background-color: #fafaf8 !important;
+  color: #1f2937 !important;
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fafaf8;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Page transition entry fade */
+.animate-page-enter {
+  animation: pageFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom luxury wellness shadows */
+.med-card-shadow {
+  box-shadow: 0px 4px 20px -2px rgba(22, 101, 52, 0.03), 0px 10px 30px -4px rgba(212, 163, 115, 0.05);
+}
+.med-card-shadow-hover:hover {
+  box-shadow: 0px 10px 25px -5px rgba(22, 101, 52, 0.06), 0px 8px 16px -6px rgba(212, 163, 115, 0.08);
+}
