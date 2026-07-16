@@ -316,7 +316,7 @@ export const templates = [
     title: "Portfolio",
     description: "A clean, modern portfolio template designed to beautifully showcase your skills, projects, and professional experience.",
     coverImage: "/Templates Images/Gokul Portfolio/Home.webp",
-    tags: ["React.js", "Portfolio", "Animations"],
+    tags: ["React.js", "Portfolio", "Business"],
     pages: [
       { title: "Home Page", image: "/Templates Images/Gokul Portfolio/Home.webp" }
     ]
@@ -328,7 +328,7 @@ export const templates = [
     title: "Nithyagokul",
     description: "A custom portfolio template with modern design and animations.",
     coverImage: "/Templates Images/nithyagokul/Home.webp",
-    tags: ["React.js", "Custom", "Portfolio"],
+    tags: ["React.js", "Custom", "Business Portal"],
     pages: [
       { title: "Home Page", image: "/Templates Images/nithyagokul/Home.webp" },
       { title: "About Page", image: "/Templates Images/nithyagokul/About.webp" },
