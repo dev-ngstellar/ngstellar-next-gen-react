@@ -336,5 +336,19 @@ export const templates = [
       { title: "Blog Page", image: "/Templates Images/nithyagokul/Blog.webp" },
       { title: "Contact Page", image: "/Templates Images/nithyagokul/Contact us.webp" }
     ]
+  },
+  {
+    id: 22,
+    slug: "startup-landing-page",
+    category: "starter",
+    title: "Startup Landing Page",
+    description: "A premium modern SaaS startup landing page template designed for high conversion.",
+    coverImage: "/Templates Images/Startup Landing Page/Home.webp",
+    tags: ["React.js", "SaaS", "Premium"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Startup Landing Page/Home.webp" },
+      { title: "Features Page", image: "/Templates Images/Startup Landing Page/Features.webp" },
+      { title: "Contact Page", image: "/Templates Images/Startup Landing Page/Contact.webp" }
+    ]
   }
 ];
