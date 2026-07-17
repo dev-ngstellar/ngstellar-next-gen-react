@@ -153,7 +153,7 @@ const Checkout = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-page-enter">
+    <div className="global-container py-12 animate-page-enter">
       
       {/* Page Header */}
       <div className="border-b border-gray-100 pb-8 mb-10">

@@ -16,7 +16,7 @@ const Hero = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white flex flex-col items-center">
+      <div className="relative z-10 global-container text-center text-white flex flex-col items-center">
         
         {/* Editorial Subheading */}
         <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] font-light mb-4 sm:mb-6 animate-[slide-down_1s_cubic-bezier(0.16,1,0.3,1)]">

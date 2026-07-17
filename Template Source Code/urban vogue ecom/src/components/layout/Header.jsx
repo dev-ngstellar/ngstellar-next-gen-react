@@ -67,7 +67,7 @@ const Header = () => {
             : 'bg-white py-6 border-b border-gray-100'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="global-container flex items-center justify-between">
           
           {/* Mobile menu trigger */}
           <button

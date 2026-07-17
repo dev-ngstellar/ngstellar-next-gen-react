@@ -1,0 +1,737 @@
+/* ============================================================
+   GLOBAL CSS – EliteFit Template
+   Premium Personal Trainer & Fitness Coach
+   ============================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-family-display: 'Outfit', sans-serif;
+  --font-family-sans: 'Inter', sans-serif;
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delay: float 6s ease-in-out 2s infinite;
+  --animate-float-delay2: float 6s ease-in-out 4s infinite;
+  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
+  --animate-marquee: marquee 35s linear infinite;
+  --animate-aurora: aurora 12s ease infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+/* ============================================================
+   THEME 1: Violet + Dark (Default)
+   ============================================================ */
+:root {
+  /* Primary accent — changing ONLY this updates everything */
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --primary-rgb: 99, 102, 241;
+
+  /* Background & surfaces */
+  --secondary: #080b10;
+  --secondary-alt: #0d1117;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.07);
+  --surface-3: rgba(255, 255, 255, 0.1);
+
+  /* Accent */
+  --accent: #fbbf24;
+  --accent-light: #fde68a;
+
+  /* Text */
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+
+  /* Glow */
+  --glow: rgba(99, 102, 241, 0.45);
+  --glow-soft: rgba(99, 102, 241, 0.15);
+  --glow-accent: rgba(251, 191, 36, 0.3);
+
+  /* Aurora colors */
+  --aurora-1: rgba(99, 102, 241, 0.18);
+  --aurora-2: rgba(168, 85, 247, 0.12);
+  --aurora-3: rgba(59, 130, 246, 0.10);
+
+  /* Mode */
+  color-scheme: dark;
+}
+
+/* ============================================================
+   THEME 2: Rose
+   ============================================================ */
+[data-color="rose"] {
+  --primary: #f43f5e;
+  --primary-light: #fb7185;
+  --primary-dark: #e11d48;
+  --primary-rgb: 244, 63, 94;
+  --glow: rgba(244, 63, 94, 0.45);
+  --glow-soft: rgba(244, 63, 94, 0.15);
+  --aurora-1: rgba(244, 63, 94, 0.18);
+  --aurora-2: rgba(251, 113, 133, 0.12);
+  --aurora-3: rgba(225, 29, 72, 0.10);
+}
+
+/* ============================================================
+   THEME 3: Emerald
+   ============================================================ */
+[data-color="emerald"] {
+  --primary: #10b981;
+  --primary-light: #34d399;
+  --primary-dark: #059669;
+  --primary-rgb: 16, 185, 129;
+  --glow: rgba(16, 185, 129, 0.45);
+  --glow-soft: rgba(16, 185, 129, 0.15);
+  --aurora-1: rgba(16, 185, 129, 0.18);
+  --aurora-2: rgba(52, 211, 153, 0.12);
+  --aurora-3: rgba(5, 150, 105, 0.10);
+}
+
+/* ============================================================
+   THEME 4: Amber
+   ============================================================ */
+[data-color="amber"] {
+  --primary: #f59e0b;
+  --primary-light: #fbbf24;
+  --primary-dark: #d97706;
+  --primary-rgb: 245, 158, 11;
+  --glow: rgba(245, 158, 11, 0.45);
+  --glow-soft: rgba(245, 158, 11, 0.15);
+  --aurora-1: rgba(245, 158, 11, 0.18);
+  --aurora-2: rgba(251, 191, 36, 0.12);
+  --aurora-3: rgba(217, 119, 6, 0.10);
+}
+
+/* ============================================================
+   THEME 5: Ocean
+   ============================================================ */
+[data-color="ocean"] {
+  --primary: #0ea5e9;
+  --primary-light: #38bdf8;
+  --primary-dark: #0284c7;
+  --primary-rgb: 14, 165, 233;
+  --glow: rgba(14, 165, 233, 0.45);
+  --glow-soft: rgba(14, 165, 233, 0.15);
+  --aurora-1: rgba(14, 165, 233, 0.18);
+  --aurora-2: rgba(56, 189, 248, 0.12);
+  --aurora-3: rgba(2, 132, 199, 0.10);
+}
+
+/* ============================================================
+   LIGHT MODE
+   ============================================================ */
+[data-mode="light"] {
+  --secondary: #f8fafc;
+  --secondary-alt: #f1f5f9;
+  --surface: rgba(0, 0, 0, 0.04);
+  --surface-2: rgba(0, 0, 0, 0.07);
+  --surface-3: rgba(0, 0, 0, 0.10);
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.16);
+  color-scheme: light;
+}
+
+/* ============================================================
+   BASE RESET & BODY
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--secondary);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--glow);
+  color: white;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-white {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   GLASSMORPHISM
+   ============================================================ */
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+.glass-2 {
+  background: var(--surface-2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+}
+
+.glass-strong {
+  background: var(--surface-3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-dark {
+  background: rgba(8, 11, 16, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+}
+
+/* ============================================================
+   GLOW EFFECTS
+   ============================================================ */
+.glow {
+  box-shadow: 0 0 24px var(--glow);
+}
+
+.glow-sm {
+  box-shadow: 0 0 12px var(--glow-soft);
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 32px var(--glow), 0 0 64px var(--glow-soft);
+  transition: box-shadow 0.4s ease;
+}
+
+.text-glow {
+  text-shadow: 0 0 24px var(--glow);
+}
+
+.border-glow {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 1px var(--glow-soft), inset 0 0 0 1px var(--glow-soft);
+}
+
+/* ============================================================
+   GRADIENT BORDER (animated on hover)
+   ============================================================ */
+.gradient-border {
+  position: relative;
+  background: var(--surface);
+  border-radius: 16px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--primary), transparent, var(--accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 32px var(--glow), 0 0 0 1px var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.btn-primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: 1px solid var(--border-hover);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  background: var(--glow-soft);
+  box-shadow: 0 0 24px var(--glow-soft);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.section-padding {
+  padding: 120px 0;
+}
+
+.section-padding-sm {
+  padding: 64px 0;
+}
+
+.container-custom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ============================================================
+   SECTION LABELS & HEADINGS
+   ============================================================ */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--glow-soft);
+  border: 1px solid rgba(var(--primary-rgb), 0.4);
+  color: var(--primary);
+  font-size: 11px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  margin-bottom: 72px;
+  text-align: center;
+}
+
+.section-header.text-left {
+  text-align: left;
+}
+
+.section-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: var(--text);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+}
+
+.section-header p {
+  margin-top: 20px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.section-header.text-left p {
+  margin-left: 0;
+}
+
+/* ============================================================
+   AURORA / MESH GRADIENT BACKGROUND
+   ============================================================ */
+.aurora-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.aurora-bg::before,
+.aurora-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: auroraMove 12s ease-in-out infinite;
+}
+
+.aurora-bg::before {
+  width: 700px;
+  height: 700px;
+  top: -20%;
+  right: -10%;
+  background: var(--aurora-1);
+}
+
+.aurora-bg::after {
+  width: 500px;
+  height: 500px;
+  bottom: -15%;
+  left: -8%;
+  background: var(--aurora-2);
+  animation-delay: -4s;
+  animation-direction: reverse;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   CARD EFFECTS
+   ============================================================ */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+}
+
+.img-zoom-container {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.img-zoom-container img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.06);
+}
+
+/* ============================================================
+   PROGRESS BARS
+   ============================================================ */
+.progress-track {
+  background: var(--surface-2);
+  border-radius: 100px;
+  overflow: hidden;
+  height: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  box-shadow: 0 0 12px var(--glow-soft);
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================================
+   COUNTER
+   ============================================================ */
+.counter-value {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+/* ============================================================
+   BEFORE/AFTER SLIDER
+   ============================================================ */
+.before-after-slider {
+  position: relative;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+}
+
+/* ============================================================
+   NOISE TEXTURE
+   ============================================================ */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* ============================================================
+   DIVIDERS
+   ============================================================ */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+.divider-primary {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--primary), transparent);
+  opacity: 0.3;
+}
+
+/* ============================================================
+   GRADIENT MESH BACKGROUND
+   ============================================================ */
+.hero-gradient-bg {
+  background: 
+    radial-gradient(ellipse 80% 60% at 70% 40%, var(--aurora-1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 70%, var(--aurora-2) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 90% 80%, var(--aurora-3) 0%, transparent 50%),
+    var(--secondary);
+}
+
+/* ============================================================
+   GRID MASONRY
+   ============================================================ */
+.masonry-grid {
+  columns: 3;
+  column-gap: 16px;
+}
+
+.masonry-grid > * {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 16px var(--glow); }
+  50% { box-shadow: 0 0 40px var(--glow), 0 0 80px var(--glow-soft); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes auroraMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   ANIMATE CLASSES
+   ============================================================ */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation: float 6s ease-in-out 2s infinite;
+}
+.animate-float-delay2 {
+  animation: float 6s ease-in-out 4s infinite;
+}
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   RESPONSIVE UTILITIES
+   ============================================================ */
+@media (max-width: 1024px) {
+  .section-padding { padding: 90px 0; }
+  .container-custom { padding: 0 24px; }
+  .section-header { margin-bottom: 56px; }
+  .masonry-grid { columns: 2; }
+}
+
+@media (max-width: 768px) {
+  .section-padding { padding: 72px 0; }
+  .container-custom { padding: 0 20px; }
+  .section-header { margin-bottom: 44px; }
+  .masonry-grid { columns: 1; }
+  .section-header h2 { font-size: clamp(2rem, 6vw, 2.8rem); }
+}
+
+@media (max-width: 480px) {
+  .btn-primary, .btn-outline {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  .container-custom { padding: 0 16px; }
+}

@@ -127,7 +127,7 @@ const Products = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-page-enter">
+    <div className="global-container py-12 animate-page-enter">
       
       {/* Page Header */}
       <div className="border-b border-gray-100 pb-8 mb-8 flex flex-col md:flex-row md:items-baseline md:justify-between gap-4">
@@ -316,16 +316,16 @@ const Products = () => {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-8">
               {filteredProducts.map(product => (
-                <div key={product.id} className="flex flex-col">
+                <div key={product.id} className="flex flex-col h-full justify-between">
                   {/* Reuse the custom card */}
                   <ProductCard product={product} />
                   
                   {/* Inline Add to Cart Button underneath (Zara/H&M style overlay style addition) */}
                   <button
                     onClick={() => handleSmartAddToCart(product)}
-                    className="w-full mt-3 bg-black text-white text-[10px] tracking-widest font-light uppercase py-3 hover:bg-neutral-850 transition-colors"
+                    className="w-full mt-4 bg-black text-white text-[10px] tracking-widest font-light uppercase py-3 hover:bg-neutral-850 transition-colors"
                   >
                     Add To Bag
                   </button>

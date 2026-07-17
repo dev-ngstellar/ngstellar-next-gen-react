@@ -87,7 +87,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-page-enter">
+    <div className="global-container py-12 animate-page-enter">
       
       {/* Breadcrumbs */}
       <nav className="text-[10px] uppercase tracking-[0.2em] font-light mb-10 text-gray-400">

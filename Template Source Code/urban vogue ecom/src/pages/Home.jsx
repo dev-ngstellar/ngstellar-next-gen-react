@@ -28,7 +28,7 @@ const Home = () => {
 
       {/* 3. New Arrivals */}
       <section className="py-24 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="global-container">
           
           {/* Header */}
           <div className="text-center mb-16">
@@ -56,7 +56,7 @@ const Home = () => {
 
       {/* 5. Trending Products */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="global-container">
           
           {/* Header */}
           <div className="text-center mb-16">
