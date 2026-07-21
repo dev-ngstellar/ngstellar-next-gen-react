@@ -368,5 +368,21 @@ export const templates = [
       { title: "Order Success Page", image: "/Templates Images/Cafe/Order Success.png" },
       { title: "Contact Page", image: "/Templates Images/Cafe/Contact.png" }
     ]
+  },
+  {
+    id: 24,
+    slug: "ngo",
+    category: "standard",
+    title: "NGO Foundation",
+    description: "A premium, modern template crafted for Non-Governmental Organizations (NGOs), charities, and foundations to showcase their impact and gather support.",
+    coverImage: "/Templates Images/NGO/Home.png",
+    tags: ["React.js", "Responsive", "Modern UI"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/NGO/Home.png" },
+      { title: "About Page", image: "/Templates Images/NGO/About.png" },
+      { title: "Programs Page", image: "/Templates Images/NGO/Programs.png" },
+      { title: "Volunteer Page", image: "/Templates Images/NGO/Volunteer.png" },
+      { title: "Contact Page", image: "/Templates Images/NGO/Contact.png" }
+    ]
   }
 ];
