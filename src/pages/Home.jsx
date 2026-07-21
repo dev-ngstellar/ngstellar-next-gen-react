@@ -4,6 +4,7 @@ import Workflow from '../components/Workflow.jsx';
 import Services from '../components/Services.jsx';
 import Gallery from '../components/Gallery.jsx';
 import Testimonials from '../components/Testimonials.jsx';
+import WebsitePlans from '../components/WebsitePlans.jsx';
 import { Helmet } from "react-helmet-async";
 
 function Home() {
@@ -28,6 +29,11 @@ function Home() {
                 <Workflow />
                 <Services />
                 <Gallery />
+            </div>
+            
+            <WebsitePlans />
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <Testimonials />
             </div>
         </div>
