@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #10B981; /* Soft Emerald */
+    --primary-hover: #059669;
+    --secondary: #0EA5E9; /* Ocean Blue */
+    --accent: #F59E0B; /* Golden Accent */
+    
+    --background: #FAFAFA; /* Off White */
+    --foreground: #111827; /* Dark Navy */
+    
+    --card: rgba(255, 255, 255, 0.7);
+    --card-hover: rgba(255, 255, 255, 0.9);
+    --border: #E5E7EB; /* Soft Grey */
+  }
+
+  .dark {
+    --primary: #34D399; /* Soft Emerald */
+    --primary-hover: #10B981;
+    --secondary: #38BDF8; /* Sky Blue */
+    --accent: #FBBF24; /* Golden Accent */
+    
+    --background: #0F172A; /* Dark Navy */
+    --foreground: #F8FAFC; /* Off White */
+    
+    --card: rgba(30, 41, 59, 0.7);
+    --card-hover: rgba(30, 41, 59, 0.9);
+    --border: #334155;
+  }
+}
+
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)] antialiased transition-colors duration-300;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-[var(--card)] backdrop-blur-md border border-[var(--border)] shadow-sm;
+}
+
+.glass-hover {
+  @apply hover:bg-[var(--card-hover)] hover:shadow-md hover:-translate-y-1 transition-all duration-300;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
