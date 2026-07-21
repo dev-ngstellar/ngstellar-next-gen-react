@@ -384,5 +384,74 @@ export const templates = [
       { title: "Volunteer Page", image: "/Templates Images/NGO/Volunteer.png" },
       { title: "Contact Page", image: "/Templates Images/NGO/Contact.png" }
     ]
+  },
+  {
+    id: 25,
+    slug: "coaching-institute",
+    category: "growth",
+    title: "Elevate Academy - Coaching Institute",
+    description: "A premium, high-converting coaching & education institute template with course catalogs, faculty profiles, student success stories, and blog.",
+    coverImage: "/Templates Images/Coaching Institute/Home.png",
+    tags: ["React.js", "Education", "Growth Plan"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Coaching Institute/Home.png" },
+      { title: "About Us Page", image: "/Templates Images/Coaching Institute/About.png" },
+      { title: "Courses Page", image: "/Templates Images/Coaching Institute/Courses.png" },
+      { title: "Faculty Page", image: "/Templates Images/Coaching Institute/Faculty.png" },
+      { title: "Success Stories Page", image: "/Templates Images/Coaching Institute/Stories.png" },
+      { title: "Blog Page", image: "/Templates Images/Coaching Institute/Blog.png" },
+      { title: "Contact Page", image: "/Templates Images/Coaching Institute/Contact.png" }
+    ]
+  },
+  {
+    id: 26,
+    slug: "job-consultancy",
+    category: "growth",
+    title: "TalentBridge - Job Consultancy",
+    description: "A luxury recruitment & HR agency platform template featuring job search, candidate portals, employer solutions, and full admin panel.",
+    coverImage: "/Templates Images/Job Consultancy/Home.png",
+    tags: ["React.js", "Recruitment", "Growth Plan", "Admin Panel"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Job Consultancy/Home.png" },
+      { title: "Find Jobs Page", image: "/Templates Images/Job Consultancy/Find jobs.png" },
+      { title: "Companies Page", image: "/Templates Images/Job Consultancy/Companies.png" },
+      { title: "Candidates Page", image: "/Templates Images/Job Consultancy/Candidates.png" },
+      { title: "Pricing Page", image: "/Templates Images/Job Consultancy/Pricing.png" },
+      { title: "Admin Dashboard", image: "/Templates Images/Job Consultancy/Admin Dashboard.png" }
+    ]
+  },
+  {
+    id: 27,
+    slug: "news-portal",
+    category: "growth",
+    title: "NovaPress - Digital News Portal",
+    description: "A modern digital publication and media platform template featuring article archives, topic browsing, and complete admin CMS management.",
+    coverImage: "/Templates Images/News Portal/Home.png",
+    tags: ["React.js", "Digital Media", "Growth Plan", "Admin Panel"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/News Portal/Home.png" },
+      { title: "Browse Topics Page", image: "/Templates Images/News Portal/Browse by Topics.png" },
+      { title: "Archive Page", image: "/Templates Images/News Portal/Archive.png" },
+      { title: "Admin Dashboard", image: "/Templates Images/News Portal/Admin Dashboard.png" },
+      { title: "Admin Add Articles", image: "/Templates Images/News Portal/Admin Add Articles.png" },
+      { title: "Admin Add Categories", image: "/Templates Images/News Portal/Admin Add Categories.png" },
+      { title: "Admin Media Library", image: "/Templates Images/News Portal/Admin Media Library.png" }
+    ]
+  },
+  {
+    id: 28,
+    slug: "salon-spa",
+    category: "standard",
+    title: "Luxe Glow - Salon & Spa",
+    description: "An elegant, high-end luxury salon & spa template with service menus, photo galleries, team showcases, and booking integration.",
+    coverImage: "/Templates Images/Salon & Spa/Home.png",
+    tags: ["React.js", "Beauty & Spa", "Standard Plan"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Salon & Spa/Home.png" },
+      { title: "About Us Page", image: "/Templates Images/Salon & Spa/About.png" },
+      { title: "Services Page", image: "/Templates Images/Salon & Spa/Services.png" },
+      { title: "Gallery Page", image: "/Templates Images/Salon & Spa/Gallery.png" },
+      { title: "Contact Page", image: "/Templates Images/Salon & Spa/Contact.png" }
+    ]
   }
 ];
