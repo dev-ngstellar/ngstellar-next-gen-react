@@ -200,23 +200,28 @@ const WebsitePlans = () => {
                                     </div>
 
                                     {/* Price */}
-                                    <div className="mb-2 flex items-baseline">
-                                        <motion.div className="text-2xl sm:text-[28px] font-extrabold text-white tracking-tight group-hover:scale-[1.02] origin-left transition-transform duration-300">
-                                            {plan.price}
+                                    <div className="mb-2 flex items-baseline gap-1.5">
+                                        <motion.div className={`text-2xl sm:text-[28px] font-extrabold tracking-tight group-hover:scale-[1.02] origin-left transition-transform duration-300 ${plan.textAccent}`}>
+                                            {plan.price.split(' – ')[0]}
                                         </motion.div>
+                                        {plan.price.split(' – ')[1] && (
+                                            <div className="text-sm font-medium text-gray-500">
+                                                - {plan.price.split(' – ')[1]}
+                                            </div>
+                                        )}
                                     </div>
 
                                     {/* Description */}
-                                    <p className="text-[13px] text-gray-400 leading-snug mb-5 min-h-[40px]">
+                                    <p className="text-[16px] text-gray-400 leading-snug mb-5 min-h-[40px]">
                                         {plan.description}
                                     </p>
 
                                     {/* Best For Chips */}
                                     <div className="mb-5">
-                                        <div className="text-[10px] uppercase tracking-wider font-semibold text-gray-500 mb-2">Ideal For</div>
+                                        <div className="text-xs uppercase tracking-wider font-semibold text-gray-500 mb-2">Ideal For</div>
                                         <div className="flex flex-wrap gap-1.5">
                                             {plan.bestFor.map((item, i) => (
-                                                <span key={i} className="text-[10px] font-medium text-gray-300 bg-white/5 border border-white/10 px-2 py-0.5 rounded-md">
+                                                <span key={i} className="text-xs font-medium text-gray-300 bg-white/5 border border-white/10 px-2.5 py-1 rounded-md">
                                                     {item}
                                                 </span>
                                             ))}
@@ -226,11 +231,11 @@ const WebsitePlans = () => {
                                     <div className="w-full h-px bg-white/10 mb-5"></div>
 
                                     {/* Features - 2 Column Grid */}
-                                    <ul className="grid grid-cols-2 gap-x-2 gap-y-3 mb-6 flex-1">
+                                    <ul className="grid grid-cols-2 gap-x-3 gap-y-3.5 mb-6 flex-1">
                                         {plan.features.map((feature, i) => (
-                                            <li key={i} className="flex items-start gap-1.5 text-[12px] text-gray-300">
-                                                <FaCheck className={`mt-[3px] flex-shrink-0 text-[9px] ${plan.textAccent}`} />
-                                                <span className="leading-tight">{feature}</span>
+                                            <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                                                <FaCheck className={`mt-[4px] flex-shrink-0 text-[10px] ${plan.textAccent}`} />
+                                                <span className="leading-snug">{feature}</span>
                                             </li>
                                         ))}
                                     </ul>

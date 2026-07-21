@@ -350,5 +350,23 @@ export const templates = [
       { title: "Features Page", image: "/Templates Images/Startup Landing Page/Features.webp" },
       { title: "Contact Page", image: "/Templates Images/Startup Landing Page/Contact.webp" }
     ]
+  },
+  {
+    id: 23,
+    slug: "cafe",
+    category: "standard",
+    title: "Cafe Template",
+    description: "A cozy and elegant template perfect for cafes, coffee shops, and small bakeries, featuring a menu display and online ordering system.",
+    coverImage: "/Templates Images/Cafe/Home.png",
+    tags: ["React.js", "Responsive", "Modern UI"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Cafe/Home.png" },
+      { title: "About Page", image: "/Templates Images/Cafe/About.png" },
+      { title: "Menu Page", image: "/Templates Images/Cafe/Menu.png" },
+      { title: "Gallery Page", image: "/Templates Images/Cafe/Gallery.png" },
+      { title: "Cart Page", image: "/Templates Images/Cafe/Cart.png" },
+      { title: "Order Success Page", image: "/Templates Images/Cafe/Order Success.png" },
+      { title: "Contact Page", image: "/Templates Images/Cafe/Contact.png" }
+    ]
   }
 ];
