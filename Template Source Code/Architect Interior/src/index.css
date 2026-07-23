@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #A08C75; /* A luxurious beige/bronze */
+  --background-color: #FAFAFA; /* Off-white for luxury feel */
+  --surface-color: #FFFFFF;
+  --text-main: #1C1C1C;
+  --text-muted: #6B6B6B;
+  --border-color: #E5E5E5;
+  --accent-color: #D4AF37;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --primary-color: #D4B895; /* Lighter bronze for dark mode */
+  --background-color: #121212; /* Deep charcoal */
+  --surface-color: #1E1E1E;
+  --text-main: #F5F5F5;
+  --text-muted: #A0A0A0;
+  --border-color: #333333;
+  --accent-color: #E8D385;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.025em;
+}
+
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+.dark .glass-panel {
+  background-color: rgba(30, 30, 30, 0.85);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
