@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default Theme: Dark Mode Deep Tech Cobalt */
+  --primary-color: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-50: rgba(2, 132, 199, 0.08);
+  --primary-100: rgba(2, 132, 199, 0.18);
+  --primary-700: #0369a1;
+  --primary-900: #0c4a6e;
+  --accent-glow: rgba(2, 132, 199, 0.45);
+  
+  --bg-color: #060913;
+  --card-bg: rgba(13, 20, 36, 0.75);
+  --card-hover-bg: rgba(23, 34, 59, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(10, 16, 30, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+html.light {
+  --primary-color: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-50: rgba(2, 132, 199, 0.06);
+  --primary-100: rgba(2, 132, 199, 0.12);
+  --primary-700: #0369a1;
+  --primary-900: #0c4a6e;
+  --accent-glow: rgba(2, 132, 199, 0.2);
+  
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --card-hover-bg: #f1f5f9;
+  --border-color: rgba(15, 23, 42, 0.09);
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(15, 23, 42, 0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Custom Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: var(--card-hover-bg);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px -10px var(--accent-glow);
+}
+
+/* Aurora Glow & Radial Gradients */
+.aurora-bg {
+  background: radial-gradient(circle at 50% 0%, var(--accent-glow) 0%, transparent 65%);
+}
+
+.mesh-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+}
+
+/* Animated Route Path */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+.route-line {
+  stroke-dasharray: 8 6;
+  animation: dash 4s linear infinite;
+}
+
+/* Custom Primary Color dynamic styling */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .text-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-primary-gradient {
+  background: linear-gradient(135deg, var(--text-main) 30%, var(--primary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pulse animation */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+.radar-ring {
+  animation: radar-pulse 2.5s infinite ease-in-out;
+}
