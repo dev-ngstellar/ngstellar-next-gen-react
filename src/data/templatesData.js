@@ -453,5 +453,114 @@ export const templates = [
       { title: "Gallery Page", image: "/Templates Images/Salon & Spa/Gallery.png" },
       { title: "Contact Page", image: "/Templates Images/Salon & Spa/Contact.png" }
     ]
+  },
+  {
+    id: 29,
+    slug: "logistics",
+    category: "standard",
+    title: "Logistics & Freight",
+    description: "A modern, high-efficiency supply chain and freight management template built for logistics providers, shipping fleets, and cargo operators.",
+    coverImage: "/Templates Images/Logistics/Home.webp",
+    tags: ["React.js", "Logistics", "Freight", "Standard Plan"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Logistics/Home.webp" },
+      { title: "About Us Page", image: "/Templates Images/Logistics/About.webp" },
+      { title: "Services Page", image: "/Templates Images/Logistics/Services.webp" },
+      { title: "Tracking Page", image: "/Templates Images/Logistics/Tracking.webp" },
+      { title: "Contact Page", image: "/Templates Images/Logistics/Contact.webp" }
+    ]
+  },
+  {
+    id: 30,
+    slug: "architect",
+    category: "standard",
+    title: "Architect & Design Studio",
+    description: "An elegant, minimalist showcase designed for architectural firms, interior designers, urban planners, and structural engineering studios.",
+    coverImage: "/Templates Images/Architect/Home.webp",
+    tags: ["React.js", "Architecture", "Interior Design", "Standard Plan"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Architect/Home.webp" },
+      { title: "About Us Page", image: "/Templates Images/Architect/About.webp" },
+      { title: "Services Page", image: "/Templates Images/Architect/Serviecs.webp" },
+      { title: "Projects Page", image: "/Templates Images/Architect/Projects.webp" },
+      { title: "Contact Page", image: "/Templates Images/Architect/Contact.webp" }
+    ]
+  },
+  {
+    id: 31,
+    slug: "travel-agency",
+    category: "growth",
+    title: "Wanderlust Travel Agency",
+    description: "A vibrant, immersive travel & tourism template featuring destination showcases, curated tour packages, custom navigation, and booking inquiries.",
+    coverImage: "/Templates Images/Travel Agency/Home.webp",
+    tags: ["React.js", "Travel & Tourism", "Growth Plan"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Travel Agency/Home.webp" },
+      { title: "About Us Page", image: "/Templates Images/Travel Agency/About.webp" },
+      { title: "Destinations Page", image: "/Templates Images/Travel Agency/Destinations.webp" },
+      { title: "Tour Packages Page", image: "/Templates Images/Travel Agency/Tour Package.webp" },
+      { title: "Nav Menu View", image: "/Templates Images/Travel Agency/Nav Menu.webp" },
+      { title: "Contact Page", image: "/Templates Images/Travel Agency/Contact.webp" }
+    ]
+  },
+  {
+    id: 32,
+    slug: "apartment-cms",
+    category: "professional",
+    title: "SkyLine Apartment CMS",
+    description: "A complete residential society and apartment management platform with tenant portals, facility bookings, maintenance tracking, visitor security, and full admin console.",
+    coverImage: "/Templates Images/Apartment CMS/Home.webp",
+    tags: ["React.js", "Property Management", "Professional Plan", "Admin Portal"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Apartment CMS/Home.webp" },
+      { title: "About Us Page", image: "/Templates Images/Apartment CMS/About.webp" },
+      { title: "Amenities Page", image: "/Templates Images/Apartment CMS/Amenities.webp" },
+      { title: "Gallery Page", image: "/Templates Images/Apartment CMS/Gallery.webp" },
+      { title: "Contact Page", image: "/Templates Images/Apartment CMS/Contact.webp" },
+      { title: "Admin Overview Dashboard", image: "/Templates Images/Apartment CMS/Admin/Overview Dashboard.webp" },
+      { title: "Admin Apartment Management", image: "/Templates Images/Apartment CMS/Admin/Apartment Management.webp" },
+      { title: "Admin Resident Directory", image: "/Templates Images/Apartment CMS/Admin/Resident Directory.webp" },
+      { title: "Admin Amenities Booking", image: "/Templates Images/Apartment CMS/Admin/Amenities Booking.webp" },
+      { title: "Admin Maintenance", image: "/Templates Images/Apartment CMS/Admin/Maintenance.webp" },
+      { title: "Admin Visitor Approvals", image: "/Templates Images/Apartment CMS/Admin/Visitors Approvals.webp" },
+      { title: "Admin Security Gate Console", image: "/Templates Images/Apartment CMS/Admin/Security Gate Console.webp" },
+      { title: "Admin Document Vault", image: "/Templates Images/Apartment CMS/Admin/Document Vault.webp" },
+      { title: "Admin Complaints Portal", image: "/Templates Images/Apartment CMS/Admin/Complaints.webp" },
+      { title: "Admin Community Events", image: "/Templates Images/Apartment CMS/Admin/Community Events.webp" },
+      { title: "Admin Notice Board", image: "/Templates Images/Apartment CMS/Admin/Notice Board.webp" },
+      { title: "Admin Parking Management", image: "/Templates Images/Apartment CMS/Admin/Parking.webp" },
+      { title: "Admin Parcel Console", image: "/Templates Images/Apartment CMS/Admin/Parcel.webp" },
+      { title: "Admin Reports & Analytics", image: "/Templates Images/Apartment CMS/Admin/Reports & Analytics.webp" },
+      { title: "Admin Settings", image: "/Templates Images/Apartment CMS/Admin/Settings.webp" },
+      { title: "Admin Staff Management", image: "/Templates Images/Apartment CMS/Admin/Staffs.webp" }
+    ]
+  },
+  {
+    id: 33,
+    slug: "inventory-cms",
+    category: "professional",
+    title: "Enterprise Inventory CMS",
+    description: "An advanced multi-warehouse inventory control dashboard supporting sales & purchase orders, stock transfers, analytics, and supplier workflows.",
+    coverImage: "/Templates Images/Inventory CMS/Dashboard.webp",
+    tags: ["React.js", "Inventory Control", "Professional Plan", "Admin Portal"],
+    pages: [
+      { title: "Admin Dashboard", image: "/Templates Images/Inventory CMS/Dashboard.webp" },
+      { title: "Inventory Overview", image: "/Templates Images/Inventory CMS/Inventory Overview.webp" },
+      { title: "Products List", image: "/Templates Images/Inventory CMS/Products.webp" },
+      { title: "Add New Product", image: "/Templates Images/Inventory CMS/Add New Products.webp" },
+      { title: "Categories Management", image: "/Templates Images/Inventory CMS/Categories.webp" },
+      { title: "Brands Management", image: "/Templates Images/Inventory CMS/Brands.webp" },
+      { title: "Suppliers Directory", image: "/Templates Images/Inventory CMS/Suppliers.webp" },
+      { title: "Warehouses Management", image: "/Templates Images/Inventory CMS/Warehouses.webp" },
+      { title: "Stock Transfers", image: "/Templates Images/Inventory CMS/Stock Transfers.webp" },
+      { title: "Purchase Orders (PO)", image: "/Templates Images/Inventory CMS/PO.webp" },
+      { title: "Sales Orders (SO)", image: "/Templates Images/Inventory CMS/SO.webp" },
+      { title: "Customers Directory", image: "/Templates Images/Inventory CMS/Customers.webp" },
+      { title: "Reports Dashboard", image: "/Templates Images/Inventory CMS/Reports.webp" },
+      { title: "Analytics Page", image: "/Templates Images/Inventory CMS/Analytics.webp" },
+      { title: "Help Center", image: "/Templates Images/Inventory CMS/Help Centers.webp" },
+      { title: "Notifications Panel", image: "/Templates Images/Inventory CMS/Notifications.webp" },
+      { title: "System Settings", image: "/Templates Images/Inventory CMS/Settings.webp" }
+    ]
   }
 ];
