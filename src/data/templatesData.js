@@ -562,5 +562,39 @@ export const templates = [
       { title: "Notifications Panel", image: "/Templates Images/Inventory CMS/Notifications.webp" },
       { title: "System Settings", image: "/Templates Images/Inventory CMS/Settings.webp" }
     ]
+  },
+  {
+    id: 34,
+    slug: "electrician",
+    category: "standard",
+    title: "VoltagePro Electrician & Electrical Systems",
+    description: "A high-conversion, professional website template designed for electricians, electrical contractors, EV charger installers, solar integration, and 24/7 emergency dispatch.",
+    coverImage: "/Templates Images/Electrician/Home.webp",
+    tags: ["React.js", "Electrician", "Emergency Service", "Standard Plan"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Electrician/Home.webp" },
+      { title: "Services Page", image: "/Templates Images/Electrician/Services.webp" },
+      { title: "Projects Page", image: "/Templates Images/Electrician/Projects.webp" },
+      { title: "About Us Page", image: "/Templates Images/Electrician/About.webp" },
+      { title: "Contact Page", image: "/Templates Images/Electrician/Contact.webp" }
+    ]
+  },
+  {
+    id: 35,
+    slug: "event-management",
+    category: "growth",
+    title: "Stellar Event Experience & SaaS Admin Platform",
+    description: "A complete event experience platform featuring luxury public event landing pages, interactive agenda builders, ticket QR scanners, and a modern SaaS admin portal.",
+    coverImage: "/Templates Images/Event Management/Home.webp",
+    tags: ["React.js", "Event Management", "Growth Plan", "Admin Portal"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Event Management/Home.webp" },
+      { title: "Events Page", image: "/Templates Images/Event Management/Events.webp" },
+      { title: "Services Page", image: "/Templates Images/Event Management/Services.webp" },
+      { title: "Gallery Page", image: "/Templates Images/Event Management/Gallery.webp" },
+      { title: "About Us Page", image: "/Templates Images/Event Management/About.webp" },
+      { title: "Contact Page", image: "/Templates Images/Event Management/Contact.webp" },
+      { title: "SaaS Admin Dashboard", image: "/Templates Images/Event Management/Admin.webp" }
+    ]
   }
 ];
