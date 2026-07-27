@@ -596,5 +596,21 @@ export const templates = [
       { title: "Contact Page", image: "/Templates Images/Event Management/Contact.webp" },
       { title: "SaaS Admin Dashboard", image: "/Templates Images/Event Management/Admin.webp" }
     ]
+  },
+  {
+    id: 36,
+    slug: "pet-care",
+    category: "standard",
+    title: "AuraPet Veterinary & Pet Care Template",
+    description: "A luxury, modern, warm, and trustworthy template designed for veterinary hospitals, pet clinics, grooming lounges, pet spas, resort boarding, and animal care centers.",
+    coverImage: "/Templates Images/Pet Care/Home.png",
+    tags: ["React.js", "Veterinary Care", "Pet Grooming", "Standard Plan", "Responsive"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Pet Care/Home.png" },
+      { title: "Services Page", image: "/Templates Images/Pet Care/Services.png" },
+      { title: "Gallery Page", image: "/Templates Images/Pet Care/Gallery.png" },
+      { title: "About Us Page", image: "/Templates Images/Pet Care/About.png" },
+      { title: "Contact Page", image: "/Templates Images/Pet Care/Contact.png" }
+    ]
   }
 ];
