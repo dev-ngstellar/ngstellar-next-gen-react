@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { BsTwitterX } from 'react-icons/bs';
+import OptimizedImage from './OptimizedImage.jsx';
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -15,7 +18,7 @@ function Footer() {
         {/* 1. Logo */}
         <div className="mb-6">
           <Link to="/">
-            <img src="/ng_logo_white.png" alt="NG Stellar Solutions" className="h-12 w-auto" />
+            <OptimizedImage src="/ng_logo_white.png" alt="NG Stellar Solutions" className="h-12 w-auto" width="180" height="48" loading="lazy" decoding="async" />
           </Link>
         </div>
 
@@ -80,4 +83,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);
