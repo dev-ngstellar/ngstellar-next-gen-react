@@ -612,5 +612,44 @@ export const templates = [
       { title: "About Us Page", image: "/Templates Images/Pet Care/About.png" },
       { title: "Contact Page", image: "/Templates Images/Pet Care/Contact.png" }
     ]
+  },
+  {
+    id: 37,
+    slug: "law-firm",
+    category: "standard",
+    title: "Apex & Partners Law Firm & Legal Practice",
+    description: "A prestigious, high-trust law firm template designed for corporate attorneys, trial lawyers, legal consultants, practice areas, and consultation bookings.",
+    coverImage: "/Templates Images/Law Firm/Home.png",
+    tags: ["React.js", "Law Firm", "Legal Practice", "Standard Plan", "Responsive"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Law Firm/Home.png" },
+      { title: "Practice Areas Page", image: "/Templates Images/Law Firm/Practice Areas.png" },
+      { title: "About Firm Page", image: "/Templates Images/Law Firm/About Firm.png" },
+      { title: "Insights Page", image: "/Templates Images/Law Firm/Insights.png" },
+      { title: "Contact Page", image: "/Templates Images/Law Firm/Contact.png" },
+      { title: "Consultation Booking Modal", image: "/Templates Images/Law Firm/Book.png" }
+    ]
+  },
+  {
+    id: 38,
+    slug: "restaurant-ordering",
+    category: "growth",
+    title: "Gourmetium Fine Dining & Restaurant Ordering System",
+    description: "An end-to-end luxury restaurant ordering platform with interactive digital menus, live order tracking, customer portal, kitchen KDS, delivery driver app, and admin SaaS portal.",
+    coverImage: "/Templates Images/Restaurant Ordering System/Home.png",
+    tags: ["React.js", "Restaurant", "Food Delivery", "Growth Plan", "Admin & Kitchen Portal"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Restaurant Ordering System/Home.png" },
+      { title: "Digital Menu Page", image: "/Templates Images/Restaurant Ordering System/Menu.png" },
+      { title: "Cart & Checkout Drawer", image: "/Templates Images/Restaurant Ordering System/Cart.png" },
+      { title: "Offers & Combos Page", image: "/Templates Images/Restaurant Ordering System/Offers.png" },
+      { title: "Order Tracking", image: "/Templates Images/Restaurant Ordering System/Order Track.png" },
+      { title: "Reservations & Contact", image: "/Templates Images/Restaurant Ordering System/Reservations.png" },
+      { title: "About Us Page", image: "/Templates Images/Restaurant Ordering System/About.png" },
+      { title: "Customer Portal", image: "/Templates Images/Restaurant Ordering System/Order History.png" },
+      { title: "Kitchen KDS Portal", image: "/Templates Images/Restaurant Ordering System/Kitchen KDS.png" },
+      { title: "Driver App Portal", image: "/Templates Images/Restaurant Ordering System/Deliver App.png" },
+      { title: "Admin SaaS Dashboard", image: "/Templates Images/Restaurant Ordering System/Admin Saas.png" }
+    ]
   }
 ];
