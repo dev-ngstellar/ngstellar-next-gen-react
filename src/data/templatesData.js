@@ -651,5 +651,41 @@ export const templates = [
       { title: "Driver App Portal", image: "/Templates Images/Restaurant Ordering System/Deliver App.png" },
       { title: "Admin SaaS Dashboard", image: "/Templates Images/Restaurant Ordering System/Admin Saas.png" }
     ]
+  },
+  {
+    id: 39,
+    slug: "retail-management",
+    category: "professional",
+    title: "StellarRetail Grocery Commerce & Retail Management Platform",
+    description: "An enterprise retail management platform powering next-generation hypermarkets, organic food chains, multi-branch grocery networks, customer account portals, and complete admin operations OS.",
+    coverImage: "/Templates Images/Retail Management/Home.webp",
+    tags: ["React.js", "Grocery Commerce", "Retail Management", "Professional Plan", "Admin & Operations OS"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Retail Management/Home.webp" },
+      { title: "Shop Catalog", image: "/Templates Images/Retail Management/Shop.webp" },
+      { title: "Categories Directory", image: "/Templates Images/Retail Management/Categories.webp" },
+      { title: "Offers & Promotions", image: "/Templates Images/Retail Management/Offers.webp" },
+      { title: "Chef Recipes", image: "/Templates Images/Retail Management/Recipes.webp" },
+      { title: "About Us Page", image: "/Templates Images/Retail Management/About.webp" },
+      { title: "Contact & Branch Locations", image: "/Templates Images/Retail Management/Contact.webp" },
+      { title: "Customer Dashboard Overview", image: "/Templates Images/Retail Management/Customer Dashboard.webp" },
+      { title: "Order History", image: "/Templates Images/Retail Management/Orders.webp" },
+      { title: "Recurring Grocery Plans", image: "/Templates Images/Retail Management/Subscriptions.webp" },
+      { title: "Wallet & Loyalty Rewards", image: "/Templates Images/Retail Management/Wallet.webp" },
+      { title: "Saved Wishlist", image: "/Templates Images/Retail Management/Wishlist.webp" },
+      { title: "Saved Delivery Addresses", image: "/Templates Images/Retail Management/Saved Addresses.webp" },
+      { title: "Admin Executive Dashboard", image: "/Templates Images/Retail Management/Admin Dashboard.webp" },
+      { title: "Product SKU Management", image: "/Templates Images/Retail Management/Product Management.webp" },
+      { title: "Inventory & Heatmap Matrix", image: "/Templates Images/Retail Management/Inventory Management.webp" },
+      { title: "Fulfillment Hub & Warehouse Visualizer", image: "/Templates Images/Retail Management/Warehouse Management.webp" },
+      { title: "Supplier Directory & PO Workflow", image: "/Templates Images/Retail Management/Supplier Management.webp" },
+      { title: "Delivery Drivers & Route Planner", image: "/Templates Images/Retail Management/Delivery Management.webp" },
+      { title: "Staff Management & Role Access", image: "/Templates Images/Retail Management/Staff Management.webp" },
+      { title: "Customer CRM & LTV", image: "/Templates Images/Retail Management/Customer CRM.webp" },
+      { title: "Marketing & Campaign Manager", image: "/Templates Images/Retail Management/Marketing.webp" },
+      { title: "Financial Reports & Audits", image: "/Templates Images/Retail Management/Reports.webp" },
+      { title: "Enterprise Analytics & Predictive Forecast", image: "/Templates Images/Retail Management/Analytics.webp" },
+      { title: "Retail System Settings", image: "/Templates Images/Retail Management/Settings.webp" }
+    ]
   }
 ];
