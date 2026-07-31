@@ -656,7 +656,7 @@ export const templates = [
     id: 39,
     slug: "retail-management",
     category: "professional",
-    title: "StellarRetail Grocery Commerce & Retail Management Platform",
+    title: "Retail Grocery Commerce & Retail Management Platform",
     description: "An enterprise retail management platform powering next-generation hypermarkets, organic food chains, multi-branch grocery networks, customer account portals, and complete admin operations OS.",
     coverImage: "/Templates Images/Retail Management/Home.webp",
     tags: ["React.js", "Grocery Commerce", "Retail Management", "Professional Plan", "Admin & Operations OS"],
