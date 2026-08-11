@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-solar-orange: #f0771a;
+  --color-solar-hover: #d6620d;
+  --color-solar-light: #fff7ed;
+  --color-solar-dark: #b84e03;
+}
+
+@layer base {
+  html, body, h1, h2, h3, h4, h5, h6, button, input, select, textarea {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+}
+
+/* Custom Design System Tokens & Utility Styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at top right, rgba(240, 119, 26, 0.15), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(30, 64, 175, 0.12), transparent 40%);
+}
+
+.custom-shadow {
+  box-shadow: 0 10px 30px -5px rgba(240, 119, 26, 0.12);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
+}
