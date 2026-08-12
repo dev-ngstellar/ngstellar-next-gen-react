@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #101214;
+    --bg-surface: #151719;
+    --bg-card: #1B1B1D;
+    --bg-alt: #211D1D;
+    --color-rose-gold: #C99683;
+    --color-rose-gold-light: #D6A08D;
+    --color-rose-gold-dark: #B88572;
+    --color-champagne: #E8C8B8;
+    --color-text-primary: #F7F4F0;
+    --color-text-muted: #A39E98;
+    --color-border-subtle: #282523;
+  }
+
+  *, ::before, ::after {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+
+  body, input, select, textarea, button, option {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    background-color: #101214;
+    color: #F7F4F0;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-sans {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+}
+
+/* Custom Utilities for Rose Gold & Deep Charcoal Theme */
+.bg-charcoal-primary { background-color: #101214; }
+.bg-charcoal-surface { background-color: #151719; }
+.bg-charcoal-card { background-color: #1B1B1D; }
+.bg-charcoal-alt { background-color: #211D1D; }
+
+.bg-rose-gold { background-color: #C99683; }
+.bg-rose-gold-hover:hover { background-color: #B88572; }
+.text-rose-gold { color: #C99683; }
+.text-rose-gold-light { color: #D6A08D; }
+.text-champagne { color: #E8C8B8; }
+.text-ivory { color: #F7F4F0; }
+.text-warm-gray { color: #A39E98; }
+
+.border-charcoal-subtle { border-color: #282523; }
+.border-rose-gold-subtle { border-color: rgba(201, 150, 131, 0.3); }
+
+/* Rose Gold Metallic Text Gradient */
+.text-gradient-rose-gold {
+  background: linear-gradient(135deg, #F7F4F0 0%, #D6A08D 50%, #C99683 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #101214;
+}
+::-webkit-scrollbar-thumb {
+  background: #282523;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C99683;
+}
