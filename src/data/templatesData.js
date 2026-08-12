@@ -703,5 +703,21 @@ export const templates = [
       { title: "Enterprise Analytics & Predictive Forecast", image: "/Templates Images/Retail Management/Analytics.webp" },
       { title: "Retail System Settings", image: "/Templates Images/Retail Management/Settings.webp" }
     ]
+  },
+  {
+    id: 40,
+    slug: "dance-academy",
+    category: "standard",
+    title: "Dance Academy Template",
+    description: "A vibrant, energetic, and rhythm-driven website template designed for dance studios, choreography academies, performative arts centers, and fitness dance clubs.",
+    coverImage: "/Templates Images/dance academy/home screen for dance.webp",
+    tags: ["React.js", "Responsive", "Modern UI", "Standard Plan", "Dance Studio"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/dance academy/home screen for dance.webp" },
+      { title: "About Us Page", image: "/Templates Images/dance academy/aboutus screen.webp" },
+      { title: "Classes Page", image: "/Templates Images/dance academy/classes screen.webp" },
+      { title: "Programs Page", image: "/Templates Images/dance academy/programs screen.webp" },
+      { title: "Contact Us Page", image: "/Templates Images/dance academy/contactus screen.webp" }
+    ]
   }
 ];
