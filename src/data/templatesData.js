@@ -631,6 +631,22 @@ export const templates = [
     ]
   },
   {
+    id: 40,
+    slug: "solar-energy",
+    category: "standard",
+    title: "SunPower Solar Energy & Green Tech Solutions",
+    description: "A modern, eco-friendly solar energy and clean technology website template with home, services, projects, about, and contact pages.",
+    coverImage: "/Templates Images/solarenery/home screen for solar.webp",
+    tags: ["React.js", "Solar Energy", "Clean Tech", "Standard Plan", "Responsive"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/solarenery/home screen for solar.webp" },
+      { title: "Services Page", image: "/Templates Images/solarenery/service screenfor solar.webp" },
+      { title: "Projects Page", image: "/Templates Images/solarenery/project screen for solar.webp" },
+      { title: "About Us Page", image: "/Templates Images/solarenery/about us screen for solar.webp" },
+      { title: "Contact Us Page", image: "/Templates Images/solarenery/contactus screen for solar.webp" }
+    ]
+  },
+  {
     id: 38,
     slug: "restaurant-ordering",
     category: "growth",
