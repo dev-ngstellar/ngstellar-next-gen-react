@@ -22,6 +22,7 @@ const Consulting = lazy(() => import('./pages/Consulting.jsx'));
 const Tech = lazy(() => import('./pages/Tech.jsx'));
 const Templates = lazy(() => import('./pages/Templates/Templates.jsx'));
 const TemplateDetails = lazy(() => import('./pages/Templates/TemplateDetails.jsx'));
+const AdvisoryPage = lazy(() => import('./pages/AdvisoryPage.jsx'));
 
 
 // Simple page-transition fallback
@@ -38,17 +39,17 @@ function App() {
     <BrowserRouter>
       <Helmet>
         {/* Basic SEO */}
-        <title>NG Stellar - Software Solutions Company</title>
+        <title>NG Stellar — Transformation & Sustainability Advisory</title>
         <meta
           name="description"
-          content="NG Stellar provides modern web and software development services."
+          content="NG Stellar is a premier transformation and sustainability advisory firm. Transform the business. Sustain the impact."
         />
 
         {/* Open Graph */}
-        <meta property="og:title" content="NG Stellar - Software Solutions Company" />
+        <meta property="og:title" content="NG Stellar — Transformation & Sustainability Advisory" />
         <meta
           property="og:description"
-          content="NG Stellar provides modern web and software development services."
+          content="NG Stellar is a premier transformation and sustainability advisory firm. Transform the business. Sustain the impact."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ngstellar.com/" />
@@ -74,7 +75,9 @@ function App() {
               <Route path="/templates/:slug" element={<TemplateDetails />} />
 
               <Route path="/about" element={<About />} />
+              <Route path="/about/*" element={<AdvisoryPage />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/contact/*" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/termsandconditions" element={<TermsAndConditions />} />
               <Route path="/privacypolicy" element={<PrivacyPolicy />} />
@@ -83,6 +86,24 @@ function App() {
               <Route path="/services/branding" element={<BrandingService />} />
               <Route path="/services/consulting" element={<Consulting />} />
               <Route path="/services/tech" element={<Tech />} />
+
+              {/* New Transformation & Sustainability Advisory Routes */}
+              <Route path="/transformation" element={<AdvisoryPage />} />
+              <Route path="/transformation/*" element={<AdvisoryPage />} />
+              <Route path="/sustainability" element={<AdvisoryPage />} />
+              <Route path="/sustainability/*" element={<AdvisoryPage />} />
+              <Route path="/transformation-health-check" element={<AdvisoryPage />} />
+              <Route path="/transformation-health-check/*" element={<AdvisoryPage />} />
+              <Route path="/capabilities" element={<AdvisoryPage />} />
+              <Route path="/capabilities/*" element={<AdvisoryPage />} />
+              <Route path="/approach" element={<AdvisoryPage />} />
+              <Route path="/approach/*" element={<AdvisoryPage />} />
+              <Route path="/ecosystem" element={<AdvisoryPage />} />
+              <Route path="/ecosystem/*" element={<AdvisoryPage />} />
+              <Route path="/transformation-stories" element={<AdvisoryPage />} />
+              <Route path="/transformation-stories/*" element={<AdvisoryPage />} />
+              <Route path="/insights" element={<AdvisoryPage />} />
+              <Route path="/insights/*" element={<AdvisoryPage />} />
             </Routes>
           </Suspense>
         </main>
