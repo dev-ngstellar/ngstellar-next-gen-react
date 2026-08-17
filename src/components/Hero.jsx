@@ -14,7 +14,7 @@ const heroSlides = [
     titleBody: 'First Crore Business',
     descHighlight: 'Most businesses fail simply because they are invisible.',
     descBody: 'We fix that. We build, market, and scale your brand.',
-    image: '/cursole1.png',
+    image: '/cursole1.webp',
     features: [
       { icon: '🚀', label: 'High Visibility' },
       { icon: '💡', label: 'Smart Building' },
@@ -28,7 +28,7 @@ const heroSlides = [
     titleHighlight: 'They Just Go Unnoticed.',
     descHighlight: "If customers can't find you online, they can't choose you.",
     descBody: 'We drive visibility and trust to bring you more customers.',
-    image: '/cursole2.png',
+    image: '/cursole2.webp',
     features: [
       { icon: '🔍', label: 'Get Seen' },
       { icon: '🤝', label: 'Get Trusted' },
@@ -42,7 +42,7 @@ const heroSlides = [
     titleHighlight: 'More Potential Than You Think.',
     descHighlight: "Hard work alone isn't enough without the right systems.",
     descBody: 'We accelerate your business using modern tech, automation, and visibility.',
-    image: '/cursole3.png',
+    image: '/cursole3.webp',
     features: [
       { icon: '⚙️', label: 'Automation' },
       { icon: '💻', label: 'Technology' },

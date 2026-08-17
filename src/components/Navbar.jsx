@@ -129,9 +129,9 @@ function Navbar() {
           <div className="relative">
             <div className="absolute -inset-2 rounded-full"></div>
             <picture>
-              <source srcSet="/ng_logo_white.png" />
+              <source srcSet="/ng_logo_white.webp" />
               <img
-                src='/ng_logo_white.png'
+                src='/ng_logo_white.webp'
                 alt="Next Gen Stellar"
                 width="400"
                 height="74"

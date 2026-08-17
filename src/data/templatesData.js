@@ -357,16 +357,16 @@ const rawTemplates = [
     category: "standard",
     title: "Cafe Template",
     description: "A cozy and elegant template perfect for cafes, coffee shops, and small bakeries, featuring a menu display and online ordering system.",
-    coverImage: "/Templates Images/Cafe/Home.png",
+    coverImage: "/Templates Images/Cafe/Home.webp",
     tags: ["React.js", "Responsive", "Modern UI"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Cafe/Home.png" },
-      { title: "About Page", image: "/Templates Images/Cafe/About.png" },
-      { title: "Menu Page", image: "/Templates Images/Cafe/Menu.png" },
-      { title: "Gallery Page", image: "/Templates Images/Cafe/Gallery.png" },
-      { title: "Cart Page", image: "/Templates Images/Cafe/Cart.png" },
-      { title: "Order Success Page", image: "/Templates Images/Cafe/Order Success.png" },
-      { title: "Contact Page", image: "/Templates Images/Cafe/Contact.png" }
+      { title: "Home Page", image: "/Templates Images/Cafe/Home.webp" },
+      { title: "About Page", image: "/Templates Images/Cafe/About.webp" },
+      { title: "Menu Page", image: "/Templates Images/Cafe/Menu.webp" },
+      { title: "Gallery Page", image: "/Templates Images/Cafe/Gallery.webp" },
+      { title: "Cart Page", image: "/Templates Images/Cafe/Cart.webp" },
+      { title: "Order Success Page", image: "/Templates Images/Cafe/Order Success.webp" },
+      { title: "Contact Page", image: "/Templates Images/Cafe/Contact.webp" }
     ]
   },
   {
@@ -375,14 +375,14 @@ const rawTemplates = [
     category: "standard",
     title: "NGO Foundation",
     description: "A premium, modern template crafted for Non-Governmental Organizations (NGOs), charities, and foundations to showcase their impact and gather support.",
-    coverImage: "/Templates Images/NGO/Home.png",
+    coverImage: "/Templates Images/NGO/Home.webp",
     tags: ["React.js", "Responsive", "Modern UI"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/NGO/Home.png" },
-      { title: "About Page", image: "/Templates Images/NGO/About.png" },
-      { title: "Programs Page", image: "/Templates Images/NGO/Programs.png" },
-      { title: "Volunteer Page", image: "/Templates Images/NGO/Volunteer.png" },
-      { title: "Contact Page", image: "/Templates Images/NGO/Contact.png" }
+      { title: "Home Page", image: "/Templates Images/NGO/Home.webp" },
+      { title: "About Page", image: "/Templates Images/NGO/About.webp" },
+      { title: "Programs Page", image: "/Templates Images/NGO/Programs.webp" },
+      { title: "Volunteer Page", image: "/Templates Images/NGO/Volunteer.webp" },
+      { title: "Contact Page", image: "/Templates Images/NGO/Contact.webp" }
     ]
   },
   {
@@ -391,16 +391,16 @@ const rawTemplates = [
     category: "growth",
     title: "Elevate Academy - Coaching Institute",
     description: "A premium, high-converting coaching & education institute template with course catalogs, faculty profiles, student success stories, and blog.",
-    coverImage: "/Templates Images/Coaching Institute/Home.png",
+    coverImage: "/Templates Images/Coaching Institute/Home.webp",
     tags: ["React.js", "Education", "Growth Plan"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Coaching Institute/Home.png" },
-      { title: "About Us Page", image: "/Templates Images/Coaching Institute/About.png" },
-      { title: "Courses Page", image: "/Templates Images/Coaching Institute/Courses.png" },
-      { title: "Faculty Page", image: "/Templates Images/Coaching Institute/Faculty.png" },
-      { title: "Success Stories Page", image: "/Templates Images/Coaching Institute/Stories.png" },
-      { title: "Blog Page", image: "/Templates Images/Coaching Institute/Blog.png" },
-      { title: "Contact Page", image: "/Templates Images/Coaching Institute/Contact.png" }
+      { title: "Home Page", image: "/Templates Images/Coaching Institute/Home.webp" },
+      { title: "About Us Page", image: "/Templates Images/Coaching Institute/About.webp" },
+      { title: "Courses Page", image: "/Templates Images/Coaching Institute/Courses.webp" },
+      { title: "Faculty Page", image: "/Templates Images/Coaching Institute/Faculty.webp" },
+      { title: "Success Stories Page", image: "/Templates Images/Coaching Institute/Stories.webp" },
+      { title: "Blog Page", image: "/Templates Images/Coaching Institute/Blog.webp" },
+      { title: "Contact Page", image: "/Templates Images/Coaching Institute/Contact.webp" }
     ]
   },
   {
@@ -409,15 +409,15 @@ const rawTemplates = [
     category: "growth",
     title: "TalentBridge - Job Consultancy",
     description: "A luxury recruitment & HR agency platform template featuring job search, candidate portals, employer solutions, and full admin panel.",
-    coverImage: "/Templates Images/Job Consultancy/Home.png",
+    coverImage: "/Templates Images/Job Consultancy/Home.webp",
     tags: ["React.js", "Recruitment", "Growth Plan", "Admin Panel"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Job Consultancy/Home.png" },
-      { title: "Find Jobs Page", image: "/Templates Images/Job Consultancy/Find jobs.png" },
-      { title: "Companies Page", image: "/Templates Images/Job Consultancy/Companies.png" },
-      { title: "Candidates Page", image: "/Templates Images/Job Consultancy/Candidates.png" },
-      { title: "Pricing Page", image: "/Templates Images/Job Consultancy/Pricing.png" },
-      { title: "Admin Dashboard", image: "/Templates Images/Job Consultancy/Admin Dashboard.png" }
+      { title: "Home Page", image: "/Templates Images/Job Consultancy/Home.webp" },
+      { title: "Find Jobs Page", image: "/Templates Images/Job Consultancy/Find jobs.webp" },
+      { title: "Companies Page", image: "/Templates Images/Job Consultancy/Companies.webp" },
+      { title: "Candidates Page", image: "/Templates Images/Job Consultancy/Candidates.webp" },
+      { title: "Pricing Page", image: "/Templates Images/Job Consultancy/Pricing.webp" },
+      { title: "Admin Dashboard", image: "/Templates Images/Job Consultancy/Admin Dashboard.webp" }
     ]
   },
   {
@@ -426,16 +426,16 @@ const rawTemplates = [
     category: "growth",
     title: "NovaPress - Digital News Portal",
     description: "A modern digital publication and media platform template featuring article archives, topic browsing, and complete admin CMS management.",
-    coverImage: "/Templates Images/News Portal/Home.png",
+    coverImage: "/Templates Images/News Portal/Home.webp",
     tags: ["React.js", "Digital Media", "Growth Plan", "Admin Panel"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/News Portal/Home.png" },
-      { title: "Browse Topics Page", image: "/Templates Images/News Portal/Browse by Topics.png" },
-      { title: "Archive Page", image: "/Templates Images/News Portal/Archive.png" },
-      { title: "Admin Dashboard", image: "/Templates Images/News Portal/Admin Dashboard.png" },
-      { title: "Admin Add Articles", image: "/Templates Images/News Portal/Admin Add Articles.png" },
-      { title: "Admin Add Categories", image: "/Templates Images/News Portal/Admin Add Categories.png" },
-      { title: "Admin Media Library", image: "/Templates Images/News Portal/Admin Media Library.png" }
+      { title: "Home Page", image: "/Templates Images/News Portal/Home.webp" },
+      { title: "Browse Topics Page", image: "/Templates Images/News Portal/Browse by Topics.webp" },
+      { title: "Archive Page", image: "/Templates Images/News Portal/Archive.webp" },
+      { title: "Admin Dashboard", image: "/Templates Images/News Portal/Admin Dashboard.webp" },
+      { title: "Admin Add Articles", image: "/Templates Images/News Portal/Admin Add Articles.webp" },
+      { title: "Admin Add Categories", image: "/Templates Images/News Portal/Admin Add Categories.webp" },
+      { title: "Admin Media Library", image: "/Templates Images/News Portal/Admin Media Library.webp" }
     ]
   },
   {
@@ -444,14 +444,14 @@ const rawTemplates = [
     category: "standard",
     title: "Luxe Glow - Salon & Spa",
     description: "An elegant, high-end luxury salon & spa template with service menus, photo galleries, team showcases, and booking integration.",
-    coverImage: "/Templates Images/Salon & Spa/Home.png",
+    coverImage: "/Templates Images/Salon & Spa/Home.webp",
     tags: ["React.js", "Beauty & Spa", "Standard Plan"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Salon & Spa/Home.png" },
-      { title: "About Us Page", image: "/Templates Images/Salon & Spa/About.png" },
-      { title: "Services Page", image: "/Templates Images/Salon & Spa/Services.png" },
-      { title: "Gallery Page", image: "/Templates Images/Salon & Spa/Gallery.png" },
-      { title: "Contact Page", image: "/Templates Images/Salon & Spa/Contact.png" }
+      { title: "Home Page", image: "/Templates Images/Salon & Spa/Home.webp" },
+      { title: "About Us Page", image: "/Templates Images/Salon & Spa/About.webp" },
+      { title: "Services Page", image: "/Templates Images/Salon & Spa/Services.webp" },
+      { title: "Gallery Page", image: "/Templates Images/Salon & Spa/Gallery.webp" },
+      { title: "Contact Page", image: "/Templates Images/Salon & Spa/Contact.webp" }
     ]
   },
   {
@@ -603,14 +603,14 @@ const rawTemplates = [
     category: "standard",
     title: "AuraPet Veterinary & Pet Care Template",
     description: "A luxury, modern, warm, and trustworthy template designed for veterinary hospitals, pet clinics, grooming lounges, pet spas, resort boarding, and animal care centers.",
-    coverImage: "/Templates Images/Pet Care/Home.png",
+    coverImage: "/Templates Images/Pet Care/Home.webp",
     tags: ["React.js", "Veterinary Care", "Pet Grooming", "Standard Plan", "Responsive"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Pet Care/Home.png" },
-      { title: "Services Page", image: "/Templates Images/Pet Care/Services.png" },
-      { title: "Gallery Page", image: "/Templates Images/Pet Care/Gallery.png" },
-      { title: "About Us Page", image: "/Templates Images/Pet Care/About.png" },
-      { title: "Contact Page", image: "/Templates Images/Pet Care/Contact.png" }
+      { title: "Home Page", image: "/Templates Images/Pet Care/Home.webp" },
+      { title: "Services Page", image: "/Templates Images/Pet Care/Services.webp" },
+      { title: "Gallery Page", image: "/Templates Images/Pet Care/Gallery.webp" },
+      { title: "About Us Page", image: "/Templates Images/Pet Care/About.webp" },
+      { title: "Contact Page", image: "/Templates Images/Pet Care/Contact.webp" }
     ]
   },
   {
@@ -619,15 +619,15 @@ const rawTemplates = [
     category: "standard",
     title: "Apex & Partners Law Firm & Legal Practice",
     description: "A prestigious, high-trust law firm template designed for corporate attorneys, trial lawyers, legal consultants, practice areas, and consultation bookings.",
-    coverImage: "/Templates Images/Law Firm/Home.png",
+    coverImage: "/Templates Images/Law Firm/Home.webp",
     tags: ["React.js", "Law Firm", "Legal Practice", "Standard Plan", "Responsive"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Law Firm/Home.png" },
-      { title: "Practice Areas Page", image: "/Templates Images/Law Firm/Practice Areas.png" },
-      { title: "About Firm Page", image: "/Templates Images/Law Firm/About Firm.png" },
-      { title: "Insights Page", image: "/Templates Images/Law Firm/Insights.png" },
-      { title: "Contact Page", image: "/Templates Images/Law Firm/Contact.png" },
-      { title: "Consultation Booking Modal", image: "/Templates Images/Law Firm/Book.png" }
+      { title: "Home Page", image: "/Templates Images/Law Firm/Home.webp" },
+      { title: "Practice Areas Page", image: "/Templates Images/Law Firm/Practice Areas.webp" },
+      { title: "About Firm Page", image: "/Templates Images/Law Firm/About Firm.webp" },
+      { title: "Insights Page", image: "/Templates Images/Law Firm/Insights.webp" },
+      { title: "Contact Page", image: "/Templates Images/Law Firm/Contact.webp" },
+      { title: "Consultation Booking Modal", image: "/Templates Images/Law Firm/Book.webp" }
     ]
   },
   {
@@ -652,20 +652,20 @@ const rawTemplates = [
     category: "growth",
     title: "Gourmetium Fine Dining & Restaurant Ordering System",
     description: "An end-to-end luxury restaurant ordering platform with interactive digital menus, live order tracking, customer portal, kitchen KDS, delivery driver app, and admin SaaS portal.",
-    coverImage: "/Templates Images/Restaurant Ordering System/Home.png",
+    coverImage: "/Templates Images/Restaurant Ordering System/Home.webp",
     tags: ["React.js", "Restaurant", "Food Delivery", "Growth Plan", "Admin & Kitchen Portal"],
     pages: [
-      { title: "Home Page", image: "/Templates Images/Restaurant Ordering System/Home.png" },
-      { title: "Digital Menu Page", image: "/Templates Images/Restaurant Ordering System/Menu.png" },
-      { title: "Cart & Checkout Drawer", image: "/Templates Images/Restaurant Ordering System/Cart.png" },
-      { title: "Offers & Combos Page", image: "/Templates Images/Restaurant Ordering System/Offers.png" },
-      { title: "Order Tracking", image: "/Templates Images/Restaurant Ordering System/Order Track.png" },
-      { title: "Reservations & Contact", image: "/Templates Images/Restaurant Ordering System/Reservations.png" },
-      { title: "About Us Page", image: "/Templates Images/Restaurant Ordering System/About.png" },
-      { title: "Customer Portal", image: "/Templates Images/Restaurant Ordering System/Order History.png" },
-      { title: "Kitchen KDS Portal", image: "/Templates Images/Restaurant Ordering System/Kitchen KDS.png" },
-      { title: "Driver App Portal", image: "/Templates Images/Restaurant Ordering System/Deliver App.png" },
-      { title: "Admin SaaS Dashboard", image: "/Templates Images/Restaurant Ordering System/Admin Saas.png" }
+      { title: "Home Page", image: "/Templates Images/Restaurant Ordering System/Home.webp" },
+      { title: "Digital Menu Page", image: "/Templates Images/Restaurant Ordering System/Menu.webp" },
+      { title: "Cart & Checkout Drawer", image: "/Templates Images/Restaurant Ordering System/Cart.webp" },
+      { title: "Offers & Combos Page", image: "/Templates Images/Restaurant Ordering System/Offers.webp" },
+      { title: "Order Tracking", image: "/Templates Images/Restaurant Ordering System/Order Track.webp" },
+      { title: "Reservations & Contact", image: "/Templates Images/Restaurant Ordering System/Reservations.webp" },
+      { title: "About Us Page", image: "/Templates Images/Restaurant Ordering System/About.webp" },
+      { title: "Customer Portal", image: "/Templates Images/Restaurant Ordering System/Order History.webp" },
+      { title: "Kitchen KDS Portal", image: "/Templates Images/Restaurant Ordering System/Kitchen KDS.webp" },
+      { title: "Driver App Portal", image: "/Templates Images/Restaurant Ordering System/Deliver App.webp" },
+      { title: "Admin SaaS Dashboard", image: "/Templates Images/Restaurant Ordering System/Admin Saas.webp" }
     ]
   },
   {
