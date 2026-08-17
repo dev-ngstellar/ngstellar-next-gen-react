@@ -110,7 +110,7 @@ function Services() {
             {/* Left Side - Title */}
             <div className="space-y-4">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 border border-violet-400/30 overflow-hidden">
-                <img src="/setting_8333974.png" alt="Operating Principles" className="w-full h-full object-contain p-1.5" />
+                <img src="/setting_8333974.webp" alt="Operating Principles" className="w-full h-full object-contain p-1.5" />
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Operating Principles

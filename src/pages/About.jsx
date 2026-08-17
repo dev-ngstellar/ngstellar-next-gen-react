@@ -117,7 +117,7 @@ export default function About() {
               {/* Floating Element - Only visible on md+ */}
               <div className="absolute -bottom-10 md:-bottom-20  md:-left-10 w-2/3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-2 shadow-2xl transform -rotate-3 hover:rotate-0 transition duration-500 block z-20">
                  <img
-                  src="/about-us-banner-1.jpg"
+                  src="/about-us-banner-1.webp"
                   alt="Business Analytics"
                   className="w-full h-auto rounded-xl shadow-lg"
                 />

@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 /**
- * Optimized Image Component with multi-format fallback (AVIF -> WebP -> Fallback Original)
+ * Optimized Image Component with smart format handling
  */
 function OptimizedImage({
   src,
@@ -16,16 +16,31 @@ function OptimizedImage({
 }) {
   if (!src) return null;
 
-  // Extract base path without extension
-  const extMatch = src.match(/\.(png|jpg|jpeg|webp|avif)$/i);
-  const basePath = extMatch ? src.substring(0, extMatch.index) : src;
+  const isWebp = src.endsWith('.webp');
 
-  const avifSrc = `${basePath}.avif`;
+  if (isWebp) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        width={width}
+        height={height}
+        loading={loading}
+        decoding={decoding}
+        {...(fetchpriority ? { fetchpriority } : {})}
+        {...props}
+      />
+    );
+  }
+
+  // For non-webp legacy files, provide webp fallback if available
+  const extMatch = src.match(/\.(png|jpg|jpeg|avif)$/i);
+  const basePath = extMatch ? src.substring(0, extMatch.index) : src;
   const webpSrc = `${basePath}.webp`;
 
   return (
     <picture>
-      <source srcSet={avifSrc} type="image/avif" />
       <source srcSet={webpSrc} type="image/webp" />
       <img
         src={src}
