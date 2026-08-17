@@ -1,4 +1,4 @@
-export const templates = [
+const rawTemplates = [
   {
     id: 1,
     slug: "construction",
@@ -631,7 +631,7 @@ export const templates = [
     ]
   },
   {
-    id: 40,
+    id: 38,
     slug: "solar-energy",
     category: "standard",
     title: "SunPower Solar Energy & Green Tech Solutions",
@@ -647,7 +647,7 @@ export const templates = [
     ]
   },
   {
-    id: 38,
+    id: 39,
     slug: "restaurant-ordering",
     category: "growth",
     title: "Gourmetium Fine Dining & Restaurant Ordering System",
@@ -669,7 +669,7 @@ export const templates = [
     ]
   },
   {
-    id: 39,
+    id: 40,
     slug: "retail-management",
     category: "professional",
     title: "Retail Grocery Commerce & Retail Management Platform",
@@ -705,7 +705,7 @@ export const templates = [
     ]
   },
   {
-    id: 40,
+    id: 41,
     slug: "dance-academy",
     category: "standard",
     title: "Dance Academy Template",
@@ -721,3 +721,20 @@ export const templates = [
     ]
   }
 ];
+
+// Ensure data safety by deduplicating templates by unique ID and unique slug
+const getUniqueTemplates = (templateList) => {
+  const seenIds = new Set();
+  const seenSlugs = new Set();
+  return templateList.filter((item) => {
+    if (!item || item.id === undefined || !item.slug) return false;
+    if (seenIds.has(item.id) || seenSlugs.has(item.slug)) {
+      return false;
+    }
+    seenIds.add(item.id);
+    seenSlugs.add(item.slug);
+    return true;
+  });
+};
+
+export const templates = getUniqueTemplates(rawTemplates);
