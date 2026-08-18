@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C98B"/>
+      <stop offset="50%" stop-color="#C8A96B"/>
+      <stop offset="100%" stop-color="#9A7B3E"/>
+    </linearGradient>
+    <linearGradient id="goldGradSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5C8"/>
+      <stop offset="100%" stop-color="#C8A96B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Fine Wreath / Arch Ring -->
+  <circle cx="60" cy="60" r="54" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="120 4 4 4" opacity="0.65" />
+  <circle cx="60" cy="60" r="48" stroke="url(#goldGrad)" stroke-width="1" opacity="0.9" />
+
+  <!-- Interlocking Luxury Wedding Rings Motif -->
+  <circle cx="49" cy="46" r="16" stroke="url(#goldGrad)" stroke-width="2" fill="none" />
+  <circle cx="71" cy="46" r="16" stroke="url(#goldGrad)" stroke-width="2" fill="none" />
+
+  <!-- Diamond Sparkle Accent at Intersection -->
+  <path d="M60 26 L63 32 L60 38 L57 32 Z" fill="url(#goldGradSoft)" />
+
+  <!-- Monogram Initials MH -->
+  <text x="60" y="82" font-family="'Cinzel', 'Playfair Display', 'Georgia', serif" font-size="22" font-weight="700" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="2">MH</text>
+
+  <!-- Delicate Stars / Dots -->
+  <circle cx="36" cy="80" r="1.5" fill="url(#goldGrad)" />
+  <circle cx="84" cy="80" r="1.5" fill="url(#goldGrad)" />
+</svg>
