@@ -719,6 +719,36 @@ const rawTemplates = [
       { title: "Programs Page", image: "/Templates Images/dance academy/programs screen.webp" },
       { title: "Contact Us Page", image: "/Templates Images/dance academy/contactus screen.webp" }
     ]
+  },
+  {
+    id: 42,
+    slug: "wedding-planner",
+    category: "standard",
+    title: "Wedding Planner Template",
+    description: "An elegant, romantic, and beautifully styled website template tailored for wedding planners, event organizers, bridal consultants, and celebration managers.",
+    coverImage: "/Templates Images/wedding planner/home.webp",
+    tags: ["React.js", "Wedding Planner", "Event Planning", "Standard Plan", "Responsive"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/wedding planner/home.webp" },
+      { title: "About Us Page", image: "/Templates Images/wedding planner/about us.webp" },
+      { title: "Services Page", image: "/Templates Images/wedding planner/service.webp" },
+      { title: "Weddings Page", image: "/Templates Images/wedding planner/weddings.webp" },
+      { title: "Contact Us Page", image: "/Templates Images/wedding planner/contact us.webp" }
+    ]
+  },
+  {
+    id: 43,
+    slug: "car-rental",
+    category: "starter",
+    title: "Car Rental Template",
+    description: "A modern, sleek, and high-conversion car rental and vehicle hire landing page template designed for rental agencies, car fleets, and luxury vehicle services.",
+    coverImage: "/Templates Images/Car Rental/home.webp",
+    tags: ["React.js", "Car Rental", "Vehicle Fleet", "Starter Plan", "Responsive"],
+    pages: [
+      { title: "Home Page", image: "/Templates Images/Car Rental/home.webp" },
+      { title: "Cars Fleet Page", image: "/Templates Images/Car Rental/cars.webp" },
+      { title: "Contact Us Page", image: "/Templates Images/Car Rental/contact us.webp" }
+    ]
   }
 ];
 
