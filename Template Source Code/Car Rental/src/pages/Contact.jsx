@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -34,22 +35,30 @@ function Contact() {
           <h2>We're here to help.</h2>
 
           <div className="contact-item">
-            <strong>Phone</strong>
+            <strong style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <Phone size={15} style={{ color: "#ff8500" }} /> Phone
+            </strong>
             <span>+91 90000 00000</span>
           </div>
 
           <div className="contact-item">
-            <strong>Email</strong>
+            <strong style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <Mail size={15} style={{ color: "#ff8500" }} /> Email
+            </strong>
             <span>support@drivex.com</span>
           </div>
 
           <div className="contact-item">
-            <strong>Office</strong>
+            <strong style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <MapPin size={15} style={{ color: "#ff8500" }} /> Office
+            </strong>
             <span>Coimbatore, Tamil Nadu, India</span>
           </div>
 
           <div className="contact-item">
-            <strong>Business Hours</strong>
+            <strong style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <Clock size={15} style={{ color: "#ff8500" }} /> Business Hours
+            </strong>
             <span>Mon - Sun · 8:00 AM - 10:00 PM</span>
           </div>
         </div>
@@ -105,28 +114,30 @@ function Contact() {
                 required
               />
 
-              <button type="submit" className="primary-button">
-                Send Message →
+              <button
+                type="submit"
+                className="primary-button"
+                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
+              >
+                Send Message <Send size={15} />
               </button>
             </form>
           ) : (
             <div style={{ textAlign: "center", padding: "40px 10px" }}>
               <div
                 style={{
-                  width: "60px",
-                  height: "60px",
+                  width: "64px",
+                  height: "64px",
                   background: "#eefbf3",
                   color: "#10b981",
                   borderRadius: "50%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "30px",
-                  fontWeight: "bold",
                   margin: "0 auto 20px",
                 }}
               >
-                ✓
+                <CheckCircle2 size={36} />
               </div>
               <h2 style={{ marginBottom: "10px" }}>Message Sent!</h2>
               <p style={{ color: "#687385", marginBottom: "24px" }}>
@@ -148,4 +159,5 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Contact;
+

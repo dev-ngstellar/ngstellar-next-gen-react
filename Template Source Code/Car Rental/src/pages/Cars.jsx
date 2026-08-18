@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import { Search, Filter, ArrowUpDown, RotateCcw } from "lucide-react";
 import { cars } from "../data/carRentalData";
 import CarCard from "../components/CarCard";
 import CarDetailsModal from "../components/CarDetailsModal";
@@ -48,10 +49,14 @@ function Cars() {
         <div className="cars-layout">
           {/* SIDEBAR FILTER */}
           <aside className="filter-bar">
-            <h3>Filter & Search</h3>
+            <h3 style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <Filter size={18} style={{ color: "#ff8500" }} /> Filter & Search
+            </h3>
 
             <div className="filter-group">
-              <label htmlFor="search-car">Search Car</label>
+              <label htmlFor="search-car" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                <Search size={13} /> Search Car
+              </label>
               <input
                 id="search-car"
                 type="text"
@@ -62,7 +67,9 @@ function Cars() {
             </div>
 
             <div className="filter-group">
-              <label htmlFor="type-filter">Vehicle Category</label>
+              <label htmlFor="type-filter" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                <Filter size={13} /> Vehicle Category
+              </label>
               <select
                 id="type-filter"
                 value={type}
@@ -76,7 +83,9 @@ function Cars() {
             </div>
 
             <div className="filter-group">
-              <label htmlFor="sort-filter">Sort By Price</label>
+              <label htmlFor="sort-filter" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                <ArrowUpDown size={13} /> Sort By Price
+              </label>
               <select
                 id="sort-filter"
                 value={sort}
@@ -109,10 +118,10 @@ function Cars() {
                 <button
                   type="button"
                   className="primary-button"
-                  style={{ width: "auto", padding: "10px 24px", marginTop: "12px" }}
+                  style={{ width: "auto", padding: "10px 24px", marginTop: "12px", display: "inline-flex", alignItems: "center", gap: "6px" }}
                   onClick={() => { setSearch(""); setType("All"); setSort("Recommended"); }}
                 >
-                  Reset Filters
+                  <RotateCcw size={15} /> Reset Filters
                 </button>
               </div>
             )}
@@ -139,4 +148,5 @@ function Cars() {
   );
 }
 
-export default Cars;
+export default Cars;
+

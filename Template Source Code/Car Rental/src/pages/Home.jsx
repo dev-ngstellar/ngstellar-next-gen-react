@@ -1,5 +1,17 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  Car,
+  MapPin,
+  Headphones,
+  Calendar,
+  Search,
+  ArrowRight,
+  ShieldCheck,
+  Tag,
+  CalendarCheck,
+  Sparkles,
+} from "lucide-react";
 import { cars } from "../data/carRentalData";
 import CarCard from "../components/CarCard";
 import CarDetailsModal from "../components/CarDetailsModal";
@@ -37,7 +49,9 @@ function Home() {
       {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
-          <p className="hero-label">PREMIUM CAR RENTALS</p>
+          <p className="hero-label" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <Sparkles size={14} style={{ color: "#ff8500" }} /> PREMIUM CAR RENTALS
+          </p>
 
           <h1 className="hero-title">
             Your Journey
@@ -51,17 +65,23 @@ function Home() {
 
           <div className="hero-stats">
             <div className="hero-stat">
-              <span className="hero-stat-icon">★</span>
+              <span className="hero-stat-icon">
+                <Car size={18} />
+              </span>
               <span><strong>500+</strong> Cars</span>
             </div>
 
             <div className="hero-stat">
-              <span className="hero-stat-icon">📍</span>
+              <span className="hero-stat-icon">
+                <MapPin size={18} />
+              </span>
               <span><strong>25+</strong> Locations</span>
             </div>
 
             <div className="hero-stat">
-              <span className="hero-stat-icon">🎧</span>
+              <span className="hero-stat-icon">
+                <Headphones size={18} />
+              </span>
               <span><strong>24/7</strong> Support</span>
             </div>
           </div>
@@ -71,7 +91,9 @@ function Home() {
         <div className="booking-box">
           <form className="booking-form" onSubmit={handleSearch}>
             <div className="booking-field">
-              <label htmlFor="pickupLocation">Pick-up Location</label>
+              <label htmlFor="pickupLocation" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                <MapPin size={13} style={{ color: "#ff8500" }} /> Pick-up Location
+              </label>
               <input
                 id="pickupLocation"
                 name="pickupLocation"
@@ -82,7 +104,9 @@ function Home() {
             </div>
 
             <div className="booking-field">
-              <label htmlFor="dropoffLocation">Drop-off Location</label>
+              <label htmlFor="dropoffLocation" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                <MapPin size={13} style={{ color: "#ff8500" }} /> Drop-off Location
+              </label>
               <input
                 id="dropoffLocation"
                 name="dropoffLocation"
@@ -93,7 +117,9 @@ function Home() {
             </div>
 
             <div className="booking-field">
-              <label htmlFor="pickupDate">Pick-up Date</label>
+              <label htmlFor="pickupDate" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                <Calendar size={13} style={{ color: "#ff8500" }} /> Pick-up Date
+              </label>
               <input
                 id="pickupDate"
                 name="pickupDate"
@@ -104,7 +130,9 @@ function Home() {
             </div>
 
             <div className="booking-field">
-              <label htmlFor="dropoffDate">Drop-off Date</label>
+              <label htmlFor="dropoffDate" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                <Calendar size={13} style={{ color: "#ff8500" }} /> Drop-off Date
+              </label>
               <input
                 id="dropoffDate"
                 name="dropoffDate"
@@ -114,8 +142,8 @@ function Home() {
               />
             </div>
 
-            <button type="submit" className="search-button">
-              Search Cars →
+            <button type="submit" className="search-button" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px" }}>
+              <Search size={16} /> Search Cars
             </button>
           </form>
         </div>
@@ -132,8 +160,8 @@ function Home() {
             </p>
           </div>
 
-          <Link to="/cars" className="view-all">
-            View All Cars →
+          <Link to="/cars" className="view-all" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            View All Cars <ArrowRight size={16} />
           </Link>
         </div>
 
@@ -161,25 +189,33 @@ function Home() {
 
         <div className="why-grid">
           <div className="why-card">
-            <div className="why-icon">🚗</div>
+            <div className="why-icon">
+              <Car size={22} />
+            </div>
             <h3>Wide Selection</h3>
             <p>Choose from hundreds of well-maintained vehicles ranging from economic sedans to luxury SUVs.</p>
           </div>
 
           <div className="why-card">
-            <div className="why-icon">💰</div>
+            <div className="why-icon">
+              <Tag size={22} />
+            </div>
             <h3>Best Prices</h3>
             <p>Transparent pricing with no hidden charges, complete with comprehensive insurance options.</p>
           </div>
 
           <div className="why-card">
-            <div className="why-icon">📅</div>
+            <div className="why-icon">
+              <CalendarCheck size={22} />
+            </div>
             <h3>Flexible Booking</h3>
             <p>Easy online booking, instant confirmations, and hassle-free cancellation options anytime.</p>
           </div>
 
           <div className="why-card">
-            <div className="why-icon">🎧</div>
+            <div className="why-icon">
+              <Headphones size={22} />
+            </div>
             <h3>24/7 Support</h3>
             <p>Our dedicated road assistance and customer service team is always available to help you.</p>
           </div>
@@ -198,8 +234,8 @@ function Home() {
             <p className="cta-description">
               Book your perfect car today and enjoy an unforgettable driving experience.
             </p>
-            <Link to="/cars" className="cta-button">
-              Browse Cars →
+            <Link to="/cars" className="cta-button" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+              Browse Cars <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -224,4 +260,5 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home;
+

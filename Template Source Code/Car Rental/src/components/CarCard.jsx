@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { Star, Heart, Gauge, Users, Fuel, ArrowRight } from "lucide-react";
 
 function CarCard({ car, onView, onBook }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
   return (
     <article className="car-card">
       <div className="car-image-wrapper">
@@ -12,8 +15,17 @@ function CarCard({ car, onView, onBook }) {
         {car.rating >= 4.8 && (
           <span className="popular-badge">Popular</span>
         )}
-        <button type="button" className="favorite-button" title="Save to favorites">
-          ♡
+        <button
+          type="button"
+          className={`favorite-button ${isFavorite ? "active" : ""}`}
+          title="Save to favorites"
+          onClick={() => setIsFavorite(!isFavorite)}
+          style={{
+            color: isFavorite ? "#ef4444" : "#071a32",
+            fill: isFavorite ? "#ef4444" : "none",
+          }}
+        >
+          <Heart className="icon-sm" size={16} />
         </button>
       </div>
 
@@ -22,16 +34,24 @@ function CarCard({ car, onView, onBook }) {
           {car.brand} {car.model}
         </h3>
 
-        <div className="car-rating">
-          ★ {car.rating} <span style={{ color: "#687385", fontWeight: 400 }}>({car.year})</span>
+        <div className="car-rating" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          <Star className="icon-star" size={15} fill="#f59e0b" color="#f59e0b" />
+          <span>{car.rating}</span>
+          <span style={{ color: "#687385", fontWeight: 400 }}>({car.year})</span>
         </div>
 
         <p className="car-type">{car.type}</p>
 
         <div className="car-features">
-          <span className="car-feature">⚙ {car.transmission}</span>
-          <span className="car-feature">👥 {car.seats} Seats</span>
-          <span className="car-feature">⛽ {car.fuel}</span>
+          <span className="car-feature">
+            <Gauge size={14} style={{ color: "#ff8500" }} /> {car.transmission}
+          </span>
+          <span className="car-feature">
+            <Users size={14} style={{ color: "#ff8500" }} /> {car.seats} Seats
+          </span>
+          <span className="car-feature">
+            <Fuel size={14} style={{ color: "#ff8500" }} /> {car.fuel}
+          </span>
         </div>
 
         <div className="car-price">
@@ -50,9 +70,10 @@ function CarCard({ car, onView, onBook }) {
           <button
             type="button"
             className="rent-button"
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}
             onClick={() => onBook && onBook(car)}
           >
-            Rent →
+            Rent <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -60,4 +81,5 @@ function CarCard({ car, onView, onBook }) {
   );
 }
 
-export default CarCard;
+export default CarCard;
+
