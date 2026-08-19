@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
                 />
             </Helmet>
             {/* Header Banner - Matching TermsAndConditions Style */}
-            <div className="relative w-full py-24 md:py-32 overflow-hidden bg-[#020617]">
+            <div className="relative w-full pt-24 sm:pt-28 pb-12 sm:pb-14 overflow-hidden bg-[#020617]">
                 {/* Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-slate-950 to-secondary-950 opacity-90"></div>
                 <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-secondary-900/20 to-transparent blur-3xl"></div>
@@ -38,7 +38,7 @@ const PrivacyPolicy = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="max-w-6xl mx-auto px-6 mt-20 relative z-1 pb-12 md:pb-16"
+                className="max-w-6xl mx-auto px-6 mt-8 sm:mt-10 relative z-1 pb-12 md:pb-16"
             >
                 <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800 rounded-2xl p-8 md:p-12 text-slate-300 shadow-2xl">
                     

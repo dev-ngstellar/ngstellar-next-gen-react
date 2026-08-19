@@ -3,33 +3,33 @@ import { motion } from 'framer-motion';
 const projectImages = [
   {
     url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80',
-    title: 'E-Commerce Platform',
-    category: 'Web Development'
+    title: 'Enterprise Platforms',
+    category: 'Technology Transformation'
   },
   {
     url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
-    title: 'Analytics Dashboard',
-    category: 'UI/UX Design'
+    title: 'Diagnostic Roadmaps',
+    category: 'Transformation Health Check'
   },
   {
     url: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop&q=80',
-    title: 'Brand Identity',
-    category: 'Branding'
+    title: 'Brand Architecture',
+    category: 'Brand & Experience'
   },
   {
     url: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop&q=80',
-    title: 'Marketing Campaign',
-    category: 'Digital Marketing'
+    title: 'Digital Growth Strategy',
+    category: 'Digital Growth'
   },
   {
     url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=80',
-    title: 'Mobile App',
-    category: 'App Development'
+    title: 'AI & Automation Systems',
+    category: 'Technology Transformation'
   },
   {
     url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=80',
-    title: 'Corporate Website',
-    category: 'Web Design'
+    title: 'Sustainability Frameworks',
+    category: 'Sustainability Advisory'
   },
 ];
 
@@ -54,7 +54,7 @@ function Gallery() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border border-violet-400/30 text-violet-200 text-xs font-medium uppercase tracking-wider mb-4">
               <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
-              Our Projects
+              Capability Showcase
             </span>
           </motion.div>
 

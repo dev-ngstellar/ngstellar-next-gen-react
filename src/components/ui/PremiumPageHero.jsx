@@ -28,7 +28,7 @@ function PremiumPageHero({
       : 'bg-primary-500/10 border-primary-500/25 text-primary-300';
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+    <section className="relative pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-28 lg:pb-14 overflow-hidden">
       {/* Precision ambient background glow */}
       <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] ${accentGlow} blur-[140px] rounded-full pointer-events-none -z-10`} />
       <div className="absolute top-1/3 right-10 w-[400px] h-[300px] bg-secondary-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
@@ -37,7 +37,7 @@ function PremiumPageHero({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Breadcrumb Bar */}
         {breadcrumbs.length > 0 && (
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-6 flex-wrap">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-3.5 sm:mb-4 flex-wrap">
             {breadcrumbs.map((b, idx) => (
               <span key={idx} className="flex items-center gap-2">
                 {idx > 0 && <ChevronRight className="w-3.5 h-3.5 text-slate-600" />}
@@ -54,13 +54,13 @@ function PremiumPageHero({
         )}
 
         {/* Hero Grid: Left Content + Right Strategic Visual */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           <div className={visualElement ? 'lg:col-span-7' : 'lg:col-span-10'}>
             {eyebrow && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-bold uppercase tracking-widest mb-6 ${badgeBorder}`}
+                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-bold uppercase tracking-widest mb-3.5 sm:mb-4 ${badgeBorder}`}
               >
                 <Sparkles className="w-3.5 h-3.5 text-secondary-400" />
                 <span>{eyebrow}</span>
@@ -71,7 +71,7 @@ function PremiumPageHero({
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white tracking-tight leading-[1.15] mb-5"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.1rem] font-extrabold text-white tracking-tight leading-[1.15] mb-3.5 sm:mb-4"
             >
               {title}{' '}
               {titleHighlight && (
@@ -86,7 +86,7 @@ function PremiumPageHero({
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-primary-300 via-secondary-300 to-emerald-300 bg-clip-text text-transparent mb-5"
+                className="text-sm sm:text-base md:text-lg font-bold bg-gradient-to-r from-primary-300 via-secondary-300 to-emerald-300 bg-clip-text text-transparent mb-3.5 sm:mb-4"
               >
                 {tagline}
               </motion.div>
@@ -97,7 +97,7 @@ function PremiumPageHero({
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8 font-normal"
+                className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mb-6 font-normal whitespace-pre-line"
               >
                 {description}
               </motion.p>
@@ -108,7 +108,7 @@ function PremiumPageHero({
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-wrap items-center gap-3.5"
             >
               {primaryCta && (
                 <Link

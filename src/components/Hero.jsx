@@ -8,47 +8,47 @@ const Hero3DAnimation = lazy(() => import('./Hero3DAnimation'));
 const heroSlides = [
   {
     id: 1,
-    badge: '👉 Build Smarter. Grow Faster.',
-    title: 'Is your business growing—',
-    titleHighlight: 'or just getting bigger?',
+    badge: 'Transformation & Sustainability Advisory',
+    title: 'Transform the Business.',
+    titleHighlight: 'Sustain the Impact.',
     titleBody: '',
-    descHighlight: 'NG Stellar helps businesses identify operational gaps, improve processes, leverage technology and unlock new growth opportunities.',
-    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
+    descHighlight: 'NG Stellar is a Transformation & Sustainability Advisory firm helping businesses navigate change, solve complex challenges, unlock opportunities and build sustainable long-term value.',
+    descBody: 'From business strategy and process transformation to technology, AI, digital growth and sustainability, we help organizations understand what needs to change—and turn that understanding into measurable action.',
     features: [
-      { icon: '📊', label: 'Business Diagnostic' },
+      { icon: '📊', label: 'Diagnostic' },
       { icon: '🚀', label: 'Growth Advisory' },
       { icon: '🔄', label: 'Transformation' },
-      { icon: '💡', label: 'New Ventures' }
+      { icon: '🌱', label: 'Sustainability' }
     ]
   },
   {
     id: 2,
-    badge: '👉 Build Smarter. Grow Faster.',
-    title: "Dreams Don't Fail.",
-    titleHighlight: 'They Just Go Unnoticed.',
+    badge: 'From Problem or Idea to Sustainable Impact',
+    title: 'From Problem or Idea',
+    titleHighlight: 'to Sustainable Impact',
     titleBody: '',
-    descHighlight: "If customers can't find you online, they can't choose you.",
-    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
+    descHighlight: 'Every business reaches a point where something needs to change—whether a growth challenge, inefficient process, or outdated technology.',
+    descBody: 'NG Stellar brings together the strategic clarity, practical frameworks, specialized capabilities and ecosystem partners required to transform businesses and sustain results.',
     features: [
-      { icon: '📊', label: 'Business Diagnostic' },
-      { icon: '🚀', label: 'Growth Advisory' },
-      { icon: '🔄', label: 'Transformation' },
-      { icon: '💡', label: 'New Ventures' }
+      { icon: '💡', label: 'Problem & Opportunity' },
+      { icon: '🔍', label: 'Deep Diagnosis' },
+      { icon: '📐', label: 'Practical Strategy' },
+      { icon: '🌐', label: 'Ecosystem Delivery' }
     ]
   },
   {
     id: 3,
-    badge: '👉 Build Smarter. Grow Faster.',
-    title: 'Your Business Has',
-    titleHighlight: 'More Potential Than You Think.',
+    badge: 'Transformation Health Check',
+    title: 'Identify Gaps.',
+    titleHighlight: 'Unlock Value.',
     titleBody: '',
-    descHighlight: "Hard work alone isn't enough without the right systems.",
-    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
+    descHighlight: 'A comprehensive diagnostic across Business, People, Process, Technology and Sustainability.',
+    descBody: 'Uncover root causes, identify transformation priorities, and build a practical roadmap for sustainable growth and organizational resilience.',
     features: [
-      { icon: '📊', label: 'Business Diagnostic' },
-      { icon: '🚀', label: 'Growth Advisory' },
-      { icon: '🔄', label: 'Transformation' },
-      { icon: '💡', label: 'New Ventures' }
+      { icon: '🏢', label: 'Business' },
+      { icon: '👥', label: 'People' },
+      { icon: '⚙️', label: 'Process' },
+      { icon: '💻', label: 'Technology' }
     ]
   },
 ];
@@ -161,11 +161,18 @@ function Hero() {
             {/* Bottom Controls - Stable Wrapper */}
             <div className="flex flex-wrap items-center gap-4 md:gap-6 relative z-[60]">
               <Link
-                to="/transformation-health-check"
+                to="/contact/transformation-conversation"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95"
               >
-                Get Your Business Health Check
+                Start a Transformation Conversation
+              </Link>
+              <Link
+                to="/approach"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="order-2 md:order-none inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md"
+              >
+                Explore Our Approach
               </Link>
 
               {/* Features - Dynamic but wrapper is stable */}

@@ -15,8 +15,8 @@ function SEO({
   serviceData = null
 }) {
   const fullTitle = title
-    ? `${title} | NG Stellar — Transformation & Sustainability Advisory`
-    : 'NG Stellar — Transformation & Sustainability Advisory';
+    ? (title.includes('NG Stellar') ? title : `${title} | NG Stellar`)
+    : 'NG Stellar | Transformation & Sustainability Advisory';
 
   const defaultDescription =
     'NG Stellar is a premier transformation and sustainability advisory firm. Transform the business. Sustain the impact across business, people, processes, technology, and digital growth.';

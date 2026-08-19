@@ -4,8 +4,8 @@ import BorderBeam from './BorderBeam';
 
 const cards = [
   {
-    title: 'Web Design & Development',
-    text: 'Creating stunning, responsive websites that engage and convert your visitors.',
+    title: 'Business Transformation',
+    text: 'Helping businesses identify transformation opportunities, redesign strategies, and improve organizational performance.',
     icon: (
       <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="1.5" className="text-indigo-400" />
@@ -15,8 +15,8 @@ const cards = [
     )
   },
   {
-    title: 'Mobile App Development',
-    text: 'Building intuitive and user-friendly mobile apps for iOS and Android platforms.',
+    title: 'People & Organization',
+    text: 'Aligning leadership, establishing role clarity, building talent capability, and shaping high-performance cultures.',
     icon: (
       <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <rect x="7" y="2" width="10" height="20" rx="2" strokeWidth="1.5" className="text-indigo-400" />
@@ -26,8 +26,8 @@ const cards = [
     )
   },
   {
-    title: 'Ecommerce Website Design',
-    text: 'Designing seamless ecommerce platforms that enhance the shopping experience.',
+    title: 'Process & Operations',
+    text: 'Mapping workflows, eliminating bottlenecks, streamlining operations, and designing scalable standard processes.',
     icon: (
       <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <circle cx="9" cy="21" r="1" className="text-indigo-500" strokeWidth="2" />
@@ -37,8 +37,8 @@ const cards = [
     )
   },
   {
-    title: 'Custom Software Development',
-    text: 'Developing tailored software solutions to streamline your business operations.',
+    title: 'Technology & AI Transformation',
+    text: 'Engineering modern digital platforms, AI automation, custom software, and scalable technology architectures.',
     icon: (
       <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-400" />
@@ -47,8 +47,8 @@ const cards = [
     )
   },
   {
-    title: 'Digital Marketing',
-    text: 'Strategize and implement data-driven marketing campaigns to increase visibility.',
+    title: 'Sustainability Advisory',
+    text: 'Embedding economic durability, governance accountability, social responsibility, and long-term enterprise resilience.',
     icon: (
       <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-400" />
@@ -57,8 +57,8 @@ const cards = [
     )
   },
   {
-    title: 'Design Services',
-    text: 'We offer a range of design services including logo design, UI/UX design, animation videos',
+    title: 'Transformation Health Check',
+    text: 'A structured diagnostic evaluating your business across 5 critical dimensions with an actionable transformation roadmap.',
     icon: (
       <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-400" />
@@ -77,30 +77,24 @@ function Workflow() {
 
   return (
     <section className="relative mt-24 rounded-[32px] p-[1.5px] overflow-hidden shadow-[0_40px_120px_rgba(10,16,40,0.9)] z-0">
-      {/* Animated Border Beam */}
-      {/* Animated Border Beam */}
-      {/* <BorderBeam /> */}
-        {/* className="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#0000_92.5%,#d946ef_96.5%,#ffaa40_100%)] z-[-1]" */}
-
-      {/* Main Content Container (Masks the center) */}
+      {/* Main Content Container */}
       <div className="relative h-full w-full rounded-[30px] bg-[#050718] px-4 py-12 text-slate-100">
       <div className="mx-auto max-w-6xl">
         {/* Top label + title */}
         <div className="text-center">
           <div className="mb-2 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.22em] text-indigo-200/80 uppercase">
-            
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border border-violet-400/30 text-violet-200 text-xs font-medium uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border border-violet-400/30 text-violet-200 text-xs font-medium uppercase tracking-wider mb-4">
               <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
-              Our Services
+              Core Advisory Scope
             </span>            
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            What we serve
+            Transformation Practices
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-300">
-            Comprehensive digital solutions tailored to your business needs. From web development to digital marketing, we deliver excellence across all platforms.
+            From business strategy and process transformation to technology, AI, digital growth and sustainability, we help organizations navigate change and build sustainable long-term value.
           </p>
         </div>
 

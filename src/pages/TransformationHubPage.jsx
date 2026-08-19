@@ -1,24 +1,18 @@
 import { memo } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  ChevronRight,
   Sparkles,
-  Compass,
-  Layers,
-  ShieldCheck,
-  TrendingUp,
   Briefcase,
   Users,
   Workflow,
   Cpu,
   CheckCircle2,
-  Activity
+  ChevronDown
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PremiumPageHero from '../components/ui/PremiumPageHero';
-import OutcomeCards from '../components/ui/OutcomeCards';
 import RelatedContent from '../components/ui/RelatedContent';
 import ContextualCTA from '../components/ui/ContextualCTA';
 import { TRANSFORMATION_HUB } from '../data/siteContent';
@@ -38,16 +32,16 @@ function TransformationHubPage() {
   ];
 
   const relatedLinks = [
-    { title: 'Transformation Health Check', category: 'Diagnostic', desc: 'Benchmark organizational maturity across 5 dimensions.', href: '/transformation-health-check' },
-    { title: 'Our 6-Stage Approach', category: 'Methodology', desc: 'From initial discovery to continuous governance.', href: '/approach' },
-    { title: 'Sustainability Advisory', category: 'Resilience', desc: 'Institutionalize economic, governance & social durability.', href: '/sustainability' },
-    { title: 'Transformation Stories', category: 'Case Studies', desc: 'Explore illustrative advisory scenarios across industries.', href: '/transformation-stories' },
+    { title: 'Transformation Health Check', category: 'Diagnostic', desc: 'Assess your business across 5 critical dimensions.', href: '/transformation-health-check' },
+    { title: 'Sustainability Advisory', category: 'Sustainability', desc: 'Integrate economic viability, governance and resilience.', href: '/sustainability' },
+    { title: 'Our Transformation Capabilities', category: 'Capabilities', desc: 'Explore strategy, tech, platforms, AI and digital growth.', href: '/capabilities' },
+    { title: 'Our Approach', category: 'Methodology', desc: 'Discover → Diagnose → Design → Connect → Transform → Sustain.', href: '/approach' },
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans pb-12">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans pb-16">
       <SEO
-        title="Business Transformation for Sustainable Growth"
+        title={data.seoTitle}
         description={data.metaDescription}
         canonicalUrl="/transformation"
         breadcrumbs={breadcrumbs}
@@ -55,27 +49,108 @@ function TransformationHubPage() {
 
       {/* 1. HERO */}
       <PremiumPageHero
-        eyebrow="Master Advisory Framework"
+        eyebrow="Transformation Advisory"
         title={data.h1}
-        tagline={data.tagline}
         description={data.heroDescription}
         breadcrumbs={breadcrumbs}
         primaryCta={data.ctaPrimary}
-        secondaryCta={{
-          label: data.ctaSecondary.label,
-          href: data.ctaSecondary.href,
-          icon: Activity
-        }}
+        secondaryCta={data.ctaSecondary}
       />
 
-      {/* 2. 4 CORE TRANSFORMATION PRACTICES */}
-      <section className="py-16 bg-slate-900/50 border-y border-white/10">
+      {/* 2. OUR TRANSFORMATION FRAMEWORK: HORIZONTAL (DESKTOP) / VERTICAL (TABLET/MOBILE) JOURNEY */}
+      <section className="py-10 sm:py-14 bg-slate-900/60 border-y border-white/10 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
             <span className="text-xs font-bold text-secondary-400 uppercase tracking-widest mb-2 block">
+              Methodology
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+              {data.frameworkTitle}
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base">
+              A structured transformation journey engineered to move organizations from diagnostic insight to sustainable results.
+            </p>
+          </div>
+
+          {/* DESKTOP VIEW: HORIZONTAL TRANSFORMATION JOURNEY */}
+          <div className="hidden lg:block">
+            <div className="relative">
+              {/* Connecting Horizontal Line */}
+              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500/40 via-teal-500/40 to-secondary-500/40 -translate-y-12 z-0" />
+
+              <div className="grid grid-cols-6 gap-3 relative z-10">
+                {data.frameworkStages.map((stage, idx) => (
+                  <div
+                    key={stage.id}
+                    className="p-5 rounded-2xl bg-slate-950/90 border border-white/10 hover:border-primary-400/60 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1"
+                  >
+                    <div>
+                      {/* Step Indicator */}
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="w-8 h-8 rounded-xl bg-primary-500/20 border border-primary-500/40 text-primary-300 font-mono font-bold text-xs flex items-center justify-center group-hover:scale-110 transition-transform">
+                          {stage.step}
+                        </span>
+                        {idx < data.frameworkStages.length - 1 && (
+                          <span className="text-xs text-slate-500 font-bold">→</span>
+                        )}
+                      </div>
+
+                      <h3 className="text-sm font-bold text-white mb-2 tracking-wide uppercase group-hover:text-primary-300 transition-colors">
+                        {stage.title}
+                      </h3>
+
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        {stage.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* TABLET / MOBILE VIEW: VERTICAL TRANSFORMATION JOURNEY */}
+          <div className="lg:hidden relative">
+            {/* Connecting Vertical Line */}
+            <div className="absolute top-0 bottom-0 left-6 w-0.5 bg-gradient-to-b from-primary-500 via-teal-500 to-secondary-500 z-0" />
+
+            <div className="space-y-4 relative z-10">
+              {data.frameworkStages.map((stage, idx) => (
+                <div key={stage.id} className="flex items-start gap-4">
+                  {/* Step Node */}
+                  <div className="w-12 h-12 rounded-2xl bg-slate-950 border-2 border-primary-500 text-primary-300 font-mono font-bold text-sm flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary-500/20">
+                    {stage.step}
+                  </div>
+
+                  {/* Content Card */}
+                  <div className="flex-1 p-5 rounded-2xl bg-slate-900/90 border border-white/10 shadow-lg space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-base font-bold text-white uppercase tracking-wide">
+                        {stage.title}
+                      </h3>
+                      {idx < data.frameworkStages.length - 1 && (
+                        <ChevronDown className="w-4 h-4 text-slate-500" />
+                      )}
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      {stage.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. CORE TRANSFORMATION PRACTICES */}
+      <section className="py-12 sm:py-16 bg-slate-950">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+            <span className="text-xs font-bold text-primary-400 uppercase tracking-widest mb-2 block">
               Core Practice Areas
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
               Integrated Transformation Practices
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -105,7 +180,7 @@ function TransformationHubPage() {
                       {area.title}
                     </h3>
 
-                    <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                    <p className="text-sm text-slate-300 leading-relaxed mb-6">
                       {area.desc}
                     </p>
                   </div>
@@ -124,54 +199,14 @@ function TransformationHubPage() {
         </div>
       </section>
 
-      {/* 3. 7 DIMENSIONS OF HOLISTIC ALIGNMENT */}
-      <section className="py-20 bg-slate-950">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-primary-400 uppercase tracking-widest mb-2 block">
-              Holistic Synchronization
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
-              Seven Dimensions of Enterprise Transformation
-            </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Sustainable business transformation requires synchronizing every facet of the operating model.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {data.dimensions.map((dim, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-white/[0.03] border border-white/8 hover:border-primary-500/30 transition-all duration-200"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-300 flex items-center justify-center font-bold text-xs">
-                    0{idx + 1}
-                  </div>
-                  <h3 className="text-base font-bold text-white">{dim.title}</h3>
-                </div>
-                <p className="text-xs text-slate-400 leading-relaxed">{dim.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. OUTCOMES */}
-      <OutcomeCards
-        title="Predictable Transformation Realization"
-        subtitle="How our holistic synchronization de-risks multi-year change initiatives."
-      />
-
-      {/* 5. RELATED CONTENT */}
+      {/* 4. RELATED CONTENT */}
       <RelatedContent links={relatedLinks} />
 
-      {/* 6. CONTEXTUAL CTA */}
+      {/* 5. CONTEXTUAL CTA */}
       <ContextualCTA
         eyebrow="Transformation Advisory"
-        heading="Ready to Accelerate Your Enterprise Transformation?"
-        description="Connect with our senior advisory team for an executive conversation on realigning your operating model for sustainable growth."
+        heading="Ready to transform your business?"
+        description="Let's understand where you are today, identify what needs to change and build a practical path toward sustainable impact."
         primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
         secondaryCta={{ label: 'Take Health Check', href: '/transformation-health-check' }}
       />

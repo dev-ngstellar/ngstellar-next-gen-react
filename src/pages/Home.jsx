@@ -14,14 +14,14 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>NG Stellar - Transforming Business Through Innovation</title>
+        <title>NG Stellar | Transformation & Sustainability Advisory</title>
         <meta
           name="description"
-          content="NG Stellar provides modern web development, React, and digital solutions. Transforming Business Through Innovation."
+          content="NG Stellar is a Transformation & Sustainability Advisory firm helping businesses navigate change, solve complex challenges, unlock opportunities and build sustainable long-term value."
         />
         <meta
           name="keywords"
-          content="Web Development, React, Software Company India, Digital Transformation, Business Solutions, NG Stellar"
+          content="Transformation Advisory, Sustainability Advisory, Business Diagnostic, Digital Growth, Process Transformation, Technology Advisory, NG Stellar"
         />
         <link rel="canonical" href="https://ngstellar.com/" />
       </Helmet>

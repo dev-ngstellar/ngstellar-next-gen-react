@@ -1,406 +1,438 @@
-// Granular Content Dictionary for all Capabilities & Subpages
+// Master Capabilities Content Data Structure
 
 export const CAPABILITIES_MASTER = {
-  h1: 'Capabilities That Turn Strategy Into Action',
-  tagline: 'End-to-End Capabilities Across Strategy, Brand Experience, Technology Transformation, and Digital Growth.',
-  metaDescription: 'Explore the full spectrum of NG Stellar capabilities: Strategy & Research, Brand Experience, Custom Software, Mobile Apps, AI & Automation, E-commerce, and Digital Growth.',
-  heroDescription:
-    'Strategy without execution is ineffective; execution without strategy is wasteful. We combine strategic business advisory with specialized engineering, design, and growth capabilities to deliver measurable transformation across every layer of your business.',
+  h1: 'Our Transformation Capabilities',
+  seoTitle: 'Business Transformation & Digital Capabilities | NG Stellar',
+  metaDescription:
+    "Explore NG Stellar's capabilities across strategy, research, branding, customer experience, technology transformation, software development, AI, automation and digital growth.",
+  intro:
+    'From strategy to execution, we bring together the capabilities required to help businesses transform.\n\nOur capabilities combine business thinking, creativity, technology and digital execution.',
   categories: [
     {
       id: 'strategy-research',
-      title: 'STRATEGY & RESEARCH',
+      title: 'Strategy & Research',
       h1: 'Strategy & Research',
-      badge: 'Strategic Foundation',
+      badge: 'Strategy & Insights',
       href: '/capabilities/strategy-research',
-      tagline: 'Grounded Insight. Clear Direction. Actionable Roadmaps.',
-      metaDescription: 'Business research, market analysis, competitive benchmarking, customer understanding, and strategic planning with NG Stellar.',
-      desc: 'We conduct comprehensive business research, competitive benchmarking, market positioning analysis, and customer journey discovery to eliminate strategic guesswork and pinpoint high-return growth avenues.',
-      deliverables: [
-        'Business model and revenue sustainability analysis',
-        'Market opportunity and addressable market sizing',
-        'Competitive differentiation and value proposition mapping',
-        'Customer persona, buying behavior, and journey research',
-        'Multi-year strategic transformation roadmap'
+      seoTitle: 'Business Strategy & Market Research Services | NG Stellar',
+      metaDescription:
+        'We study businesses, markets, customers, competitors and opportunities to create strategies aligned with real business objectives.',
+      heroText:
+        'Transformation begins with understanding.\n\nWe study businesses, markets, customers, competitors and opportunities to create strategies aligned with real business objectives.',
+      capabilitiesTitle: 'Capabilities',
+      capabilities: [
+        'Business research',
+        'Market research',
+        'Competitor analysis',
+        'Customer research',
+        'Business analysis',
+        'Opportunity analysis',
+        'Digital strategy',
+        'Transformation strategy',
+        'Growth strategy'
       ],
-      methodology: [
-        { title: 'Market & Competitor Scans', desc: 'Analyzing macro-economic shifts, category disruption, and rival positioning.' },
-        { title: 'Customer Discovery', desc: 'Conducting in-depth stakeholder interviews to uncover unmet customer needs.' },
-        { title: 'Commercial Modeling', desc: 'Evaluating unit economics, margin potential, and strategic investment requirements.' },
-        { title: 'Strategic Roadmap Design', desc: 'Structuring sequenced phases with clear milestone checkpoints and accountability.' }
-      ],
-      outcomes: 'Strategic clarity, de-risked capital investment, and aligned executive decision-making.',
-      cta: 'Discuss Your Strategy',
+      outcomeTitle: 'Outcome',
+      outcomesList: ['Better information.', 'Better decisions.', 'Better direction.'],
+      cta: 'Discuss Strategy & Research',
       ctaHref: '/contact/transformation-conversation'
     },
     {
       id: 'brand-experience',
-      title: 'BRAND & EXPERIENCE',
-      h1: 'Brand Strategy, Design & Experience',
+      title: 'Brand & Experience',
+      h1: 'Brand & Experience Transformation',
       badge: 'Brand & CX',
       href: '/capabilities/brand-experience',
-      tagline: 'Build Authoritative Brands and Compelling Customer Journeys.',
-      metaDescription: 'Brand strategy, visual identity systems, UI/UX design, customer journey mapping, and conversion experience design with NG Stellar.',
-      desc: 'We architect authoritative brand positioning and intuitive digital user experiences that elevate market perception, engage decision-makers, and drive customer loyalty.',
-      deliverables: [
-        'Brand positioning and messaging framework',
-        'Complete visual identity systems and digital design tokens',
-        'User research, information architecture, and UI/UX wireframes',
-        'High-fidelity interactive web and mobile prototypes',
-        'Customer journey mapping and conversion funnel optimization'
+      seoTitle: 'Brand Strategy & Customer Experience Transformation | NG Stellar',
+      metaDescription:
+        'NG Stellar helps businesses build stronger brands and meaningful customer experiences across physical and digital touchpoints.',
+      heroText:
+        'A strong business needs a clear identity and a consistent customer experience.\n\nNG Stellar helps businesses build stronger brands and meaningful customer experiences across physical and digital touchpoints.',
+      childLinksTitle: 'Explore Brand & Experience Capabilities:',
+      childLinks: [
+        { title: 'Branding', href: '/capabilities/brand-experience/branding', desc: 'Define and express your brand clearly with distinct positioning and visual identity.' },
+        { title: 'UI/UX & Customer Experience', href: '/capabilities/brand-experience/ui-ux', desc: 'Intuitive digital experiences combining UX research, wireframing, and usability thinking.' }
       ],
-      methodology: [
-        { title: 'Brand Differentiation Audit', desc: 'Identifying your unique enterprise value story.' },
-        { title: 'Design System Engineering', desc: 'Creating scalable UI component libraries and brand guidelines.' },
-        { title: 'User Testing & Iteration', desc: 'Validating interface usability with real end-user feedback.' }
-      ],
-      outcomes: 'Distinct market authority, higher digital engagement, and reduced user friction.',
-      cta: 'Build Your Brand',
+      cta: 'Discuss Brand & Experience',
       ctaHref: '/contact/transformation-conversation'
     },
     {
       id: 'technology-transformation',
-      title: 'TECHNOLOGY TRANSFORMATION',
-      h1: 'Technology Transformation & Engineering',
+      title: 'Technology Transformation',
+      h1: 'Technology Transformation',
       badge: 'Engineering & Platforms',
       href: '/capabilities/technology-transformation',
-      tagline: 'Scalable Software, Resilient Cloud Architecture, and Practical AI.',
-      metaDescription: 'Custom software development, mobile apps, web applications, SaaS platforms, e-commerce, and AI automation by NG Stellar.',
-      desc: 'We design and build bespoke software applications, enterprise SaaS architectures, custom workflows, and secure cloud environments engineered for scalability, speed, and business agility.',
-      deliverables: [
-        'Custom web applications and enterprise software systems',
-        'Cross-platform iOS and Android mobile applications',
-        'B2B & B2C e-commerce storefronts and ordering portals',
-        'Applied AI automation workflows and intelligent data pipelines',
-        'Cloud infrastructure setup, API integrations, and security hardening'
+      seoTitle: 'Technology Transformation Services | NG Stellar',
+      metaDescription:
+        'We use technology to solve business problems, improve efficiency and create better customer experiences.',
+      heroText:
+        'We use technology to solve business problems, improve efficiency and create better customer experiences.',
+      capabilitiesTitle: 'Capabilities',
+      capabilities: [
+        'Website design',
+        'Software development',
+        'Mobile applications',
+        'E-commerce',
+        'AI & automation',
+        'Digital platforms',
+        'Business applications',
+        'System integration',
+        'Data & analytics'
       ],
-      methodology: [
-        { title: 'Architectural Blueprinting', desc: 'Designing modular, scalable, and secure system topologies.' },
-        { title: 'Agile Full-Stack Engineering', desc: 'Rapid bi-weekly sprint delivery with continuous integration and testing.' },
-        { title: 'DevOps & Cloud Governance', desc: 'Automated deployment pipelines and enterprise-grade uptime monitoring.' }
+      approachTitle: 'Our Approach',
+      approachSteps: ['Assess', 'Architect', 'Build', 'Integrate', 'Optimize'],
+      childLinksTitle: 'Explore Technology Capabilities:',
+      childLinks: [
+        { title: 'Website Design', href: '/templates', desc: 'Responsive, accessible and performance-focused websites.' },
+        { title: 'Software Development', href: '/capabilities/technology-transformation/software-development', desc: 'Reliable, secure and scalable custom software solutions.' },
+        { title: 'Mobile Applications', href: '/capabilities/technology-transformation/mobile-applications', desc: 'Mobile applications connecting customers, employees and operations.' },
+        { title: 'E-commerce', href: '/capabilities/technology-transformation/ecommerce', desc: 'Digital commerce experiences connecting products, operations and payments.' },
+        { title: 'AI & Automation', href: '/capabilities/technology-transformation/ai-automation', desc: 'Practical AI to reduce repetitive work and increase productivity.' },
+        { title: 'Digital Platforms', href: '/capabilities/technology-transformation/digital-platforms', desc: 'Platforms connecting customers, partners, employees and business processes.' }
       ],
-      outcomes: 'Modernized tech stack, eliminated operational debt, and accelerated feature delivery.',
-      cta: 'Discuss Your Software Project',
+      cta: 'Discuss Technology Transformation',
       ctaHref: '/contact/transformation-conversation'
     },
     {
       id: 'digital-growth',
-      title: 'DIGITAL GROWTH',
-      h1: 'Digital Marketing & Growth Strategy',
-      badge: 'Performance & Demand',
+      title: 'Digital Growth',
+      h1: 'Digital Growth',
+      badge: 'Growth & Acquisition',
       href: '/capabilities/digital-growth',
-      tagline: 'Sustainable Acquisition, Search Authority, and Measurable ROI.',
-      metaDescription: 'Digital marketing strategy, technical SEO, high-intent content marketing, and conversion-focused performance campaigns by NG Stellar.',
-      desc: 'We execute data-driven digital growth strategies designed for compounding organic visibility, qualified inbound pipeline generation, and measurable commercial return.',
-      deliverables: [
-        'Comprehensive digital marketing and acquisition strategy',
-        'Technical SEO, on-page optimization, and structured search data',
-        'High-value content marketing and thought leadership assets',
-        'Targeted paid acquisition campaigns across search and social',
-        'Analytics instrumentation and conversion rate optimization (CRO)'
+      seoTitle: 'Digital Growth & Digital Marketing Services | NG Stellar',
+      metaDescription:
+        'Grow your digital presence with SEO, content marketing, performance marketing and conversion optimization focused on measurable business outcomes.',
+      heroText:
+        'Digital presence should ultimately contribute to business performance.\n\nNG Stellar combines strategy, content, search, paid campaigns and conversion optimization to help businesses attract, engage and convert customers.',
+      childLinksTitle: 'Explore Digital Growth Capabilities:',
+      childLinks: [
+        { title: 'Digital Marketing', href: '/capabilities/digital-growth/digital-marketing', desc: 'Build visibility, generate qualified leads and improve customer acquisition.' },
+        { title: 'Search Engine Optimization (SEO)', href: '/capabilities/digital-growth/seo', desc: 'Improve search engine visibility and attract relevant organic traffic.' },
+        { title: 'Content Marketing', href: '/capabilities/digital-growth/content-marketing', desc: 'Content strategies that build authority, trust and customer relationships.' },
+        { title: 'Performance Marketing', href: '/capabilities/digital-growth/performance-marketing', desc: 'Data-driven campaigns focused on measurable commercial outcomes.' }
       ],
-      methodology: [
-        { title: 'Audience & Search Intent Research', desc: 'Pinpointing high-intent commercial keywords and target buyer queries.' },
-        { title: 'Content & Technical Optimization', desc: 'Building authoritative content backed by semantic site architecture.' },
-        { title: 'Continuous Experimentation', desc: 'A/B testing landing pages and campaign creatives to maximize conversion ROI.' }
-      ],
-      outcomes: 'Compounding organic search traffic, qualified enterprise leads, and lower customer acquisition costs.',
-      cta: 'Accelerate Your Digital Growth',
+      cta: 'Accelerate Digital Growth',
       ctaHref: '/contact/transformation-conversation'
     }
   ],
 
   // Specific Capability Subpages
   subpages: {
-    // 1. Brand Experience Subpages
+    // 1. BRAND & EXPERIENCE SUBPAGES
     'branding': {
-      category: 'BRAND & EXPERIENCE',
-      title: 'Brand Strategy & Branding',
-      h1: 'Brand Strategy & Branding',
+      category: 'Brand & Experience',
+      title: 'Branding',
+      h1: 'Branding',
       href: '/capabilities/brand-experience/branding',
-      tagline: 'Define Your Purpose. Differentiate Your Enterprise. Build Market Authority.',
-      metaDescription: 'Brand strategy, market positioning, messaging frameworks, visual identity systems, and brand guidelines with NG Stellar.',
-      desc: 'A powerful brand is a strategic business asset that commands price premiums, attracts top-tier talent, and fosters customer loyalty. We help organizations clarify their positioning, articulate compelling value narratives, and establish cohesive visual identity systems that resonate across all digital and physical touchpoints.',
+      seoTitle: 'Brand Strategy & Branding Services | NG Stellar',
+      metaDescription:
+        'We help businesses define and express their brand clearly with positioning, visual identity, and brand guidelines.',
+      heroText: 'We help businesses define and express their brand clearly.',
+      intro: 'We help businesses define and express their brand clearly.',
+      capabilitiesTitle: 'Capabilities',
       capabilities: [
-        'Brand Positioning & Market Differentiation',
-        'Core Messaging, Value Propositions & Tone of Voice',
-        'Visual Identity: Logo Systems, Typography & Color Palettes',
-        'Design Systems & Brand Asset Libraries',
-        'Corporate Collateral, Pitch Decks & Digital Assets',
-        'Internal Brand Culture & Employee Alignment'
+        'Brand positioning',
+        'Brand strategy',
+        'Visual identity',
+        'Brand guidelines',
+        'Messaging',
+        'Digital brand presence',
+        'Marketing assets',
+        'Brand consistency'
       ],
-      methodology: [
-        { title: '1. Brand Discovery & Competitor Audit', desc: 'Uncovering whitespace in your category and understanding customer perceptions.' },
-        { title: '2. Strategic Positioning & Narrative', desc: 'Crafting an authentic, defensible value proposition that sets you apart.' },
-        { title: '3. Visual Identity System Design', desc: 'Creating typography, color tokens, and graphical components engineered for digital scale.' },
-        { title: '4. Brand Governance & Asset Delivery', desc: 'Publishing comprehensive guidelines to ensure consistent execution across teams.' }
-      ],
-      outcomes: 'Clear market differentiation, enhanced corporate credibility, and cohesive brand touchpoints.',
-      cta: 'Build Your Brand',
+      outcomeTitle: 'Outcome',
+      outcomeText: 'A credible, consistent and memorable brand.',
+      cta: 'Discuss Branding',
       ctaHref: '/contact/transformation-conversation'
     },
     'ui-ux': {
-      category: 'BRAND & EXPERIENCE',
+      category: 'Brand & Experience',
       title: 'UI/UX & Customer Experience',
       h1: 'UI/UX & Customer Experience',
       href: '/capabilities/brand-experience/ui-ux',
-      tagline: 'Intuitive Interfaces. Frictionless Journeys. Meaningful Customer Interactions.',
-      metaDescription: 'UI/UX design, customer journey mapping, user research, wireframing, interactive prototyping, and usability testing by NG Stellar.',
-      desc: 'Exceptional digital experiences emerge from deep user empathy and meticulous interface engineering. We design intuitive, accessible, and high-converting interfaces that simplify complex workflows and delight end-users across web, tablet, and mobile platforms.',
+      seoTitle: 'UI UX Design & Customer Experience Services | NG Stellar',
+      metaDescription:
+        'Great experiences make technology easier to use and businesses easier to engage with. UI/UX design and customer experience optimization by NG Stellar.',
+      heroText:
+        'Great experiences make technology easier to use and businesses easier to engage with.\n\nWe combine user research, information architecture, wireframing, prototyping and usability thinking to create intuitive digital experiences.',
+      intro:
+        'Great experiences make technology easier to use and businesses easier to engage with.\n\nWe combine user research, information architecture, wireframing, prototyping and usability thinking to create intuitive digital experiences.',
+      capabilitiesTitle: 'Capabilities',
       capabilities: [
-        'User Research, Persona Development & Usability Testing',
-        'Information Architecture & Navigation Flow Mapping',
-        'Wireframing & Interactive Prototyping (Figma)',
-        'Design System Creation & Component Libraries',
-        'Mobile App & Enterprise Dashboard UI/UX Design',
-        'Conversion Funnel & Checkout Flow Optimization'
+        'UX research',
+        'User journeys',
+        'Information architecture',
+        'Wireframes',
+        'UI design',
+        'Prototyping',
+        'Usability testing',
+        'Design systems',
+        'Customer experience optimization'
       ],
-      methodology: [
-        { title: '1. User Research & Task Analysis', desc: 'Mapping user goals, pain points, and current drop-off barriers.' },
-        { title: '2. Wireframing & Structural Design', desc: 'Structuring frictionless user pathways and logical information hierarchies.' },
-        { title: '3. High-Fidelity UI & Micro-interactions', desc: 'Crafting responsive, aesthetically refined visual interfaces.' },
-        { title: '4. Usability Validation & Developer Handoff', desc: 'Testing with target users and delivering production-ready design tokens.' }
-      ],
-      outcomes: 'Higher customer satisfaction, reduced onboarding time, lower churn, and increased conversion rates.',
-      cta: 'Improve Your Customer Experience',
+      outcomeTitle: 'Outcome',
+      outcomesList: ['Simpler experiences.', 'Better engagement.', 'Higher conversion.'],
+      cta: 'Improve UI/UX & Experience',
       ctaHref: '/contact/transformation-conversation'
     },
 
-    // 2. Technology Transformation Subpages
+    // 2. TECHNOLOGY TRANSFORMATION SUBPAGES
     'software-development': {
-      category: 'TECHNOLOGY TRANSFORMATION',
-      title: 'Custom Software Development',
-      h1: 'Custom Software Development',
+      category: 'Technology Transformation',
+      title: 'Software Development',
+      h1: 'Software Development',
       href: '/capabilities/technology-transformation/software-development',
-      tagline: 'Purpose-Built Software Engineered for Scalability, Security & Performance.',
-      metaDescription: 'Custom software development, enterprise business applications, SaaS platforms, ERP, CRM, APIs, and cloud architecture by NG Stellar.',
-      desc: 'Off-the-shelf software often forces organizations into rigid, suboptimal workflows. We engineer bespoke web applications, enterprise portals, workflow automation tools, and SaaS platforms built precisely around your operational requirements and scalable for future growth.',
+      seoTitle: 'Custom Software Development Services | NG Stellar',
+      metaDescription:
+        'We build reliable, secure and scalable software solutions aligned with business requirements.',
+      heroText:
+        'We build reliable, secure and scalable software solutions aligned with business requirements.',
+      intro:
+        'We build reliable, secure and scalable software solutions aligned with business requirements.',
+      capabilitiesTitle: 'We Develop',
       capabilities: [
-        'Enterprise Business Applications & Operations Portals',
-        'Custom CRM, ERP, and Supply Chain Workflow Systems',
-        'Multi-Tenant SaaS Platform Engineering',
-        'Robust REST & GraphQL API Architecture',
-        'Third-Party Software & Legacy System Integrations',
-        'Database Optimization & Scalable Cloud Infrastructure'
+        'Custom business applications',
+        'Web applications',
+        'SaaS platforms',
+        'Portals',
+        'Workflow systems',
+        'Enterprise applications',
+        'API integrations',
+        'Business automation platforms'
       ],
-      methodology: [
-        { title: '1. Technical Scoping & Architecture Design', desc: 'Defining data models, system boundaries, and security protocols.' },
-        { title: '2. Agile Sprint Delivery', desc: 'Bi-weekly sprint demos providing transparent progress and working software.' },
-        { title: '3. Automated Testing & Code Quality Audits', desc: 'Rigorous unit, integration, and security test coverage.' },
-        { title: '4. Cloud Deployment & CI/CD Pipelines', desc: 'Automated, zero-downtime deployment pipelines on AWS, Google Cloud, or Azure.' }
-      ],
-      outcomes: 'Tailored operational leverage, complete IP ownership, eliminated manual work, and unlimited scaling potential.',
-      cta: 'Discuss Your Software Project',
+      focusTitle: 'Our Focus',
+      focusList: ['Performance', 'Security', 'Scalability', 'Maintainability'],
+      cta: 'Discuss Software Development',
       ctaHref: '/contact/transformation-conversation'
     },
     'mobile-applications': {
-      category: 'TECHNOLOGY TRANSFORMATION',
+      category: 'Technology Transformation',
       title: 'Mobile Application Development',
       h1: 'Mobile Application Development',
       href: '/capabilities/technology-transformation/mobile-applications',
-      tagline: 'High-Performance iOS, Android & Cross-Platform Mobile Solutions.',
-      metaDescription: 'Mobile app development for iOS and Android, React Native, cross-platform apps, mobile UX, and secure backend integrations with NG Stellar.',
-      desc: 'We design, engineer, and deploy native and cross-platform mobile applications that provide intuitive user experiences, seamless offline capabilities, and secure backend synchronization for both consumer and enterprise use cases.',
+      seoTitle: 'Mobile App Development Services | NG Stellar',
+      metaDescription:
+        'We design and develop mobile applications that connect customers, employees and business operations.',
+      heroText:
+        'We design and develop mobile applications that connect customers, employees and business operations.',
+      intro:
+        'We design and develop mobile applications that connect customers, employees and business operations.',
+      capabilitiesTitle: 'Capabilities',
       capabilities: [
-        'Cross-Platform Mobile Apps (React Native)',
-        'Native iOS (Swift) & Android (Kotlin) Development',
-        'Enterprise Field Operations & Service Mobile Apps',
-        'Secure Biometric Authentication & Role-Based Access',
-        'Push Notifications, Geo-location & Device Integrations',
-        'App Store & Google Play Deployment & Compliance'
+        'Android applications',
+        'iOS applications',
+        'Cross-platform applications',
+        'Field-force applications',
+        'Customer applications',
+        'Business applications',
+        'Mobile workflow solutions',
+        'API integration'
       ],
-      methodology: [
-        { title: '1. Mobile Strategy & UX Prototyping', desc: 'Designing touch-first interfaces optimized for various screen sizes.' },
-        { title: '2. Cross-Platform Engineering', desc: 'Building unified, maintainable codebases for rapid multi-platform release.' },
-        { title: '3. API & Offline Data Sync', desc: 'Ensuring seamless performance in low-connectivity operational environments.' },
-        { title: '4. App Store Submission & Maintenance', desc: 'Managing app approval guidelines, security reviews, and ongoing updates.' }
-      ],
-      outcomes: 'Engaging mobile touchpoints, empowered mobile workforces, and rapid time-to-market.',
-      cta: 'Discuss Your Mobile Application',
+      outcomeTitle: 'Outcome',
+      outcomeText: 'Mobile experiences designed around real business needs.',
+      cta: 'Discuss Mobile Applications',
       ctaHref: '/contact/transformation-conversation'
     },
     'ecommerce': {
-      category: 'TECHNOLOGY TRANSFORMATION',
-      title: 'E-commerce Solutions',
-      h1: 'E-commerce Solutions',
+      category: 'Technology Transformation',
+      title: 'E-commerce Transformation',
+      h1: 'E-commerce Transformation',
       href: '/capabilities/technology-transformation/ecommerce',
-      tagline: 'High-Converting Online Storefronts, Seamless Checkouts & B2B Portals.',
-      metaDescription: 'Custom e-commerce platforms, B2B wholesale portals, payment gateway integrations, catalog management, and conversion optimization with NG Stellar.',
-      desc: 'We build robust, secure, and conversion-optimized e-commerce platforms that streamline product catalogs, simplify checkout flows, integrate complex payment gateways, and connect seamlessly with your inventory and ERP systems.',
+      seoTitle: 'E-commerce Development & Digital Commerce Solutions | NG Stellar',
+      metaDescription:
+        'We help businesses build and improve digital commerce experiences that connect products, customers, operations and payments.',
+      heroText:
+        'We help businesses build and improve digital commerce experiences that connect products, customers, operations and payments.',
+      intro:
+        'We help businesses build and improve digital commerce experiences that connect products, customers, operations and payments.',
+      capabilitiesTitle: 'Capabilities',
       capabilities: [
-        'B2C Online Stores & Custom E-commerce Platforms',
-        'B2B Wholesale Portals with Tiered Pricing & Credit Workflows',
-        'Multi-Currency & Localized Payment Gateway Integrations',
-        'Inventory Management & ERP/Logistics API Synchronization',
-        'Cart Optimization, One-Click Checkout & Abandonment Recovery',
-        'Customer Account Portals, Order History & Self-Service Invoicing'
+        'E-commerce websites',
+        'Product catalogues',
+        'Shopping experiences',
+        'Payment integration',
+        'Order management',
+        'Customer accounts',
+        'Inventory integration',
+        'Analytics',
+        'Marketing integration',
+        'Custom commerce platforms'
       ],
-      methodology: [
-        { title: '1. E-Commerce Architecture Planning', desc: 'Structuring product taxonomies, variant models, and payment workflows.' },
-        { title: '2. Conversion-Focused Storefront Design', desc: 'Building responsive, fast-loading shopping and checkout interfaces.' },
-        { title: '3. Payment & Logistics Integration', desc: 'Connecting secure payment providers, tax engines, and automated shipping carriers.' },
-        { title: '4. Launch, Security & Performance Tuning', desc: 'Ensuring PCI compliance, SSL security, and sub-second page load times.' }
-      ],
-      outcomes: 'Higher average order values, reduced checkout friction, and automated order processing.',
-      cta: 'Launch Your E-commerce Platform',
+      outcomeTitle: 'Outcome',
+      outcomeText: 'A scalable digital commerce experience aligned with business growth.',
+      cta: 'Discuss E-commerce Transformation',
       ctaHref: '/contact/transformation-conversation'
     },
     'ai-automation': {
-      category: 'TECHNOLOGY TRANSFORMATION',
+      category: 'Technology Transformation',
       title: 'AI & Business Automation',
       h1: 'AI & Business Automation',
       href: '/capabilities/technology-transformation/ai-automation',
-      tagline: 'Practical AI Workflows, Intelligent Document Processing & Process Automation.',
-      metaDescription: 'Practical AI solutions, workflow automation, intelligent chatbots, document processing, and data-driven decision support by NG Stellar.',
-      desc: 'We help organizations harness the practical power of artificial intelligence and robotic process automation (RPA) to eliminate repetitive administrative burdens, extract insights from unstructured data, and accelerate operational decision-making.',
+      seoTitle: 'AI & Business Automation Solutions | NG Stellar',
+      metaDescription:
+        'Use AI and automation to reduce repetitive work, improve decision-making, increase productivity and transform business operations with NG Stellar.',
+      heroText:
+        'AI should create measurable business value—not simply become another technology experiment.\n\nWe identify practical opportunities to use AI and automation across business operations.',
+      intro:
+        'AI should create measurable business value—not simply become another technology experiment.\n\nWe identify practical opportunities to use AI and automation across business operations.',
+      capabilitiesTitle: 'Opportunities',
       capabilities: [
-        'Automated Document Processing & Data Extraction (OCR/LLM)',
-        'Intelligent Customer Support Chatbots & Knowledge Assistants',
-        'Workflow Automation Across CRM, ERP, and Communication Channels',
-        'Predictive Analytics & Inventory Demand Forecasting',
-        'Internal Knowledge Bases & Semantic Search Systems',
-        'Human-in-the-Loop AI Review & Verification Workflows'
+        'Process automation',
+        'Customer support',
+        'Lead management',
+        'Document processing',
+        'Business intelligence',
+        'Content workflows',
+        'Marketing automation',
+        'Internal knowledge systems',
+        'AI assistants',
+        'Predictive analytics'
       ],
-      methodology: [
-        { title: '1. Automation Opportunity Audit', desc: 'Identifying high-friction, repetitive workflows with immediate ROI potential.' },
-        { title: '2. Data Readiness & Pipeline Setup', desc: 'Cleaning and structuring business data securely for model integration.' },
-        { title: '3. Model Fine-Tuning & Integration', desc: 'Deploying secure, privacy-compliant AI models via robust APIs.' },
-        { title: '4. Monitoring & Continuous Accuracy Tuning', desc: 'Tracking automation throughput and refining prompts and rules over time.' }
-      ],
-      outcomes: 'Significant reduction in manual labor hours, near-zero error rates, and rapid customer response times.',
-      cta: 'Explore AI Automation Solutions',
+      approachTitle: 'Our Approach',
+      approachSteps: ['Identify', 'Evaluate', 'Pilot', 'Implement', 'Measure'],
+      cta: 'Explore AI & Automation',
       ctaHref: '/contact/transformation-conversation'
     },
     'digital-platforms': {
-      category: 'TECHNOLOGY TRANSFORMATION',
-      title: 'Digital Platform Development',
-      h1: 'Digital Platform Development',
+      category: 'Technology Transformation',
+      title: 'Digital Platforms',
+      h1: 'Digital Platforms',
       href: '/capabilities/technology-transformation/digital-platforms',
-      tagline: 'Multi-Tenant Architectures, Client Portals & Scalable SaaS Ecosystems.',
-      metaDescription: 'Digital platform engineering, multi-tenant SaaS architecture, client self-service portals, API ecosystems, and scalable infrastructure with NG Stellar.',
-      desc: 'We engineer multi-sided digital platforms, partner ecosystems, and enterprise client portals that enable multi-tenant access, secure role-based permissions, real-time data exchange, and seamless integration with third-party software providers.',
+      seoTitle: 'Digital Platform Development Services | NG Stellar',
+      metaDescription:
+        'We design and develop digital platforms that connect customers, employees, partners and business processes.',
+      heroText:
+        'We design and develop digital platforms that connect customers, employees, partners and business processes.',
+      intro:
+        'We design and develop digital platforms that connect customers, employees, partners and business processes.',
+      capabilitiesTitle: 'Examples',
       capabilities: [
-        'Multi-Tenant SaaS Architecture & Subscription Billing',
-        'Client & Vendor Self-Service Portals',
-        'Role-Based Access Control (RBAC) & Single Sign-On (SSO)',
-        'Developer APIs, Webhooks & Partner Integration Hubs',
-        'Real-Time Analytics Dashboards & Custom Reporting',
-        'Enterprise Security, Compliance & Data Isolation'
+        'Customer portals',
+        'Partner portals',
+        'Business platforms',
+        'SaaS products',
+        'Marketplaces',
+        'Internal platforms',
+        'Workflow platforms',
+        'Data-driven applications'
       ],
-      methodology: [
-        { title: '1. Platform Domain Modeling', desc: 'Structuring entity relationships, multi-tenant isolation, and permission matrices.' },
-        { title: '2. Cloud-Native Scalable Architecture', desc: 'Leveraging microservices, serverless queues, and distributed databases.' },
-        { title: '3. Intuitive Portal UI/UX Design', desc: 'Crafting clean dashboards that empower external users to self-serve.' },
-        { title: '4. API Documentation & Partner Sandbox', desc: 'Enabling rapid third-party developer integration and ecosystem expansion.' }
-      ],
-      outcomes: 'Automated customer self-service, scalable recurring software revenue, and connected operational ecosystems.',
-      cta: 'Build Your Digital Platform',
+      focusTitle: 'Focus',
+      focusText: 'Scalable architecture + user experience + business integration',
+      cta: 'Discuss Digital Platforms',
       ctaHref: '/contact/transformation-conversation'
     },
 
-    // 3. Digital Growth Subpages
+    // 3. DIGITAL GROWTH SUBPAGES
     'digital-marketing': {
-      category: 'DIGITAL GROWTH',
-      title: 'Digital Marketing for Sustainable Growth',
-      h1: 'Digital Marketing for Sustainable Growth',
+      category: 'Digital Growth',
+      title: 'Digital Marketing',
+      h1: 'Digital Marketing',
       href: '/capabilities/digital-growth/digital-marketing',
-      tagline: 'Strategic Inbound Acquisition, Audience Targeting & Sustainable Growth.',
-      metaDescription: 'Digital marketing strategy, multi-channel campaigns, inbound lead generation, audience targeting, and ROI tracking with NG Stellar.',
-      desc: 'We design holistic digital marketing strategies that connect your brand with high-intent decision-makers, build long-term digital authority, and convert traffic into qualified commercial opportunities.',
+      seoTitle: 'Digital Marketing Services for Business Growth | NG Stellar',
+      metaDescription:
+        'We help businesses build visibility, generate qualified leads and improve digital customer acquisition.',
+      heroText:
+        'We help businesses build visibility, generate qualified leads and improve digital customer acquisition.',
+      intro:
+        'We help businesses build visibility, generate qualified leads and improve digital customer acquisition.',
+      capabilitiesTitle: 'Capabilities',
       capabilities: [
-        'Comprehensive Digital Marketing Strategy & Planning',
-        'Inbound Lead Generation & Marketing Funnel Design',
-        'Multi-Channel Campaign Strategy (Search, Social, Email)',
-        'Audience Segmentation & Behavioral Retargeting',
-        'Marketing Automation & Lead Nurturing Sequences',
-        'Marketing Analytics, Attribution & ROI Measurement'
+        'Digital marketing strategy',
+        'SEO',
+        'Social media',
+        'Content marketing',
+        'Paid advertising',
+        'Lead generation',
+        'Conversion optimization',
+        'Analytics',
+        'Campaign management'
       ],
-      methodology: [
-        { title: '1. Audience & Channel Analysis', desc: 'Pinpointing where your target buyers research solutions.' },
-        { title: '2. Full-Funnel Campaign Architecture', desc: 'Designing awareness, consideration, and decision-stage campaigns.' },
-        { title: '3. Creative & Copy Execution', desc: 'Developing persuasive, benefit-driven messaging assets.' },
-        { title: '4. Performance Attribution & Optimization', desc: 'Continuously refining channel spend based on actual revenue contribution.' }
-      ],
-      outcomes: 'Predictable inbound lead generation, improved customer lifetime value, and clear marketing ROI.',
-      cta: 'Accelerate Your Digital Marketing',
+      outcomeTitle: 'Outcome',
+      outcomesList: ['More relevant traffic.', 'Better leads.', 'Measurable growth.'],
+      cta: 'Discuss Digital Marketing',
       ctaHref: '/contact/transformation-conversation'
     },
     'seo': {
-      category: 'DIGITAL GROWTH',
+      category: 'Digital Growth',
       title: 'Search Engine Optimization',
       h1: 'Search Engine Optimization',
       href: '/capabilities/digital-growth/seo',
-      tagline: 'Technical Architecture, Search Intent Alignment & Organic Authority.',
-      metaDescription: 'Technical SEO, on-page optimization, keyword intent research, structured data, Core Web Vitals, and semantic site architecture by NG Stellar.',
-      desc: 'Sustainable SEO is built on clean technical architecture, fast page load speeds, semantic structured data, and high-value content that matches real search intent. We optimize every layer of your digital presence to secure durable organic rankings.',
+      seoTitle: 'SEO Services & Search Engine Optimization | NG Stellar',
+      metaDescription:
+        'We help businesses improve their visibility in search engines and attract relevant organic traffic.',
+      heroText:
+        'We help businesses improve their visibility in search engines and attract relevant organic traffic.',
+      intro:
+        'We help businesses improve their visibility in search engines and attract relevant organic traffic.',
+      capabilitiesTitle: 'SEO Capabilities',
       capabilities: [
-        'Comprehensive Technical SEO Audits & Crawlability Fixes',
-        'Core Web Vitals, Site Speed & Mobile Performance Tuning',
-        'Commercial Keyword & Search Intent Mapping',
-        'On-Page Optimization: Title Tags, Meta, Headings & Internal Linking',
-        'Schema.org Structured Data & Rich Snippet Implementation',
-        'SEO Analytics, Keyword Rank Tracking & Organic Reporting'
+        'Technical SEO',
+        'Keyword strategy',
+        'On-page SEO',
+        'Content strategy',
+        'Local SEO',
+        'Website optimization',
+        'Search performance analysis',
+        'Conversion-focused SEO'
       ],
-      methodology: [
-        { title: '1. Technical Health & Architecture Audit', desc: 'Eliminating indexing roadblocks, slow render bottlenecks, and schema errors.' },
-        { title: '2. Search Intent & Keyword Strategy', desc: 'Targeting commercial search terms used by active enterprise buyers.' },
-        { title: '3. Content & Semantic Enhancements', desc: 'Optimizing on-page hierarchies and internal linking architectures.' },
-        { title: '4. Continuous Monitoring & Authority Building', desc: 'Tracking rankings, organic conversions, and search algorithm updates.' }
-      ],
-      outcomes: 'Compounding organic traffic, high search engine visibility, and reduced reliance on paid advertising.',
-      cta: 'Optimize Your Search Visibility',
+      goalTitle: 'Goal',
+      goalText: 'Be found by the right customers at the right moment.',
+      cta: 'Discuss Search Engine Optimization',
       ctaHref: '/contact/transformation-conversation'
     },
     'content-marketing': {
-      category: 'DIGITAL GROWTH',
+      category: 'Digital Growth',
       title: 'Content Marketing',
       h1: 'Content Marketing',
       href: '/capabilities/digital-growth/content-marketing',
-      tagline: 'Thought Leadership, Strategic Briefings & High-Converting Content.',
-      metaDescription: 'Content marketing strategy, thought leadership articles, case studies, executive briefings, and search-aligned content development with NG Stellar.',
-      desc: 'High-performing content informs, educates, and persuades. We produce executive-level thought leadership, practical guides, in-depth service explanations, and transformation scenarios that build market trust and guide prospects through their decision cycle.',
+      seoTitle: 'Content Marketing Strategy & Services | NG Stellar',
+      metaDescription:
+        'Good content builds authority, trust and customer relationships. Content strategies designed around business objectives with NG Stellar.',
+      heroText:
+        'Good content builds authority, trust and customer relationships.\n\nWe create content strategies designed around business objectives and customer journeys.',
+      intro:
+        'Good content builds authority, trust and customer relationships.\n\nWe create content strategies designed around business objectives and customer journeys.',
+      capabilitiesTitle: 'Content Areas',
       capabilities: [
-        'Content Strategy & Editorial Calendar Planning',
-        'Executive Thought Leadership & Strategic Articles',
-        'In-Depth Industry Guides & Whitepapers',
-        'Transformation Case Studies & Customer Success Stories',
-        'Search-Aligned Pillar Pages & Knowledge Centers',
-        'Repurposing Content for Social & Newsletter Distribution'
+        'Website content',
+        'Thought leadership',
+        'Blogs',
+        'Social content',
+        'Video',
+        'Case studies',
+        'Educational content',
+        'Lead-generation content'
       ],
-      methodology: [
-        { title: '1. Topic Opportunity & Competitor Research', desc: 'Identifying knowledge gaps and questions your buyers actively search for.' },
-        { title: '2. Expert Content Creation', desc: 'Writing insightful, authoritative content free of generic fluff.' },
-        { title: '3. SEO & Formatting Optimization', desc: 'Structuring content with clear headings, callouts, and conversion hooks.' },
-        { title: '4. Distribution & Performance Tracking', desc: 'Measuring engagement, time on page, and direct lead conversions.' }
-      ],
-      outcomes: 'Established thought leadership, increased organic inbound traffic, and accelerated sales cycles.',
-      cta: 'Elevate Your Content Strategy',
+      outcomeTitle: 'Outcome',
+      outcomeText: 'Content that informs, builds trust and contributes to growth.',
+      cta: 'Discuss Content Marketing',
       ctaHref: '/contact/transformation-conversation'
     },
     'performance-marketing': {
-      category: 'DIGITAL GROWTH',
+      category: 'Digital Growth',
       title: 'Performance Marketing',
       h1: 'Performance Marketing',
       href: '/capabilities/digital-growth/performance-marketing',
-      tagline: 'High-Intent Paid Acquisition, Conversion Tracking & Continuous Optimization.',
-      metaDescription: 'Performance marketing, Google Search Ads, LinkedIn B2B campaigns, paid acquisition, conversion tracking, and landing page optimization with NG Stellar.',
-      desc: 'We execute disciplined performance marketing campaigns across search and social channels, focusing strictly on high-intent commercial audiences, conversion rate optimization, and transparent return on advertising spend (ROAS).',
+      seoTitle: 'Performance Marketing & Lead Generation Services | NG Stellar',
+      metaDescription:
+        'We use data-driven campaigns to help businesses generate qualified traffic, leads and measurable commercial outcomes.',
+      heroText:
+        'We use data-driven campaigns to help businesses generate qualified traffic, leads and measurable commercial outcomes.',
+      intro:
+        'We use data-driven campaigns to help businesses generate qualified traffic, leads and measurable commercial outcomes.',
+      capabilitiesTitle: 'Capabilities',
       capabilities: [
-        'Google Search Ads (PPC) Targeting High-Intent Keywords',
-        'LinkedIn B2B Account-Based Advertising (ABM)',
-        'Conversion-Focused Dedicated Landing Page Design',
-        'Advanced Pixel, Server-Side Tracking & Google Analytics 4 Setup',
-        'Ad Creative, Copywriting & Continuous A/B Split Testing',
-        'Budget Allocation, Bid Optimization & ROAS Reporting'
+        'Google Ads',
+        'Meta Ads',
+        'Lead generation',
+        'Campaign strategy',
+        'Landing pages',
+        'Conversion optimization',
+        'Remarketing',
+        'Analytics',
+        'ROI measurement'
       ],
-      methodology: [
-        { title: '1. Commercial Intent Keyword & Audience Setup', desc: 'Filtering out low-intent clicks to maximize spend efficiency.' },
-        { title: '2. High-Converting Landing Page Pairing', desc: 'Aligning ad copy directly with landing page value propositions.' },
-        { title: '3. Robust Conversion Tracking', desc: 'Configuring server-side events and CRM integration for precise attribution.' },
-        { title: '4. Daily Bid & Placement Optimization', desc: 'Reallocating budget to top-performing ad groups and audiences.' }
-      ],
-      outcomes: 'Immediate qualified lead flow, lower cost per acquisition (CPA), and positive campaign ROI.',
-      cta: 'Launch Your Performance Campaign',
+      philosophyTitle: 'Our Philosophy',
+      philosophyText: 'We optimize for business outcomes, not vanity metrics.',
+      cta: 'Discuss Performance Marketing',
       ctaHref: '/contact/transformation-conversation'
     }
   }

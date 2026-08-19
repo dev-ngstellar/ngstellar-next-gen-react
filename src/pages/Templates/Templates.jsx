@@ -87,7 +87,18 @@ const Templates = () => {
   const breadcrumbs = [
     { name: 'Home', url: '/' },
     { name: 'Capabilities', url: '/capabilities' },
-    { name: 'Website Design Solutions', url: '/templates' }
+    { name: 'Website Design', url: '/templates' }
+  ];
+
+  const focusPoints = [
+    'Responsive design',
+    'UX',
+    'Performance',
+    'Accessibility',
+    'SEO readiness',
+    'Mobile experience',
+    'Conversion',
+    'Analytics'
   ];
 
   const relatedLinks = [
@@ -100,8 +111,8 @@ const Templates = () => {
   return (
     <>
       <SEO
-        title="Website Design Solutions for Modern Businesses"
-        description="High-performance website design solutions by NG Stellar: corporate websites, business landing pages, e-commerce, and responsive website templates."
+        title="Website Design & Development Services | NG Stellar"
+        description="We design responsive, accessible and performance-focused websites that support brand credibility, customer engagement, lead generation and business growth."
         canonicalUrl="/templates"
         breadcrumbs={breadcrumbs}
       />
@@ -109,11 +120,10 @@ const Templates = () => {
       <div className="relative min-h-screen bg-slate-950 text-slate-100 font-sans pb-12">
         {/* 1. HERO */}
         <PremiumPageHero
-          eyebrow="Digital Platform Capabilities"
-          title="Website Design Solutions for"
-          titleHighlight="Modern Businesses"
-          tagline="High Performance. Responsive Layouts. Conversion-Focused Architecture."
-          description="We design and build fast, responsive, conversion-focused websites engineered to showcase your enterprise capabilities, engage decision-makers, and establish digital authority. Explore our ready-to-deploy template architectures or request a bespoke build."
+          eyebrow="Technology Transformation"
+          title="Website Design"
+          tagline="Your website should be more than a digital brochure."
+          description="We design responsive, accessible and performance-focused websites that support brand credibility, customer engagement, lead generation and business growth."
           breadcrumbs={breadcrumbs}
           primaryCta={{
             label: 'Explore Website Templates',
@@ -121,40 +131,29 @@ const Templates = () => {
           }}
           secondaryCta={{
             label: 'Discuss Custom Build',
-            href: '/contact'
+            href: '/contact/transformation-conversation'
           }}
         />
 
-        {/* 2. WEBSITE DESIGN CAPABILITIES GRID */}
-        <section className="py-16 bg-slate-900/50 border-y border-white/10 mb-16">
+        {/* 2. WE FOCUS ON */}
+        <section className="py-8 sm:py-10 bg-slate-900/60 border-y border-white/10 mb-8 sm:mb-10">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="text-center max-w-3xl mx-auto mb-6">
               <span className="text-xs font-bold text-secondary-400 uppercase tracking-widest mb-2 block">
-                Engineering & Design Standards
+                Core Focus
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-                What Powers Our Website Solutions
+                We Focus On
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {capabilitiesList.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-6 rounded-2xl bg-white/[0.03] border border-white/8 hover:border-primary-500/30 transition-all flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="w-10 h-10 rounded-xl bg-primary-500/15 text-primary-300 flex items-center justify-center mb-4">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                      <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {focusPoints.map((point, idx) => (
+                <div key={idx} className="p-4 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm font-bold text-slate-200">{point}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>

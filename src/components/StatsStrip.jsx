@@ -2,10 +2,10 @@ import { motion, useInView } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 
 const items = [
-  { label: 'Worldwide Clients', value: 5000, suffix: '+', prefix: '' },
-  { label: 'Award-Winning Excellence', value: 89, suffix: '', prefix: '' },
-  { label: 'Projects Delivered', value: 248, suffix: '', prefix: '' },
-  { label: 'Quality Insights', value: 99, suffix: '%', prefix: '' },
+  { label: 'Diagnostic Dimensions', value: 5, suffix: '', prefix: '' },
+  { label: 'Delivery Stages', value: 6, suffix: '', prefix: '' },
+  { label: 'Core Practice Areas', value: 4, suffix: '', prefix: '' },
+  { label: 'Ecosystem Categories', value: 8, suffix: '', prefix: '' },
 ];
 
 function CountUpAnimation({ end, suffix, prefix, duration = 2 }) {
@@ -66,7 +66,7 @@ function StatsStrip() {
     <div className="mt-6">
       {/* Heading - Outside Container */}
       <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">
-        Our Success <span
+        Transformation <span
           className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold"
           style={{
             WebkitBackgroundClip: 'text',

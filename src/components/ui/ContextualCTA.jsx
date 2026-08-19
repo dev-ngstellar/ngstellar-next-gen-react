@@ -21,24 +21,24 @@ function ContextualCTA({
       : 'bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 shadow-primary-600/30';
 
   return (
-    <section className="py-20">
+    <section className="py-10 sm:py-14">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`p-8 sm:p-12 md:p-14 rounded-3xl bg-gradient-to-b ${gradient} border shadow-2xl text-center relative overflow-hidden backdrop-blur-xl`}>
+        <div className={`p-8 sm:p-10 md:p-12 rounded-3xl bg-gradient-to-b ${gradient} border shadow-2xl text-center relative overflow-hidden backdrop-blur-xl`}>
           {eyebrow && (
-            <span className="text-xs font-bold text-secondary-400 uppercase tracking-widest block mb-3">
+            <span className="text-xs font-bold text-secondary-400 uppercase tracking-widest block mb-2.5">
               {eyebrow}
             </span>
           )}
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3.5 tracking-tight max-w-3xl mx-auto">
             {heading}
           </h2>
 
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6 leading-relaxed">
             {description}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3.5">
             {primaryCta && (
               <Link
                 to={primaryCta.href}

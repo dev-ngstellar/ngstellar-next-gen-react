@@ -24,7 +24,7 @@ export default function Careers() {
       </Helmet>
       
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden flex items-center justify-center pt-20 pb-10 md:py-24">
+      <section className="relative overflow-hidden flex items-center justify-center pt-24 sm:pt-28 pb-6 md:pb-10">
          {/* Background Elements */}
          <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
             <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob"></div>
@@ -35,7 +35,7 @@ export default function Careers() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 max-w-5xl mx-auto px-4 py-10 text-center"
+          className="relative z-10 max-w-5xl mx-auto px-4 py-4 text-center"
         >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border border-violet-400/30 text-violet-200 text-xs font-medium uppercase tracking-wider mb-4">
               <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>

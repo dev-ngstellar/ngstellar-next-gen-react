@@ -2,39 +2,39 @@ import { motion } from 'framer-motion';
 
 const services = [
   {
-    title: 'Branding Services',
-    description: 'Creating a powerful brand identity that reflects your values and attracts your ideal audience.',
+    title: 'Business Transformation',
+    description: 'Helping businesses identify transformation opportunities, redesign strategies, optimize operating models and prepare for sustainable growth.',
     image: '/Branding-container.webp',
-    icon: '🎨'
+    icon: '🏢'
   },
   {
-    title: 'Consulting Services',
-    description: 'Strategic guidance designed to improve efficiency, boost performance, and drive results.',
-    image: '/Consulting-container.webp',
-    icon: '💼'
-  },
-  {
-    title: 'Tech Services',
-    description: 'Providing help desks for users, resolving technical issues with hardware and software and managing software upgrades.',
+    title: 'Technology & Platforms',
+    description: 'Architecting modern web solutions, scalable digital platforms, custom software and AI automation to power execution.',
     image: '/Technical-container.webp',
     icon: '⚙️'
+  },
+  {
+    title: 'Sustainability Advisory',
+    description: 'Embedding economic viability, governance accountability, social responsibility and operational resilience into core business.',
+    image: '/Consulting-container.webp',
+    icon: '🌱'
   },
 ];
 
 const principles = [
   {
-    title: '💡 Solve Customer Pain',
-    description: 'We focus on understanding customer challenges and solving their most critical problems through continuous learning and improvement.',
+    title: '🔍 Understand First',
+    description: 'We take time to deeply understand your situation, challenges, capabilities and goals before recommending solutions.',
     borderColor: 'border-violet-500'
   },
   {
-    title: '🎯 Ambition Shapes Reality',
-    description: 'We set bold goals, believe in our potential, and treat setbacks as opportunities to learn and achieve more.',
+    title: '🛠️ Practical Over Theoretical',
+    description: 'We design strategies and systems that can actually be executed within your organization, not complex frameworks that sit on a shelf.',
     borderColor: 'border-fuchsia-500'
   },
   {
-    title: '⚡ Fast, Yet Detailed',
-    description: 'We build fast and learn fast — without ever compromising on the details that matter most.',
+    title: '📈 Value and Impact Driven',
+    description: 'Every transformation initiative must have a clear purpose and measurable outcome that creates sustainable long-term value.',
     borderColor: 'border-cyan-500'
   },
 ];
@@ -46,17 +46,17 @@ function Services() {
       <div className="text-center space-y-2 mb-12">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border border-violet-400/30 text-violet-200 text-xs font-medium uppercase tracking-wider mb-4">
               <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
-              Professional Services
+              Advisory & Capabilities
             </span>
         <h2 className="text-3xl md:text-4xl font-bold text-white">
-          Quality <span
+          Strategic <span
               className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent font-extrabold"
               style={{
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
               }}
-            > Services</span>
+            >Advisory Services</span>
         </h2>
        
       </div>
