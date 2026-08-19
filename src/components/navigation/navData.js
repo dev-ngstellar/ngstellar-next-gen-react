@@ -166,7 +166,7 @@ export const NAV_ITEMS = [
         category: 'TECHNOLOGY TRANSFORMATION',
         href: '/capabilities/technology-transformation',
         links: [
-          { title: 'Website Design', href: '/capabilities/technology-transformation/website-design' },
+          { title: 'Website Design', href: '/templates' },
           { title: 'Software Development', href: '/capabilities/technology-transformation/software-development' },
           { title: 'Mobile Applications', href: '/capabilities/technology-transformation/mobile-applications' },
           { title: 'E-commerce', href: '/capabilities/technology-transformation/ecommerce' },

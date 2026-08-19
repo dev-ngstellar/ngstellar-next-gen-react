@@ -1,53 +1,79 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
+import {
+  Globe,
+  Layout,
+  Smartphone,
+  Search,
+  Zap,
+  ShieldCheck,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  ShoppingBag,
+  Building2,
+  FileCode,
+  Layers
+} from 'lucide-react';
+import SEO from '../../components/SEO';
+import PremiumPageHero from '../../components/ui/PremiumPageHero';
+import RelatedContent from '../../components/ui/RelatedContent';
+import ContextualCTA from '../../components/ui/ContextualCTA';
 import { templates } from '../../data/templatesData.js';
 import TemplateCard from '../../components/templates/TemplateCard.jsx';
-import FeaturedLiveWebsite from '../../components/templates/FeaturedLiveWebsite.jsx';
-import { Link, useLocation } from 'react-router-dom';
 
-const categories = [
-  { id: 'all', label: 'All Templates' },
-  { id: 'starter', label: 'Starter' },
-  { id: 'standard', label: 'Standard' },
-  { id: 'growth', label: 'Growth' },
-  { id: 'professional', label: 'Professional' },
-  { id: 'custom', label: 'Custom' }
+const planCategories = [
+  { id: 'all', label: 'All Website Solutions' },
+  { id: 'starter', label: 'Starter (₹2.5k)' },
+  { id: 'standard', label: 'Standard (₹7.5k)' },
+  { id: 'growth', label: 'Growth (₹15k)' },
+  { id: 'professional', label: 'Professional (₹20k)' },
+  { id: 'custom', label: 'Custom Build' }
 ];
 
 const categoryInfo = {
   starter: {
-    title: "STARTER",
-    price: "₹2,500",
-    badge: "Up to 3 Pages",
-    desc: "Simple, professional websites for businesses getting started online.",
-    features: ["Responsive Design", "Contact Form", "Basic SEO"]
+    title: 'STARTER WEBSITE SOLUTIONS',
+    price: '₹2,500',
+    badge: 'Up to 3 Pages',
+    desc: 'Clean, conversion-ready business websites for organizations establishing their digital presence.',
+    features: ['Responsive Layout', 'Contact Inquiries', 'Basic SEO Architecture']
   },
   standard: {
-    title: "STANDARD",
-    price: "₹7,500",
-    badge: "Up to 5 Pages + Image Gallery",
-    desc: "Feature-rich business websites with galleries and enhanced content sections."
+    title: 'STANDARD CORPORATE WEBSITES',
+    price: '₹7,500',
+    badge: 'Up to 5 Pages + Gallery',
+    desc: 'Feature-rich corporate websites with multimedia galleries and enhanced service sections.'
   },
   growth: {
-    title: "GROWTH",
-    price: "₹15,000",
-    badge: "Blog + Admin Portal",
-    desc: "Dynamic websites with content management capabilities for growing businesses."
+    title: 'GROWTH & DYNAMIC WEBSITES',
+    price: '₹15,000',
+    badge: 'Blog + Admin Portal',
+    desc: 'Dynamic web platforms with content publishing workflows and administrative controls for scaling brands.'
   },
   professional: {
-    title: "PROFESSIONAL",
-    price: "₹20,000",
-    badge: "Unlimited Pages + Advanced CMS",
-    desc: "Advanced websites designed for businesses with multi-user admins and complex roles."
+    title: 'PROFESSIONAL ENTERPRISE PORTALS',
+    price: '₹20,000',
+    badge: 'Unlimited Pages + CMS',
+    desc: 'Advanced web architectures designed for multi-tier user roles, deep navigation, and complex integrations.'
   },
   custom: {
-    title: "CUSTOM / ENTERPRISE",
-    price: "₹30,000+",
-    badge: "Built Around Your Requirements",
-    desc: "Have a unique idea or business workflow? We can design and develop a completely custom solution."
+    title: 'CUSTOM & ENTERPRISE WEB APPLICATIONS',
+    price: '₹30,000+',
+    badge: 'Engineered to Specification',
+    desc: 'Have bespoke workflows or unique operational requirements? We design and engineer tailored web solutions from scratch.'
   }
 };
+
+const capabilitiesList = [
+  { icon: Building2, title: 'Corporate & Business Websites', desc: 'Authoritative online presence reflecting your market positioning and enterprise capabilities.' },
+  { icon: Layout, title: 'Conversion Landing Pages', desc: 'High-intent single-purpose pages structured for maximum lead generation and campaign ROI.' },
+  { icon: ShoppingBag, title: 'E-commerce Storefronts', desc: 'Fast, secure online stores with seamless checkout, catalog search, and payment integrations.' },
+  { icon: Globe, title: 'Industry-Specific Solutions', desc: 'Tailored architectures for healthcare, manufacturing, fintech, education, and legal sectors.' },
+  { icon: Smartphone, title: 'Responsive Multi-Device Design', desc: 'Pixel-perfect typography and layouts optimized across mobile, tablet, laptop, and 4K displays.' },
+  { icon: Search, title: 'SEO-Ready Semantic Architecture', desc: 'Clean HTML5 hierarchy, structured JSON-LD data, fast Core Web Vitals, and meta optimization.' },
+];
 
 const Templates = () => {
   const location = useLocation();
@@ -58,87 +84,110 @@ const Templates = () => {
     ? templates
     : templates.filter(t => t.category === activeCategory);
 
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Capabilities', url: '/capabilities' },
+    { name: 'Website Design Solutions', url: '/templates' }
+  ];
+
+  const relatedLinks = [
+    { title: 'Custom Software Development', category: 'Engineering', desc: 'Bespoke web applications, CRM, ERP, and API platforms.', href: '/capabilities/technology-transformation/software-development' },
+    { title: 'UI/UX & Experience Design', category: 'Design', desc: 'Intuitive interface design, customer journeys, and wireframes.', href: '/capabilities/brand-experience/ui-ux' },
+    { title: 'Search Engine Optimization', category: 'Growth', desc: 'Technical SEO and organic search visibility architectures.', href: '/capabilities/digital-growth/seo' },
+    { title: 'Transformation Health Check', category: 'Diagnostic', desc: 'Benchmark your digital readiness across all dimensions.', href: '/transformation-health-check' },
+  ];
+
   return (
     <>
-      <Helmet>
-        <title>Website Template Collection | NG Stellar</title>
-        <meta
-          name="description"
-          content="Explore professionally designed website templates built for various industries. High quality, premium React and responsive landing pages by NG Stellar."
+      <SEO
+        title="Website Design Solutions for Modern Businesses"
+        description="High-performance website design solutions by NG Stellar: corporate websites, business landing pages, e-commerce, and responsive website templates."
+        canonicalUrl="/templates"
+        breadcrumbs={breadcrumbs}
+      />
+
+      <div className="relative min-h-screen bg-slate-950 text-slate-100 font-sans pb-12">
+        {/* 1. HERO */}
+        <PremiumPageHero
+          eyebrow="Digital Platform Capabilities"
+          title="Website Design Solutions for"
+          titleHighlight="Modern Businesses"
+          tagline="High Performance. Responsive Layouts. Conversion-Focused Architecture."
+          description="We design and build fast, responsive, conversion-focused websites engineered to showcase your enterprise capabilities, engage decision-makers, and establish digital authority. Explore our ready-to-deploy template architectures or request a bespoke build."
+          breadcrumbs={breadcrumbs}
+          primaryCta={{
+            label: 'Explore Website Templates',
+            href: '#templates-collection'
+          }}
+          secondaryCta={{
+            label: 'Discuss Custom Build',
+            href: '/contact'
+          }}
         />
-      </Helmet>
 
-      <div className="relative min-h-screen bg-slate-950 pt-32 pb-24 overflow-hidden">
-        {/* Decorative background mesh */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none -z-10">
-          <div className="absolute top-12 left-10 w-[400px] h-[400px] rounded-full bg-primary-900/10 blur-[120px] animate-blob" />
-          <div className="absolute top-1/3 right-10 w-[500px] h-[500px] rounded-full bg-secondary-900/10 blur-[130px] animate-blob [animation-delay:3s]" />
-          <div className="absolute bottom-10 left-1/4 w-[450px] h-[450px] rounded-full bg-accent-950/15 blur-[120px] animate-blob [animation-delay:6s]" />
-        </div>
+        {/* 2. WEBSITE DESIGN CAPABILITIES GRID */}
+        <section className="py-16 bg-slate-900/50 border-y border-white/10 mb-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-bold text-secondary-400 uppercase tracking-widest mb-2 block">
+                Engineering & Design Standards
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+                What Powers Our Website Solutions
+              </h2>
+            </div>
 
-        {/* Page Header */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10 relative">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-300 text-xs font-semibold mb-6 uppercase tracking-wider"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse" />
-            Premium Marketplace
-          </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {capabilitiesList.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="p-6 rounded-2xl bg-white/[0.03] border border-white/8 hover:border-primary-500/30 transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="w-10 h-10 rounded-xl bg-primary-500/15 text-primary-300 flex items-center justify-center mb-4">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                      <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6"
-          >
-            Template <span className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-300 bg-clip-text text-transparent pr-2">Collection</span>
-          </motion.h1>
+        {/* 3. TEMPLATES SHOWCASE HEADER & FILTERS */}
+        <div id="templates-collection" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
+          <span className="text-xs font-bold text-primary-400 uppercase tracking-widest block mb-2">
+            Ready-to-Deploy Architectures
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-6">
+            Explore Pre-Engineered Website Templates
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 leading-relaxed mb-10"
-          >
-            Explore professionally designed website templates built for various industries. Ready-to-go, fully customizable solutions.
-          </motion.p>
-
-          {/* Category Filter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-flex flex-wrap justify-center gap-2 p-1.5 rounded-2xl bg-slate-900/60 border border-white/10 backdrop-blur-md mx-auto"
-          >
-            {categories.map((cat) => (
+          <div className="inline-flex flex-wrap justify-center gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-white/10 backdrop-blur-md mx-auto">
+            {planCategories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`relative px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ease-out ${activeCategory === cat.id
-                  ? 'text-white shadow-lg'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
-                  }`}
+                className={`relative px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+                  activeCategory === cat.id
+                    ? 'text-white shadow-lg bg-gradient-to-r from-primary-600 to-secondary-600'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+                }`}
               >
-                {activeCategory === cat.id && (
-                  <motion.div
-                    layoutId="activeCategoryBg"
-                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary-600 to-secondary-600 shadow-[0_0_15px_rgba(14,165,233,0.3)]"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{cat.label}</span>
+                {cat.label}
               </button>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Category Information Strip */}
         <AnimatePresence mode="wait">
-          {activeCategory !== 'all' && (
+          {activeCategory !== 'all' && categoryInfo[activeCategory] && (
             <motion.div
               key={activeCategory}
               initial={{ opacity: 0, height: 0, y: -10 }}
@@ -157,31 +206,17 @@ const Templates = () => {
                     {categoryInfo[activeCategory].badge}
                   </span>
                 </div>
-                <p className="text-slate-300">
+                <p className="text-slate-300 text-sm">
                   {categoryInfo[activeCategory].desc}
                 </p>
-                {categoryInfo[activeCategory].features && (
-                  <div className="flex flex-wrap justify-center gap-4 mt-4">
-                    {categoryInfo[activeCategory].features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5 text-sm text-slate-400">
-                        <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {feat}
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Main Content Area */}
-        <div id="templates-collection" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* 4. TEMPLATE CARDS GRID */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative mb-16">
           <AnimatePresence mode="wait">
-
-
             {filteredTemplates.length > 0 ? (
               <motion.div
                 key="template-grid"
@@ -190,70 +225,58 @@ const Templates = () => {
                 exit={{ opacity: 0 }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
-                <AnimatePresence>
-                  {filteredTemplates.map((template) => (
-                    <TemplateCard key={template.id} template={template} />
-                  ))}
-                </AnimatePresence>
+                {filteredTemplates.map((template) => (
+                  <TemplateCard key={template.id} template={template} />
+                ))}
               </motion.div>
             ) : (
-              <motion.div
-                key="no-results"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="text-center py-20"
-              >
+              <div className="text-center py-20">
                 <h3 className="text-2xl font-semibold text-white mb-2">No templates found</h3>
-                <p className="text-slate-400">There are currently no templates in this category.</p>
-              </motion.div>
+                <p className="text-slate-400">There are currently no templates matching this filter.</p>
+              </div>
             )}
           </AnimatePresence>
-          {activeCategory === 'custom' && (
-            <motion.div
-              key="customized-cta"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="w-full my-12"
-            >
-              <div className="rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-transparent to-secondary-900/20 pointer-events-none" />
-
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10">
-                  CUSTOMIZED SOLUTIONS
-                </h2>
-                <p className="text-xl text-primary-400 mb-6 font-medium relative z-10">
-                  Have something unique in mind?
-                </p>
-                <p className="text-slate-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto relative z-10">
-                  From SaaS platforms and admin dashboards to booking systems, marketplaces and custom business portals — we design solutions around your exact requirements.
-                </p>
-
-                <div className="flex flex-wrap justify-center gap-3 mb-10 relative z-10">
-                  {['Custom UI/UX', 'Admin Portals', 'SaaS Platforms', 'API Integrations', 'Booking Systems', 'Business Automation', 'Custom Enterprise Solution', 'AI SaaS Platform', 'CRM + ERP', 'Marketplace', 'Mobile App + Website', 'WordPress Site', 'Any Custom Requirement'].map((chip, idx) => (
-                    <span key={idx} className="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm font-medium">
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-secondary-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-                  >
-                    Discuss Your Project
-                    <svg className="ml-2 -mr-1 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          )}
         </div>
+
+        {/* 5. CUSTOM WEB SOLUTION BANNER */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="rounded-3xl border border-primary-500/30 bg-slate-900/90 backdrop-blur-xl p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4">
+              Need a Completely Custom Web Application?
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+              From bespoke SaaS platforms and corporate client portals to custom booking engines and e-commerce architectures—we engineer digital solutions tailored to your exact operational requirements.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-2.5 mb-8">
+              {['Custom UI/UX', 'Admin Portals', 'SaaS Backends', 'API Integrations', 'Booking Workflows', 'Business Automation', 'ERP Integration', 'Mobile-Responsive'].map((chip, idx) => (
+                <span key={idx} className="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium">
+                  {chip}
+                </span>
+              ))}
+            </div>
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <span>Discuss Your Custom Project</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+
+        {/* 6. RELATED CONTENT */}
+        <RelatedContent links={relatedLinks} />
+
+        {/* 7. CONTEXTUAL CTA */}
+        <ContextualCTA
+          eyebrow="Website Engineering"
+          heading="Build Your Digital Presence with NG Stellar"
+          description="Schedule a strategy session to select the ideal website architecture for your commercial and technical requirements."
+          primaryCta={{ label: 'Discuss Your Website Project', href: '/contact' }}
+          secondaryCta={{ label: 'Explore All Capabilities', href: '/capabilities' }}
+        />
       </div>
     </>
   );

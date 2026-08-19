@@ -1,24 +1,24 @@
-import { useState, useEffect, useRef, lazy, Suspense, memo } from 'react';
+import { useState, useEffect, lazy, Suspense, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Lazy-load Three.js canvas — defers 923 kB from initial page load
+// Lazy-load Three.js canvas — defers initial bundle weight
 const Hero3DAnimation = lazy(() => import('./Hero3DAnimation'));
 
 const heroSlides = [
   {
     id: 1,
     badge: '👉 Build Smarter. Grow Faster.',
-    title: '₹500 Today',
-    titleHighlight: 'Could Be the First Step Toward Your',
-    titleBody: 'First Crore Business',
-    descHighlight: 'Most businesses fail simply because they are invisible.',
-    descBody: 'We fix that. We build, market, and scale your brand.',
-    image: '/cursole1.webp',
+    title: 'Is your business growing—',
+    titleHighlight: 'or just getting bigger?',
+    titleBody: '',
+    descHighlight: 'NG Stellar helps businesses identify operational gaps, improve processes, leverage technology and unlock new growth opportunities.',
+    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
     features: [
-      { icon: '🚀', label: 'High Visibility' },
-      { icon: '💡', label: 'Smart Building' },
-      { icon: '📈', label: 'Scale Fast' }
+      { icon: '📊', label: 'Business Diagnostic' },
+      { icon: '🚀', label: 'Growth Advisory' },
+      { icon: '🔄', label: 'Transformation' },
+      { icon: '💡', label: 'New Ventures' }
     ]
   },
   {
@@ -26,13 +26,14 @@ const heroSlides = [
     badge: '👉 Build Smarter. Grow Faster.',
     title: "Dreams Don't Fail.",
     titleHighlight: 'They Just Go Unnoticed.',
+    titleBody: '',
     descHighlight: "If customers can't find you online, they can't choose you.",
-    descBody: 'We drive visibility and trust to bring you more customers.',
-    image: '/cursole2.webp',
+    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
     features: [
-      { icon: '🔍', label: 'Get Seen' },
-      { icon: '🤝', label: 'Get Trusted' },
-      { icon: '👥', label: 'Get Customers' }
+      { icon: '📊', label: 'Business Diagnostic' },
+      { icon: '🚀', label: 'Growth Advisory' },
+      { icon: '🔄', label: 'Transformation' },
+      { icon: '💡', label: 'New Ventures' }
     ]
   },
   {
@@ -40,13 +41,14 @@ const heroSlides = [
     badge: '👉 Build Smarter. Grow Faster.',
     title: 'Your Business Has',
     titleHighlight: 'More Potential Than You Think.',
+    titleBody: '',
     descHighlight: "Hard work alone isn't enough without the right systems.",
-    descBody: 'We accelerate your business using modern tech, automation, and visibility.',
-    image: '/cursole3.webp',
+    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
     features: [
-      { icon: '⚙️', label: 'Automation' },
-      { icon: '💻', label: 'Technology' },
-      { icon: '📊', label: 'Growth' }
+      { icon: '📊', label: 'Business Diagnostic' },
+      { icon: '🚀', label: 'Growth Advisory' },
+      { icon: '🔄', label: 'Transformation' },
+      { icon: '💡', label: 'New Ventures' }
     ]
   },
 ];
@@ -71,7 +73,7 @@ function Hero() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
 
   const onTouchStart = (e) => {
-    setTouchEnd(null); // Reset touch end
+    setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
@@ -140,12 +142,7 @@ function Hero() {
                       backgroundImage: 'linear-gradient(90deg, #335fa8 0%, #7db941 50%, #87be41 100%)'
                     }}
                   >
-                    {heroSlides[currentSlide].titleHighlight.split(/<br\s*\/?>/).map((text, idx, arr) => (
-                      <span key={idx}>
-                        {text}
-                        {idx < arr.length - 1 && <br />}
-                      </span>
-                    ))}
+                    {heroSlides[currentSlide].titleHighlight}
                   </span>{' '}
                   {heroSlides[currentSlide].titleBody}
                 </h1>
@@ -163,14 +160,16 @@ function Hero() {
 
             {/* Bottom Controls - Stable Wrapper */}
             <div className="flex flex-wrap items-center gap-4 md:gap-6 relative z-[60]">
-              <Link to="/contact" className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95">
-                Get Started
+              <Link
+                to="/transformation-health-check"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95"
+              >
+                Get Your Business Health Check
               </Link>
-              <Link to="/templates" className="order-2 md:order-none inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md">
-                View Templates
-              </Link>
+
               {/* Features - Dynamic but wrapper is stable */}
-              <div className="flex flex-nowrap items-center gap-3 md:gap-4 text-xs sm:text-sm text-slate-300">
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs sm:text-sm text-slate-300">
                 {heroSlides[currentSlide].features.map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-1.5">
                     <span className="text-base md:text-lg">{feature.icon}</span>
@@ -220,9 +219,8 @@ function Hero() {
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 }
 
 export default memo(Hero);
-

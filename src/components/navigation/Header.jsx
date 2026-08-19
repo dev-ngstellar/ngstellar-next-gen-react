@@ -77,14 +77,14 @@ export default function Header() {
             aria-label="NG Stellar Home"
           >
             <img
-              src="/ng_logo_white.png"
+              src="/NG Stellar.png"
               alt="NG Stellar - Transformation & Sustainability Advisory"
-              width="145"
+              width="188"
               height="36"
               loading="eager"
               decoding="async"
               className="h-7 sm:h-8 lg:h-9 w-auto max-w-[130px] sm:max-w-[150px] lg:max-w-[165px] object-contain transition-transform duration-200 group-hover:scale-[1.02]"
-              style={{ aspectRatio: '340/65' }}
+              style={{ aspectRatio: '2170/417' }}
             />
           </Link>
         </div>

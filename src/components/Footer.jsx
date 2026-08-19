@@ -18,7 +18,7 @@ function Footer() {
         {/* 1. Logo */}
         <div className="mb-6">
           <Link to="/">
-            <OptimizedImage src="/ng_logo_white.webp" alt="NG Stellar Solutions" className="h-12 w-auto" width="180" height="48" loading="lazy" decoding="async" />
+            <OptimizedImage src="/NG Stellar.png" alt="NG Stellar Solutions" className="h-12 w-auto" width="180" height="48" loading="lazy" decoding="async" />
           </Link>
         </div>
 
