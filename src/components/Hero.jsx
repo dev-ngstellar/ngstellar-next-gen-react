@@ -8,49 +8,55 @@ const Hero3DAnimation = lazy(() => import('./Hero3DAnimation'));
 const heroSlides = [
   {
     id: 1,
-    badge: '👉 Build Smarter. Grow Faster.',
-    title: 'Is your business growing—',
-    titleHighlight: 'or just getting bigger?',
+    badge: '👉 Transformation & Sustainability Advisory',
+    title: 'Transform the Business.',
+    titleHighlight: 'Sustain the Impact.',
     titleBody: '',
-    descHighlight: 'NG Stellar helps businesses identify operational gaps, improve processes, leverage technology and unlock new growth opportunities.',
-    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
+    descHighlight:
+      'NG Stellar is a Transformation & Sustainability Advisory firm helping businesses navigate change, solve complex challenges, unlock opportunities and build sustainable long-term value.',
+    descBody:
+      'From business strategy and process transformation to technology, AI, digital growth and sustainability, we help organizations understand what needs to change—and turn that understanding into measurable action.',
     features: [
-      { icon: '📊', label: 'Business Diagnostic' },
-      { icon: '🚀', label: 'Growth Advisory' },
-      { icon: '🔄', label: 'Transformation' },
-      { icon: '💡', label: 'New Ventures' }
+      { icon: '📊', label: 'Business Strategy' },
+      { icon: '👥', label: 'People & Org' },
+      { icon: '⚙️', label: 'Process & Tech' },
+      { icon: '🌱', label: 'Sustainability' }
     ]
   },
   {
     id: 2,
-    badge: '👉 Build Smarter. Grow Faster.',
-    title: "Dreams Don't Fail.",
-    titleHighlight: 'They Just Go Unnoticed.',
+    badge: '👉 Navigating Enterprise Change',
+    title: 'Transform the Business.',
+    titleHighlight: 'Sustain the Impact.',
     titleBody: '',
-    descHighlight: "If customers can't find you online, they can't choose you.",
-    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
+    descHighlight:
+      'NG Stellar brings together business thinking, people, processes, technology and the right ecosystem to help businesses move from problem or idea to sustainable impact.',
+    descBody:
+      'From business strategy and process transformation to technology, AI, digital growth and sustainability, we help organizations understand what needs to change—and turn that understanding into measurable action.',
     features: [
-      { icon: '📊', label: 'Business Diagnostic' },
-      { icon: '🚀', label: 'Growth Advisory' },
-      { icon: '🔄', label: 'Transformation' },
-      { icon: '💡', label: 'New Ventures' }
+      { icon: '📊', label: 'Business Strategy' },
+      { icon: '👥', label: 'People & Org' },
+      { icon: '⚙️', label: 'Process & Tech' },
+      { icon: '🌱', label: 'Sustainability' }
     ]
   },
   {
     id: 3,
-    badge: '👉 Build Smarter. Grow Faster.',
-    title: 'Your Business Has',
-    titleHighlight: 'More Potential Than You Think.',
+    badge: '👉 Delivering Measurable Value',
+    title: 'Transform the Business.',
+    titleHighlight: 'Sustain the Impact.',
     titleBody: '',
-    descHighlight: "Hard work alone isn't enough without the right systems.",
-    descBody: 'Business Diagnostic | Growth Advisory | Transformation | New Ventures',
+    descHighlight:
+      'We help organizations understand what needs to change—and turn that understanding into measurable action and compounding long-term growth.',
+    descBody:
+      'From business strategy and process transformation to technology, AI, digital growth and sustainability, we help organizations understand what needs to change—and turn that understanding into measurable action.',
     features: [
-      { icon: '📊', label: 'Business Diagnostic' },
-      { icon: '🚀', label: 'Growth Advisory' },
-      { icon: '🔄', label: 'Transformation' },
-      { icon: '💡', label: 'New Ventures' }
+      { icon: '📊', label: 'Business Strategy' },
+      { icon: '👥', label: 'People & Org' },
+      { icon: '⚙️', label: 'Process & Tech' },
+      { icon: '🌱', label: 'Sustainability' }
     ]
-  },
+  }
 ];
 
 function Hero() {
@@ -161,11 +167,19 @@ function Hero() {
             {/* Bottom Controls - Stable Wrapper */}
             <div className="flex flex-wrap items-center gap-4 md:gap-6 relative z-[60]">
               <Link
-                to="/transformation-health-check"
+                to="/contact/transformation-conversation"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95"
               >
-                Get Your Business Health Check
+                Start a Transformation Conversation
+              </Link>
+
+              <Link
+                to="/approach"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-white/[0.08] hover:bg-white/15 border border-white/20 px-6 sm:px-7 py-3 sm:py-3.5 text-sm font-semibold text-slate-100 hover:text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95"
+              >
+                Explore Our Approach
               </Link>
 
               {/* Features - Dynamic but wrapper is stable */}
