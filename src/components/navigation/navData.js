@@ -330,30 +330,13 @@ export const NAV_ITEMS = [
     label: 'Contact',
     dropdownTitle: 'Contact NG Stellar',
     href: '/contact',
-    type: 'contact',
+    type: 'link',
     inMoreGroup: true,
-    tagline: 'Engage with our senior advisory team to start your journey.',
+    tagline: 'Engage with our senior advisory team to start your transformation conversation.',
     cta: {
       label: 'Contact NG Stellar',
       href: '/contact',
     },
-    items: [
-      {
-        title: 'Start a Transformation Conversation',
-        href: '/contact/transformation-conversation',
-        description: 'Discuss your strategic challenges with a senior transformation advisor.',
-      },
-      {
-        title: 'Request a Health Check',
-        href: '/contact/health-check',
-        description: 'Schedule a tailored assessment of your organization’s capabilities.',
-      },
-      {
-        title: 'Partner With Us',
-        href: '/contact/partner',
-        description: 'Explore ecosystem alliances, tech integration, or expert collaboration.',
-      },
-    ],
   },
 ];
 

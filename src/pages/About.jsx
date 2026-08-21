@@ -88,7 +88,7 @@ function About() {
         breadcrumbs={breadcrumbs}
         primaryCta={{
           label: 'Start a Transformation Conversation',
-          href: '/contact/transformation-conversation'
+          href: '/contact'
         }}
         secondaryCta={{
           label: 'Explore Our Approach',
@@ -315,7 +315,7 @@ function About() {
         eyebrow="Transformation Partnership"
         heading="Partner With NG Stellar"
         description="Transform your business operations and sustain your market impact with our integrated advisory and technology capabilities."
-        primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact' }}
         secondaryCta={{ label: 'Request a Health Check', href: '/transformation-health-check' }}
       />
     </div>

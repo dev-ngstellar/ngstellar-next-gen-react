@@ -105,7 +105,7 @@ function ApproachHubPage() {
         breadcrumbs={breadcrumbs}
         primaryCta={{
           label: currentStage ? currentStage.cta : 'Start a Transformation Conversation',
-          href: currentStage ? currentStage.ctaHref : '/contact/transformation-conversation'
+          href: currentStage ? currentStage.ctaHref : '/contact'
         }}
         secondaryCta={{
           label: 'Explore Health Check',
@@ -357,7 +357,7 @@ function ApproachHubPage() {
         eyebrow="Methodology in Action"
         heading="Apply Our Transformation Framework to Your Organization"
         description="Schedule a strategy session to explore how our 6-stage framework can be tailored to solve your specific operational challenges."
-        primaryCta={{ label: currentStage ? currentStage.cta : 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: currentStage ? currentStage.cta : 'Start a Transformation Conversation', href: '/contact' }}
         secondaryCta={{ label: 'Take Health Check', href: '/transformation-health-check' }}
       />
     </div>

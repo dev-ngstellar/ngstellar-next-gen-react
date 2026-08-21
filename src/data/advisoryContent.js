@@ -65,7 +65,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Talk to Our Transformation Experts',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   },
 
@@ -137,7 +137,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Start Your People & Organization Transformation Journey',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   },
 
@@ -209,7 +209,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Optimize Your Business Operations with NG Stellar',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   },
 
@@ -281,7 +281,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Begin Your Technology Transformation Journey',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   },
 
@@ -352,7 +352,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Strengthen Your Business for Tomorrow',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   },
 
@@ -422,7 +422,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Build a People-Centric & Sustainable Organization',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   },
 
@@ -492,7 +492,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Strengthen Your Governance Framework',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   },
 
@@ -562,7 +562,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Build a More Sustainable Business',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   },
 
@@ -632,7 +632,7 @@ export const ADVISORY_PAGES = {
     },
     cta: {
       text: 'Strengthen Your Business Resilience',
-      link: '/contact/transformation-conversation'
+      link: '/contact'
     }
   }
 };

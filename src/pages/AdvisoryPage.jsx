@@ -131,7 +131,7 @@ export default function AdvisoryPage() {
 
           <div className="flex flex-wrap items-center gap-4">
             <Link
-              to="/contact/transformation-conversation"
+              to="/contact"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 text-white font-bold text-sm shadow-xl shadow-primary-700/30 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
               <span>Start a Transformation Conversation</span>

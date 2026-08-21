@@ -53,7 +53,7 @@ export const TRANSFORMATION_HUB = {
       badge: 'Technology'
     },
   ],
-  ctaPrimary: { label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' },
+  ctaPrimary: { label: 'Start a Transformation Conversation', href: '/contact' },
   ctaSecondary: { label: 'Request a Transformation Health Check', href: '/transformation-health-check' },
 };
 
@@ -105,7 +105,7 @@ export const SUSTAINABILITY_HUB = {
       focus: ['Crisis readiness & contingency planning', 'Supply chain diversification', 'Operational redundancy', 'Cyber & data security resilience', 'Adaptive leadership workflows']
     },
   ],
-  ctaPrimary: { label: 'Discuss Your Sustainability Priorities', href: '/contact/transformation-conversation' },
+  ctaPrimary: { label: 'Discuss Your Sustainability Priorities', href: '/contact' },
   ctaSecondary: { label: 'Explore Sustainability Assessment', href: '/transformation-health-check/sustainability' },
 };
 
@@ -143,7 +143,7 @@ export const HEALTH_CHECK_HUB = {
       ],
       fromAssessmentToAction: 'Following the Business Transformation Assessment, our advisory team delivers an executive briefing and works with your leadership to construct an executable transformation roadmap.',
       cta: 'Request a Business Assessment',
-      ctaHref: '/contact/health-check'
+      ctaHref: '/contact'
     },
     {
       id: 'people',
@@ -171,7 +171,7 @@ export const HEALTH_CHECK_HUB = {
       ],
       fromAssessmentToAction: 'We translate organizational findings into targeted leadership workshops, capability upskilling tracks, and agile structural redesigns.',
       cta: 'Assess Your Organization',
-      ctaHref: '/contact/health-check'
+      ctaHref: '/contact'
     },
     {
       id: 'process',
@@ -199,7 +199,7 @@ export const HEALTH_CHECK_HUB = {
       ],
       fromAssessmentToAction: 'Our operational consultants partner with your teams to re-engineer workflows, eliminate friction, and implement automated operational platforms.',
       cta: 'Assess Your Operations',
-      ctaHref: '/contact/health-check'
+      ctaHref: '/contact'
     },
     {
       id: 'technology',
@@ -227,7 +227,7 @@ export const HEALTH_CHECK_HUB = {
       ],
       fromAssessmentToAction: 'We architect modern digital solutions, custom web and mobile applications, and AI integrations that turn technological constraints into competitive accelerators.',
       cta: 'Assess Your Technology Landscape',
-      ctaHref: '/contact/health-check'
+      ctaHref: '/contact'
     },
     {
       id: 'sustainability',
@@ -255,7 +255,7 @@ export const HEALTH_CHECK_HUB = {
       ],
       fromAssessmentToAction: 'We assist executive teams in institutionalizing sustainable governance policies, operational efficiency initiatives, and resilience safeguards.',
       cta: 'Request a Sustainability Assessment',
-      ctaHref: '/contact/health-check'
+      ctaHref: '/contact'
     },
     {
       id: 'roadmap',
@@ -284,7 +284,7 @@ export const HEALTH_CHECK_HUB = {
       ],
       fromAssessmentToAction: 'Our senior advisory and technical implementation teams remain embedded alongside your leadership to co-execute every phase of the transformation roadmap.',
       cta: 'Build Your Transformation Roadmap',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
   ]
 };
@@ -313,7 +313,7 @@ export const APPROACH_HUB = {
       ],
       deliverables: ['Contextual Discovery Report', 'Stakeholder Alignment Brief', 'Transformation Scope Definition'],
       cta: 'Start Your Transformation Conversation',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     {
       step: '02',
@@ -351,7 +351,7 @@ export const APPROACH_HUB = {
       ],
       deliverables: ['Target Operating Model Design', 'Transformation Architecture Blueprint', 'Phased Implementation Roadmap'],
       cta: 'Design Your Transformation Blueprint',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     {
       step: '04',
@@ -389,7 +389,7 @@ export const APPROACH_HUB = {
       ],
       deliverables: ['Functional Software Platforms', 'Automated Operating Workflows', 'Sprint Value Realization Reports'],
       cta: 'Execute Your Transformation',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     {
       step: '06',
@@ -408,7 +408,7 @@ export const APPROACH_HUB = {
       ],
       deliverables: ['Executive KPI Dashboard', 'Capability Transfer Playbook', 'Annual Resilience & Sustainability Audit'],
       cta: 'Build Sustainable Transformation',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
   ]
 };
@@ -477,7 +477,7 @@ export const ECOSYSTEM_HUB = {
       focus: ['End-to-end system integration', 'Cross-border deployment', 'Staff augmentation & training', 'Operational cutover management']
     },
   ],
-  ctaPrimary: { label: 'Partner With NG Stellar', href: '/contact/partner' },
+  ctaPrimary: { label: 'Partner With NG Stellar', href: '/contact' },
 };
 
 export const STORIES_HUB = {
@@ -560,7 +560,7 @@ export const STORIES_HUB = {
       ]
     }
   ],
-  ctaPrimary: { label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' },
+  ctaPrimary: { label: 'Start a Transformation Conversation', href: '/contact' },
 };
 
 export const INSIGHTS_HUB = {

@@ -10,7 +10,7 @@ function PremiumPageHero({
   tagline,
   description,
   breadcrumbs = [],
-  primaryCta = { label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' },
+  primaryCta = { label: 'Start a Transformation Conversation', href: '/contact' },
   secondaryCta = null,
   visualElement = null,
   accentColor = 'primary', // 'primary' (blue), 'emerald' (green), 'secondary' (teal/lime)

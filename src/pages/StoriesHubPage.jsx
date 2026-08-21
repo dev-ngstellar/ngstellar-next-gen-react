@@ -80,7 +80,7 @@ function StoriesHubPage() {
         breadcrumbs={breadcrumbs}
         primaryCta={{
           label: 'Discuss Your Specific Challenge',
-          href: '/contact/transformation-conversation'
+          href: '/contact'
         }}
         secondaryCta={{
           label: 'Take Health Check',
@@ -230,7 +230,7 @@ function StoriesHubPage() {
         eyebrow="Have a Similar Challenge?"
         heading="Discuss Your Organization's Transformation Objectives"
         description="Every business has unique operational nuances. Connect with our advisory team to evaluate your current operating model and design a customized roadmap."
-        primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact' }}
         secondaryCta={{ label: 'Request a Health Check', href: '/transformation-health-check' }}
       />
     </div>

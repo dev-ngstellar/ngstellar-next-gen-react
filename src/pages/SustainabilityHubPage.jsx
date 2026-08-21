@@ -153,7 +153,7 @@ function SustainabilityHubPage() {
         eyebrow="Resilience & Governance"
         heading="Integrate Sustainability into Your Operating Model"
         description="Transform compliance obligations into long-term commercial advantages. Discuss your sustainability priorities with our advisory team."
-        primaryCta={{ label: 'Discuss Your Sustainability Priorities', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: 'Discuss Your Sustainability Priorities', href: '/contact' }}
         secondaryCta={{ label: 'Take Health Check', href: '/transformation-health-check' }}
         accent="emerald"
       />

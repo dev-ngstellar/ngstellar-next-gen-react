@@ -90,7 +90,7 @@ function HealthCheckHubPage() {
         breadcrumbs={breadcrumbs}
         primaryCta={{
           label: currentSubpage ? currentSubpage.cta : 'Request a Health Check',
-          href: currentSubpage ? currentSubpage.ctaHref : '/contact/health-check'
+          href: currentSubpage ? currentSubpage.ctaHref : '/contact'
         }}
         secondaryCta={{
           label: 'Explore Our Approach',
@@ -291,8 +291,8 @@ function HealthCheckHubPage() {
         eyebrow="Diagnostic Engagement"
         heading="Know Where Your Business Needs to Transform."
         description="Schedule a confidential Transformation Health Check with our senior advisory team to benchmark your operations against industry best practices."
-        primaryCta={{ label: currentSubpage ? currentSubpage.cta : 'Request a Health Check', href: '/contact/health-check' }}
-        secondaryCta={{ label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: currentSubpage ? currentSubpage.cta : 'Request a Health Check', href: '/contact' }}
+        secondaryCta={{ label: 'Start a Transformation Conversation', href: '/contact' }}
       />
     </div>
   );

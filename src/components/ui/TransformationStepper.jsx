@@ -103,7 +103,7 @@ function TransformationStepper({ activeStepId }) {
           </Link>
         ) : (
           <Link
-            to="/contact/transformation-conversation"
+            to="/contact"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors ml-auto"
           >
             <span>Complete Lifecycle — Start Transformation →</span>

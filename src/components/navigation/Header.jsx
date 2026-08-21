@@ -97,7 +97,7 @@ export default function Header() {
         {/* Zone 3: Compact CTA (>= 1024px) & Mobile Toggle (< 1024px) */}
         <div className="flex-shrink-0 flex items-center gap-2">
           <Link
-            to="/contact/transformation-conversation"
+            to="/contact"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="hidden lg:inline-flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-3 lg:px-4 py-2 text-[11.5px] lg:text-[12.5px] font-bold text-white shadow-md shadow-primary-700/25 transition-all hover:brightness-110 hover:shadow-primary-500/40 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
             style={{ maxWidth: '175px' }}

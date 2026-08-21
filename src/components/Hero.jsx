@@ -167,7 +167,7 @@ function Hero() {
             {/* Bottom Controls - Stable Wrapper */}
             <div className="flex flex-wrap items-center gap-4 md:gap-6 relative z-[60]">
               <Link
-                to="/contact/transformation-conversation"
+                to="/contact"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="order-1 md:order-none inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/30 transition-all hover:brightness-110 hover:shadow-sm hover:shadow-secondary-500/40 hover:scale-105 active:scale-95"
               >

@@ -436,7 +436,7 @@ function Home() {
 
             <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
               <Link
-                to="/contact/transformation-conversation"
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-8 py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-primary-600/30 transition-all hover:brightness-110 hover:scale-105 active:scale-95"
               >
                 <span>Start a Transformation Conversation</span>

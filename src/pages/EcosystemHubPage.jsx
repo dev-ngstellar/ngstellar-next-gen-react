@@ -81,7 +81,7 @@ function EcosystemHubPage() {
         breadcrumbs={breadcrumbs}
         primaryCta={{
           label: 'Partner With NG Stellar',
-          href: '/contact/partner'
+          href: '/contact'
         }}
         secondaryCta={{
           label: 'Explore Our Approach',
@@ -227,8 +227,8 @@ function EcosystemHubPage() {
         eyebrow="Ecosystem Alliance"
         heading="Partner With NG Stellar"
         description="We welcome collaboration with industry experts, technology providers, professional advisors, and innovative startups."
-        primaryCta={{ label: 'Explore Partnership Opportunities', href: '/contact/partner' }}
-        secondaryCta={{ label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: 'Explore Partnership Opportunities', href: '/contact' }}
+        secondaryCta={{ label: 'Start a Transformation Conversation', href: '/contact' }}
       />
     </div>
   );

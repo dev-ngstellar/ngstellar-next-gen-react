@@ -6,7 +6,7 @@ function ContextualCTA({
   eyebrow = 'Next Steps in Transformation',
   heading = 'Ready to Realign Your Business Operations?',
   description = 'Connect with our senior advisory team to explore how our transformation and sustainability frameworks can be tailored to your strategic priorities.',
-  primaryCta = { label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' },
+  primaryCta = { label: 'Start a Transformation Conversation', href: '/contact' },
   secondaryCta = { label: 'Request a Health Check', href: '/transformation-health-check' },
   accent = 'primary', // 'primary' | 'emerald'
 }) {

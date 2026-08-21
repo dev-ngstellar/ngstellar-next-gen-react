@@ -108,7 +108,7 @@ function CapabilitiesHubPage() {
         breadcrumbs={breadcrumbs}
         primaryCta={{
           label: currentSubpage?.cta || currentCategory?.cta || 'Start a Transformation Conversation',
-          href: currentSubpage?.ctaHref || currentCategory?.ctaHref || '/contact/transformation-conversation'
+          href: currentSubpage?.ctaHref || currentCategory?.ctaHref || '/contact'
         }}
         secondaryCta={{
           label: 'Take Health Check',
@@ -368,7 +368,7 @@ function CapabilitiesHubPage() {
         eyebrow="Capability Enablement"
         heading="Bring Specialized Capabilities to Your Initiative"
         description="Whether you need strategic advisory, bespoke software development, or conversion-focused digital growth, our multidisciplinary team is ready."
-        primaryCta={{ label: currentSubpage?.cta || 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: currentSubpage?.cta || 'Start a Transformation Conversation', href: '/contact' }}
         secondaryCta={{ label: 'Explore All Capabilities', href: '/capabilities' }}
       />
     </div>

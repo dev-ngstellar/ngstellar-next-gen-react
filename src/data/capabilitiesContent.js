@@ -31,7 +31,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Strategic clarity, de-risked capital investment, and aligned executive decision-making.',
       cta: 'Discuss Your Strategy',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     {
       id: 'brand-experience',
@@ -56,7 +56,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Distinct market authority, higher digital engagement, and reduced user friction.',
       cta: 'Build Your Brand',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     {
       id: 'technology-transformation',
@@ -81,7 +81,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Modernized tech stack, eliminated operational debt, and accelerated feature delivery.',
       cta: 'Discuss Your Software Project',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     {
       id: 'digital-growth',
@@ -106,7 +106,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Compounding organic search traffic, qualified enterprise leads, and lower customer acquisition costs.',
       cta: 'Accelerate Your Digital Growth',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     }
   ],
 
@@ -137,7 +137,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Clear market differentiation, enhanced corporate credibility, and cohesive brand touchpoints.',
       cta: 'Build Your Brand',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     'ui-ux': {
       category: 'BRAND & EXPERIENCE',
@@ -163,7 +163,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Higher customer satisfaction, reduced onboarding time, lower churn, and increased conversion rates.',
       cta: 'Improve Your Customer Experience',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
 
     // 2. Technology Transformation Subpages
@@ -191,7 +191,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Tailored operational leverage, complete IP ownership, eliminated manual work, and unlimited scaling potential.',
       cta: 'Discuss Your Software Project',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     'mobile-applications': {
       category: 'TECHNOLOGY TRANSFORMATION',
@@ -217,7 +217,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Engaging mobile touchpoints, empowered mobile workforces, and rapid time-to-market.',
       cta: 'Discuss Your Mobile Application',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     'ecommerce': {
       category: 'TECHNOLOGY TRANSFORMATION',
@@ -243,7 +243,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Higher average order values, reduced checkout friction, and automated order processing.',
       cta: 'Launch Your E-commerce Platform',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     'ai-automation': {
       category: 'TECHNOLOGY TRANSFORMATION',
@@ -269,7 +269,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Significant reduction in manual labor hours, near-zero error rates, and rapid customer response times.',
       cta: 'Explore AI Automation Solutions',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     'digital-platforms': {
       category: 'TECHNOLOGY TRANSFORMATION',
@@ -295,7 +295,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Automated customer self-service, scalable recurring software revenue, and connected operational ecosystems.',
       cta: 'Build Your Digital Platform',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
 
     // 3. Digital Growth Subpages
@@ -323,7 +323,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Predictable inbound lead generation, improved customer lifetime value, and clear marketing ROI.',
       cta: 'Accelerate Your Digital Marketing',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     'seo': {
       category: 'DIGITAL GROWTH',
@@ -349,7 +349,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Compounding organic traffic, high search engine visibility, and reduced reliance on paid advertising.',
       cta: 'Optimize Your Search Visibility',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     'content-marketing': {
       category: 'DIGITAL GROWTH',
@@ -375,7 +375,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Established thought leadership, increased organic inbound traffic, and accelerated sales cycles.',
       cta: 'Elevate Your Content Strategy',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     },
     'performance-marketing': {
       category: 'DIGITAL GROWTH',
@@ -401,7 +401,7 @@ export const CAPABILITIES_MASTER = {
       ],
       outcomes: 'Immediate qualified lead flow, lower cost per acquisition (CPA), and positive campaign ROI.',
       cta: 'Launch Your Performance Campaign',
-      ctaHref: '/contact/transformation-conversation'
+      ctaHref: '/contact'
     }
   }
 };

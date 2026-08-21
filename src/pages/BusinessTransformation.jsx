@@ -214,7 +214,7 @@ function BusinessTransformation() {
             {/* Action Buttons */}
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link
-                to="/contact/transformation-conversation"
+                to="/contact"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-7 py-3.5 text-sm font-bold text-white shadow-xl shadow-primary-600/25 transition-all hover:brightness-110 hover:shadow-primary-500/40 hover:scale-[1.02] active:scale-[0.98]"
               >
@@ -438,7 +438,7 @@ function BusinessTransformation() {
 
             <div className="flex flex-wrap justify-center items-center gap-4">
               <Link
-                to="/contact/transformation-conversation"
+                to="/contact"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-8 sm:px-10 py-4 text-base font-bold text-white shadow-xl shadow-primary-600/30 transition-all hover:brightness-110 hover:shadow-primary-500/50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary-400"
               >

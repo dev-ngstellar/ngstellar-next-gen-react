@@ -79,7 +79,7 @@ function InsightsHubPage() {
         breadcrumbs={breadcrumbs}
         primaryCta={{
           label: 'Start a Transformation Conversation',
-          href: '/contact/transformation-conversation'
+          href: '/contact'
         }}
         secondaryCta={{
           label: 'Explore Our Approach',
@@ -232,7 +232,7 @@ function InsightsHubPage() {
         eyebrow="Advisory Perspectives"
         heading="Explore Tailored Advisory for Your Enterprise"
         description="Have specific strategic, technological, or sustainability priorities? Connect with our senior advisory team for an executive perspective."
-        primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact' }}
         secondaryCta={{ label: 'Take Health Check', href: '/transformation-health-check' }}
       />
     </div>

@@ -172,7 +172,7 @@ function TransformationHubPage() {
         eyebrow="Transformation Advisory"
         heading="Ready to Accelerate Your Enterprise Transformation?"
         description="Connect with our senior advisory team for an executive conversation on realigning your operating model for sustainable growth."
-        primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact/transformation-conversation' }}
+        primaryCta={{ label: 'Start a Transformation Conversation', href: '/contact' }}
         secondaryCta={{ label: 'Take Health Check', href: '/transformation-health-check' }}
       />
     </div>

@@ -235,22 +235,15 @@ export default function MobileNavigation({ isOpen, onClose }) {
               );
             })}
 
-            {/* Mobile Contact CTAs */}
-            <div className="pt-3 mt-3 border-t border-white/10 space-y-2">
+            {/* Mobile Contact CTA */}
+            <div className="pt-3 mt-3 border-t border-white/10">
               <Link
-                to="/contact/transformation-conversation"
+                to="/contact"
                 onClick={handleLinkClick}
                 className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-4 py-2.5 text-xs font-bold text-white shadow-lg shadow-primary-600/30 hover:brightness-110 active:scale-[0.98] transition-all"
               >
                 <span>Start a Conversation</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-              <Link
-                to="/contact"
-                onClick={handleLinkClick}
-                className="w-full inline-flex items-center justify-center rounded-xl bg-white/[0.06] border border-white/10 px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
-              >
-                Contact & General Inquiries
               </Link>
             </div>
           </div>
