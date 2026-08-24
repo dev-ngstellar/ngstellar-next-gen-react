@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaMapLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6';
 import { BsBuildingsFill } from 'react-icons/bs';
 import { Sparkles, Send, Loader2, CheckCircle2, AlertCircle, ArrowLeft, Check } from 'lucide-react';
 import { sendContactEmail } from '../services/emailService';
+import { isValidEmail } from '../utils/validation';
 
 const DISCUSSION_TOPICS = [
   'Business transformation',
@@ -19,6 +20,11 @@ const DISCUSSION_TOPICS = [
 ];
 
 export default function Contact() {
+  const nameInputRef = useRef(null);
+  const emailInputRef = useRef(null);
+  const subjectInputRef = useRef(null);
+  const messageInputRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,55 +36,84 @@ export default function Contact() {
   const [status, setStatus] = useState(''); // '' | 'submitting' | 'success' | 'error'
   const [errorMessage, setErrorMessage] = useState('');
 
+  const validateField = (fieldName, value) => {
+    const val = (value || '').trim();
+    switch (fieldName) {
+      case 'name':
+        if (!val) return 'Please enter your full name.';
+        return '';
+      case 'email':
+        if (!val || !isValidEmail(val)) return 'Please enter a valid email address.';
+        return '';
+      case 'subject':
+        if (!val) return 'Please enter a subject.';
+        return '';
+      case 'message':
+        if (!val) return 'Please enter your message.';
+        return '';
+      default:
+        return '';
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setErrors((prev) => ({ ...prev, [name]: error }));
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Inline validation
-    let error = '';
-    if (name === 'name') {
-      if (value.trim() && value.trim().length < 2) error = 'Full Name must be at least 2 characters';
-      else if (/\d/.test(value)) error = 'Name should not contain numbers';
+    // When the user enters a valid value after an error, immediately remove the error
+    if (errors[name]) {
+      const error = validateField(name, value);
+      setErrors((prev) => ({ ...prev, [name]: error }));
     }
-    if (name === 'email') {
-      if (value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) error = 'Please enter a valid email address';
-    }
-    if (name === 'subject') {
-      if (value.trim() && value.trim().length < 2) error = 'Subject must be at least 2 characters';
-    }
-    if (name === 'message') {
-      if (value.trim() && value.trim().length < 5) error = 'Message must not be empty';
-    }
-
-    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
-  const validate = () => {
+  const validateForm = () => {
     const newErrors = {};
+    const nameErr = validateField('name', formData.name);
+    if (nameErr) newErrors.name = nameErr;
 
-    if (!formData.name.trim()) newErrors.name = 'Full Name is required';
-    else if (formData.name.trim().length < 2) newErrors.name = 'Full Name must be at least 2 characters';
-    else if (/\d/.test(formData.name)) newErrors.name = 'Name should not contain numbers';
+    const emailErr = validateField('email', formData.email);
+    if (emailErr) newErrors.email = emailErr;
 
-    if (!formData.email.trim()) newErrors.email = 'Email Address is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Please enter a valid email address';
+    const subjectErr = validateField('subject', formData.subject);
+    if (subjectErr) newErrors.subject = subjectErr;
 
-    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
-
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    const messageErr = validateField('message', formData.message);
+    if (messageErr) newErrors.message = messageErr;
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    if (Object.keys(newErrors).length > 0) {
+      // Focus first invalid field
+      if (newErrors.name && nameInputRef.current) {
+        nameInputRef.current.focus();
+      } else if (newErrors.email && emailInputRef.current) {
+        emailInputRef.current.focus();
+      } else if (newErrors.subject && subjectInputRef.current) {
+        subjectInputRef.current.focus();
+      } else if (newErrors.message && messageInputRef.current) {
+        messageInputRef.current.focus();
+      }
+      return false;
+    }
+    return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validate() || status === 'submitting') return;
+    if (status === 'submitting') return;
+    if (!validateForm()) return;
 
     setStatus('submitting');
     setErrorMessage('');
 
-    // Exact template parameters specified
+    // Data normalization before submission
     const templateParams = {
       name: formData.name.trim(),
       email: formData.email.trim(),
@@ -106,10 +141,11 @@ export default function Contact() {
   const handleResetForm = () => {
     setStatus('');
     setErrorMessage('');
+    setErrors({});
   };
 
   return (
-    <section className="py-12 md:py-20 min-h-screen bg-slate-950 text-white">
+    <section className="pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-16 md:pb-20 min-h-screen bg-slate-950 text-white">
       <Helmet>
         <title>Start a Transformation Conversation | NG Stellar</title>
         <meta
@@ -280,85 +316,117 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-5">
                     {/* Field 1: Full Name */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-300 mb-1.5">
                         Full Name <span className="text-primary-400">*</span>
                       </label>
                       <input
+                        id="contact-name"
+                        ref={nameInputRef}
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         disabled={status === 'submitting'}
+                        aria-invalid={Boolean(errors.name)}
+                        aria-describedby={errors.name ? 'contact-name-error' : undefined}
                         placeholder="e.g. Alex Morgan"
                         className={`w-full px-3.5 py-2.5 text-sm rounded-xl bg-slate-900/70 border ${
                           errors.name ? 'border-rose-500/70 focus:ring-rose-500' : 'border-slate-700/60 focus:ring-primary-500'
                         } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
                       />
                       {errors.name && (
-                        <p className="text-rose-400 text-xs mt-1">{errors.name}</p>
+                        <p id="contact-name-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                          <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                          <span>{errors.name}</span>
+                        </p>
                       )}
                     </div>
 
                     {/* Field 2: Email Address */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-300 mb-1.5">
                         Email Address <span className="text-primary-400">*</span>
                       </label>
                       <input
+                        id="contact-email"
+                        ref={emailInputRef}
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         disabled={status === 'submitting'}
+                        aria-invalid={Boolean(errors.email)}
+                        aria-describedby={errors.email ? 'contact-email-error' : undefined}
                         placeholder="e.g. alex@company.com"
                         className={`w-full px-3.5 py-2.5 text-sm rounded-xl bg-slate-900/70 border ${
                           errors.email ? 'border-rose-500/70 focus:ring-rose-500' : 'border-slate-700/60 focus:ring-primary-500'
                         } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
                       />
                       {errors.email && (
-                        <p className="text-rose-400 text-xs mt-1">{errors.email}</p>
+                        <p id="contact-email-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                          <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                          <span>{errors.email}</span>
+                        </p>
                       )}
                     </div>
 
                     {/* Field 3: Subject */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label htmlFor="contact-subject" className="block text-xs font-semibold text-slate-300 mb-1.5">
                         Subject <span className="text-primary-400">*</span>
                       </label>
                       <input
+                        id="contact-subject"
+                        ref={subjectInputRef}
                         type="text"
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         disabled={status === 'submitting'}
+                        aria-invalid={Boolean(errors.subject)}
+                        aria-describedby={errors.subject ? 'contact-subject-error' : undefined}
                         placeholder="e.g. Business Transformation, Technology, AI..."
                         className={`w-full px-3.5 py-2.5 text-sm rounded-xl bg-slate-900/70 border ${
                           errors.subject ? 'border-rose-500/70 focus:ring-rose-500' : 'border-slate-700/60 focus:ring-primary-500'
                         } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
                       />
                       {errors.subject && (
-                        <p className="text-rose-400 text-xs mt-1">{errors.subject}</p>
+                        <p id="contact-subject-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                          <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                          <span>{errors.subject}</span>
+                        </p>
                       )}
                     </div>
 
                     {/* Field 4: Message */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-300 mb-1.5">
                         Message <span className="text-primary-400">*</span>
                       </label>
                       <textarea
+                        id="contact-message"
+                        ref={messageInputRef}
                         rows={5}
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         disabled={status === 'submitting'}
+                        aria-invalid={Boolean(errors.message)}
+                        aria-describedby={errors.message ? 'contact-message-error' : undefined}
                         placeholder="Tell us about your business, the challenge you are facing or the opportunity you want to pursue..."
                         className={`w-full px-3.5 py-2.5 text-sm rounded-xl bg-slate-900/70 border ${
                           errors.message ? 'border-rose-500/70 focus:ring-rose-500' : 'border-slate-700/60 focus:ring-primary-500'
                         } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none disabled:opacity-50`}
                       />
                       {errors.message && (
-                        <p className="text-rose-400 text-xs mt-1">{errors.message}</p>
+                        <p id="contact-message-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                          <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                          <span>{errors.message}</span>
+                        </p>
                       )}
                     </div>
 

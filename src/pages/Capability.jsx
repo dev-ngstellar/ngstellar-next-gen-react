@@ -72,7 +72,7 @@ export default function Capability() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white pt-24 pb-20">
+    <div className="min-h-screen bg-slate-950 text-white pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-16">
       <Helmet>
         <title>Our Capabilities - NG Stellar</title>
         <meta
@@ -86,7 +86,7 @@ export default function Capability() {
       </Helmet>
       
       {/* Hero Section */}
-      <section className="relative px-4 mb-24 text-center">
+      <section className="relative px-4 mb-12 sm:mb-16 text-center">
          {/* Background Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 

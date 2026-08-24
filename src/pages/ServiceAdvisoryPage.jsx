@@ -77,7 +77,7 @@ function ServiceAdvisoryPage() {
       </Helmet>
 
       {/* 1. HERO / PAGE INTRODUCTION */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <section className="relative pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-12 md:pb-16 overflow-hidden">
         {/* Ambient Glows */}
         <div
           className={`absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] blur-[140px] rounded-full pointer-events-none ${isSustainability ? 'bg-emerald-600/15' : 'bg-primary-600/15'
@@ -91,7 +91,7 @@ function ServiceAdvisoryPage() {
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-6">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-5">
             <Link to="/" className="hover:text-primary-300 transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
             <Link to={categoryRoute} className="hover:text-primary-300 transition-colors">{page.category}</Link>
@@ -103,7 +103,7 @@ function ServiceAdvisoryPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6 max-w-4xl"
+            className="space-y-4 sm:space-y-5 max-w-4xl"
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/25 text-xs font-bold text-primary-300 uppercase tracking-widest">

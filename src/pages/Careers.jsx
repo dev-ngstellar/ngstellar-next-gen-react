@@ -21,6 +21,7 @@ import emailjs from '@emailjs/browser';
 import StarBorder from '../components/StarBorder';
 import Typewriter from '../components/Typewriter';
 import Marquee from '../components/Marquee';
+import { isValidEmail, isValidIndianMobile, normalizePhone, isValidUrl } from '../utils/validation';
 
 // Open Positions Data
 const POSITIONS = [
@@ -88,6 +89,14 @@ const POSITIONS = [
 
 export default function Careers() {
   const formRef = useRef(null);
+  const fullNameInputRef = useRef(null);
+  const emailInputRef = useRef(null);
+  const phoneInputRef = useRef(null);
+  const positionInputRef = useRef(null);
+  const linkedinInputRef = useRef(null);
+  const portfolioInputRef = useRef(null);
+  const resumeInputRef = useRef(null);
+  const coverLetterInputRef = useRef(null);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -118,28 +127,68 @@ export default function Careers() {
     }
   };
 
-  // Input change handler with real-time validation
+  const validateField = (name, value) => {
+    const val = (value || '').trim();
+    switch (name) {
+      case 'fullName':
+        if (!val) return 'Please enter your full name.';
+        return '';
+      case 'email':
+        if (!val || !isValidEmail(val)) return 'Please enter a valid email address.';
+        return '';
+      case 'phone':
+        if (!val) return 'Phone number is required.';
+        if (!/^[6-9]\d{9}$/.test(val)) return 'Please enter a valid 10-digit mobile number.';
+        return '';
+      case 'position':
+        if (!val) return 'Please select a position.';
+        return '';
+      case 'linkedin':
+        if (val && !isValidUrl(val)) return 'Please enter a valid URL.';
+        return '';
+      case 'portfolio':
+        if (val && !isValidUrl(val)) return 'Please enter a valid URL.';
+        return '';
+      case 'coverLetter':
+        if (!val) return 'Please enter your cover letter or introduction.';
+        return '';
+      default:
+        return '';
+    }
+  };
+
+  // Blur handler for fields
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setErrors((prev) => ({ ...prev, [name]: error }));
+  };
+
+  // Dedicated phone input handler: strictly extracts only digits (0-9) and limits to 10 characters
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+
+    // Clear error immediately if it becomes valid or revalidate if previously in error
+    if (errors.phone) {
+      const error = validateField('phone', value);
+      setErrors((prev) => ({ ...prev, phone: error }));
+    }
+  };
+
+  // Input change handler with real-time error removal
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Inline field validation
-    let error = '';
-    if (name === 'fullName') {
-      if (value.trim() && value.trim().length < 2) error = 'Full Name must be at least 2 characters';
-      else if (/\d/.test(value)) error = 'Name should not contain numbers';
+    // When the user enters a valid value after an error, immediately remove the error
+    if (errors[name]) {
+      const error = validateField(name, value);
+      setErrors((prev) => ({ ...prev, [name]: error }));
     }
-    if (name === 'email') {
-      if (value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) error = 'Invalid email address';
-    }
-    if (name === 'phone') {
-      if (value.trim() && value.trim().length < 7) error = 'Please enter a valid contact number';
-    }
-    if (name === 'coverLetter') {
-      if (value.trim() && value.trim().length < 10) error = 'Cover letter / message must be at least 10 characters';
-    }
-
-    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
   // Resume File Handler (Validation for PDF/DOC/DOCX and <= 5MB)
@@ -175,42 +224,69 @@ export default function Careers() {
 
   const removeResume = () => {
     setResumeFile(null);
-    setErrors((prev) => ({ ...prev, resume: 'Resume is required' }));
+    setErrors((prev) => ({ ...prev, resume: 'Resume document (*.pdf, *.doc, *.docx) is required' }));
   };
 
   // Form Validation
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.fullName.trim()) newErrors.fullName = 'Full Name is required';
-    else if (formData.fullName.trim().length < 2) newErrors.fullName = 'Full Name must be at least 2 characters';
-    else if (/\d/.test(formData.fullName)) newErrors.fullName = 'Name should not contain numbers';
+    const nameErr = validateField('fullName', formData.fullName);
+    if (nameErr) newErrors.fullName = nameErr;
 
-    if (!formData.email.trim()) newErrors.email = 'Email address is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Valid email address is required';
+    const emailErr = validateField('email', formData.email);
+    if (emailErr) newErrors.email = emailErr;
 
-    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-    else if (formData.phone.trim().length < 7) newErrors.phone = 'Please enter a valid phone number';
+    const phoneErr = validateField('phone', formData.phone);
+    if (phoneErr) newErrors.phone = phoneErr;
 
-    if (!formData.position) newErrors.position = 'Please select a position';
+    const posErr = validateField('position', formData.position);
+    if (posErr) newErrors.position = posErr;
+
+    const linkedinErr = validateField('linkedin', formData.linkedin);
+    if (linkedinErr) newErrors.linkedin = linkedinErr;
+
+    const portfolioErr = validateField('portfolio', formData.portfolio);
+    if (portfolioErr) newErrors.portfolio = portfolioErr;
 
     if (!resumeFile) {
       newErrors.resume = 'Resume document (*.pdf, *.doc, *.docx) is required';
     }
 
-    if (!formData.coverLetter.trim()) {
-      newErrors.coverLetter = 'Cover letter or message is required';
-    } else if (formData.coverLetter.trim().length < 10) {
-      newErrors.coverLetter = 'Cover letter must be at least 10 characters';
-    }
+    const coverErr = validateField('coverLetter', formData.coverLetter);
+    if (coverErr) newErrors.coverLetter = coverErr;
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    if (Object.keys(newErrors).length > 0) {
+      // Focus first invalid field
+      if (newErrors.fullName && fullNameInputRef.current) {
+        fullNameInputRef.current.focus();
+      } else if (newErrors.email && emailInputRef.current) {
+        emailInputRef.current.focus();
+      } else if (newErrors.phone && phoneInputRef.current) {
+        phoneInputRef.current.focus();
+      } else if (newErrors.position && positionInputRef.current) {
+        positionInputRef.current.focus();
+      } else if (newErrors.linkedin && linkedinInputRef.current) {
+        linkedinInputRef.current.focus();
+      } else if (newErrors.portfolio && portfolioInputRef.current) {
+        portfolioInputRef.current.focus();
+      } else if (newErrors.resume && resumeInputRef.current) {
+        resumeInputRef.current.focus();
+        resumeInputRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if (newErrors.coverLetter && coverLetterInputRef.current) {
+        coverLetterInputRef.current.focus();
+      }
+      return false;
+    }
+    return true;
   };
 
   // Submit Handler with EmailJS
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (status === 'sending') return;
     if (!validateForm()) return;
 
     setStatus('sending');
@@ -231,11 +307,13 @@ export default function Careers() {
       ? `${resumeFile.name} (${(resumeFile.size / (1024 * 1024)).toFixed(2)} MB, ${resumeFile.type || 'Document'})`
       : 'No file provided';
 
+    const normalizedPhone = normalizePhone(formData.phone) || formData.phone.trim();
+
     // EmailJS Template Parameters matching the exact specifications
     const templateParams = {
       applicant_name: formData.fullName.trim(),
       applicant_email: formData.email.trim(),
-      applicant_phone: formData.phone.trim(),
+      applicant_phone: normalizedPhone,
       position: formData.position,
       experience: formData.experience.trim() || 'Not specified',
       location: formData.location.trim() || 'Not specified',
@@ -315,7 +393,7 @@ export default function Careers() {
       </Helmet>
 
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden flex items-center justify-center pt-24 pb-12 md:pt-32 md:pb-20">
+      <section className="relative overflow-hidden flex items-center justify-center pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-12 md:pb-16">
         {/* Background Glowing Ambient Orbs */}
         <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary-600 rounded-full mix-blend-screen filter blur-[120px] opacity-70 animate-pulse"></div>
@@ -328,11 +406,11 @@ export default function Careers() {
           transition={{ duration: 0.8 }}
           className="relative z-10 max-w-5xl mx-auto px-4 text-center"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-400/30 text-primary-300 text-xs font-semibold uppercase tracking-wider mb-5">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-400/30 text-primary-300 text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5 text-secondary-400 animate-pulse" />
             We Are Hiring
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-5 leading-tight tracking-tight">
             <span>Build What Matters with</span>
             <span className="block mt-2">
               <Typewriter
@@ -633,87 +711,113 @@ export default function Careers() {
               )}
             </AnimatePresence>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} noValidate className="space-y-6">
               {/* Row 1: Full Name & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="fullName" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Full Name <span className="text-primary-400">*</span>
                   </label>
                   <input
+                    id="fullName"
+                    ref={fullNameInputRef}
                     type="text"
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
+                    aria-invalid={Boolean(errors.fullName)}
+                    aria-describedby={errors.fullName ? 'fullName-error' : undefined}
                     placeholder="e.g. Alex Morgan"
                     className={`w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border ${
                       errors.fullName ? 'border-rose-500/70 focus:ring-rose-500' : 'border-white/10 focus:ring-primary-500'
                     } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
                   />
                   {errors.fullName && (
-                    <p className="text-rose-400 text-xs mt-1.5 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" /> {errors.fullName}
+                    <p id="fullName-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                      <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                      <span>{errors.fullName}</span>
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="email" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Email Address <span className="text-primary-400">*</span>
                   </label>
                   <input
+                    id="email"
+                    ref={emailInputRef}
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                     placeholder="e.g. alex@example.com"
                     className={`w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border ${
                       errors.email ? 'border-rose-500/70 focus:ring-rose-500' : 'border-white/10 focus:ring-primary-500'
                     } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
                   />
                   {errors.email && (
-                    <p className="text-rose-400 text-xs mt-1.5 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" /> {errors.email}
+                    <p id="email-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                      <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                      <span>{errors.email}</span>
                     </p>
                   )}
                 </div>
               </div>
 
               {/* Row 2: Phone Number & Target Position */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="phone" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Phone Number <span className="text-primary-400">*</span>
                   </label>
                   <input
+                    id="phone"
+                    ref={phoneInputRef}
                     type="tel"
+                    inputMode="numeric"
+                    maxLength={10}
+                    pattern="[0-9]*"
                     name="phone"
                     value={formData.phone}
-                    onChange={handleChange}
+                    onChange={handlePhoneChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
-                    placeholder="e.g. +91 98765 43210"
+                    aria-invalid={Boolean(errors.phone)}
+                    aria-describedby={errors.phone ? 'phone-error' : undefined}
+                    placeholder="e.g. 9876543210"
                     className={`w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border ${
                       errors.phone ? 'border-rose-500/70 focus:ring-rose-500' : 'border-white/10 focus:ring-primary-500'
                     } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
                   />
                   {errors.phone && (
-                    <p className="text-rose-400 text-xs mt-1.5 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" /> {errors.phone}
+                    <p id="phone-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                      <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                      <span>{errors.phone}</span>
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="position" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Position Applied For <span className="text-primary-400">*</span>
                   </label>
                   <select
+                    id="position"
+                    ref={positionInputRef}
                     name="position"
                     value={formData.position}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
+                    aria-invalid={Boolean(errors.position)}
+                    aria-describedby={errors.position ? 'position-error' : undefined}
                     className={`w-full px-4 py-3 text-sm rounded-xl bg-slate-900/90 border ${
                       errors.position ? 'border-rose-500/70 focus:ring-rose-500' : 'border-white/10 focus:ring-primary-500'
                     } text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
@@ -723,24 +827,27 @@ export default function Careers() {
                     <option value="Digital Marketing & Sales" className="bg-slate-900 text-white">Digital Marketing & Sales</option>
                   </select>
                   {errors.position && (
-                    <p className="text-rose-400 text-xs mt-1.5 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" /> {errors.position}
+                    <p id="position-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                      <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                      <span>{errors.position}</span>
                     </p>
                   )}
                 </div>
               </div>
 
               {/* Row 3: Experience & Location */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="experience" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Years of Experience
                   </label>
                   <input
+                    id="experience"
                     type="text"
                     name="experience"
                     value={formData.experience}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
                     placeholder="e.g. 2+ Years / Fresher"
                     className="w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50"
@@ -748,14 +855,16 @@ export default function Careers() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="location" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Current Location
                   </label>
                   <input
+                    id="location"
                     type="text"
                     name="location"
                     value={formData.location}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
                     placeholder="e.g. Erode / Coimbatore / Remote"
                     className="w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50"
@@ -764,49 +873,77 @@ export default function Careers() {
               </div>
 
               {/* Row 4: LinkedIn & Portfolio */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="linkedin" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     LinkedIn Profile URL
                   </label>
                   <input
+                    id="linkedin"
+                    ref={linkedinInputRef}
                     type="url"
                     name="linkedin"
                     value={formData.linkedin}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
+                    aria-invalid={Boolean(errors.linkedin)}
+                    aria-describedby={errors.linkedin ? 'linkedin-error' : undefined}
                     placeholder="https://linkedin.com/in/username"
-                    className="w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50"
+                    className={`w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border ${
+                      errors.linkedin ? 'border-rose-500/70 focus:ring-rose-500' : 'border-white/10 focus:ring-primary-500'
+                    } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
                   />
+                  {errors.linkedin && (
+                    <p id="linkedin-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                      <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                      <span>{errors.linkedin}</span>
+                    </p>
+                  )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="portfolio" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Portfolio / GitHub / Website
                   </label>
                   <input
+                    id="portfolio"
+                    ref={portfolioInputRef}
                     type="url"
                     name="portfolio"
                     value={formData.portfolio}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
+                    aria-invalid={Boolean(errors.portfolio)}
+                    aria-describedby={errors.portfolio ? 'portfolio-error' : undefined}
                     placeholder="https://yourportfolio.com or github.com/..."
-                    className="w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50"
+                    className={`w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border ${
+                      errors.portfolio ? 'border-rose-500/70 focus:ring-rose-500' : 'border-white/10 focus:ring-primary-500'
+                    } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
                   />
+                  {errors.portfolio && (
+                    <p id="portfolio-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                      <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                      <span>{errors.portfolio}</span>
+                    </p>
+                  )}
                 </div>
               </div>
 
               {/* Row 5: Availability & Expected Salary */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="availability" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Availability / Notice Period
                   </label>
                   <input
+                    id="availability"
                     type="text"
                     name="availability"
                     value={formData.availability}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
                     placeholder="e.g. Immediate / 15 Days / 1 Month"
                     className="w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50"
@@ -814,14 +951,16 @@ export default function Careers() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label htmlFor="expectedSalary" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                     Expected Salary / Compensation
                   </label>
                   <input
+                    id="expectedSalary"
                     type="text"
                     name="expectedSalary"
                     value={formData.expectedSalary}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     disabled={status === 'sending'}
                     placeholder="e.g. Expected CTC (INR / Per Annum)"
                     className="w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50"
@@ -835,13 +974,17 @@ export default function Careers() {
                   Resume / CV Document <span className="text-primary-400">* (PDF, DOC, DOCX — Max 5MB)</span>
                 </label>
                 <div
+                  tabIndex={0}
+                  ref={resumeInputRef}
+                  aria-invalid={Boolean(errors.resume)}
+                  aria-describedby={errors.resume ? 'resume-error' : undefined}
                   className={`relative rounded-2xl border-2 border-dashed ${
                     errors.resume
                       ? 'border-rose-500/70 bg-rose-950/10'
                       : resumeFile
                       ? 'border-primary-500/60 bg-primary-950/20'
                       : 'border-white/15 bg-slate-900/50 hover:border-primary-400/50 hover:bg-slate-900/80'
-                  } p-5 transition-all text-center`}
+                  } p-5 transition-all text-center focus:outline-none focus:ring-2 focus:ring-primary-500`}
                 >
                   {resumeFile ? (
                     <div className="flex items-center justify-between gap-3 p-2 bg-slate-900/90 rounded-xl border border-white/10">
@@ -896,31 +1039,38 @@ export default function Careers() {
                   )}
                 </div>
                 {errors.resume && (
-                  <p className="text-rose-400 text-xs mt-1.5 flex items-center gap-1">
-                    <AlertCircle className="w-3 h-3" /> {errors.resume}
+                  <p id="resume-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                    <span>{errors.resume}</span>
                   </p>
                 )}
               </div>
 
               {/* Cover Letter / Message */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label htmlFor="coverLetter" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                   Cover Letter / Introduction <span className="text-primary-400">*</span>
                 </label>
                 <textarea
+                  id="coverLetter"
+                  ref={coverLetterInputRef}
                   rows={4}
                   name="coverLetter"
                   value={formData.coverLetter}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   disabled={status === 'sending'}
+                  aria-invalid={Boolean(errors.coverLetter)}
+                  aria-describedby={errors.coverLetter ? 'coverLetter-error' : undefined}
                   placeholder="Tell us about yourself, your experience, and why you are excited to join NG Stellar..."
                   className={`w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border ${
                     errors.coverLetter ? 'border-rose-500/70 focus:ring-rose-500' : 'border-white/10 focus:ring-primary-500'
                   } text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none disabled:opacity-50`}
                 />
                 {errors.coverLetter && (
-                  <p className="text-rose-400 text-xs mt-1.5 flex items-center gap-1">
-                    <AlertCircle className="w-3 h-3" /> {errors.coverLetter}
+                  <p id="coverLetter-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
+                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                    <span>{errors.coverLetter}</span>
                   </p>
                 )}
               </div>
@@ -935,7 +1085,7 @@ export default function Careers() {
                   {status === 'sending' ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Submitting Application...</span>
+                      <span>Submitting...</span>
                     </>
                   ) : (
                     <>

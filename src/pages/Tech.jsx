@@ -19,7 +19,7 @@ export default function Tech() {
       </Helmet>
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
+      <section className="relative pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-16 md:pb-20 overflow-hidden">
          {/* Background Elements - Tech/Grid Theme */}
          <div className="absolute inset-0 z-0">
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-[100px] animate-pulse"></div>

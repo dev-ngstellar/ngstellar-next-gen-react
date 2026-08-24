@@ -28,7 +28,7 @@ function PremiumPageHero({
       : 'bg-primary-500/10 border-primary-500/25 text-primary-300';
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+    <section className="relative pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-12 md:pb-16 overflow-hidden">
       {/* Precision ambient background glow */}
       <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] ${accentGlow} blur-[140px] rounded-full pointer-events-none -z-10`} />
       <div className="absolute top-1/3 right-10 w-[400px] h-[300px] bg-secondary-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
@@ -37,7 +37,7 @@ function PremiumPageHero({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Breadcrumb Bar */}
         {breadcrumbs.length > 0 && (
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-6 flex-wrap">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-5 flex-wrap">
             {breadcrumbs.map((b, idx) => (
               <span key={idx} className="flex items-center gap-2">
                 {idx > 0 && <ChevronRight className="w-3.5 h-3.5 text-slate-600" />}

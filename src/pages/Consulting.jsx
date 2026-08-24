@@ -20,7 +20,7 @@ export default function Consulting() {
       </Helmet>
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
+      <section className="relative pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-16 md:pb-20 overflow-hidden">
          {/* Background Elements */}
          <div className="absolute inset-0 z-0">
              <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-teal-600/20 rounded-full mix-blend-screen filter blur-[120px] animate-pulse"></div>

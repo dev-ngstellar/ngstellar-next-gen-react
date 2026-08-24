@@ -80,7 +80,7 @@ export default function Industry() {
       </Helmet>
       
       {/* 1. HERO SECTION */}
-          <section className="relative overflow-hidden flex items-center justify-center pt-32 pb-10 md:py-20">
+      <section className="relative overflow-hidden flex items-center justify-center pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-10 md:pb-16">
              {/* Background Elements */}
              <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob"></div>
