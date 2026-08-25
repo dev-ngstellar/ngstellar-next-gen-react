@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import faqData from "./faq-data.json";
 import Fuse from "fuse.js";
 import { useNavigate } from "react-router-dom";
+import { Bot, X, Send } from "lucide-react";
 
 export default function FaqChatbot() {
   const navigate = useNavigate();
@@ -135,186 +136,145 @@ export default function FaqChatbot() {
           background-color: rgba(0, 0, 0, 0.2);
         }
       `}</style>
-      <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[50] flex flex-col items-start pointer-events-none">
-      {/* Chat Window */}
-      <div
-        className={`mb-4 flex h-[500px] w-80 flex-col overflow-hidden rounded-2xl bg-white shadow-2xl transition-all duration-300 ease-in-out ${
-          isOpen
-            ? "translate-y-0 opacity-100 scale-100 pointer-events-auto"
-            : "translate-y-10 opacity-0 scale-95 pointer-events-none"
-        }`}
-      >
-        {/* Header */}
-        <div className="flex items-center justify-between bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 p-4 text-white">
-          <div>
-            <h3 className="text-lg font-bold">NG Stellar Support</h3>
-            <p className="text-xs text-white/80">We usually reply instantly</p>
-          </div>
-          <button
-            onClick={toggleChat}
-            className="rounded-full p-1 text-white transition hover:bg-white/20"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-
-        {/* Messages Area */}
-        <div className="flex-1 overflow-y-auto bg-gray-50 p-4 scrollbar-thin">
-          {messages.map((msg) => (
-            <div
-              key={msg.id}
-              className={`mb-3 flex flex-col ${
-                msg.sender === "user" ? "items-end" : "items-start"
-              }`}
-            >
-              <div
-                className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm ${
-                  msg.sender === "user"
-                    ? "bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 text-white rounded-br-none shadow-md"
-                    : "bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-none"
-                }`}
-              >
-                {msg.text}
+      <div className="fixed bottom-[76px] right-4 sm:bottom-[92px] sm:right-6 z-[1100] flex flex-col items-end pointer-events-none">
+        {/* Chat Window Panel */}
+        <div
+          className={`mb-3 sm:mb-4 flex h-[490px] max-h-[calc(100vh-170px)] w-[calc(100vw-32px)] sm:w-[390px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl border border-gray-100 transition-all duration-300 ease-in-out ${
+            isOpen
+              ? "translate-y-0 opacity-100 scale-100 pointer-events-auto"
+              : "translate-y-10 opacity-0 scale-95 pointer-events-none"
+          }`}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 p-4 text-white">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                <Bot className="w-5 h-5 text-white" />
               </div>
-              {/* Suggestion Chips */}
-              {msg.options && (
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {msg.options.map((option, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => handleSendMessage(option)}
-                      className="rounded-full border border-fuchsia-200 bg-white px-3 py-1 text-xs font-medium text-fuchsia-600 transition hover:bg-fuchsia-50"
-                    >
-                      {option}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <div>
+                <h3 className="text-sm sm:text-base font-bold leading-tight">NG Stellar Support</h3>
+                <p className="text-[11px] text-white/80">We usually reply instantly</p>
+              </div>
             </div>
-          ))}
-          
-          {/* Typing Indicator */}
-          {isTyping && (
-            <div className="mb-3 flex items-start">
-               <div className="bg-white text-gray-800 shadow-sm border border-gray-100 rounded-2xl rounded-bl-none px-4 py-3">
-                 <div className="flex gap-1">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:0.4s]"></span>
-                 </div>
-               </div>
-            </div>
-          )}
-
-          {/* Initial Suggested Questions (only show if just welcome message) */}
-          {messages.length === 1 && !isTyping && (
-             <div className="mt-4 flex flex-col gap-2">
-                <p className="text-xs font-medium text-gray-400 mb-1">Suggested Questions:</p>
-                {faqData.slice(0, 4).map(faq => (
-                    <button 
-                        key={faq.id}
-                        onClick={() => handleSendMessage(faq.question)}
-                        className="text-left text-xs bg-white border border-fuchsia-100 text-fuchsia-600 px-3 py-2 rounded-lg hover:bg-fuchsia-50 transition"
-                    >
-                        {faq.question}
-                    </button>
-                ))}
-             </div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
-
-        {/* Input Area */}
-        <div className="border-t border-gray-100 bg-white p-3">
-          <div className="flex items-center gap-2">
-            <input
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Type your question..."
-              className="flex-1 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-800 focus:border-fuchsia-500 focus:outline-none focus:ring-1 focus:ring-fuchsia-500"
-            />
             <button
-              onClick={() => handleSendMessage(inputValue)}
-              disabled={!inputValue.trim()}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 text-white transition hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-fuchsia-500/20"
+              onClick={toggleChat}
+              className="rounded-full p-1.5 text-white transition hover:bg-white/20 cursor-pointer"
+              aria-label="Close Chat"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
+              <X className="w-5 h-5 text-white" />
             </button>
           </div>
-          <div className="mt-2 text-center">
-             <p className="text-[10px] text-gray-400">Powered by NG Stellar</p>
+
+          {/* Messages Area */}
+          <div className="flex-1 overflow-y-auto bg-gray-50 p-4 scrollbar-thin">
+            {messages.map((msg) => (
+              <div
+                key={msg.id}
+                className={`mb-3 flex flex-col ${
+                  msg.sender === "user" ? "items-end" : "items-start"
+                }`}
+              >
+                <div
+                  className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm ${
+                    msg.sender === "user"
+                      ? "bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 text-white rounded-br-none shadow-md"
+                      : "bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-none"
+                  }`}
+                >
+                  {msg.text}
+                </div>
+                {/* Suggestion Chips */}
+                {msg.options && (
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {msg.options.map((option, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleSendMessage(option)}
+                        className="rounded-full border border-fuchsia-200 bg-white px-3 py-1 text-xs font-medium text-fuchsia-600 transition hover:bg-fuchsia-50 cursor-pointer"
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            
+            {/* Typing Indicator */}
+            {isTyping && (
+              <div className="mb-3 flex items-start">
+                 <div className="bg-white text-gray-800 shadow-sm border border-gray-100 rounded-2xl rounded-bl-none px-4 py-3">
+                   <div className="flex gap-1">
+                      <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+                      <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                      <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                   </div>
+                 </div>
+              </div>
+            )}
+
+            {/* Initial Suggested Questions (only show if just welcome message) */}
+            {messages.length === 1 && !isTyping && (
+               <div className="mt-4 flex flex-col gap-2">
+                  <p className="text-xs font-medium text-gray-400 mb-1">Suggested Questions:</p>
+                  {faqData.slice(0, 4).map(faq => (
+                      <button 
+                          key={faq.id}
+                          onClick={() => handleSendMessage(faq.question)}
+                          className="text-left text-xs bg-white border border-fuchsia-100 text-fuchsia-600 px-3 py-2 rounded-lg hover:bg-fuchsia-50 transition cursor-pointer"
+                      >
+                          {faq.question}
+                      </button>
+                  ))}
+               </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          {/* Input Area */}
+          <div className="border-t border-gray-100 bg-white p-3">
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Type your question..."
+                className="flex-1 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-800 focus:border-fuchsia-500 focus:outline-none focus:ring-1 focus:ring-fuchsia-500"
+              />
+              <button
+                onClick={() => handleSendMessage(inputValue)}
+                disabled={!inputValue.trim()}
+                aria-label="Send message"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 text-white transition hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-fuchsia-500/20 cursor-pointer"
+              >
+                <Send className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="mt-2 text-center">
+               <p className="text-[10px] text-gray-400">Powered by NG Stellar</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Floating Button */}
-      <button
-        onClick={toggleChat}
-        className={`flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 pointer-events-auto ${
-          isOpen ? "bg-gray-800 text-white rotate-90" : "bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 text-white shadow-fuchsia-500/40"
-        }`}
-        aria-label="Open FAQ Chatbot"
-      >
-        {isOpen ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-        )}
-      </button>
-    </div>
+        {/* Floating Chatbot Launcher Button */}
+        <button
+          onClick={toggleChat}
+          className={`flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 pointer-events-auto cursor-pointer ${
+            isOpen
+              ? "bg-slate-900 text-white border border-white/20 shadow-xl"
+              : "bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 text-white shadow-[0_8px_25px_rgba(217,70,239,0.45)] hover:shadow-[0_12px_35px_rgba(217,70,239,0.65)]"
+          }`}
+          aria-label={isOpen ? "Close FAQ Chatbot" : "Open FAQ Chatbot"}
+          title={isOpen ? "Close FAQ Chatbot" : "Open FAQ Chatbot"}
+        >
+          {isOpen ? (
+            <X className="w-6 h-6 text-white transition-transform" />
+          ) : (
+            <Bot className="w-7 h-7 text-white drop-shadow-md transition-transform" />
+          )}
+        </button>
+      </div>
     </>
   );
 }
