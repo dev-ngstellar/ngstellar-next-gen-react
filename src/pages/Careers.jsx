@@ -1,27 +1,20 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
   Code,
   Palette,
   TrendingUp,
-  UploadCloud,
-  FileText,
   CheckCircle2,
   AlertCircle,
   Sparkles,
   ArrowRight,
-  X,
   Send,
   Loader2,
 } from 'lucide-react';
-import { FaCheckCircle, FaUsers, FaLightbulb, FaRocket, FaHandshake, FaDraftingCompass } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import StarBorder from '../components/StarBorder';
-import Typewriter from '../components/Typewriter';
-import Marquee from '../components/Marquee';
-import { isValidEmail, isValidIndianMobile, normalizePhone, isValidUrl } from '../utils/validation';
+import { isValidEmail, normalizePhone, isValidUrl } from '../utils/validation';
 
 // Open Positions Data
 const POSITIONS = [
@@ -95,10 +88,9 @@ export default function Careers() {
   const positionInputRef = useRef(null);
   const linkedinInputRef = useRef(null);
   const portfolioInputRef = useRef(null);
-  const resumeInputRef = useRef(null);
   const coverLetterInputRef = useRef(null);
 
-  // Form State
+  // Form State (Without Resume)
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -113,7 +105,6 @@ export default function Careers() {
     coverLetter: '',
   });
 
-  const [resumeFile, setResumeFile] = useState(null);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState(''); // '' | 'sending' | 'success' | 'error'
   const [statusMessage, setStatusMessage] = useState('');
@@ -157,77 +148,39 @@ export default function Careers() {
     }
   };
 
-  // Blur handler for fields
   const handleBlur = (e) => {
     const { name, value } = e.target;
     const error = validateField(name, value);
-    setErrors((prev) => ({ ...prev, [name]: error }));
-  };
-
-  // Dedicated phone input handler: strictly extracts only digits (0-9) and limits to 10 characters
-  const handlePhoneChange = (e) => {
-    const value = e.target.value.replace(/\D/g, '').slice(0, 10);
-    setFormData((prev) => ({
+    setErrors((prev) => ({
       ...prev,
-      phone: value,
+      [name]: error,
     }));
-
-    // Clear error immediately if it becomes valid or revalidate if previously in error
-    if (errors.phone) {
-      const error = validateField('phone', value);
-      setErrors((prev) => ({ ...prev, phone: error }));
-    }
   };
 
-  // Input change handler with real-time error removal
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
 
-    // When the user enters a valid value after an error, immediately remove the error
     if (errors[name]) {
-      const error = validateField(name, value);
-      setErrors((prev) => ({ ...prev, [name]: error }));
-    }
-  };
-
-  // Resume File Handler (Validation for PDF/DOC/DOCX and <= 5MB)
-  const handleFileChange = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    const allowedExtensions = ['pdf', 'doc', 'docx'];
-    const fileExtension = file.name.split('.').pop()?.toLowerCase();
-    const maxSizeBytes = 5 * 1024 * 1024; // 5 MB
-
-    if (!allowedExtensions.includes(fileExtension)) {
       setErrors((prev) => ({
         ...prev,
-        resume: 'Invalid file format. Please upload a PDF, DOC, or DOCX document.',
+        [name]: '',
       }));
-      setResumeFile(null);
-      return;
     }
-
-    if (file.size > maxSizeBytes) {
-      setErrors((prev) => ({
-        ...prev,
-        resume: `File exceeds maximum limit of 5 MB (${(file.size / (1024 * 1024)).toFixed(2)} MB uploaded).`,
-      }));
-      setResumeFile(null);
-      return;
-    }
-
-    setResumeFile(file);
-    setErrors((prev) => ({ ...prev, resume: '' }));
   };
 
-  const removeResume = () => {
-    setResumeFile(null);
-    setErrors((prev) => ({ ...prev, resume: 'Resume document (*.pdf, *.doc, *.docx) is required' }));
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+    setFormData((prev) => ({ ...prev, phone: value }));
+
+    if (errors.phone) {
+      setErrors((prev) => ({ ...prev, phone: '' }));
+    }
   };
 
-  // Form Validation
   const validateForm = () => {
     const newErrors = {};
 
@@ -249,17 +202,12 @@ export default function Careers() {
     const portfolioErr = validateField('portfolio', formData.portfolio);
     if (portfolioErr) newErrors.portfolio = portfolioErr;
 
-    if (!resumeFile) {
-      newErrors.resume = 'Resume document (*.pdf, *.doc, *.docx) is required';
-    }
-
     const coverErr = validateField('coverLetter', formData.coverLetter);
     if (coverErr) newErrors.coverLetter = coverErr;
 
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
-      // Focus first invalid field
       if (newErrors.fullName && fullNameInputRef.current) {
         fullNameInputRef.current.focus();
       } else if (newErrors.email && emailInputRef.current) {
@@ -272,9 +220,6 @@ export default function Careers() {
         linkedinInputRef.current.focus();
       } else if (newErrors.portfolio && portfolioInputRef.current) {
         portfolioInputRef.current.focus();
-      } else if (newErrors.resume && resumeInputRef.current) {
-        resumeInputRef.current.focus();
-        resumeInputRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else if (newErrors.coverLetter && coverLetterInputRef.current) {
         coverLetterInputRef.current.focus();
       }
@@ -292,7 +237,6 @@ export default function Careers() {
     setStatus('sending');
     setStatusMessage('');
 
-    // Environment Variables (Client Keys only, NO private credentials in frontend)
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_rxycj4g';
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_yvu62eo';
     const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID || 'template_1jbggx8';
@@ -303,13 +247,8 @@ export default function Careers() {
       timeStyle: 'short',
     });
 
-    const resumeReference = resumeFile
-      ? `${resumeFile.name} (${(resumeFile.size / (1024 * 1024)).toFixed(2)} MB, ${resumeFile.type || 'Document'})`
-      : 'No file provided';
-
     const normalizedPhone = normalizePhone(formData.phone) || formData.phone.trim();
 
-    // EmailJS Template Parameters matching the exact specifications
     const templateParams = {
       applicant_name: formData.fullName.trim(),
       applicant_email: formData.email.trim(),
@@ -322,16 +261,13 @@ export default function Careers() {
       availability: formData.availability.trim() || 'Immediate / Flexible',
       expected_salary: formData.expectedSalary.trim() || 'Not specified',
       cover_letter: formData.coverLetter.trim(),
-      resume: resumeReference,
       submitted_at: submissionTimestamp,
     };
 
     try {
       if (publicKey && publicKey !== 'YOUR_PUBLIC_KEY') {
-        // Send Admin Notification to hr@ngstellar.com via EmailJS
         await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
-        // Optionally send Applicant Auto-Reply confirmation if template configured
         if (autoReplyTemplateId && autoReplyTemplateId !== 'YOUR_AUTO_REPLY_TEMPLATE_ID') {
           try {
             await emailjs.send(serviceId, autoReplyTemplateId, templateParams, publicKey);
@@ -340,7 +276,6 @@ export default function Careers() {
           }
         }
       } else {
-        // Mock success fallback for preview when public key is waiting configuration
         await new Promise((resolve) => setTimeout(resolve, 1000));
       }
 
@@ -348,7 +283,6 @@ export default function Careers() {
         name: formData.fullName.trim(),
         position: formData.position,
         email: formData.email.trim(),
-        resumeName: resumeFile?.name,
       });
 
       setStatus('success');
@@ -368,7 +302,6 @@ export default function Careers() {
         expectedSalary: '',
         coverLetter: '',
       });
-      setResumeFile(null);
       setErrors({});
     } catch (err) {
       console.error('EmailJS submission error:', err);
@@ -378,67 +311,112 @@ export default function Careers() {
     }
   };
 
+  const handleScrollToRoles = (e) => {
+    e.preventDefault();
+    const el = document.getElementById('open-roles');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollToForm = (e) => {
+    e.preventDefault();
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Helmet>
-        <title>Careers at NG Stellar — Join Our Team</title>
+        <title>Careers at NG Stellar — Think Bold. Build Impact. Shape the Future.</title>
         <meta
           name="description"
-          content="Join NG Stellar. Explore career opportunities for Developers, Designers, and Digital Marketing & Sales professionals."
+          content="Explore career opportunities at NG Stellar. Join an energetic multidisciplinary team building ideas, solutions, and opportunities for tomorrow."
         />
         <meta
           name="keywords"
-          content="NG Stellar Careers, Developer Jobs, UI UX Designer, Digital Marketing, Tech Jobs, Advisory Careers"
+          content="NG Stellar Careers, Developer Jobs, UI UX Designer, Digital Marketing & Sales, Technology Advisory, Transformation Careers"
         />
       </Helmet>
 
-      {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden flex items-center justify-center pt-[32px] sm:pt-[40px] lg:pt-[48px] pb-12 md:pb-16">
+      {/* 1. CAREERS HERO */}
+      <section className="relative overflow-hidden flex items-center justify-center pt-24 sm:pt-28 lg:pt-32 pb-16 md:pb-20">
         {/* Background Glowing Ambient Orbs */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary-600 rounded-full mix-blend-screen filter blur-[120px] opacity-70 animate-pulse"></div>
-          <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-secondary-600 rounded-full mix-blend-screen filter blur-[120px] opacity-70"></div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-25 pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[550px] h-[550px] bg-primary-600 rounded-full mix-blend-screen filter blur-[130px] opacity-70 animate-pulse"></div>
+          <div className="absolute top-[-10%] right-[-10%] w-[550px] h-[550px] bg-secondary-600 rounded-full mix-blend-screen filter blur-[130px] opacity-70"></div>
+          <div className="absolute bottom-0 left-1/3 w-[450px] h-[450px] bg-accent-600/30 rounded-full mix-blend-screen filter blur-[140px]"></div>
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 max-w-5xl mx-auto px-4 text-center"
+          className="relative z-10 max-w-4xl mx-auto px-4 text-center"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-400/30 text-primary-300 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-secondary-400 animate-pulse" />
-            We Are Hiring
-          </span>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-5 leading-tight tracking-tight">
-            <span>Build What Matters with</span>
-            <span className="block mt-2">
-              <Typewriter
-                words={['Passionate', 'Curious', 'Visionary', 'Impact-Driven']}
-                className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400"
-                wait={2200}
-              />
-            </span>
-            <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl text-slate-300 font-medium">
-              Teams Transforming Global Enterprises.
-            </span>
+          {/* BOLD PREMIUM EDITORIAL "WE'RE HIRING" HERO HEADLINE ELEMENT */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="mb-8 sm:mb-10 inline-flex flex-col items-center"
+          >
+            <div className="relative group px-6 sm:px-12 py-5 sm:py-7 rounded-3xl bg-slate-900/90 border border-primary-500/30 backdrop-blur-2xl shadow-[0_20px_50px_rgba(15,23,42,0.8)] overflow-hidden transition-all duration-300 hover:border-primary-400/50">
+              {/* Subtle ambient gradient mesh & glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600/15 via-secondary-500/15 to-accent-500/10 pointer-events-none" />
+              <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-64 h-24 bg-primary-400/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-48 h-20 bg-secondary-400/20 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col items-center text-center">
+                {/* Eyebrow supporting line */}
+                <div className="inline-flex items-center gap-2 sm:gap-2.5 text-primary-400 text-xs sm:text-sm font-extrabold uppercase tracking-[0.25em] mb-1.5">
+                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary-400 animate-pulse flex-shrink-0" />
+                  <span>WE&apos;RE</span>
+                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary-400 animate-pulse flex-shrink-0" />
+                </div>
+
+                {/* Massive BOLD "HIRING" Headline */}
+                <div className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-white via-primary-200 to-secondary-400 drop-shadow-[0_4px_25px_rgba(59,130,246,0.35)] select-none">
+                  HIRING
+                </div>
+
+                {/* Editorial Accent Gradient Underline */}
+                <div className="w-24 sm:w-36 h-1 sm:h-1.5 rounded-full bg-gradient-to-r from-primary-500 via-secondary-400 to-accent-400 mt-3 shadow-[0_0_15px_rgba(56,189,248,0.7)]" />
+              </div>
+            </div>
+          </motion.div>
+
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-[1.15] tracking-tight text-white">
+            Think Bold. Build Impact.<br className="hidden sm:inline" /> Shape the Future.
           </h1>
 
-          <p className="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
-            At NG Stellar, we solve high-stakes challenges at the intersection of business strategy, technology, and sustainability. Explore our open roles and accelerate your career.
+          <div className="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base leading-relaxed mb-6 space-y-3">
+            <p>
+              At NG Stellar, we bring together strategy, technology, and innovation to solve complex business challenges and create meaningful transformation.
+            </p>
+            <p>
+              Join a team of curious minds, diverse experts, and ambitious problem-solvers who are building what’s next for businesses around the world.
+            </p>
+          </div>
+
+          <p className="text-primary-300 text-sm sm:text-base font-semibold mb-8">
+            Your next opportunity could start here.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="#open-roles"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-500/25 transition-all hover:brightness-110 hover:scale-105 active:scale-95"
+              href="/careers#open-roles"
+              onClick={handleScrollToRoles}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-primary-600/30 transition-all hover:brightness-110 hover:scale-105 active:scale-95"
             >
-              <span>View Open Roles</span>
+              <span>Explore Careers</span>
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="#apply-form"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md"
+              onClick={handleScrollToForm}
+              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md"
             >
               Direct Application
             </a>
@@ -446,7 +424,7 @@ export default function Careers() {
         </motion.div>
       </section>
 
-      {/* 2. OPEN ROLES SECTION */}
+      {/* 2. OPEN POSITIONS SECTION */}
       <section id="open-roles" className="py-16 md:py-24 bg-slate-900/40 border-y border-white/5 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -454,10 +432,10 @@ export default function Careers() {
               Open Positions
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-              Join Our Multidisciplinary Advisory Team
+              Come Grow with a Team That Thinks Big.
             </h2>
             <p className="text-slate-400 text-sm sm:text-base mt-3">
-              Select a position below to apply directly. We offer collaborative environments, challenging projects, and continuous growth.
+              Be part of an energetic team building ideas, solutions, and opportunities for tomorrow.
             </p>
           </div>
 
@@ -531,9 +509,9 @@ export default function Careers() {
                     <button
                       type="button"
                       onClick={() => handleSelectPosition(pos.title)}
-                      className={`w-full py-3 px-4 rounded-xl font-bold text-sm text-white bg-slate-900/80 hover:bg-white hover:text-slate-950 border border-white/20 hover:border-white transition-all duration-200 flex items-center justify-center gap-2 group/btn shadow-md`}
+                      className="w-full py-3 px-4 rounded-xl font-bold text-sm text-white bg-slate-900/80 hover:bg-white hover:text-slate-950 border border-white/20 hover:border-white transition-all duration-200 flex items-center justify-center gap-2 group/btn shadow-md"
                     >
-                      <span>Apply for {pos.title}</span>
+                      <span>Apply Now</span>
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
@@ -544,82 +522,7 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* 3. CULTURE & EXPECTATIONS */}
-      <section className="py-20 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-500/10 border border-secondary-500/20 text-secondary-400 text-xs font-semibold uppercase tracking-wider mb-3">
-              Our Principles
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-              What You Can Expect at NG Stellar
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: 'Meaningful Projects', desc: 'Work on strategic transformations that solve genuine enterprise and sustainability challenges.', icon: <FaRocket /> },
-              { title: 'Collaborative Culture', desc: 'A transparent, respectful ecosystem where multidisciplinary ideas flourish together.', icon: <FaUsers /> },
-              { title: 'Continuous Growth', desc: 'Dedicated mentorship, hands-on enterprise exposure, and technical upskilling opportunities.', icon: <FaLightbulb /> },
-              { title: 'Clear Communication', desc: 'Direct, honest feedback loops, well-defined milestones, and respect for delivery commitments.', icon: <FaHandshake /> },
-              { title: 'Quality Over Shortcuts', desc: 'We take pride in engineering scalable, robust solutions designed for long-term endurance.', icon: <FaCheckCircle /> },
-              { title: 'Empowered Ownership', desc: 'Take autonomous ownership of outcomes and guide strategic decisions from inception to deployment.', icon: <FaDraftingCompass /> },
-            ].map((card, idx) => (
-              <motion.article
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.08, duration: 0.5 }}
-                className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm hover:border-primary-500/40 transition-all hover:-translate-y-1"
-              >
-                <div className="text-primary-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
-                  {card.icon}
-                </div>
-                <h3 className="text-white font-bold text-base mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  {card.desc}
-                </p>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. MARQUEE WHO FITS IN */}
-      <section className="py-16 overflow-hidden bg-slate-900/30 border-y border-white/5">
-        <div className="text-center mb-10 px-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Who Thrives at NG Stellar?</h3>
-        </div>
-        <div className="space-y-6">
-          <Marquee speed={0.25} direction="left" className="flex overflow-hidden relative w-full">
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex gap-4 pr-4">
-                {['Developers', 'Designers', 'Growth Strategists', 'Product Thinkers', 'Problem Solvers', 'Tech Enthusiasts', 'Collaborators'].map((role, idx) => (
-                  <div key={idx} className="px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-slate-300 whitespace-nowrap">
-                    {role}
-                  </div>
-                ))}
-              </div>
-            ))}
-          </Marquee>
-          <Marquee speed={0.25} direction="right" className="flex overflow-hidden relative w-full">
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex gap-4 pr-4">
-                {['Outcome Focused', 'Design Obsessed', 'Clean Architecture', 'Continuous Learners', 'Accountable', 'Ethical Advisors'].map((val, idx) => (
-                  <div key={idx} className="px-5 py-2.5 rounded-full border border-primary-500/20 bg-primary-500/5 text-sm font-medium text-primary-300 whitespace-nowrap">
-                    {val}
-                  </div>
-                ))}
-              </div>
-            ))}
-          </Marquee>
-        </div>
-      </section>
-
-      {/* 5. STATEMENT */}
+      {/* LEADERSHIP QUOTE STATEMENT */}
       <section className="py-20 px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
@@ -639,7 +542,7 @@ export default function Careers() {
         </motion.div>
       </section>
 
-      {/* 6. APPLICATION FORM SECTION */}
+      {/* 3. APPLICATION PORTAL SECTION */}
       <section id="apply-form" ref={formRef} className="py-20 relative overflow-hidden">
         {/* Background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary-600/10 rounded-full blur-[140px] pointer-events-none" />
@@ -650,16 +553,14 @@ export default function Careers() {
               Application Portal
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Apply to Join NG Stellar
+              Ready to Build What’s Next?
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base mt-2 max-w-xl mx-auto">
-              Fill out the application below. Your information will be directly reviewed by our leadership and HR team (<span className="text-primary-300">hr@ngstellar.com</span>).
+            <p className="text-slate-400 text-sm sm:text-base mt-3 max-w-2xl mx-auto leading-relaxed">
+              Take the next step with NG Stellar. Share your details below and explore the opportunity to learn, grow, and make an impact with an exciting team.
             </p>
           </div>
 
-          <div
-            className="rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_25px_80px_rgba(0,0,0,0.7)] backdrop-blur-2xl border border-white/12 bg-slate-950/90"
-          >
+          <div className="rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_25px_80px_rgba(0,0,0,0.7)] backdrop-blur-2xl border border-white/12 bg-slate-950/90">
             {/* Success Feedback Alert */}
             <AnimatePresence>
               {status === 'success' && (
@@ -681,7 +582,6 @@ export default function Careers() {
                       <div className="text-xs space-y-1 text-emerald-300/80 bg-black/20 p-3 rounded-lg border border-emerald-500/20">
                         <div><strong>Applicant:</strong> {submittedData.name} ({submittedData.email})</div>
                         <div><strong>Position:</strong> {submittedData.position}</div>
-                        {submittedData.resumeName && <div><strong>Resume:</strong> {submittedData.resumeName}</div>}
                       </div>
                     )}
                   </div>
@@ -966,84 +866,6 @@ export default function Careers() {
                     className="w-full px-4 py-3 text-sm rounded-xl bg-slate-900/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50"
                   />
                 </div>
-              </div>
-
-              {/* Resume File Upload Field */}
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                  Resume / CV Document <span className="text-primary-400">* (PDF, DOC, DOCX — Max 5MB)</span>
-                </label>
-                <div
-                  tabIndex={0}
-                  ref={resumeInputRef}
-                  aria-invalid={Boolean(errors.resume)}
-                  aria-describedby={errors.resume ? 'resume-error' : undefined}
-                  className={`relative rounded-2xl border-2 border-dashed ${
-                    errors.resume
-                      ? 'border-rose-500/70 bg-rose-950/10'
-                      : resumeFile
-                      ? 'border-primary-500/60 bg-primary-950/20'
-                      : 'border-white/15 bg-slate-900/50 hover:border-primary-400/50 hover:bg-slate-900/80'
-                  } p-5 transition-all text-center focus:outline-none focus:ring-2 focus:ring-primary-500`}
-                >
-                  {resumeFile ? (
-                    <div className="flex items-center justify-between gap-3 p-2 bg-slate-900/90 rounded-xl border border-white/10">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-10 h-10 rounded-lg bg-primary-500/20 text-primary-300 flex items-center justify-center flex-shrink-0">
-                          <FileText className="w-5 h-5" />
-                        </div>
-                        <div className="text-left min-w-0">
-                          <p className="text-xs sm:text-sm font-semibold text-white truncate">
-                            {resumeFile.name}
-                          </p>
-                          <p className="text-[11px] text-slate-400">
-                            {(resumeFile.size / (1024 * 1024)).toFixed(2)} MB
-                          </p>
-                        </div>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={removeResume}
-                        className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
-                        title="Remove file"
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
-                    </div>
-                  ) : (
-                    <div>
-                      <input
-                        type="file"
-                        id="resume-upload"
-                        name="resume"
-                        accept=".pdf,.doc,.docx"
-                        onChange={handleFileChange}
-                        disabled={status === 'sending'}
-                        className="hidden"
-                      />
-                      <label
-                        htmlFor="resume-upload"
-                        className="cursor-pointer flex flex-col items-center justify-center gap-2 py-4"
-                      >
-                        <div className="w-12 h-12 rounded-2xl bg-primary-500/10 border border-primary-500/20 text-primary-400 flex items-center justify-center">
-                          <UploadCloud className="w-6 h-6" />
-                        </div>
-                        <span className="text-xs sm:text-sm font-semibold text-white">
-                          Click to upload your resume
-                        </span>
-                        <span className="text-[11px] text-slate-400">
-                          Supported formats: PDF, DOC, DOCX up to 5 MB
-                        </span>
-                      </label>
-                    </div>
-                  )}
-                </div>
-                {errors.resume && (
-                  <p id="resume-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
-                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                    <span>{errors.resume}</span>
-                  </p>
-                )}
               </div>
 
               {/* Cover Letter / Message */}

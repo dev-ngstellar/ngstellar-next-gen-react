@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { memo } from 'react';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
-import { BsTwitterX } from 'react-icons/bs';
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import OptimizedImage from './OptimizedImage.jsx';
 
 function Footer() {
@@ -30,15 +29,16 @@ function Footer() {
         {/* 3. Social Media Icons */}
         <div className="flex gap-4 mb-12">
           {[
-            { icon: <FaFacebookF className="text-white" />, href: "https://www.facebook.com/people/NG-Stellar-Solutions-Private-Limited/61585290988154/" },
-            { icon: <BsTwitterX className="text-white" />, href: "#" },
-            { icon: <FaLinkedinIn className="text-white" />, href: "https://www.linkedin.com/company/ng-stellar-solutions-private-limited" },
-            { icon: <FaInstagram className="text-white" />, href: "https://www.instagram.com/ng_stellar_solutions/" },
-            { icon: <FaYoutube className="text-white" />, href: "#" },
+            { icon: <FaFacebookF className="text-white" />, href: "https://www.facebook.com/ngstellarofficial/", label: "Facebook" },
+            { icon: <FaLinkedinIn className="text-white" />, href: "https://www.linkedin.com/company/ng-stellar-solutions-private-limited", label: "LinkedIn" },
+            { icon: <FaInstagram className="text-white" />, href: "https://www.instagram.com/ngstellar.official/?fbclid=IwY2xjawTyIBZwZG9mBGV4dG4DYWVtAjExAGJyaWQRMWdReURBdDhNbzV6cmtIZmhzcnRjBmFwcF9pZAEwAAEeFeKeCAUkaG_20-_bWIGOsthp4J11nsdVRJqB3ruf8H9KuuUdnpNOs69YRqQ_aem_t5xwgtGFHaYcGj3i__YS3A", label: "Instagram" },
           ].map((social, index) => (
             <a
               key={index}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
               className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 transform hover:scale-110"
             >
               {social.icon}

@@ -119,10 +119,10 @@ export default function MoreMenu({ onItemClick, currentPath, isDesktopWide = tru
       className="w-full max-w-[880px] rounded-2xl bg-slate-950/98 backdrop-blur-2xl border border-white/12 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] overflow-hidden text-slate-200"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 min-h-[320px] h-auto">
-        {/* Column 1: More Sections Category Tabs */}
+        {/* Column 1: About Sections Category Tabs */}
         <div className="md:col-span-4 bg-white/[0.02] border-b md:border-b-0 md:border-r border-white/10 p-3 sm:p-4 space-y-1">
           <div className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2.5 px-3">
-            More Sections
+            About Sections
           </div>
           {moreList.map((item) => {
             const Icon = getSectionIcon(item.id);

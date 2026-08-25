@@ -87,9 +87,12 @@ export default function DesktopNavigation() {
     };
   }, []);
 
-  // Primary and More nav item lists based on viewport width
+  // Primary and About dropdown nav item lists based on viewport width
   const primaryItems = getPrimaryNavItems(isDesktopWide);
-  const moreItems = getMoreNavItems(isDesktopWide);
+  const aboutDropdownItems = getMoreNavItems(isDesktopWide);
+
+  // Remaining primary items after Home: Transformation, Sustainability, Health Check, Capabilities, Approach
+  const otherPrimaryItems = primaryItems.filter((item) => item.id !== 'home');
 
   // Check active states
   const isItemActive = (item) => {
@@ -98,12 +101,18 @@ export default function DesktopNavigation() {
     return false;
   };
 
-  const isMoreActive = moreItems.some((item) => currentPath.startsWith(item.href));
+  const isAboutActive =
+    currentPath === '/about' ||
+    currentPath.startsWith('/about/') ||
+    aboutDropdownItems.some((item) => currentPath.startsWith(item.href));
 
   // Render the specific mega-menu component
   const renderMenuContent = (menuId) => {
     const item = primaryItems.find((i) => i.id === menuId);
     switch (menuId) {
+      case 'about':
+      case 'more':
+        return <MoreMenu onItemClick={handleItemClick} currentPath={currentPath} isDesktopWide={isDesktopWide} />;
       case 'transformation':
         return <TransformationMenu item={item} onItemClick={handleItemClick} currentPath={currentPath} />;
       case 'sustainability':
@@ -114,8 +123,6 @@ export default function DesktopNavigation() {
         return <CapabilitiesMenu item={item} onItemClick={handleItemClick} currentPath={currentPath} />;
       case 'approach':
         return <ApproachMenu item={item} onItemClick={handleItemClick} currentPath={currentPath} />;
-      case 'more':
-        return <MoreMenu onItemClick={handleItemClick} currentPath={currentPath} isDesktopWide={isDesktopWide} />;
       default:
         return null;
     }
@@ -127,7 +134,53 @@ export default function DesktopNavigation() {
       aria-label="Main Navigation"
       className="flex items-center gap-1 xl:gap-1.5 text-[12.5px] xl:text-[13.5px] font-medium tracking-normal text-white"
     >
-      {primaryItems.map((item) => {
+      {/* 1. Home */}
+      <Link
+        to="/"
+        onClick={handleItemClick}
+        className={`relative px-2 xl:px-3 py-1.5 rounded-lg transition-all duration-150 whitespace-nowrap ${
+          currentPath === '/'
+            ? 'text-white font-semibold bg-white/10 shadow-sm'
+            : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
+        }`}
+      >
+        Home
+        {currentPath === '/' && (
+          <span className="absolute bottom-0.5 left-2 xl:left-3 right-2 xl:right-3 h-[2px] bg-primary-400 rounded-full" />
+        )}
+      </Link>
+
+      {/* 2. About ▾ Dropdown (Existing More menu renamed to About in 2nd position) */}
+      <div
+        className="relative"
+        onMouseEnter={() => handleMouseEnter('about')}
+        onMouseLeave={handleMouseLeave}
+      >
+        <button
+          type="button"
+          onClick={(e) => toggleMenu('about', e)}
+          aria-expanded={openMenuId === 'about'}
+          aria-haspopup="true"
+          className={`relative px-2 xl:px-3 py-1.5 rounded-lg transition-all duration-150 flex items-center gap-1 text-left whitespace-nowrap ${
+            isAboutActive || openMenuId === 'about'
+              ? 'text-white font-semibold bg-white/10 shadow-sm'
+              : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
+          }`}
+        >
+          <span>About</span>
+          <ChevronDown
+            className={`w-3.5 h-3.5 transition-transform duration-200 flex-shrink-0 ${
+              openMenuId === 'about' ? 'rotate-180 text-primary-300' : 'text-slate-400'
+            }`}
+          />
+          {isAboutActive && openMenuId !== 'about' && (
+            <span className="absolute bottom-0.5 left-2 xl:left-3 right-2 xl:right-3 h-[2px] bg-primary-400 rounded-full" />
+          )}
+        </button>
+      </div>
+
+      {/* 3. Primary Items: Transformation, Sustainability, Health Check, Capabilities, Approach */}
+      {otherPrimaryItems.map((item) => {
         const active = isItemActive(item);
         const isOpen = openMenuId === item.id;
         const isHealthCheck = item.id === 'health-check';
@@ -205,35 +258,6 @@ export default function DesktopNavigation() {
           </div>
         );
       })}
-
-      {/* MORE ▾ Dropdown */}
-      <div
-        className="relative"
-        onMouseEnter={() => handleMouseEnter('more')}
-        onMouseLeave={handleMouseLeave}
-      >
-        <button
-          type="button"
-          onClick={(e) => toggleMenu('more', e)}
-          aria-expanded={openMenuId === 'more'}
-          aria-haspopup="true"
-          className={`relative px-2 xl:px-3 py-1.5 rounded-lg transition-all duration-150 flex items-center gap-1 text-left whitespace-nowrap ${
-            isMoreActive || openMenuId === 'more'
-              ? 'text-white font-semibold bg-white/10 shadow-sm'
-              : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
-          }`}
-        >
-          <span>More</span>
-          <ChevronDown
-            className={`w-3.5 h-3.5 transition-transform duration-200 flex-shrink-0 ${
-              openMenuId === 'more' ? 'rotate-180 text-primary-300' : 'text-slate-400'
-            }`}
-          />
-          {isMoreActive && openMenuId !== 'more' && (
-            <span className="absolute bottom-0.5 left-2 xl:left-3 right-2 xl:right-3 h-[2px] bg-primary-400 rounded-full" />
-          )}
-        </button>
-      </div>
 
       {/* Centered Mega-Menu Container attached cleanly below header */}
       <AnimatePresence>

@@ -135,7 +135,7 @@ export default function FaqChatbot() {
           background-color: rgba(0, 0, 0, 0.2);
         }
       `}</style>
-      <div className="fixed bottom-6 right-6 z-[50] flex flex-col items-end pointer-events-none">
+      <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[50] flex flex-col items-start pointer-events-none">
       {/* Chat Window */}
       <div
         className={`mb-4 flex h-[500px] w-80 flex-col overflow-hidden rounded-2xl bg-white shadow-2xl transition-all duration-300 ease-in-out ${

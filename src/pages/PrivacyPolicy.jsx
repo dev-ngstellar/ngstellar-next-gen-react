@@ -34,16 +34,16 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Content Container */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="max-w-6xl mx-auto px-6 mt-8 md:mt-12 relative z-1 pb-12 md:pb-16"
             >
                 <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800 rounded-2xl p-8 md:p-12 text-slate-300 shadow-2xl">
-                    
+
                     <p className="leading-relaxed mb-8 text-lg">
-                        NGStellar Solutions Private Limited (“NGStellar”, “we”, “us”, or “our”) respects your privacy. This policy explains how we collect, use, and protect your information when you use our website ngstellarsolutions.org or services.
+                        NGStellar Solutions Private Limited (“NGStellar”, “we”, “us”, or “our”) respects your privacy. This policy explains how we collect, use, and protect your information when you use our website ngstellar.com or services.
                     </p>
 
                     <div className="space-y-10">
@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">6</span>
                                 Your Rights
                             </h2>
-                            <p>You may access, update, or request deletion of your personal data. Contact us at <a href="mailto:email@ngstellar.com" className="text-secondary-400 hover:text-fuchsia-300 underline">email@ngstellar.com</a>.</p>
+                            <p>You may access, update, or request deletion of your personal data. Contact us at <a href="mailto:contact@ngstellar.com" className="text-secondary-400 hover:text-fuchsia-300 underline">contact@ngstellar.com</a>.</p>
                         </section>
 
                         {/* Section 7 */}
@@ -140,10 +140,10 @@ const PrivacyPolicy = () => {
                             </h2>
                             <div className="space-y-2 text-white">
                                 <p className="font-semibold">NGStellar Solutions Private Limited</p>
-                                <p>151/18, D R Avenue 1, Netaji Nagar, Moolapalayam<br/>Erode, Tamil Nadu 638002, India</p>
+                                <p>151/18, D R Avenue 1, Netaji Nagar, Moolapalayam<br />Erode, Tamil Nadu 638002, India</p>
                                 <p className="flex items-center gap-2 mt-4"><span className="text-secondary-400">📞</span> +91 97109 09727</p>
-                                <p className="flex items-center gap-2"><span className="text-secondary-400">📧</span> email@ngstellar.com</p>
-                                <p className="flex items-center gap-2"><span className="text-secondary-400">🌐</span> ngstellarsolutions.org</p>
+                                <p className="flex items-center gap-2"><span className="text-secondary-400">📧</span> contact@ngstellar.com</p>
+                                <p className="flex items-center gap-2"><span className="text-secondary-400">🌐</span> ngstellar.com</p>
                             </div>
                         </section>
 

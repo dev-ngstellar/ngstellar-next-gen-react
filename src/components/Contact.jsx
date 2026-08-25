@@ -14,7 +14,7 @@ function Contact() {
             digital experience.
           </p>
           <ul className="mt-3 space-y-1 text-sm text-slate-300">
-            <li>Email: info@ngstellarsolutions.org</li>
+            <li>Email: info@ngstellar.com</li>
             <li>Phone: +91-00000-00000</li>
           </ul>
         </div>

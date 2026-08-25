@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
+import FloatingCallButton from './components/FloatingCallButton.jsx';
 import { Helmet } from 'react-helmet-async';
 
 const FaqChatbot = lazy(() => import('./components/FaqChatbot.jsx'));
@@ -144,6 +145,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <FloatingCallButton />
       <Suspense fallback={null}>
         <FaqChatbot />
       </Suspense>

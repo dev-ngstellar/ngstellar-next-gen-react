@@ -35,14 +35,14 @@ const TermsAndConditions = () => {
             </div>
 
             {/* Content Container */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="max-w-6xl mx-auto px-6 mt-8 md:mt-12 relative z-1 pb-12 md:pb-16"
             >
                 <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800 rounded-2xl p-8 md:p-12 text-slate-300 shadow-2xl">
-                    
+
                     <p className="leading-relaxed mb-8 text-lg">
                         Please read these Terms and Conditions (“Terms”) carefully before accessing or using our website and services.
                     </p>
@@ -56,8 +56,8 @@ const TermsAndConditions = () => {
                             </h2>
                             <p className="mb-4">Capitalized terms used in these Terms shall have the meanings set out below, whether used in singular or plural form:</p>
                             <ul className="list-disc pl-6 space-y-3 marker:text-primary-500">
-                                <li><strong className="text-white">Company</strong> refers to NGStellar Solutions Private Limited, 151/18, D R Avenue 1, Netaji Nagar, Moolapalayam, Erode, Tamil Nadu 638002, India. <br/> 📞 +91-9710909727 | 📧 email@ngstellar.com</li>
-                                <li><strong className="text-white">Website</strong> refers to ngstellarsolutions.org.</li>
+                                <li><strong className="text-white">Company</strong> refers to NGStellar Solutions Private Limited, 151/18, D R Avenue 1, Netaji Nagar, Moolapalayam, Erode, Tamil Nadu 638002, India. <br /> 📞 +91-9710909727 | 📧 contact@ngstellar.com</li>
+                                <li><strong className="text-white">Website</strong> refers to ngstellar.com.</li>
                                 <li><strong className="text-white">Service(s)</strong> refers to website development, mobile application development, digital marketing, branding services, technology solutions, and consulting services offered by the Company.</li>
                                 <li><strong className="text-white">You / Client / User</strong> means any individual or legal entity accessing or using the Website or Services.</li>
                                 <li><strong className="text-white">Agreement</strong> means these Terms and Conditions together with any proposal, statement of work, or written contract entered into between You and the Company.</li>
@@ -122,7 +122,7 @@ const TermsAndConditions = () => {
 
                         {/* Section 6 */}
                         <section>
-                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">6</span>
                                 Intellectual Property
                             </h2>
@@ -135,7 +135,7 @@ const TermsAndConditions = () => {
 
                         {/* Section 7 */}
                         <section>
-                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">7</span>
                                 Third-Party Services
                             </h2>
@@ -144,16 +144,16 @@ const TermsAndConditions = () => {
 
                         {/* Section 8 */}
                         <section>
-                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">8</span>
                                 Confidentiality
                             </h2>
                             <p>Both parties agree to maintain the confidentiality of all non-public business, technical, and commercial information exchanged during the engagement, unless disclosure is required by law.</p>
                         </section>
 
-                         {/* Section 9 */}
-                         <section>
-                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                        {/* Section 9 */}
+                        <section>
+                            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">9</span>
                                 Disclaimer
                             </h2>
@@ -163,7 +163,7 @@ const TermsAndConditions = () => {
 
                         {/* Section 10 */}
                         <section>
-                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">10</span>
                                 Limitation of Liability
                             </h2>
@@ -176,7 +176,7 @@ const TermsAndConditions = () => {
 
                         {/* Section 11 */}
                         <section>
-                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">11</span>
                                 Termination
                             </h2>
@@ -189,7 +189,7 @@ const TermsAndConditions = () => {
 
                         {/* Section 12 */}
                         <section>
-                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">12</span>
                                 Governing Law
                             </h2>
@@ -198,7 +198,7 @@ const TermsAndConditions = () => {
 
                         {/* Section 13 */}
                         <section>
-                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-500/20 text-primary-400 text-sm">13</span>
                                 Changes to Terms
                             </h2>
@@ -207,16 +207,16 @@ const TermsAndConditions = () => {
 
                         {/* Section 14 */}
                         <section className="bg-gradient-to-br from-primary-900/30 to-secondary-900/30 border border-white/10 rounded-xl p-6">
-                             <h2 className="text-2xl font-bold text-white mb-4">
+                            <h2 className="text-2xl font-bold text-white mb-4">
                                 14. Contact Information
                             </h2>
                             <p className="mb-4 text-slate-300">For any questions regarding these Terms and Conditions, please contact:</p>
                             <div className="space-y-2 text-white">
                                 <p className="font-semibold">NGStellar Solutions Private Limited</p>
-                                <p>151/18, D R Avenue 1, Netaji Nagar, Moolapalayam<br/>Erode, Tamil Nadu 638002, India</p>
+                                <p>151/18, D R Avenue 1, Netaji Nagar, Moolapalayam<br />Erode, Tamil Nadu 638002, India</p>
                                 <p className="flex items-center gap-2 mt-4"><span className="text-secondary-400">📞</span> +91 97109 09727</p>
-                                <p className="flex items-center gap-2"><span className="text-secondary-400">📧</span> email@ngstellar.com</p>
-                                <p className="flex items-center gap-2"><span className="text-secondary-400">🌐</span> ngstellarsolutions.org</p>
+                                <p className="flex items-center gap-2"><span className="text-secondary-400">📧</span> contact@ngstellar.com</p>
+                                <p className="flex items-center gap-2"><span className="text-secondary-400">🌐</span> ngstellar.com</p>
                             </div>
                         </section>
 

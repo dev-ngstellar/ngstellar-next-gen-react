@@ -322,7 +322,6 @@ export const NAV_ITEMS = [
       { title: 'Our Principles', href: '/about/principles', description: 'The non-negotiable values guiding every client engagement.' },
       { title: 'Leadership', href: '/about/leadership', description: 'Executive team and advisory board.' },
       { title: 'Our Journey', href: '/about/journey', description: 'Milestones, evolution, and future trajectory.' },
-      { title: 'Careers', href: '/careers', description: 'Join our mission and make a tangible difference.' },
     ],
   },
   {
