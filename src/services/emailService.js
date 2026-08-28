@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 // Reuses the configured service_4dgpcwr and template_y1dqzf2
 const DEFAULT_SERVICE_ID = 'service_4dgpcwr';
 const DEFAULT_TEMPLATE_ID = 'template_y1dqzf2';
-const DEFAULT_AUTO_REPLY_TEMPLATE_ID = 'template_contact_autoreply';
+const DEFAULT_AUTO_REPLY_TEMPLATE_ID = '';
 const DEFAULT_PUBLIC_KEY = 'oJ0NUxKWWEBrNzzUs';
 
 export const getEmailConfig = () => ({
