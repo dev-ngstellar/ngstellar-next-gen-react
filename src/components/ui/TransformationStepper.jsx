@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const STAGES = [
@@ -11,7 +11,11 @@ const STAGES = [
   { step: '06', id: 'sustain', title: 'Sustain', href: '/approach/sustain', tagline: 'Continuous Governance' },
 ];
 
-function TransformationStepper({ activeStepId }) {
+function TransformationStepper({ activeStepId, showOverviewLink }) {
+  const location = useLocation();
+  const isOverviewPage = location.pathname.replace(/\/+$/, '') === '/approach';
+  const shouldShowOverviewLink = showOverviewLink !== undefined ? showOverviewLink : !isOverviewPage;
+
   const currentIndex = STAGES.findIndex((s) => s.id === activeStepId);
   const prevStage = currentIndex > 0 ? STAGES[currentIndex - 1] : null;
   const nextStage = currentIndex < STAGES.length - 1 ? STAGES[currentIndex + 1] : null;
@@ -24,12 +28,14 @@ function TransformationStepper({ activeStepId }) {
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
             The 6-Stage Transformation Lifecycle
           </span>
-          <Link
-            to="/approach"
-            className="text-xs font-bold text-primary-400 hover:text-primary-300 transition-colors"
-          >
-            View Framework Overview →
-          </Link>
+          {shouldShowOverviewLink && (
+            <Link
+              to="/approach"
+              className="text-xs font-bold text-primary-400 hover:text-primary-300 transition-colors"
+            >
+              View Framework Overview →
+            </Link>
+          )}
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
