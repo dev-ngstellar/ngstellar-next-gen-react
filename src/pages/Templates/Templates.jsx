@@ -14,7 +14,8 @@ import {
   ShoppingBag,
   Building2,
   FileCode,
-  Layers
+  Layers,
+  FileText
 } from 'lucide-react';
 import SEO from '../../components/SEO';
 import PremiumPageHero from '../../components/ui/PremiumPageHero';
@@ -28,7 +29,7 @@ const planCategories = [
   { id: 'starter', label: 'Starter (₹2.5k)' },
   { id: 'standard', label: 'Standard (₹7.5k)' },
   { id: 'growth', label: 'Growth (₹15k)' },
-  { id: 'professional', label: 'Professional (₹20k)' },
+  { id: 'professional', label: 'Professional (₹25k)' },
   { id: 'custom', label: 'Custom Build' }
 ];
 
@@ -54,8 +55,9 @@ const categoryInfo = {
   },
   professional: {
     title: 'PROFESSIONAL ENTERPRISE PORTALS',
-    price: '₹20,000',
+    price: '₹25,000',
     badge: 'Unlimited Pages + CMS',
+    features: ['Audit Report', 'Regular Health Check'],
     desc: 'Advanced web architectures designed for multi-tier user roles, deep navigation, and complex integrations.'
   },
   custom: {
@@ -206,6 +208,21 @@ const Templates = () => {
                     {categoryInfo[activeCategory].badge}
                   </span>
                 </div>
+
+                {categoryInfo[activeCategory].features && categoryInfo[activeCategory].features.length > 0 && (
+                  <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
+                    {categoryInfo[activeCategory].features.map((feature, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 text-xs font-semibold border border-emerald-500/20"
+                      >
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>{feature}</span>
+                      </span>
+                    ))}
+                  </div>
+                )}
+
                 <p className="text-slate-300 text-sm">
                   {categoryInfo[activeCategory].desc}
                 </p>

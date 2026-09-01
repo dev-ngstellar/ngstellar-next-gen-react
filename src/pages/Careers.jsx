@@ -5,79 +5,187 @@ import {
   Code,
   Palette,
   TrendingUp,
+  Video,
+  Briefcase,
   CheckCircle2,
   AlertCircle,
   Sparkles,
   ArrowRight,
   Send,
   Loader2,
+  ChevronDown,
+  MapPin,
+  Clock,
+  GraduationCap,
+  Award
 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import StarBorder from '../components/StarBorder';
+import JobDetailsModal from '../components/careers/JobDetailsModal';
 import { isValidEmail, normalizePhone, isValidUrl } from '../utils/validation';
 
-// Open Positions Data
+// All 5 Approved Open Positions Data
 const POSITIONS = [
   {
     id: 'developer',
+    selectValue: 'Developer',
     title: 'Developer',
     subtitle: 'Full Stack / Frontend / Backend Engineer',
     type: 'Full-time / Remote / Hybrid',
     location: 'Erode, Tamil Nadu / Hybrid',
+    experience: '1 – 4 Years / Relevant Project Experience',
+    qualifications: 'B.E. / B.Tech in CS/IT, MCA, or proven engineering experience',
     icon: Code,
     gradient: 'from-blue-500/20 via-primary-500/20 to-cyan-500/20',
     borderGradient: 'border-blue-500/30',
     accentColor: 'text-blue-400',
-    description:
-      'Architect, develop, and deploy scalable enterprise platforms, intuitive interactive web applications, and robust API architectures powering high-impact digital transformations.',
-    skills: ['React / Vite', 'Node.js / Express', 'TypeScript / Modern JS', 'TailwindCSS', 'REST & GraphQL APIs', 'Performance Optimization'],
+    shortDescription:
+      'Architect, develop, and deploy scalable enterprise platforms, interactive web applications, and robust API architectures powering digital transformations.',
+    fullDescription:
+      'As a Developer at NG Stellar, you will work on mission-critical digital transformation systems, custom enterprise software platforms, responsive web applications, and high-throughput backend APIs. You will collaborate directly with solution architects and UI/UX designers to translate complex business workflows into elegant, resilient, and secure code.',
+    skills: ['React / Vite', 'Node.js / Express', 'TypeScript / Modern JS', 'TailwindCSS', 'REST & GraphQL APIs', 'PostgreSQL / MongoDB', 'Performance Tuning'],
+    preferredSkills: ['Next.js', 'Docker / CI-CD', 'Cloud Infrastructure (AWS/GCP)', 'Redis / Caching'],
     responsibilities: [
       'Build responsive, high-performance web applications using modern React ecosystems.',
       'Collaborate with designers to implement pixel-perfect, accessible UI components.',
       'Integrate secure backend APIs, microservices, and database systems.',
       'Write clean, modular, and thoroughly tested code adhering to modern standards.',
+      'Participate in architecture reviews and code optimization for sub-2 second load times.'
     ],
+    impactAreas: [
+      'Core enterprise application reliability and speed',
+      'Seamless multi-platform user experiences',
+      'Scalable cloud software architecture'
+    ]
   },
   {
     id: 'designer',
+    selectValue: 'Designer',
     title: 'Designer',
     subtitle: 'UI/UX & Brand Identity Designer',
     type: 'Full-time / Hybrid',
     location: 'Erode, Tamil Nadu / Hybrid',
+    experience: '1 – 3+ Years in Digital Product / UI/UX Design',
+    qualifications: 'Degree in Design, Fine Arts, Visual Communication, or strong design portfolio',
     icon: Palette,
     gradient: 'from-purple-500/20 via-fuchsia-500/20 to-pink-500/20',
     borderGradient: 'border-purple-500/30',
     accentColor: 'text-purple-400',
-    description:
-      'Create visually stunning digital experiences, human-centered UX design systems, prototypes, and brand identities that articulate the future of advisory and enterprise technology.',
-    skills: ['Figma / FigJam', 'UI/UX Systems', 'Wireframing & Prototyping', 'Visual Branding', 'Design Thinking', 'Micro-interactions'],
+    shortDescription:
+      'Create visually stunning digital experiences, human-centered UX design systems, interactive prototypes, and authoritative corporate brand identities.',
+    fullDescription:
+      'As a Designer at NG Stellar, you will shape how users interact with enterprise tools, business portals, and digital brands. You will conduct user journey research, build scalable component systems in Figma, create interactive high-fidelity prototypes, and define cohesive brand visual languages that elevate our clients’ market authority.',
+    skills: ['Figma / FigJam', 'UI/UX Systems', 'Wireframing & Prototyping', 'Visual Branding', 'Design Thinking', 'Micro-interactions', 'WCAG Accessibility'],
+    preferredSkills: ['Motion Design', 'Design Token Management', 'Adobe Illustrator / Photoshop', 'Basic HTML/CSS understanding'],
     responsibilities: [
-      'Design comprehensive UI/UX blueprints, wireframes, and production-ready mockups.',
+      'Design comprehensive UI/UX blueprints, wireframes, and production-ready mockups in Figma.',
       'Develop and maintain scalable enterprise design systems and component libraries.',
-      'Conduct user research, usability testing, and interactive prototyping.',
+      'Conduct user research, journey mapping, and interactive usability testing.',
       'Work closely with developers to ensure seamless, faithful design implementation.',
+      'Design authoritative brand visual identity systems, style guides, and digital assets.'
     ],
+    impactAreas: [
+      'Intuitive user interfaces that reduce user error',
+      'Distinctive corporate brand perception',
+      'Seamless design-to-development handoffs'
+    ]
   },
   {
     id: 'marketing-sales',
+    selectValue: 'Digital Marketing & Sales',
     title: 'Digital Marketing & Sales',
     subtitle: 'Growth Strategist & Client Solutions Lead',
     type: 'Full-time / On-site / Hybrid',
     location: 'Erode, Tamil Nadu / Hybrid',
+    experience: '1 – 4 Years in B2B Marketing, SEO, or Client Acquisition',
+    qualifications: 'Degree in Marketing, Business Administration, Communications, or proven track record',
     icon: TrendingUp,
     gradient: 'from-emerald-500/20 via-teal-500/20 to-green-500/20',
     borderGradient: 'border-emerald-500/30',
     accentColor: 'text-emerald-400',
-    description:
-      'Drive customer acquisition, brand amplification, performance marketing campaigns, strategic sales pipelines, and executive client relationships across target industries.',
-    skills: ['Performance Marketing', 'SEO & SEM', 'B2B Sales Pipeline', 'Content Strategy', 'HubSpot / CRM', 'Analytics & ROI Tracking'],
+    shortDescription:
+      'Drive customer acquisition, organic search authority, performance marketing campaigns, and strategic B2B client relationships across target industries.',
+    fullDescription:
+      'As a Digital Marketing & Sales specialist at NG Stellar, you will connect business decision-makers with our digital transformation and technology capabilities. You will manage high-intent SEO strategies, targeted PPC campaigns, B2B content marketing funnels, lead qualification, and consultative client conversations.',
+    skills: ['Performance Marketing', 'Technical SEO & Local SEO', 'B2B Sales Pipeline', 'Content Strategy', 'HubSpot / CRM', 'Analytics & ROI Tracking'],
+    preferredSkills: ['Google Ads Certification', 'LinkedIn B2B Outreach', 'Conversion Rate Optimization (CRO)', 'Email Automation'],
     responsibilities: [
-      'Formulate and execute comprehensive multi-channel digital marketing campaigns.',
-      'Generate high-quality enterprise leads and nurture B2B client relationships.',
-      'Optimize SEO rankings, paid advertising campaigns, and content conversion funnels.',
-      'Analyze performance analytics, CAC, and ROI metrics to scale growth strategies.',
+      'Formulate and execute comprehensive multi-channel digital marketing and SEO campaigns.',
+      'Generate high-quality enterprise inquiries and nurture consultative client relationships.',
+      'Optimize search engine rankings for commercial keywords in key regional markets.',
+      'Analyze performance analytics, CAC, and conversion funnels to scale inbound pipeline.',
+      'Lead discovery conversations with prospective clients to understand operational needs.'
     ],
+    impactAreas: [
+      'Inbound commercial pipeline generation',
+      'Organic search authority and market reach',
+      'Client relationship trust and retention'
+    ]
   },
+  {
+    id: 'video-editor',
+    selectValue: 'Video Editor / Video Editing',
+    title: 'Video Editor / Video Editing',
+    subtitle: 'Video Editor & Motion Graphics Creator',
+    type: 'Full-time / Hybrid / On-site',
+    location: 'Erode, Tamil Nadu / Hybrid',
+    experience: '1 – 3+ Years in Video Editing & Motion Design',
+    qualifications: 'Degree in Visual Media, Animation, Film, or strong showreel / portfolio',
+    icon: Video,
+    gradient: 'from-amber-500/20 via-orange-500/20 to-red-500/20',
+    borderGradient: 'border-amber-500/30',
+    accentColor: 'text-amber-400',
+    shortDescription:
+      'Craft compelling video stories, product walkthroughs, motion graphics, and high-impact digital brand content that captivates audiences.',
+    fullDescription:
+      'As a Video Editor at NG Stellar, you will turn complex technology and business concepts into engaging visual narratives. You will edit brand films, software product demo videos, social media storytelling assets, client case study reels, and motion graphic animations with pristine sound design and pacing.',
+    skills: ['Adobe Premiere Pro', 'Adobe After Effects', 'Motion Graphics', 'Color Grading (DaVinci Resolve)', 'Audio Mastering', 'Storyboarding', 'Social Video Formats'],
+    preferredSkills: ['3D Motion Design (Blender/Cinema4D)', 'Kinetic Typography', 'Thumbnail & Visual Asset Design'],
+    responsibilities: [
+      'Edit high-quality corporate videos, case study stories, and social media reels.',
+      'Design kinetic typography, motion graphics, and animated UI screen recordings.',
+      'Handle end-to-end post-production: assembly, color grading, sound mixing, and pacing.',
+      'Collaborate with design and marketing teams to produce high-retention video content.',
+      'Maintain an organized digital asset library and adhere to strict delivery timelines.'
+    ],
+    impactAreas: [
+      'High-engagement visual storytelling',
+      'Clarity in communicating complex digital solutions',
+      'Compelling social media and web video presence'
+    ]
+  },
+  {
+    id: 'bde',
+    selectValue: 'Business Development Executive / Business Development',
+    title: 'Business Development Executive / Business Development',
+    subtitle: 'Business Development & Enterprise Growth Specialist',
+    type: 'Full-time / On-site / Hybrid',
+    location: 'Erode, Tamil Nadu / Hybrid',
+    experience: '1 – 4 Years in B2B Sales, Technology Solutions, or Business Development',
+    qualifications: 'Bachelor’s degree in Business, Marketing, Engineering, or relevant experience',
+    icon: Briefcase,
+    gradient: 'from-cyan-500/20 via-blue-500/20 to-indigo-500/20',
+    borderGradient: 'border-cyan-500/30',
+    accentColor: 'text-cyan-400',
+    shortDescription:
+      'Identify enterprise growth opportunities, build relationships with business owners and MSME leaders, and pitch transformative technology solutions.',
+    fullDescription:
+      'As a Business Development Executive at NG Stellar, you will be the front-line ambassador introducing growing businesses to our transformation, software, and automation capabilities. You will identify target enterprises across manufacturing, textiles, retail, and services, conduct consultative discovery, and structure tailored solution proposals.',
+    skills: ['B2B Consultative Selling', 'Client Relationship Management', 'Cold Outreach & Lead Sourcing', 'Solution Pitching', 'Contract Negotiation', 'CRM Management'],
+    preferredSkills: ['Experience selling IT/Software/Digital services', 'Understanding of MSME operational pain points', 'Fluent in Tamil and English'],
+    responsibilities: [
+      'Prospect, identify, and qualify potential B2B clients in Erode, Coimbatore, and regional hubs.',
+      'Conduct consultative discovery meetings with business owners, CEOs, and operations heads.',
+      'Collaborate with technical leads to construct accurate, value-driven transformation proposals.',
+      'Manage sales pipelines within CRM and maintain timely follow-up discipline.',
+      'Represent NG Stellar at regional industry events, trade expos, and networking forums.'
+    ],
+    impactAreas: [
+      'New client acquisition and revenue growth',
+      'Long-term client partnership development',
+      'Market intelligence on regional enterprise needs'
+    ]
+  }
 ];
 
 export default function Careers() {
@@ -89,6 +197,9 @@ export default function Careers() {
   const linkedinInputRef = useRef(null);
   const portfolioInputRef = useRef(null);
   const coverLetterInputRef = useRef(null);
+
+  // Job Details Modal State
+  const [selectedModalJob, setSelectedModalJob] = useState(null);
 
   // Form State (Without Resume)
   const [formData, setFormData] = useState({
@@ -111,8 +222,8 @@ export default function Careers() {
   const [submittedData, setSubmittedData] = useState(null);
 
   // Handle position select & smooth scroll to form
-  const handleSelectPosition = (posTitle) => {
-    setFormData((prev) => ({ ...prev, position: posTitle }));
+  const handleSelectPosition = (selectVal) => {
+    setFormData((prev) => ({ ...prev, position: selectVal }));
     if (formRef.current) {
       formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -129,7 +240,7 @@ export default function Careers() {
         return '';
       case 'phone':
         if (!val) return 'Phone number is required.';
-        if (!/^[6-9]\d{9}$/.test(val)) return 'Please enter a valid 10-digit mobile number.';
+        if (!/^[6-9]\d{9}$/.test(val)) return 'Please enter a valid 10-digit Indian mobile number starting with 6-9.';
         return '';
       case 'position':
         if (!val) return 'Please select a position.';
@@ -336,7 +447,7 @@ export default function Careers() {
         />
         <meta
           name="keywords"
-          content="NG Stellar Careers, Developer Jobs, UI UX Designer, Digital Marketing & Sales, Technology Advisory, Transformation Careers"
+          content="NG Stellar Careers, Developer Jobs, UI UX Designer, Digital Marketing & Sales, Video Editor, Business Development Executive, Technology Advisory, Transformation Careers"
         />
       </Helmet>
 
@@ -355,7 +466,7 @@ export default function Careers() {
           transition={{ duration: 0.8 }}
           className="relative z-10 max-w-4xl mx-auto px-4 text-center"
         >
-          {/* BOLD PREMIUM EDITORIAL "WE'RE HIRING" HERO HEADLINE ELEMENT */}
+          {/* BOLD PREMIUM "WE'RE HIRING" HERO HEADLINE */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -363,25 +474,21 @@ export default function Careers() {
             className="mb-8 sm:mb-10 inline-flex flex-col items-center"
           >
             <div className="relative group px-6 sm:px-12 py-5 sm:py-7 rounded-3xl bg-slate-900/90 border border-primary-500/30 backdrop-blur-2xl shadow-[0_20px_50px_rgba(15,23,42,0.8)] overflow-hidden transition-all duration-300 hover:border-primary-400/50">
-              {/* Subtle ambient gradient mesh & glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-600/15 via-secondary-500/15 to-accent-500/10 pointer-events-none" />
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-64 h-24 bg-primary-400/20 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-48 h-20 bg-secondary-400/20 rounded-full blur-2xl pointer-events-none" />
 
               <div className="relative z-10 flex flex-col items-center text-center">
-                {/* Eyebrow supporting line */}
                 <div className="inline-flex items-center gap-2 sm:gap-2.5 text-primary-400 text-xs sm:text-sm font-extrabold uppercase tracking-[0.25em] mb-1.5">
                   <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary-400 animate-pulse flex-shrink-0" />
                   <span>WE&apos;RE</span>
                   <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary-400 animate-pulse flex-shrink-0" />
                 </div>
 
-                {/* Massive BOLD "HIRING" Headline */}
                 <div className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-white via-primary-200 to-secondary-400 drop-shadow-[0_4px_25px_rgba(59,130,246,0.35)] select-none">
                   HIRING
                 </div>
 
-                {/* Editorial Accent Gradient Underline */}
                 <div className="w-24 sm:w-36 h-1 sm:h-1.5 rounded-full bg-gradient-to-r from-primary-500 via-secondary-400 to-accent-400 mt-3 shadow-[0_0_15px_rgba(56,189,248,0.7)]" />
               </div>
             </div>
@@ -396,7 +503,7 @@ export default function Careers() {
               At NG Stellar, we bring together strategy, technology, and innovation to solve complex business challenges and create meaningful transformation.
             </p>
             <p>
-              Join a team of curious minds, diverse experts, and ambitious problem-solvers who are building what’s next for businesses around the world.
+              Join a team of curious minds, diverse experts, and ambitious problem-solvers who are building what&apos;s next for businesses around the world.
             </p>
           </div>
 
@@ -406,7 +513,7 @@ export default function Careers() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/careers#open-roles"
+              href="#open-roles"
               onClick={handleScrollToRoles}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-primary-600/30 transition-all hover:brightness-110 hover:scale-105 active:scale-95"
             >
@@ -424,12 +531,12 @@ export default function Careers() {
         </motion.div>
       </section>
 
-      {/* 2. OPEN POSITIONS SECTION */}
+      {/* 2. OPEN POSITIONS SECTION (Compact Cards + Expandable Accordion View) */}
       <section id="open-roles" className="py-16 md:py-24 bg-slate-900/40 border-y border-white/5 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-semibold uppercase tracking-wider mb-3">
-              Open Positions
+              Open Opportunities
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
               Come Grow with a Team That Thinks Big.
@@ -439,17 +546,20 @@ export default function Careers() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          {/* Job Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {POSITIONS.map((pos) => {
               const Icon = pos.icon;
+
               return (
                 <motion.div
                   key={pos.id}
+                  layout
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className={`relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 bg-gradient-to-b ${pos.gradient} backdrop-blur-xl border ${pos.borderGradient} shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all hover:translate-y-[-4px] hover:shadow-primary-500/10 group`}
+                  transition={{ duration: 0.4 }}
+                  className={`relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 bg-gradient-to-b ${pos.gradient} backdrop-blur-xl border ${pos.borderGradient} shadow-[0_15px_40px_rgba(0,0,0,0.4)] hover:border-primary-400/50 hover:shadow-2xl transition-all duration-300 group`}
                 >
                   <div>
                     {/* Role Header */}
@@ -457,7 +567,7 @@ export default function Careers() {
                       <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
                         <Icon className={`w-6 h-6 ${pos.accentColor}`} />
                       </div>
-                      <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white/10 text-slate-300 border border-white/10">
+                      <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-white/10 text-slate-300 border border-white/10">
                         {pos.type}
                       </span>
                     </div>
@@ -465,54 +575,39 @@ export default function Careers() {
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
                       {pos.title}
                     </h3>
-                    <p className={`text-xs font-semibold ${pos.accentColor} mb-4`}>
+                    <p className={`text-xs font-semibold ${pos.accentColor} mb-2`}>
                       {pos.subtitle}
                     </p>
 
+                    <div className="flex items-center gap-2 text-xs text-slate-400 mb-4">
+                      <MapPin className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+                      <span>{pos.location}</span>
+                    </div>
+
+                    {/* Short Description */}
                     <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed mb-5">
-                      {pos.description}
+                      {pos.shortDescription}
                     </p>
-
-                    {/* Key Skills */}
-                    <div className="mb-6">
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-                        Core Competencies
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {pos.skills.map((skill) => (
-                          <span
-                            key={skill}
-                            className="text-[11px] px-2.5 py-1 rounded-lg bg-slate-900/60 border border-white/10 text-slate-300 font-medium"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Responsibilities */}
-                    <div className="mb-6 space-y-2">
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
-                        Key Impact Areas
-                      </div>
-                      {pos.responsibilities.map((resp, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
-                          <CheckCircle2 className={`w-3.5 h-3.5 ${pos.accentColor} flex-shrink-0 mt-0.5`} />
-                          <span>{resp}</span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
 
-                  {/* Apply Action Button */}
-                  <div className="pt-4 border-t border-white/10">
+                  {/* Actions: View Details (Opens Modal) + Apply Now */}
+                  <div className="pt-4 border-t border-white/10 mt-4 flex items-center gap-2.5">
                     <button
                       type="button"
-                      onClick={() => handleSelectPosition(pos.title)}
-                      className="w-full py-3 px-4 rounded-xl font-bold text-sm text-white bg-slate-900/80 hover:bg-white hover:text-slate-950 border border-white/20 hover:border-white transition-all duration-200 flex items-center justify-center gap-2 group/btn shadow-md"
+                      onClick={() => setSelectedModalJob(pos)}
+                      className="flex-1 py-2.5 px-3 rounded-xl font-medium text-xs text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-900 border border-white/15 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <span>View Details</span>
+                      <ChevronDown className="w-3.5 h-3.5 -rotate-90 text-slate-400" />
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => handleSelectPosition(pos.selectValue)}
+                      className="flex-1 py-2.5 px-3 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:brightness-110 border border-white/20 transition-all flex items-center justify-center gap-1.5 group/btn shadow-md cursor-pointer"
                     >
                       <span>Apply Now</span>
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </motion.div>
@@ -720,11 +815,13 @@ export default function Careers() {
                     aria-describedby={errors.position ? 'position-error' : undefined}
                     className={`w-full px-4 py-3 text-sm rounded-xl bg-slate-900/90 border ${
                       errors.position ? 'border-rose-500/70 focus:ring-rose-500' : 'border-white/10 focus:ring-primary-500'
-                    } text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50`}
+                    } text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all disabled:opacity-50 cursor-pointer`}
                   >
                     <option value="Developer" className="bg-slate-900 text-white">Developer</option>
                     <option value="Designer" className="bg-slate-900 text-white">Designer</option>
                     <option value="Digital Marketing & Sales" className="bg-slate-900 text-white">Digital Marketing & Sales</option>
+                    <option value="Video Editor / Video Editing" className="bg-slate-900 text-white">Video Editor / Video Editing</option>
+                    <option value="Business Development Executive / Business Development" className="bg-slate-900 text-white">Business Development Executive / Business Development</option>
                   </select>
                   {errors.position && (
                     <p id="position-error" role="alert" className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5 font-medium leading-tight">
@@ -804,7 +901,7 @@ export default function Careers() {
 
                 <div>
                   <label htmlFor="portfolio" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                    Portfolio / GitHub / Website
+                    Portfolio / GitHub / Showreel URL
                   </label>
                   <input
                     id="portfolio"
@@ -924,6 +1021,13 @@ export default function Careers() {
           </div>
         </div>
       </section>
+      {/* Job Details Modal Dialog */}
+      <JobDetailsModal
+        job={selectedModalJob}
+        isOpen={Boolean(selectedModalJob)}
+        onClose={() => setSelectedModalJob(null)}
+        onApply={handleSelectPosition}
+      />
     </div>
   );
 }

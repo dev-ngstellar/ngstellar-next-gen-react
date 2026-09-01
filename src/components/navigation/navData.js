@@ -6,9 +6,59 @@ export const NAV_ITEMS = [
     type: 'link',
   },
   {
+    id: 'capabilities',
+    label: 'Capabilities',
+    dropdownTitle: 'CAPABILITIES & SERVICES',
+    href: '/capabilities',
+    type: 'mega-menu',
+    tagline: 'End-to-end digital transformation, technology implementation, custom engineering, and growth capabilities.',
+    cta: {
+      label: 'Explore All Capabilities',
+      href: '/capabilities',
+    },
+    categories: [
+      {
+        category: 'TRANSFORMATION & ADVISORY',
+        href: '/digital-transformation',
+        links: [
+          { title: 'Digital Transformation', href: '/digital-transformation' },
+          { title: 'Process Automation', href: '/process-automation' },
+          { title: 'Business Strategy', href: '/transformation/business' },
+          { title: 'Operations Modernization', href: '/transformation/process-operations' },
+        ],
+      },
+      {
+        category: 'SYSTEMS & SOFTWARE',
+        href: '/software-system-implementation',
+        links: [
+          { title: 'Software & System Implementation', href: '/software-system-implementation' },
+          { title: 'Custom Software Development', href: '/custom-software-development' },
+          { title: 'Technology Transformation', href: '/transformation/technology' },
+          { title: 'Website Solutions & Templates', href: '/templates' },
+        ],
+      },
+      {
+        category: 'DIGITAL CHANNELS',
+        href: '/website-development',
+        links: [
+          { title: 'Website Development', href: '/website-development' },
+          { title: 'Mobile App Development', href: '/mobile-app-development' },
+        ],
+      },
+      {
+        category: 'GROWTH & EXPERIENCE',
+        href: '/digital-marketing',
+        links: [
+          { title: 'Digital Marketing & SEO', href: '/digital-marketing' },
+          { title: 'Branding & UI/UX Design', href: '/branding-ui-ux' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'transformation',
     label: 'Transformation',
-    dropdownTitle: 'TRANSFORMATION',
+    dropdownTitle: 'TRANSFORMATION ADVISORY',
     href: '/transformation',
     type: 'mega-menu',
     tagline: 'Transform business models, people, processes, and technology to create stronger and more adaptable organizations.',
@@ -136,57 +186,6 @@ export const NAV_ITEMS = [
     ],
   },
   {
-    id: 'capabilities',
-    label: 'Capabilities',
-    dropdownTitle: 'CAPABILITIES',
-    href: '/capabilities',
-    type: 'mega-menu',
-    tagline: 'End-to-end consulting and execution capabilities empowering high-impact enterprise transformation.',
-    cta: {
-      label: 'Explore All Capabilities',
-      href: '/capabilities',
-    },
-    categories: [
-      {
-        category: 'STRATEGY & RESEARCH',
-        href: '/capabilities/strategy-research',
-        links: [
-          { title: 'Strategy & Research', href: '/capabilities/strategy-research' },
-        ],
-      },
-      {
-        category: 'BRAND & EXPERIENCE',
-        href: '/capabilities/brand-experience',
-        links: [
-          { title: 'Branding', href: '/capabilities/brand-experience/branding' },
-          { title: 'UI/UX & Customer Experience', href: '/capabilities/brand-experience/ui-ux' },
-        ],
-      },
-      {
-        category: 'TECHNOLOGY TRANSFORMATION',
-        href: '/capabilities/technology-transformation',
-        links: [
-          { title: 'Website Design', href: '/templates' },
-          { title: 'Software Development', href: '/capabilities/technology-transformation/software-development' },
-          { title: 'Mobile Applications', href: '/capabilities/technology-transformation/mobile-applications' },
-          { title: 'E-commerce', href: '/capabilities/technology-transformation/ecommerce' },
-          { title: 'AI & Automation', href: '/capabilities/technology-transformation/ai-automation' },
-          { title: 'Digital Platforms', href: '/capabilities/technology-transformation/digital-platforms' },
-        ],
-      },
-      {
-        category: 'DIGITAL GROWTH',
-        href: '/capabilities/digital-growth',
-        links: [
-          { title: 'Digital Marketing', href: '/capabilities/digital-growth/digital-marketing' },
-          { title: 'SEO', href: '/capabilities/digital-growth/seo' },
-          { title: 'Content Marketing', href: '/capabilities/digital-growth/content-marketing' },
-          { title: 'Performance Marketing', href: '/capabilities/digital-growth/performance-marketing' },
-        ],
-      },
-    ],
-  },
-  {
     id: 'approach',
     label: 'Approach',
     dropdownTitle: 'Our Approach',
@@ -234,6 +233,23 @@ export const NAV_ITEMS = [
         href: '/approach/sustain',
         description: 'Continuous value measurement, governance embedding, and capability transfer.',
       },
+    ],
+  },
+  {
+    id: 'locations',
+    label: 'Locations',
+    dropdownTitle: 'Regional Hubs',
+    href: '/locations/erode',
+    type: 'dropdown',
+    inMoreGroup: true,
+    tagline: 'Local digital transformation and technology implementation hubs across Tamil Nadu.',
+    cta: {
+      label: 'View Local Presence',
+      href: '/contact',
+    },
+    items: [
+      { title: 'Erode Hub', href: '/locations/erode', description: 'Business registration, compliance, audit, due diligence, and advisory in Erode.' },
+      { title: 'Coimbatore Hub', href: '/locations/coimbatore', description: 'Custom software, mobile applications, and system implementation in Coimbatore.' },
     ],
   },
   {
@@ -325,13 +341,26 @@ export const NAV_ITEMS = [
     ],
   },
   {
+    id: 'careers',
+    label: 'Careers',
+    dropdownTitle: 'Careers at NG Stellar',
+    href: '/careers',
+    type: 'link',
+    inMoreGroup: true,
+    tagline: 'Think Bold. Build Impact. Shape the Future with our team.',
+    cta: {
+      label: 'Explore Careers',
+      href: '/careers',
+    },
+  },
+  {
     id: 'contact',
     label: 'Contact',
     dropdownTitle: 'Contact NG Stellar',
     href: '/contact',
     type: 'link',
     inMoreGroup: true,
-    tagline: 'Engage with our senior advisory team to start your transformation conversation.',
+    tagline: 'Engage with our senior team to start your transformation conversation.',
     cta: {
       label: 'Contact NG Stellar',
       href: '/contact',
@@ -342,18 +371,18 @@ export const NAV_ITEMS = [
 // Helper functions for responsive menus
 export const getPrimaryNavItems = (isDesktopWide = true) => {
   if (isDesktopWide) {
-    // Desktop >= 1200px: Home, Transformation, Sustainability, Health Check, Capabilities, Approach
-    return NAV_ITEMS.filter((item) => ['home', 'transformation', 'sustainability', 'health-check', 'capabilities', 'approach'].includes(item.id));
+    // Desktop >= 1200px: Home, Capabilities, Transformation, Sustainability, Health Check, Approach
+    return NAV_ITEMS.filter((item) => ['home', 'capabilities', 'transformation', 'sustainability', 'health-check', 'approach'].includes(item.id));
   }
-  // Tablet 768px - 1199px: Home, Transformation, Sustainability, Health Check, Capabilities (Approach is in More)
-  return NAV_ITEMS.filter((item) => ['home', 'transformation', 'sustainability', 'health-check', 'capabilities'].includes(item.id));
+  // Tablet 768px - 1199px: Home, Capabilities, Transformation, Sustainability, Health Check (Approach is in More)
+  return NAV_ITEMS.filter((item) => ['home', 'capabilities', 'transformation', 'sustainability', 'health-check'].includes(item.id));
 };
 
 export const getMoreNavItems = (isDesktopWide = true) => {
   if (isDesktopWide) {
-    // Desktop >= 1200px: Ecosystem, Transformation Stories, Insights, About, Contact
-    return NAV_ITEMS.filter((item) => ['ecosystem', 'stories', 'insights', 'about', 'contact'].includes(item.id));
+    // Desktop >= 1200px: Locations, Ecosystem, Stories, Insights, About, Careers, Contact
+    return NAV_ITEMS.filter((item) => ['locations', 'ecosystem', 'stories', 'insights', 'about', 'careers', 'contact'].includes(item.id));
   }
-  // Tablet 768px - 1199px: Approach, Ecosystem, Transformation Stories, Insights, About, Contact
-  return NAV_ITEMS.filter((item) => ['approach', 'ecosystem', 'stories', 'insights', 'about', 'contact'].includes(item.id));
+  // Tablet 768px - 1199px: Approach, Locations, Ecosystem, Stories, Insights, About, Careers, Contact
+  return NAV_ITEMS.filter((item) => ['approach', 'locations', 'ecosystem', 'stories', 'insights', 'about', 'careers', 'contact'].includes(item.id));
 };

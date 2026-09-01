@@ -11,7 +11,11 @@ const FaqChatbot = lazy(() => import('./components/FaqChatbot.jsx'));
 // Eagerly loaded
 import Home from './pages/Home.jsx';
 
-// Lazy-loaded pages
+// Lazy-loaded Primary Service & Location Pages (SEO Architecture)
+const PrimaryServicePage = lazy(() => import('./pages/PrimaryServicePage.jsx'));
+const LocationPage = lazy(() => import('./pages/LocationPage.jsx'));
+
+// Lazy-loaded Transformation & Advisory Pages
 const TransformationHubPage = lazy(() => import('./pages/TransformationHubPage.jsx'));
 const SustainabilityHubPage = lazy(() => import('./pages/SustainabilityHubPage.jsx'));
 const HealthCheckHubPage = lazy(() => import('./pages/HealthCheckHubPage.jsx'));
@@ -50,15 +54,15 @@ function App() {
   return (
     <BrowserRouter>
       <Helmet>
-        <title>NG Stellar — Transformation & Sustainability Advisory</title>
+        <title>NG Stellar — Digital Transformation & Technology Implementation Partner</title>
         <meta
           name="description"
-          content="NG Stellar is a premier transformation and sustainability advisory firm. Transform the business. Sustain the impact."
+          content="NG Stellar is your digital transformation and technology implementation partner. Evaluate. Digitize. Systemize. Scale. Transform the business. Sustain the impact."
         />
-        <meta property="og:title" content="NG Stellar — Transformation & Sustainability Advisory" />
+        <meta property="og:title" content="NG Stellar — Digital Transformation & Technology Implementation Partner" />
         <meta
           property="og:description"
-          content="NG Stellar is a premier transformation and sustainability advisory firm. Transform the business. Sustain the impact."
+          content="NG Stellar is your digital transformation and technology implementation partner. Evaluate. Digitize. Systemize. Scale. Transform the business. Sustain the impact."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ngstellar.com/" />
@@ -75,7 +79,22 @@ function App() {
               {/* Home */}
               <Route path="/" element={<Home />} />
 
-              {/* Transformation Routes */}
+              {/* 1. Primary Service Routes (Page-Per-Intent SEO Architecture) */}
+              <Route path="/digital-transformation" element={<PrimaryServicePage serviceKey="digital-transformation" />} />
+              <Route path="/process-automation" element={<PrimaryServicePage serviceKey="process-automation" />} />
+              <Route path="/software-system-implementation" element={<PrimaryServicePage serviceKey="software-system-implementation" />} />
+              <Route path="/custom-software-development" element={<PrimaryServicePage serviceKey="custom-software-development" />} />
+              <Route path="/website-development" element={<PrimaryServicePage serviceKey="website-development" />} />
+              <Route path="/mobile-app-development" element={<PrimaryServicePage serviceKey="mobile-app-development" />} />
+              <Route path="/digital-marketing" element={<PrimaryServicePage serviceKey="digital-marketing" />} />
+              <Route path="/branding-ui-ux" element={<PrimaryServicePage serviceKey="branding-ui-ux" />} />
+
+              {/* 2. Location Routes (Local SEO) */}
+              <Route path="/locations/erode" element={<LocationPage cityKey="erode" />} />
+              <Route path="/locations/coimbatore" element={<LocationPage cityKey="coimbatore" />} />
+              <Route path="/locations/:city" element={<LocationPage />} />
+
+              {/* 3. Transformation Routes */}
               <Route path="/transformation" element={<TransformationHubPage />} />
               <Route path="/transformation/business" element={<ServiceAdvisoryPage />} />
               <Route path="/transformation/people-organization" element={<ServiceAdvisoryPage />} />
@@ -83,7 +102,7 @@ function App() {
               <Route path="/transformation/technology" element={<ServiceAdvisoryPage />} />
               <Route path="/transformation/*" element={<TransformationHubPage />} />
 
-              {/* Sustainability Routes */}
+              {/* 4. Sustainability Routes */}
               <Route path="/sustainability" element={<SustainabilityHubPage />} />
               <Route path="/sustainability/economic" element={<ServiceAdvisoryPage />} />
               <Route path="/sustainability/people-social" element={<ServiceAdvisoryPage />} />
@@ -92,49 +111,49 @@ function App() {
               <Route path="/sustainability/business-resilience" element={<ServiceAdvisoryPage />} />
               <Route path="/sustainability/*" element={<SustainabilityHubPage />} />
 
-              {/* Transformation Health Check */}
+              {/* 5. Transformation Health Check */}
               <Route path="/transformation-health-check" element={<HealthCheckHubPage />} />
               <Route path="/transformation-health-check/*" element={<HealthCheckHubPage />} />
 
-              {/* Capabilities Routes */}
+              {/* 6. Capabilities Routes */}
               <Route path="/capabilities" element={<CapabilitiesHubPage />} />
               <Route path="/capabilities/*" element={<CapabilitiesHubPage />} />
 
-              {/* Website Design Solutions & Templates */}
+              {/* 7. Website Design Solutions & Templates */}
               <Route path="/templates" element={<Templates />} />
               <Route path="/templates/:slug" element={<TemplateDetails />} />
               <Route path="/capabilities/technology-transformation/website-design" element={<Templates />} />
 
-              {/* Our Approach */}
+              {/* 8. Our Approach */}
               <Route path="/approach" element={<ApproachHubPage />} />
               <Route path="/approach/*" element={<ApproachHubPage />} />
 
-              {/* Transformation Ecosystem */}
+              {/* 9. Transformation Ecosystem */}
               <Route path="/ecosystem" element={<EcosystemHubPage />} />
               <Route path="/ecosystem/*" element={<EcosystemHubPage />} />
 
-              {/* Transformation Stories */}
+              {/* 10. Transformation Stories & Case Studies */}
               <Route path="/transformation-stories" element={<StoriesHubPage />} />
               <Route path="/transformation-stories/*" element={<StoriesHubPage />} />
 
-              {/* Insights */}
+              {/* 11. Insights & Thought Leadership */}
               <Route path="/insights" element={<InsightsHubPage />} />
               <Route path="/insights/*" element={<InsightsHubPage />} />
 
-              {/* About NG Stellar */}
+              {/* 12. About NG Stellar */}
               <Route path="/about" element={<About />} />
               <Route path="/about/*" element={<About />} />
 
-              {/* Contact & General Inquiries */}
+              {/* 13. Contact & General Inquiries */}
               <Route path="/contact" element={<Contact />} />
               <Route path="/contact/*" element={<Contact />} />
 
-              {/* Careers, Terms, Privacy */}
+              {/* 14. Careers, Terms, Privacy */}
               <Route path="/careers" element={<Careers />} />
               <Route path="/termsandconditions" element={<TermsAndConditions />} />
               <Route path="/privacypolicy" element={<PrivacyPolicy />} />
 
-              {/* Legacy / Additional Service Routes */}
+              {/* 15. Legacy / Additional Service Routes */}
               <Route path="/capability" element={<Capability />} />
               <Route path="/industry" element={<Industry />} />
               <Route path="/services/branding" element={<BrandingService />} />

@@ -1,6 +1,14 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # 301 Redirects: Consolidate Legacy Agency URLs to Canonical Primary Services
+  RewriteRule ^services/branding/?$ /branding-ui-ux [R=301,L]
+  RewriteRule ^services/tech/?$ /custom-software-development [R=301,L]
+  RewriteRule ^services/consulting/?$ /transformation/business [R=301,L]
+  RewriteRule ^capability/?$ /capabilities [R=301,L]
+
+  # SPA Fallback Routing
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

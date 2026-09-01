@@ -19,7 +19,8 @@ import {
   Globe,
   Code,
   Sparkles,
-  Gauge
+  Gauge,
+  MapPin
 } from 'lucide-react';
 import Hero from '../components/Hero.jsx';
 
@@ -41,17 +42,17 @@ const transformAreas = [
   },
   {
     title: 'Process & Operational Transformation',
-    desc: 'We identify process gaps, reduce inefficiencies, improve workflows and build practical operating systems.',
+    desc: 'We identify process gaps, reduce inefficiencies, streamline workflows and build practical operating systems.',
     icon: WorkflowIcon,
-    route: '/transformation/process-operations',
+    route: '/process-automation',
     badge: 'Workflows & Operations'
   },
   {
-    title: 'Technology Transformation',
-    desc: 'We assess technology maturity and enable businesses through digital platforms, automation, AI, software, data and integrated systems.',
+    title: 'Technology & System Implementation',
+    desc: 'We assess technology maturity and enable businesses through digital platforms, custom software, ERP/CRM implementations, and AI.',
     icon: Cpu,
-    route: '/transformation/technology',
-    badge: 'Digital & AI'
+    route: '/digital-transformation',
+    badge: 'Digital & Technology'
   },
   {
     title: 'Sustainability Transformation',
@@ -84,42 +85,47 @@ const whyStellarProcess = [
 
 // Data for "Our Capabilities" in Section 5
 const capabilitiesList = [
-  { title: 'Strategy & Research', icon: Compass, href: '/capabilities/strategy-research' },
-  { title: 'Brand & Experience', icon: Palette, href: '/capabilities/brand-experience' },
-  { title: 'Technology Transformation', icon: Cpu, href: '/capabilities/technology-transformation' },
-  { title: 'AI & Automation', icon: Bot, href: '/capabilities/technology-transformation/ai-automation' },
-  { title: 'Digital Platforms', icon: Cpu, href: '/capabilities/technology-transformation/digital-platforms' },
-  { title: 'Digital Growth', icon: TrendingUp, href: '/capabilities/digital-growth' },
-  { title: 'Website & Software Development', icon: Code, href: '/capabilities/technology-transformation/software-development' },
-  { title: 'Digital Marketing', icon: Globe, href: '/capabilities/digital-growth/digital-marketing' }
+  { title: 'Digital Transformation', icon: Compass, href: '/digital-transformation' },
+  { title: 'Process Automation', icon: WorkflowIcon, href: '/process-automation' },
+  { title: 'Software & System Implementation', icon: Cpu, href: '/software-system-implementation' },
+  { title: 'Custom Software Development', icon: Code, href: '/custom-software-development' },
+  { title: 'Website Development', icon: Globe, href: '/website-development' },
+  { title: 'Mobile App Development', icon: Bot, href: '/mobile-app-development' },
+  { title: 'Digital Marketing & SEO', icon: TrendingUp, href: '/digital-marketing' },
+  { title: 'Branding & UI/UX Design', icon: Palette, href: '/branding-ui-ux' }
 ];
 
 // Data for "Sustainability" Pillars in Section 6
 const sustainabilityPillars = [
   {
-    title: 'Economic sustainability',
+    title: 'Economic Sustainability',
     desc: 'Building durable revenue models, financial viability, and long-term capital resilience.',
-    icon: TrendingUp
+    icon: TrendingUp,
+    href: '/sustainability/economic'
   },
   {
-    title: 'People & social sustainability',
+    title: 'People & Social Sustainability',
     desc: 'Fostering workplace well-being, talent capability, and equitable organizational culture.',
-    icon: Users
+    icon: Users,
+    href: '/sustainability/people-social'
   },
   {
-    title: 'Governance',
+    title: 'Governance & Integrity',
     desc: 'Establishing ethical oversight, risk management, and transparent operating policies.',
-    icon: Building
+    icon: Building,
+    href: '/sustainability/governance'
   },
   {
-    title: 'Environmental responsibility',
+    title: 'Environmental Responsibility',
     desc: 'Operational resource efficiency, waste reduction, and responsible environmental stewardship.',
-    icon: Leaf
+    icon: Leaf,
+    href: '/sustainability/environmental'
   },
   {
-    title: 'Business resilience',
+    title: 'Business Resilience',
     desc: 'Strengthening adaptive capacity to withstand market shifts, disruptions, and industry volatility.',
-    icon: ShieldCheck
+    icon: ShieldCheck,
+    href: '/sustainability/business-resilience'
   }
 ];
 
@@ -128,15 +134,15 @@ function Home() {
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans">
       {/* 2. HOME SEO */}
       <Helmet>
-        <title>NG Stellar | Transformation & Sustainability Advisory</title>
+        <title>NG Stellar | Digital Transformation & Technology Implementation Partner</title>
         <meta
           name="description"
-          content="NG Stellar helps businesses transform through business, people, process and technology advisory, with sustainability, innovation and long-term growth at the core."
+          content="NG Stellar is your digital transformation and technology implementation partner for growing businesses and MSMEs. Evaluate. Digitize. Systemize. Scale across Erode, Coimbatore, and South India."
         />
-        <meta property="og:title" content="NG Stellar | Transformation & Sustainability Advisory" />
+        <meta property="og:title" content="NG Stellar | Digital Transformation & Technology Implementation Partner" />
         <meta
           property="og:description"
-          content="NG Stellar helps businesses transform through business, people, process and technology advisory, with sustainability, innovation and long-term growth at the core."
+          content="NG Stellar helps growing businesses evaluate, digitize, systemize, and scale through technology implementation, process automation, custom software, and sustainability advisory."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ngstellar.com/" />
@@ -164,7 +170,7 @@ function Home() {
             <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-400/30 text-primary-200 text-xs font-medium uppercase tracking-wider">
                 <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
-                Our Advisory Foundation
+                Our Transformation Promise
               </span>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -173,20 +179,20 @@ function Home() {
 
               <div className="space-y-4 text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-center pt-2">
                 <p className="font-semibold text-slate-100">
-                  Every business reaches a point where something needs to change.
+                  Every growing business reaches a point where something needs to change.
                 </p>
                 <p className="text-slate-300">
-                  It could be a growth challenge, inefficient process, people dependency, outdated technology, a new business idea, market opportunity or the need to build a more resilient and sustainable organization.
+                  It could be a growth bottleneck, inefficient manual processes, Excel and WhatsApp dependency, outdated software, a new digital product idea, or the imperative to build a more resilient and sustainable enterprise.
                 </p>
                 <p className="text-slate-300">
-                  NG Stellar brings together business thinking, people, processes, technology and the right ecosystem to help businesses move from problem or idea to sustainable impact.
+                  NG Stellar brings together strategic advisory, technology implementation, custom engineering, and process automation to help businesses evaluate, digitize, systemize, and scale.
                 </p>
               </div>
 
               {/* Subheading & Process Steps */}
               <div className="pt-8 border-t border-white/10 space-y-6">
                 <h3 className="text-xs sm:text-sm font-bold text-secondary-400 uppercase tracking-widest">
-                  Our approach
+                  Our 6-Stage Transformation Approach
                 </h3>
 
                 <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
@@ -227,7 +233,7 @@ function Home() {
               What We Transform
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Integrated transformation advisory designed to strengthen core enterprise capabilities and build long-term value.
+              Synchronized transformation across strategy, people, operational workflows, and digital technologies.
             </p>
           </div>
 
@@ -264,7 +270,7 @@ function Home() {
 
                   <Link
                     to={area.route}
-                    className="inline-flex items-center justify-between w-full p-3 rounded-xl bg-white/[0.04] hover:bg-primary-500/20 border border-white/8 hover:border-primary-500/30 text-xs font-bold text-primary-300 transition-all group-hover:border-primary-500/40"
+                    className="inline-flex items-center justify-between w-full p-3 rounded-xl bg-white/[0.04] hover:bg-primary-500/20 border border-white/8 hover:border-primary-500/30 text-xs font-bold text-primary-300 transition-all group-hover:border-primary-500/40 cursor-pointer"
                   >
                     <span>Explore Advisory</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -337,7 +343,7 @@ function Home() {
             <div className="pt-4">
               <Link
                 to="/transformation-health-check"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-primary-600/30 transition-all hover:brightness-110 hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-primary-600/30 transition-all hover:brightness-110 hover:scale-105 active:scale-95 cursor-pointer"
               >
                 <span>Assess Your Business</span>
                 <ArrowRight className="w-4 h-4" />
@@ -353,13 +359,13 @@ function Home() {
           <div className="text-center space-y-3 max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-400/30 text-primary-200 text-xs font-medium uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
-              The Advisory Advantage
+              The Implementation Advantage
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
               Why NG Stellar?
             </h2>
             <p className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary-300 via-secondary-300 to-accent-300 bg-clip-text text-transparent">
-              We don't just advise. We help transform.
+              We don't just advise. We implement and sustain.
             </p>
           </div>
 
@@ -368,19 +374,19 @@ function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 space-y-2">
                 <span className="text-xs font-mono font-bold text-slate-400 block">Consultants</span>
-                <p className="text-sm font-semibold text-slate-200">Traditional consultants may diagnose.</p>
+                <p className="text-sm font-semibold text-slate-200">Traditional consultants diagnose.</p>
               </div>
               <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 space-y-2">
-                <span className="text-xs font-mono font-bold text-slate-400 block">Tech Companies</span>
-                <p className="text-sm font-semibold text-slate-200">Technology companies may build.</p>
+                <span className="text-xs font-mono font-bold text-slate-400 block">Tech Agencies</span>
+                <p className="text-sm font-semibold text-slate-200">Standard agencies build code in silos.</p>
               </div>
               <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 space-y-2">
-                <span className="text-xs font-mono font-bold text-slate-400 block">Marketing Agencies</span>
-                <p className="text-sm font-semibold text-slate-200">Marketing agencies may promote.</p>
+                <span className="text-xs font-mono font-bold text-slate-400 block">Ad Marketers</span>
+                <p className="text-sm font-semibold text-slate-200">Ad agencies chase vanity clicks.</p>
               </div>
               <div className="p-5 rounded-2xl bg-gradient-to-b from-primary-600/30 to-secondary-600/30 border border-primary-500/40 space-y-2">
                 <span className="text-xs font-mono font-bold text-secondary-300 block">NG Stellar</span>
-                <p className="text-sm font-bold text-white">NG Stellar brings these capabilities together.</p>
+                <p className="text-sm font-bold text-white">We align business, systems & growth.</p>
               </div>
             </div>
 
@@ -408,14 +414,127 @@ function Home() {
         </section>
 
         {/* ==================================================
-            8. SECTION — OUR CAPABILITIES
+            8. SECTION — OUR CAPABILITIES (Connecting All Primary Services)
             ================================================== */}
-      
+        <section id="capabilities" className="space-y-12">
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-400/30 text-primary-200 text-xs font-medium uppercase tracking-wider">
+              <Code className="w-3.5 h-3.5" />
+              Core Capabilities
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+              Our Capabilities
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              From enterprise digital transformation and workflow automation to custom software engineering and digital growth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {capabilitiesList.map((cap, i) => {
+              const IconComp = cap.icon;
+              return (
+                <Link
+                  key={i}
+                  to={cap.href}
+                  className="p-6 rounded-2xl bg-slate-900/70 border border-white/10 hover:border-primary-500/40 hover:bg-slate-900 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                >
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-primary-400 mb-4 group-hover:scale-110 transition-transform">
+                      <IconComp className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-base font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
+                      {cap.title}
+                    </h3>
+                  </div>
+                  <div className="text-xs font-semibold text-primary-400 flex items-center gap-1 mt-4">
+                    <span>Explore Capability</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
 
         {/* ==================================================
             9. SECTION — SUSTAINABILITY
             ================================================== */}
+        <section id="sustainability" className="space-y-12">
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-medium uppercase tracking-wider">
+              <Leaf className="w-3.5 h-3.5" />
+              Long-Term Resilience
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+              Sustainability for Long-Term Value
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Embedding economic durability, ethical governance, social equity, and resource stewardship into enterprise operations.
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {sustainabilityPillars.map((pillar, index) => {
+              const PillarIcon = pillar.icon;
+              return (
+                <Link
+                  key={index}
+                  to={pillar.href}
+                  className="p-7 rounded-3xl bg-slate-900/70 border border-white/10 hover:border-emerald-500/40 hover:bg-slate-900 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                >
+                  <div>
+                    <div className="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                      <PillarIcon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      {pillar.desc}
+                    </p>
+                  </div>
+                  <div className="text-xs font-semibold text-emerald-400 flex items-center gap-1 mt-5">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ==================================================
+            REGIONAL HUBS (Local SEO Positioning: Erode & Coimbatore)
+            ================================================== */}
+        <section className="p-8 sm:p-10 rounded-3xl bg-slate-900/60 border border-white/10 text-center">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-bold uppercase tracking-wider">
+              <MapPin className="w-3.5 h-3.5" />
+              Regional Presence
+            </span>
+            <h3 className="text-xl sm:text-2xl font-bold text-white">
+              Serving Enterprises Across Erode, Coimbatore & South India
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              We provide on-ground digital transformation, custom engineering, and technology implementation across key regional industrial clusters.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <Link
+                to="/locations/erode"
+                className="px-5 py-2.5 rounded-xl bg-slate-950 border border-white/10 hover:border-emerald-400 text-xs font-bold text-emerald-300 transition-all cursor-pointer"
+              >
+                Erode Hub: Business, Compliance & Advisory →
+              </Link>
+              <Link
+                to="/locations/coimbatore"
+                className="px-5 py-2.5 rounded-xl bg-slate-950 border border-white/10 hover:border-emerald-400 text-xs font-bold text-emerald-300 transition-all cursor-pointer"
+              >
+                Coimbatore Hub: Custom Software & App Development →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* ==================================================
             10. FINAL CTA — READY TO TRANSFORM YOUR BUSINESS?
@@ -431,16 +550,22 @@ function Home() {
             </h2>
 
             <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-              Let's understand where you are today, identify what needs to change and build a practical path toward sustainable impact.
+              Let's understand where you are today, identify what needs to change, and build a practical path toward sustainable impact.
             </p>
 
             <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-8 py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-primary-600/30 transition-all hover:brightness-110 hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 px-8 py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-primary-600/30 transition-all hover:brightness-110 hover:scale-105 active:scale-95 cursor-pointer"
               >
                 <span>Start a Transformation Conversation</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </Link>
+              <Link
+                to="/transformation-health-check"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-sm sm:text-base font-bold text-slate-200 backdrop-blur-md transition-all hover:scale-105 active:scale-95 cursor-pointer"
+              >
+                <span>Request a Health Check</span>
               </Link>
             </div>
           </div>

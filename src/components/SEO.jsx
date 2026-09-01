@@ -12,14 +12,16 @@ function SEO({
   ogType = 'website',
   breadcrumbs = [],
   schemaType = null,
-  serviceData = null
+  serviceData = null,
+  faqs = null,
+  localBusinessData = null
 }) {
   const fullTitle = title
-    ? `${title} | NG Stellar — Transformation & Sustainability Advisory`
-    : 'NG Stellar — Transformation & Sustainability Advisory';
+    ? `${title} | NG Stellar — Digital Transformation & Technology Implementation Partner`
+    : 'NG Stellar — Digital Transformation & Technology Implementation Partner';
 
   const defaultDescription =
-    'NG Stellar is a premier transformation and sustainability advisory firm. Transform the business. Sustain the impact across business, people, processes, technology, and digital growth.';
+    'NG Stellar is your digital transformation and technology implementation partner for growing businesses and MSMEs. Evaluate. Digitize. Systemize. Scale. Transform the business. Sustain the impact.';
   const metaDescription = description || defaultDescription;
 
   const currentCanonical = canonicalUrl
@@ -75,11 +77,53 @@ function SEO({
           name: serviceData.name || title,
           provider: {
             '@type': 'Organization',
-            name: 'NG Stellar Solutions'
+            name: 'NG Stellar Solutions',
+            url: SITE_URL
           },
           description: metaDescription,
-          serviceType: serviceData.serviceType || 'Advisory & Consulting',
-          areaServed: 'Worldwide'
+          serviceType: serviceData.serviceType || 'Digital Transformation & Technology Implementation',
+          areaServed: serviceData.areaServed || 'Worldwide'
+        }
+      : null;
+
+  // Schema: FAQPage
+  const faqSchema =
+    faqs && Array.isArray(faqs) && faqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.q,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.a
+            }
+          }))
+        }
+      : null;
+
+  // Schema: LocalBusiness
+  const localBusinessSchema =
+    localBusinessData
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'ProfessionalService',
+          name: `NG Stellar Solutions — ${localBusinessData.city}`,
+          legalName: 'TrueConnect Strategic Services Private Limited',
+          url: currentCanonical,
+          telephone: localBusinessData.phone || '+91-9790652929',
+          email: localBusinessData.email || 'contact@ngstellar.com',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: localBusinessData.streetAddress || '151/18, D R Avenue 1, Netaji Nagar, Moolapalayam',
+            addressLocality: localBusinessData.city,
+            addressRegion: localBusinessData.state || 'Tamil Nadu',
+            postalCode: localBusinessData.postalCode || '638002',
+            addressCountry: 'IN'
+          },
+          areaServed: localBusinessData.city,
+          description: metaDescription
         }
       : null;
 
@@ -111,6 +155,12 @@ function SEO({
       )}
       {serviceSchema && (
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+      )}
+      {faqSchema && (
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      )}
+      {localBusinessSchema && (
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       )}
     </Helmet>
   );

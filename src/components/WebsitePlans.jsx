@@ -73,7 +73,7 @@ const plans = [
     },
     {
         name: 'PROFESSIONAL',
-        price: '₹20,000 – ₹27,000',
+        price: '₹25,000 – ₹30,000',
         description: 'Advanced business platform built for established companies.',
         bestFor: ['Companies', 'E-commerce', 'Tech'],
         icon: HiBriefcase,
