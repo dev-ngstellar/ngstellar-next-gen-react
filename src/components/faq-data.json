@@ -2,245 +2,955 @@
   {
     "id": "1",
     "question": "What services do you offer?",
-    "answer": "We offer a comprehensive range of digital services. What are you interested in?",
-    "keywords": ["services", "offer", "what", "development", "branding", "marketing", "help", "do", "capability", "solutions", "tech"],
-    "options": ["I need a website", "I need a mobile app", "I need digital marketing", "Branding & Design", "E-commerce Setup", "Maintenance & Support"]
+    "answer": "We offer website development (1-Hour to Enterprise plans), mobile app development, digital marketing, branding & design, and ongoing technical support.",
+    "keywords": [
+      "services",
+      "offer",
+      "what",
+      "development",
+      "branding",
+      "marketing",
+      "help",
+      "capability",
+      "solutions",
+      "tech",
+      "ng stellar"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Development SOP Workflow",
+      "I need a website",
+      "I need a mobile app",
+      "I need digital marketing",
+      "Branding & Design",
+      "Support & Maintenance"
+    ]
   },
   {
-    "id": "2",
-    "question": "I need a website",
-    "answer": "Great! What type of website are you looking for?",
-    "keywords": ["website", "web", "site", "development", "build", "create", "make a site", "web design", "homepage", "online presence"],
-    "options": ["E-commerce Website", "Portfolio Website", "Corporate Website", "Landing Page", "Service Booking", "Blog Website", "Real Estate Website", "Healthcare Website"]
+    "id": "plans",
+    "question": "Website Plans (1 Hr to 15 Days)",
+    "answer": "We offer 5 Website Development Plans at NG Stellar:\n\n1. Starter Plan (1 Hour Delivery, Up to 3 Pages)\n2. Standard Plan (6 Hours Delivery, Up to 5 Pages)\n3. Growth Plan (3-5 Business Days, Up to 10 Pages + Admin Panel)\n4. Professional Plan (7-15 Business Days, Unlimited Pages + Advanced CMS)\n5. Custom / Enterprise Plan (10-90 Days, Custom UI/UX, Admin Dashboard & Modules)",
+    "keywords": [
+      "plans",
+      "packages",
+      "pricing",
+      "website plans",
+      "options",
+      "starter",
+      "standard",
+      "growth",
+      "professional",
+      "enterprise"
+    ],
+    "options": [
+      "Starter Website (1 Hr)",
+      "Standard Website (6 Hrs)",
+      "Growth Website (3-5 Days)",
+      "Professional Website (7-15 Days)",
+      "Custom / Enterprise Plan"
+    ]
   },
   {
-    "id": "3",
-    "question": "I need a mobile app",
-    "answer": "Excellent choice. We build native and cross-platform mobile apps. Do you have a specific platform in mind?",
-    "keywords": ["mobile", "app", "application", "android", "ios", "phone", "smartphone", "apk", "play store", "app store"],
-    "options": ["iOS App", "Android App", "Cross-Platform (Both)"]
+    "id": "plan1",
+    "question": "Starter Website (1 Hr)",
+    "answer": "Starter Plan details:\n- Delivery Time: 1 Hour\n- Scope: Up to 3 Pages, Mobile Responsive, Contact Form, WhatsApp Button, Click-to-Call, Google Maps, Social Links, Basic SEO, Demo Deployment.\n- Deliverables: Demo URL, Source Code, GitHub Repository, Responsive Website, Basic SEO, 7 Days Support.\n- Note: No Admin Panel.",
+    "keywords": [
+      "starter",
+      "1 hour",
+      "quick website",
+      "cheap",
+      "fast website",
+      "3 pages",
+      "express website"
+    ],
+    "options": [
+      "Starter Requirements",
+      "Starter Deliverables",
+      "Standard Website (6 Hrs)",
+      "Contact Us"
+    ]
   },
   {
-    "id": "3a",
-    "question": "iOS App",
-    "answer": "We develop high-performance native iOS applications using Swift and SwiftUI, ensuring a premium user experience on iPhones and iPads.",
-    "keywords": ["ios", "iphone", "apple", "ipad", "swift", "native", "mac"],
-    "options": ["What is your timeline?", "Do you have a budget range?"]
+    "id": "plan1_req",
+    "question": "Starter Requirements",
+    "answer": "Client Requirements for Starter Plan:\n- Business Name & Logo\n- Phone & WhatsApp Number\n- Email & Address\n- Google Maps Link\n- About Us text\n- Maximum 5 Services list\n- 3 Business Images\n- Brand Color preference",
+    "keywords": [
+      "starter requirements",
+      "details needed starter",
+      "starter client info"
+    ],
+    "options": [
+      "Starter Deliverables",
+      "Standard Website (6 Hrs)",
+      "Contact Us"
+    ]
   },
   {
-    "id": "3b",
-    "question": "Android App",
-    "answer": "We build robust Android applications using Kotlin and Java that work seamlessly across the vast ecosystem of Android devices.",
-    "keywords": ["android", "google", "play store", "kotlin", "java", "samsung", "pixel"],
-    "options": ["What is your timeline?", "Do you have a budget range?"]
+    "id": "plan1_del",
+    "question": "Starter Deliverables",
+    "answer": "Starter Plan Deliverables:\n- Demo URL\n- Source Code\n- GitHub Repository\n- Mobile Responsive Website\n- Basic SEO\n- 7 Days Technical Support",
+    "keywords": [
+      "starter deliverables",
+      "starter output",
+      "starter support"
+    ],
+    "options": [
+      "Starter Requirements",
+      "Standard Website (6 Hrs)",
+      "Contact Us"
+    ]
   },
   {
-    "id": "3c",
-    "question": "Cross-Platform (Both)",
-    "answer": "Smart choice! We use frameworks like Flutter and React Native to build one code base that works perfectly on both iOS and Android, saving you time and money.",
-    "keywords": ["cross", "platform", "hybrid", "flutter", "react native", "both", "multi-platform"],
-    "options": ["What is your timeline?", "Do you have a budget range?"]
+    "id": "plan2",
+    "question": "Standard Website (6 Hrs)",
+    "answer": "Standard Plan details:\n- Delivery Time: 6 Hours\n- Scope: Up to 5 Pages, Image Gallery, Testimonials, FAQ Section, Contact Form, WhatsApp Integration, Google Maps, Google Analytics, Basic SEO, Demo Deployment.\n- Deliverables: Demo URL, Source Code, GitHub Repository, Gallery, Analytics, SEO, 15 Days Support.\n- Note: No Admin Panel.",
+    "keywords": [
+      "standard",
+      "6 hours",
+      "5 pages",
+      "gallery",
+      "analytics",
+      "standard website"
+    ],
+    "options": [
+      "Standard Requirements",
+      "Standard Deliverables",
+      "Growth Website (3-5 Days)",
+      "Contact Us"
+    ]
   },
   {
-    "id": "4",
-    "question": "I need digital marketing",
-    "answer": "We can help grow your brand! What are your primary goals?",
-    "keywords": ["marketing", "digital", "seo", "social", "media", "ads", "growth", "traffic", "leads", "promotion"],
-    "options": ["SEO Services", "Social Media Marketing", "PPC Ads", "Content Marketing"]
+    "id": "plan2_req",
+    "question": "Standard Requirements",
+    "answer": "Client Requirements for Standard Plan:\n- Everything in Starter Plan\n- Plus: Gallery Images, Testimonials, FAQ items, and Google Review Link.",
+    "keywords": [
+      "standard requirements",
+      "standard details needed"
+    ],
+    "options": [
+      "Standard Deliverables",
+      "Growth Website (3-5 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan2_del",
+    "question": "Standard Deliverables",
+    "answer": "Standard Plan Deliverables:\n- Demo URL\n- Source Code\n- GitHub Repository\n- Photo Gallery\n- Google Analytics Integration\n- Basic SEO\n- 15 Days Technical Support",
+    "keywords": [
+      "standard deliverables",
+      "standard support"
+    ],
+    "options": [
+      "Growth Website (3-5 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan3",
+    "question": "Growth Website (3-5 Days)",
+    "answer": "Growth Plan details:\n- Delivery Time: 3 to 5 Business Days\n- Scope: Up to 10 Pages, Admin Panel, Blog, Gallery Management, Banner Management, Contact Enquiry & Lead Management, Basic CMS, Analytics, Basic SEO, Demo & Production Deployment.\n- Deliverables: Demo Website, Live Website, Admin Panel, Source Code, GitHub Repo, Documentation, 30 Days Support.",
+    "keywords": [
+      "growth",
+      "3-5 days",
+      "admin panel",
+      "blog",
+      "cms",
+      "lead management",
+      "growth website"
+    ],
+    "options": [
+      "Growth Requirements",
+      "Growth Deliverables",
+      "Professional Website (7-15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan3_req",
+    "question": "Growth Requirements",
+    "answer": "Client Requirements for Growth Plan:\n- Everything in Standard Plan\n- Plus: Blog Content, Admin User Details, Hosting & Domain Access, SMTP Details (if required).",
+    "keywords": [
+      "growth requirements",
+      "growth details needed"
+    ],
+    "options": [
+      "Growth Deliverables",
+      "Professional Website (7-15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan3_del",
+    "question": "Growth Deliverables",
+    "answer": "Growth Plan Deliverables:\n- Demo Website & Live Website\n- Admin Panel\n- Source Code & GitHub Repository\n- Project Documentation\n- 30 Days Technical Support",
+    "keywords": [
+      "growth deliverables",
+      "growth support"
+    ],
+    "options": [
+      "Professional Website (7-15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan4",
+    "question": "Professional Website (7-15 Days)",
+    "answer": "Professional Plan details:\n- Delivery Time: 7 to 15 Business Days\n- Scope: Unlimited Pages, Advanced CMS, Multi-user Admin, Role & Permission Management, Portfolio, Careers Page, Team Management, Newsletter, Email Notifications, Performance & Security Optimization.\n- Deliverables: Demo Website, Live Website, Advanced CMS, Admin Panel, Documentation, Source Code, GitHub Repo, 90 Days Support.",
+    "keywords": [
+      "professional",
+      "7-15 days",
+      "unlimited pages",
+      "multi user admin",
+      "role permission",
+      "advanced cms",
+      "careers",
+      "newsletter"
+    ],
+    "options": [
+      "Professional Requirements",
+      "Professional Deliverables",
+      "Custom / Enterprise Plan",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan4_req",
+    "question": "Professional Requirements",
+    "answer": "Client Requirements for Professional Plan:\n- Everything in Growth Plan\n- Plus: Team Details, Career Details, SEO Information, Domain & Hosting Access, Business Email Details.",
+    "keywords": [
+      "professional requirements",
+      "professional details needed"
+    ],
+    "options": [
+      "Professional Deliverables",
+      "Custom / Enterprise Plan",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan4_del",
+    "question": "Professional Deliverables",
+    "answer": "Professional Plan Deliverables:\n- Demo Website & Live Website\n- Advanced CMS & Admin Panel\n- Full Source Code & GitHub Repo\n- Complete Documentation\n- 90 Days Technical Support",
+    "keywords": [
+      "professional deliverables",
+      "professional support"
+    ],
+    "options": [
+      "Custom / Enterprise Plan",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan5",
+    "question": "Custom / Enterprise Plan",
+    "answer": "Custom / Enterprise Plan details:\n- Delivery Timeline: Small Project (10-15 days), Medium Project (15-30 days), Large Project (30-90 days).\n- Scope: Unlimited Pages, Custom UI/UX, Admin Dashboard, Role & Permission Management, CMS, CRM / ERP / HRMS, Inventory Management, E-commerce, Booking Systems, Reports & Analytics, Payment Gateway, API Development, Third-party Integrations, Production Deployment.",
+    "keywords": [
+      "custom",
+      "enterprise",
+      "crm",
+      "erp",
+      "hrms",
+      "booking",
+      "inventory",
+      "large project",
+      "dashboard",
+      "api"
+    ],
+    "options": [
+      "Enterprise Timeline",
+      "Enterprise Modules & Integrations",
+      "Enterprise Deliverables",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan5_time",
+    "question": "Enterprise Timeline",
+    "answer": "Enterprise Project Execution Timelines:\n- Small Project: 10–15 Business Days\n- Medium Project: 15–30 Business Days\n- Large Project: 30–90 Business Days",
+    "keywords": [
+      "enterprise timeline",
+      "how long enterprise",
+      "enterprise duration"
+    ],
+    "options": [
+      "Enterprise Modules & Integrations",
+      "Enterprise Deliverables",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan5_modules",
+    "question": "Enterprise Modules & Integrations",
+    "answer": "Common Modules:\nCRM, ERP, HRMS, Inventory, Hotel Booking, Appointment Booking, E-commerce, LMS, Event Management, Customer Portal, Vendor Portal.\n\nCommon Integrations:\nRazorpay, Stripe, Cashfree, PayPal, PhonePe, Google Login, Facebook Login, WhatsApp API, SMS Gateway, SMTP Email, Google Analytics, Google Maps.",
+    "keywords": [
+      "enterprise modules",
+      "enterprise integrations",
+      "payment gateways",
+      "crm",
+      "erp",
+      "razorpay",
+      "stripe",
+      "whatsapp api"
+    ],
+    "options": [
+      "Enterprise Deliverables",
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "plan5_del",
+    "question": "Enterprise Deliverables",
+    "answer": "Custom / Enterprise Plan Deliverables:\n- Business Requirement Document (BRD)\n- UI/UX Design Files\n- Source Code & GitHub Repository\n- API Documentation\n- Demo & Live Website / Application\n- Deployment Documentation & User Manual\n- Training & Handover Session\n- 90 Days Technical Support",
+    "keywords": [
+      "enterprise deliverables",
+      "brd",
+      "documentation",
+      "enterprise support"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "sop_workflow",
+    "question": "Development SOP Workflow",
+    "answer": "NG Stellar Standard 14-Step Development Workflow:\n1. Client Requirement Collection\n2. Requirement Verification\n3. Git Repository & Project Setup\n4. AI Prompt Engineering\n5. AI Website Generation\n6. Manual Development & Customization\n7. Content Integration\n8. Testing & Quality Assurance\n9. Bug Fixing\n10. Demo Deployment\n11. Client Review & Approval\n12. Production Deployment\n13. Project Handover\n14. Support & Maintenance",
+    "keywords": [
+      "sop",
+      "workflow",
+      "process",
+      "steps",
+      "development process",
+      "how you build",
+      "standard procedure"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "support_info",
+    "question": "Support & Maintenance",
+    "answer": "We provide dedicated technical support for all our website plans:\n- Starter Website: 7 Days Support\n- Standard Website: 15 Days Support\n- Growth Website: 30 Days Support\n- Professional Website: 90 Days Support\n- Custom / Enterprise Website: 90 Days Technical Support",
+    "keywords": [
+      "support",
+      "maintenance",
+      "help",
+      "days support",
+      "warranty",
+      "after sales"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
   },
   {
     "id": "5",
     "question": "Do you have a budget range?",
     "answer": "We offer flexible pricing based on project scope. To give you an accurate quote, could you share a rough budget range?",
-    "keywords": ["budget", "price", "cost", "money", "quote", "pricing", "rates", "fees", "expensive", "cheap", "afford"],
-    "options": ["Less than $1k", "$1k - $5k", "$5k - $10k", "More than $10k"]
+    "keywords": [
+      "budget",
+      "price",
+      "cost",
+      "money",
+      "quote",
+      "pricing",
+      "rates",
+      "fees",
+      "expensive",
+      "cheap",
+      "afford",
+      "rupees",
+      "inr"
+    ],
+    "options": [
+      "Less than ₹10k",
+      "₹10k - ₹50k",
+      "₹50k - ₹1 Lakh",
+      "More than ₹1 Lakh"
+    ]
   },
   {
     "id": "5a",
-    "question": "Less than $1k",
-    "answer": "We have specific startup packages and template-based solutions that fit this budget perfectly. Shall we connect you with a consultant?",
-    "keywords": ["cheap", "low budget", "small", "startup", "less", "1000", "1k"],
-    "options": ["Contact Us", "What services do you offer?"]
+    "question": "Less than ₹10k",
+    "answer": "We have specific starter packages (1-Hour Starter Website) and template-based solutions that fit this budget perfectly. Shall we connect you with a consultant?",
+    "keywords": [
+      "cheap",
+      "low budget",
+      "small",
+      "startup",
+      "less",
+      "10000",
+      "10k",
+      "rupees",
+      "inr"
+    ],
+    "options": [
+      "Starter Website (1 Hr)",
+      "Contact Us",
+      "What services do you offer?"
+    ]
   },
   {
     "id": "5b",
-    "question": "$1k - $5k",
-    "answer": "This is a healthy budget for a custom website or a standard mobile app MVP. We can deliver great quality within this range.",
-    "keywords": ["medium", "average", "mid-range", "5000", "5k"],
-    "options": ["Contact Us", "See Portfolio"]
+    "question": "₹10k - ₹50k",
+    "answer": "This is a great budget for our Standard (6 Hours) or Growth (3-5 Days) website plans, offering custom design and admin panel capabilities.",
+    "keywords": [
+      "medium",
+      "average",
+      "mid-range",
+      "50000",
+      "50k",
+      "rupees",
+      "inr"
+    ],
+    "options": [
+      "Standard Website (6 Hrs)",
+      "Growth Website (3-5 Days)",
+      "See Portfolio"
+    ]
   },
   {
     "id": "5c",
-    "question": "$5k - $10k",
-    "answer": "With this budget, we can build a fully custom, feature-rich platform with advanced integrations and premium design.",
-    "keywords": ["premium", "high", "custom", "advanced", "10000", "10k"],
-    "options": ["Contact Us", "See Portfolio"]
+    "question": "₹50k - ₹1 Lakh",
+    "answer": "With this budget, we can build a fully custom Professional website (7-15 Days) with advanced CMS, role management, and performance optimization.",
+    "keywords": [
+      "premium",
+      "high",
+      "custom",
+      "advanced",
+      "1 lakh",
+      "100000",
+      "rupees",
+      "inr"
+    ],
+    "options": [
+      "Professional Website (7-15 Days)",
+      "Contact Us",
+      "See Portfolio"
+    ]
   },
   {
     "id": "5d",
-    "question": "More than $10k",
-    "answer": "We are ready to build an enterprise-grade solution for you. Let's schedule a meeting to discuss your detailed requirements.",
-    "keywords": ["enterprise", "large", "scale", "big", "investor"],
-    "options": ["Contact Us"]
+    "question": "More than ₹1 Lakh",
+    "answer": "We are ready to build a high-performance Custom / Enterprise solution tailored for your business. Let's schedule a meeting to discuss your detailed requirements.",
+    "keywords": [
+      "enterprise",
+      "large",
+      "scale",
+      "big",
+      "investor",
+      "custom",
+      "enterprise plan",
+      "rupees",
+      "inr"
+    ],
+    "options": [
+      "Custom / Enterprise Plan",
+      "Enterprise Modules & Integrations",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "2",
+    "question": "I need a website",
+    "answer": "We offer website plans tailored to your speed and feature requirements, ranging from 1-Hour Starter sites to Enterprise solutions. What plan or type of site interests you?",
+    "keywords": [
+      "website",
+      "web",
+      "site",
+      "development",
+      "build",
+      "create",
+      "make a site",
+      "web design",
+      "homepage",
+      "online presence"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "E-commerce Website",
+      "Portfolio Website",
+      "Corporate Website",
+      "Landing Page",
+      "Service Booking",
+      "Blog Website",
+      "Real Estate Website",
+      "Healthcare Website"
+    ]
+  },
+  {
+    "id": "3",
+    "question": "I need a mobile app",
+    "answer": "Excellent choice. We build native and cross-platform mobile apps. Do you have a specific platform in mind?",
+    "keywords": [
+      "mobile",
+      "app",
+      "application",
+      "android",
+      "ios",
+      "phone",
+      "smartphone",
+      "apk",
+      "play store",
+      "app store"
+    ],
+    "options": [
+      "iOS App",
+      "Android App",
+      "Cross-Platform (Both)"
+    ]
+  },
+  {
+    "id": "3a",
+    "question": "iOS App",
+    "answer": "We develop high-performance native iOS applications using Swift and SwiftUI, ensuring a premium user experience on iPhones and iPads.",
+    "keywords": [
+      "ios",
+      "iphone",
+      "apple",
+      "ipad",
+      "swift",
+      "native",
+      "mac"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "3b",
+    "question": "Android App",
+    "answer": "We build robust Android applications using Kotlin and Java that work seamlessly across the vast ecosystem of Android devices.",
+    "keywords": [
+      "android",
+      "google",
+      "play store",
+      "kotlin",
+      "java",
+      "samsung",
+      "pixel"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "3c",
+    "question": "Cross-Platform (Both)",
+    "answer": "Smart choice! We use frameworks like Flutter and React Native to build one codebase that works perfectly on both iOS and Android, saving you time and money.",
+    "keywords": [
+      "cross",
+      "platform",
+      "hybrid",
+      "flutter",
+      "react native",
+      "both",
+      "multi-platform"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
+  },
+  {
+    "id": "4",
+    "question": "I need digital marketing",
+    "answer": "We can help grow your brand! What are your primary goals?",
+    "keywords": [
+      "marketing",
+      "digital",
+      "seo",
+      "social",
+      "media",
+      "ads",
+      "growth",
+      "traffic",
+      "leads",
+      "promotion"
+    ],
+    "options": [
+      "SEO Services",
+      "Social Media Marketing",
+      "PPC Ads",
+      "Content Marketing"
+    ]
   },
   {
     "id": "6",
     "question": "What is your timeline?",
-    "answer": "Standard websites typically take 4-8 weeks, while complex apps can take 3-6 months. Do you have a specific launch date in mind?",
-    "keywords": ["timeline", "time", "long", "duration", "launch", "deadline", "date", "fast", "quick", "schedule"],
-    "options": ["Urgent (ASAP)", "1-2 Months", "3-6 Months", "Flexible"]
-  },
-  {
-    "id": "6a",
-    "question": "Urgent (ASAP)",
-    "answer": "We offer expedited services for urgent projects. Note that this may incur a rush fee. Let's start immediately.",
-    "keywords": ["urgent", "fast", "now", "immediately", "quick", "rush", "asap"],
-    "options": ["Contact Us"]
-  },
-  {
-    "id": "6b",
-    "question": "Flexible",
-    "answer": "Great, a flexible timeline allows us to focus deeply on research and iterative design for the best possible result.",
-    "keywords": ["flexible", "no rush", "whenever", "relaxed"],
-    "options": ["Contact Us"]
-  },
-  {
-    "id": "7",
-    "question": "Fragrance Website",
-    "answer": "For a fragrance brand, we can create a stunning e-commerce store or brand showcase. Do you need features like a scent finder quiz, ingredient details (top/heart/base notes), or subscription options?",
-    "keywords": ["fragrance", "perfume", "scent", "store", "shop", "cologne", "aroma", "cosmetic", "beauty"]
+    "answer": "Our delivery timelines are guaranteed based on the plan you choose:\n- Starter Website: 1 Hour\n- Standard Website: 6 Hours\n- Growth Website: 3–5 Business Days\n- Professional Website: 7–15 Business Days\n- Enterprise Solutions: 10–90 Business Days",
+    "keywords": [
+      "timeline",
+      "time",
+      "long",
+      "duration",
+      "launch",
+      "deadline",
+      "date",
+      "fast",
+      "quick",
+      "schedule",
+      "turnaround"
+    ],
+    "options": [
+      "Starter Website (1 Hr)",
+      "Standard Website (6 Hrs)",
+      "Growth Website (3-5 Days)",
+      "Professional Website (7-15 Days)",
+      "Custom / Enterprise Plan"
+    ]
   },
   {
     "id": "8",
     "question": "E-commerce Website",
-    "answer": "We build robust e-commerce solutions with payment gateways (Razorpay, Stripe), order tracking, and inventory management. How many products do you plan to list?",
-    "keywords": ["ecommerce", "shop", "store", "sell", "products", "e-commerce", "cart", "buying", "selling", "shopify", "woocommerce"],
-    "options": ["1-50 Products", "50-500 Products", "500+ Products"]
+    "answer": "We build robust e-commerce solutions with payment gateways (Razorpay, Stripe, PhonePe), order tracking, and inventory management. Available across our Growth, Professional, and Enterprise plans.",
+    "keywords": [
+      "ecommerce",
+      "shop",
+      "store",
+      "sell",
+      "products",
+      "e-commerce",
+      "cart",
+      "buying",
+      "selling",
+      "shopify",
+      "woocommerce"
+    ],
+    "options": [
+      "Growth Website (3-5 Days)",
+      "Custom / Enterprise Plan",
+      "Enterprise Modules & Integrations"
+    ]
   },
   {
     "id": "9",
     "question": "Portfolio Website",
-    "answer": "A portfolio website is perfect for showcasing your work. We focus on high-quality visuals and smooth animations to make your projects stand out.",
-    "keywords": ["portfolio", "showcase", "work", "gallery", "resume", "cv", "personal site", "artist", "photographer"]
+    "answer": "A portfolio website is perfect for showcasing your work. Choose between our Starter (1 Hr), Standard (6 Hrs), or Growth plans depending on the number of projects and gallery needs.",
+    "keywords": [
+      "portfolio",
+      "showcase",
+      "work",
+      "gallery",
+      "resume",
+      "cv",
+      "personal site",
+      "artist",
+      "photographer"
+    ],
+    "options": [
+      "Starter Website (1 Hr)",
+      "Standard Website (6 Hrs)",
+      "Growth Website (3-5 Days)"
+    ]
   },
   {
     "id": "10",
     "question": "Corporate Website",
-    "answer": "We design professional corporate websites that build trust and authority. Key features often include 'About Us', 'Services', 'Team', and 'Careers' sections.",
-    "keywords": ["corporate", "business", "company", "professional", "firm", "agency", "official", "enterprise"]
+    "answer": "We design professional corporate websites that build trust and authority. Recommended plans include Standard (5 pages), Growth (10 pages + CMS), or Professional (Unlimited pages).",
+    "keywords": [
+      "corporate",
+      "business",
+      "company",
+      "professional",
+      "firm",
+      "agency",
+      "official",
+      "enterprise"
+    ],
+    "options": [
+      "Standard Website (6 Hrs)",
+      "Growth Website (3-5 Days)",
+      "Professional Website (7-15 Days)"
+    ]
   },
   {
     "id": "11",
     "question": "Landing Page",
-    "answer": "A high-converting landing page is essential for campaigns. We focus on clear CTAs, fast loading speeds, and persuasive copy to maximize conversions.",
-    "keywords": ["landing", "page", "sales", "funnel", "conversion", "squeeze page", "promo", "campaign", "offer"]
+    "answer": "High-converting landing pages built fast! Our Starter Plan (1 Hour) or Standard Plan (6 Hours) deliver mobile-responsive, conversion-focused landing pages with Google Maps and Contact Forms.",
+    "keywords": [
+      "landing",
+      "page",
+      "sales",
+      "funnel",
+      "conversion",
+      "squeeze page",
+      "promo",
+      "campaign",
+      "offer"
+    ],
+    "options": [
+      "Starter Website (1 Hr)",
+      "Standard Website (6 Hrs)"
+    ]
   },
   {
     "id": "12",
     "question": "Service Booking",
-    "answer": "We can integrate advanced booking systems for appointments, reservations, and service scheduling, complete with calendar sync and automated reminders.",
-    "keywords": ["booking", "service", "appointment", "reservation", "schedule", "calendar", "meeting", "consultation"]
+    "answer": "We integrate advanced booking systems for appointments, hotel reservations, and service scheduling. Available in Growth, Professional, and Enterprise plans.",
+    "keywords": [
+      "booking",
+      "service",
+      "appointment",
+      "reservation",
+      "schedule",
+      "calendar",
+      "meeting",
+      "consultation"
+    ],
+    "options": [
+      "Growth Website (3-5 Days)",
+      "Custom / Enterprise Plan",
+      "Enterprise Modules & Integrations"
+    ]
   },
   {
     "id": "13",
     "question": "Blog Website",
-    "answer": "We create engaging blog platforms with easy-to-use CMS, newsletter integration, and social sharing features to help you build an audience.",
-    "keywords": ["blog", "news", "magazine", "content", "article", "post", "journal", "media", "publication"]
+    "answer": "We create engaging blog platforms with easy-to-use CMS, newsletter integration, and social sharing features. Available in our Growth Plan and above.",
+    "keywords": [
+      "blog",
+      "news",
+      "magazine",
+      "content",
+      "article",
+      "post",
+      "journal",
+      "media",
+      "publication"
+    ],
+    "options": [
+      "Growth Website (3-5 Days)",
+      "Professional Website (7-15 Days)"
+    ]
   },
   {
     "id": "14",
     "question": "Real Estate Website",
-    "answer": "Our real estate solutions include property listings, advanced search filters, map integration, and virtual tour capabilities.",
-    "keywords": ["real", "estate", "property", "house", "listing", "realtor", "home", "apartment", "rent", "buy"]
+    "answer": "Our real estate solutions include property listings, advanced search filters, map integration, and virtual tour capabilities. Built with our Growth or Professional plans.",
+    "keywords": [
+      "real",
+      "estate",
+      "property",
+      "house",
+      "listing",
+      "realtor",
+      "home",
+      "apartment",
+      "rent",
+      "buy"
+    ],
+    "options": [
+      "Growth Website (3-5 Days)",
+      "Professional Website (7-15 Days)"
+    ]
   },
   {
     "id": "15",
     "question": "Healthcare Website",
-    "answer": "We build secure, HIPAA-compliant healthcare websites with patient portals, appointment scheduling, and telemedicine integration capabilities.",
-    "keywords": ["healthcare", "medical", "doctor", "clinic", "hospital", "patient", "health", "wellness", "medicine"]
-  },
-  {
-    "id": "16",
-    "question": "Maintenance & Support",
-    "answer": "We provide ongoing maintenance packages to keep your website secure and updated.",
-    "keywords": ["maintenance", "support", "help", "fix", "repair", "update", "security", "bug", "error", "issue"]
+    "answer": "We build secure healthcare websites with patient portals, appointment scheduling, and doctor profiles.",
+    "keywords": [
+      "healthcare",
+      "medical",
+      "doctor",
+      "clinic",
+      "hospital",
+      "patient",
+      "health",
+      "wellness",
+      "medicine"
+    ],
+    "options": [
+      "Growth Website (3-5 Days)",
+      "Professional Website (7-15 Days)"
+    ]
   },
   {
     "id": "17",
     "question": "Branding & Design",
     "answer": "We create impactful brand identities, including logos, color palettes, and brand guidelines.",
-    "keywords": ["branding", "design", "logo", "identity", "graphic", "visual", "art", "creative", "style"]
+    "keywords": [
+      "branding",
+      "design",
+      "logo",
+      "identity",
+      "graphic",
+      "visual",
+      "art",
+      "creative",
+      "style"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
   },
   {
     "id": "18",
     "question": "SEO Services",
-    "answer": "Our SEO services include on-page optimization, keyword research, and backlink strategies to improve your search rankings.",
-    "keywords": ["seo", "search", "ranking", "google", "optimization", "organic", "traffic", "keywords", "rank"]
+    "answer": "All our website plans include Basic SEO. We also offer advanced SEO services including keyword research, technical SEO, and backlink strategies.",
+    "keywords": [
+      "seo",
+      "search",
+      "ranking",
+      "google",
+      "optimization",
+      "organic",
+      "traffic",
+      "keywords",
+      "rank"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
   },
   {
     "id": "19",
     "question": "Social Media Marketing",
     "answer": "We manage your social media presence, creating engaging content and running targeted ad campaigns.",
-    "keywords": ["social", "media", "facebook", "instagram", "linkedin", "twitter", "tiktok", "influencer", "followers"]
+    "keywords": [
+      "social",
+      "media",
+      "facebook",
+      "instagram",
+      "linkedin",
+      "twitter",
+      "tiktok",
+      "influencer",
+      "followers"
+    ],
+    "options": [
+      "Contact Us"
+    ]
   },
   {
     "id": "20",
     "question": "PPC Ads",
     "answer": "We run data-driven PPC campaigns on Google and Social Media to drive instant traffic and conversions.",
-    "keywords": ["ppc", "ads", "google", "advertising", "paid", "search ads", "display", "sem", "adwords"]
+    "keywords": [
+      "ppc",
+      "ads",
+      "google",
+      "advertising",
+      "paid",
+      "search ads",
+      "display",
+      "sem",
+      "adwords"
+    ],
+    "options": [
+      "Contact Us"
+    ]
   },
   {
     "id": "21",
     "question": "Content Marketing",
     "answer": "We create valuable content that attracts and engages your target audience, driving profitable customer action.",
-    "keywords": ["content", "marketing", "blog", "writing", "copywriting", "strategy", "storytelling"]
+    "keywords": [
+      "content",
+      "marketing",
+      "blog",
+      "writing",
+      "copywriting",
+      "strategy",
+      "storytelling"
+    ],
+    "options": [
+      "Contact Us"
+    ]
   },
   {
     "id": "22",
     "question": "Contact Us",
     "answer": "You can reach us at contact@ngstellar.com or call us at +91 97109 09727. We'd love to hear from you!",
-    "keywords": ["contact", "email", "phone", "call", "reach", "address", "location"]
+    "keywords": [
+      "contact",
+      "email",
+      "phone",
+      "call",
+      "reach",
+      "address",
+      "location"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "See Portfolio"
+    ]
   },
   {
     "id": "23",
     "question": "See Portfolio",
     "answer": "Check out our latest work on our portfolio page. We've delivered stunning projects for clients across various industries.",
-    "keywords": ["portfolio", "work", "projects", "case studies", "examples", "samples"],
-    "options": ["I need a website", "Contact Us"]
+    "keywords": [
+      "portfolio",
+      "work",
+      "projects",
+      "case studies",
+      "examples",
+      "samples"
+    ],
+    "options": [
+      "Website Plans (1 Hr to 15 Days)",
+      "Contact Us"
+    ]
   },
   {
     "id": "24",
-    "question": "1-50 Products",
-    "answer": "Perfect for a boutique store! We can set this up quickly with a user-friendly interface. What is your timeline?",
-    "keywords": ["small store", "boutique", "few products", "startup shop"],
-    "options": ["Urgent (ASAP)", "1-2 Months", "Flexible"]
+    "question": "Less than ₹10k",
+    "answer": "Perfect for a 1-Hour Starter Website or template solution! We can set this up quickly with a user-friendly interface. What is your timeline?",
+    "keywords": [
+      "small store",
+      "boutique",
+      "few products",
+      "startup shop",
+      "cheap",
+      "starter"
+    ],
+    "options": [
+      "Starter Website (1 Hr)",
+      "Contact Us"
+    ]
   },
   {
     "id": "25",
-    "question": "50-500 Products",
-    "answer": "A growing catalog! We'll ensure your store has robust search and filtering capabilities. Do you have a budget range?",
-    "keywords": ["medium store", "catalog", "growing business"],
-    "options": ["$1k - $5k", "$5k - $10k", "More than $10k"]
+    "question": "₹10k - ₹50k",
+    "answer": "Great range! We can build a Standard (6 Hours) or Growth (3-5 Days) solution with full gallery, SEO, and analytics features.",
+    "keywords": [
+      "medium store",
+      "catalog",
+      "growing business",
+      "standard",
+      "growth"
+    ],
+    "options": [
+      "Standard Website (6 Hrs)",
+      "Growth Website (3-5 Days)"
+    ]
   },
   {
     "id": "26",
-    "question": "500+ Products",
-    "answer": "Impressive scale! We recommend a high-performance custom solution to handle your inventory and traffic. Let's discuss your enterprise needs.",
-    "keywords": ["large store", "enterprise", "huge catalog", "warehouse"],
-    "options": ["Contact Us"]
-  },
-  {
-    "id": "27",
-    "question": "1-2 Months",
-    "answer": "That's a standard timeline for most projects. We can definitely work within that schedule.",
-    "keywords": ["standard", "normal", "month", "weeks"],
-    "options": ["Do you have a budget range?", "Contact Us"]
-  },
-  {
-    "id": "28",
-    "question": "3-6 Months",
-    "answer": "This allows for a very thorough development process with extensive testing and refinement.",
-    "keywords": ["long term", "thorough", "detailed", "complex"],
-    "options": ["Do you have a budget range?", "Contact Us"]
+    "question": "More than ₹50k",
+    "answer": "Impressive scale! We recommend a high-performance Professional or Custom / Enterprise solution tailored to handle your full business needs.",
+    "keywords": [
+      "large store",
+      "enterprise",
+      "huge catalog",
+      "warehouse",
+      "professional"
+    ],
+    "options": [
+      "Professional Website (7-15 Days)",
+      "Custom / Enterprise Plan",
+      "Contact Us"
+    ]
   }
 ]

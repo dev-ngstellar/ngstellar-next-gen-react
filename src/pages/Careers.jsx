@@ -350,7 +350,7 @@ export default function Careers() {
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_rxycj4g';
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_yvu62eo';
-    const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID || 'template_1jbggx8';
+    const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID || '';
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'hW784qW3T9gdNIid6';
 
     const submissionTimestamp = new Date().toLocaleString('en-US', {
