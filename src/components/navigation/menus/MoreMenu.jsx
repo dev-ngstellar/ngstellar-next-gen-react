@@ -4,37 +4,40 @@ import {
   ChevronRight,
   Compass,
   Network,
-  Trophy,
   BookOpen,
   Building2,
   PhoneCall,
   ArrowRight,
+  MapPin,
+  Briefcase,
 } from 'lucide-react';
 import { getMoreNavItems } from '../navData';
 
 export default function MoreMenu({ onItemClick, currentPath, isDesktopWide = true }) {
   const moreList = getMoreNavItems(isDesktopWide);
-  const [activeTab, setActiveTab] = useState(moreList[0]?.id || 'ecosystem');
+  const [activeTab, setActiveTab] = useState(moreList[0]?.id || 'locations');
 
   // If the active tab is not in the list (e.g. on resize from tablet to desktop), default to first item
   useEffect(() => {
     if (!moreList.some((item) => item.id === activeTab)) {
-      setActiveTab(moreList[0]?.id || 'ecosystem');
+      setActiveTab(moreList[0]?.id || 'locations');
     }
   }, [isDesktopWide, moreList, activeTab]);
 
   const getSectionIcon = (id) => {
     switch (id) {
+      case 'locations':
+        return MapPin;
       case 'approach':
         return Compass;
       case 'ecosystem':
         return Network;
-      case 'stories':
-        return Trophy;
       case 'insights':
         return BookOpen;
       case 'about':
         return Building2;
+      case 'careers':
+        return Briefcase;
       case 'contact':
         return PhoneCall;
       default:

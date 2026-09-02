@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Layers, Users, Cpu, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Layers, Users, Cpu, ArrowUpRight, ChevronRight, Trophy } from 'lucide-react';
 
 export default function TransformationMenu({ item, onItemClick, currentPath }) {
   const getIcon = (title) => {
@@ -10,7 +10,7 @@ export default function TransformationMenu({ item, onItemClick, currentPath }) {
   };
 
   return (
-    <div className="w-full max-w-[760px] rounded-2xl bg-slate-950/98 backdrop-blur-2xl border border-white/12 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] overflow-hidden p-5 sm:p-6 text-slate-200">
+    <div className="w-full max-w-[780px] rounded-2xl bg-slate-950/98 backdrop-blur-2xl border border-white/12 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] overflow-hidden p-5 sm:p-6 text-slate-200">
       <div className="grid grid-cols-12 gap-5 sm:gap-6">
         {/* Left Overview Column */}
         <div className="col-span-5 flex flex-col justify-between border-r border-white/10 pr-5">
@@ -26,7 +26,7 @@ export default function TransformationMenu({ item, onItemClick, currentPath }) {
             </p>
           </div>
 
-          <div className="mt-5 pt-4 border-t border-white/10">
+          <div className="mt-5 pt-4 border-t border-white/10 space-y-2.5">
             <Link
               to={item.cta.href}
               onClick={onItemClick}
@@ -35,6 +35,17 @@ export default function TransformationMenu({ item, onItemClick, currentPath }) {
               <span>{item.cta.label}</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
+            <div>
+              <Link
+                to="/transformation-stories"
+                onClick={onItemClick}
+                className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-200 transition-colors group"
+              >
+                <Trophy className="w-3.5 h-3.5 text-secondary-400" />
+                <span>Transformation Stories</span>
+                <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-primary-300 group-hover:translate-x-0.5 transition-all" />
+              </Link>
+            </div>
           </div>
         </div>
 

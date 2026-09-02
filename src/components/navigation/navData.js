@@ -380,9 +380,9 @@ export const getPrimaryNavItems = (isDesktopWide = true) => {
 
 export const getMoreNavItems = (isDesktopWide = true) => {
   if (isDesktopWide) {
-    // Desktop >= 1200px: Locations, Ecosystem, Stories, Insights, About, Careers, Contact
-    return NAV_ITEMS.filter((item) => ['locations', 'ecosystem', 'stories', 'insights', 'about', 'careers', 'contact'].includes(item.id));
+    // Desktop >= 1200px: Locations, Ecosystem, Insights, About, Careers, Contact
+    return NAV_ITEMS.filter((item) => ['locations', 'ecosystem', 'insights', 'about', 'careers', 'contact'].includes(item.id));
   }
-  // Tablet 768px - 1199px: Approach, Locations, Ecosystem, Stories, Insights, About, Careers, Contact
-  return NAV_ITEMS.filter((item) => ['approach', 'locations', 'ecosystem', 'stories', 'insights', 'about', 'careers', 'contact'].includes(item.id));
+  // Tablet 768px - 1199px: Approach, Locations, Ecosystem, Insights, About, Careers, Contact
+  return NAV_ITEMS.filter((item) => ['approach', 'locations', 'ecosystem', 'insights', 'about', 'careers', 'contact'].includes(item.id));
 };

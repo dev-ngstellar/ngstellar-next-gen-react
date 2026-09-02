@@ -350,7 +350,7 @@ export default function Careers() {
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_rxycj4g';
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_yvu62eo';
-    const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID || '';
+    const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID || 'template_1jbggx8';
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'hW784qW3T9gdNIid6';
 
     const submissionTimestamp = new Date().toLocaleString('en-US', {
@@ -363,6 +363,7 @@ export default function Careers() {
     const templateParams = {
       applicant_name: formData.fullName.trim(),
       applicant_email: formData.email.trim(),
+      phone: normalizedPhone,
       applicant_phone: normalizedPhone,
       position: formData.position,
       experience: formData.experience.trim() || 'Not specified',
@@ -375,15 +376,19 @@ export default function Careers() {
       submitted_at: submissionTimestamp,
     };
 
+    console.log('Sending Careers application with params:', templateParams);
+
     try {
       if (publicKey && publicKey !== 'YOUR_PUBLIC_KEY') {
+        // STEP 1: Send the application details to HR (hr@ngstellar.com)
         await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
+        // STEP 2: Send automatic confirmation email to candidate
         if (autoReplyTemplateId && autoReplyTemplateId !== 'YOUR_AUTO_REPLY_TEMPLATE_ID') {
           try {
             await emailjs.send(serviceId, autoReplyTemplateId, templateParams, publicKey);
           } catch (autoErr) {
-            console.warn('Applicant auto-reply notification skipped or pending template config:', autoErr);
+            console.error('Careers auto-reply failed:', autoErr);
           }
         }
       } else {
